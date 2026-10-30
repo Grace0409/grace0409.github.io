@@ -30,9 +30,9 @@ permalink: /about/
 ## 좋아하는 것
 
 <div class="fav-grid">
-  <div class="fav" style="--c: #ff8a3d"><i>GAME</i><b>오버워치</b><span>팀플레이와 한 판의 짜릿함</span></div>
-  <div class="fav" style="--c: #ff2e88"><i>GAME</i><b>페르소나</b><span>스타일리시한 UI와 이야기</span></div>
-  <div class="fav" style="--c: #b8ff4d"><i>STUDY</i><b>보안</b><span>깨 보면서 배우는 재미</span></div>
+  <div class="fav" style="--c: #ff8a3d"><i>GAME</i><b>오버워치</b><span>탱딜힐 다 하는 올라운더! 같이 하실 분? 🙋‍♀️</span></div>
+  <div class="fav" style="--c: #ff2e88"><i>GAME</i><b>페르소나</b><span>멋진 캐릭터들과 감동적인 스토리, 감각적인 디자인</span></div>
+  <div class="fav" style="--c: #b8ff4d"><i>STUDY</i><b>보안</b><span>"이 규칙, 공격자가 알면 뚫리지 않을까?" 그 질문을 따라가는 게 제일 재밌어요</span></div>
 </div>
 
 ## 활동 기록
