@@ -1087,3 +1087,48 @@ img { max-width: 100%; height: auto; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ───────── paper card (논문 정보) ───────── */
+.paper-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0 0 1.8em;
+  padding: 18px 20px 16px;
+  background: var(--bg-elev);
+  border: 2px solid var(--line);
+  box-shadow: 6px 6px 0 var(--accent);
+}
+.paper-venue {
+  align-self: flex-start;
+  padding: 0 10px;
+  background: var(--text);
+  color: var(--bg);
+  font-family: var(--hud);
+  font-size: .9rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  transform: skewX(-12deg);
+}
+.paper-card b { color: var(--text); font-size: 1.05rem; line-height: 1.45; }
+.paper-authors { color: var(--muted); font-size: .9rem; }
+.paper-authors u { color: var(--text); text-decoration: none; border-bottom: 2px solid var(--accent); }
+.paper-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+.paper-badges i {
+  padding: 0 9px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--hud);
+  font-size: .82rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: .1em;
+  transform: skewX(-12deg);
+}
+.paper-badges i.gold { background: #ffd23f; color: var(--black); }
+.paper-badges i.plain { background: transparent; color: var(--text); box-shadow: inset 0 0 0 2px var(--line); }
+
+/* about 페이지 안의 HUD 통계 */
+.prose .hero-stats .stat, .prose .hero-stats .mission { color: #fff; background: var(--black); }
+.prose .hero-stats .mission p { margin: 2px 0 6px; color: #fff; }
