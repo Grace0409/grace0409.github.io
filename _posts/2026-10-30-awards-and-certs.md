@@ -29,11 +29,11 @@ tags: [award, certificate]
   <span class="paper-badges"><i class="gold">우수논문상</i></span>
 </div>
 
-상 받은 연구는 [논문/컨퍼런스](/categories/paper-conference/)에 자세히 적어 뒀어요.
+상을 받은 연구는 [논문/컨퍼런스](/categories/paper-conference/)에 자세히 적어 두었습니다 :)
 
 ## 🎓 교육, 수료
 
-버그헌팅마스터 3기 B트랙을 2026년 여름에 수료했어요. 포트폴리오 심사, 기술시험, 면접을 거쳐 뽑혔고 실제 웹 타깃으로 버그헌팅을 했습니다.
+2026년 여름에 버그헌팅마스터 3기 B트랙을 수료했습니다. 포트폴리오 심사, 기술시험, 면접을 거쳐 선발됐고 실제 웹 타깃으로 버그헌팅을 했습니다.
 
 | 시기 | 과정 | 내용 |
 | --- | --- | --- |
@@ -42,4 +42,4 @@ tags: [award, certificate]
 
 ## 🌏 어학
 
-TOEIC 850, JLPT 2급이에요. 논문은 영어로 쓰고 WISA, MobiSec 같은 국제학회에서 발표하고 있어요.
+TOEIC 850, JLPT 2급입니다. 논문은 영어로 쓰고, WISA와 MobiSec 같은 국제학회에서 발표하고 있습니다.

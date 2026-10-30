@@ -15,15 +15,15 @@ tags: [bug-bounty, web, owasp]
   <span class="paper-badges"><i>수료</i></span>
 </div>
 
-선발을 거쳐 들어갔고, 실제 웹 서비스를 대상으로 버그헌팅을 했어요. 실습용 환경이 아니라 진짜 서비스라서 범위(scope)를 지키는 게 제일 신경 쓰였습니다.
+선발 과정을 거쳐 들어갔고, 실제 웹 서비스를 대상으로 버그헌팅을 했습니다. 실습용 환경이 아니라 진짜 서비스라서 범위(scope)를 지키는 데 가장 신경을 썼습니다.
 
 ## HASH 버그바운티 팀 프로젝트
 
-2026년 2학기부터 해킹 동아리 HASH에서 OWASP Juice Shop 버그바운티 프로젝트 팀장을 하고 있어요.
+2026년 2학기부터 해킹 동아리 HASH에서 OWASP Juice Shop 버그바운티 프로젝트 팀장을 맡고 있습니다!
 
-진행은 이렇게 해요. 팀원마다 자기 환경에 Juice Shop을 띄우고 엔드포인트별로 정찰합니다. 찾은 취약점은 PoC까지 재현해요. 거기서 끝내지 않고 라우트 소스코드에서 원인을 찾고, 시큐어 코딩으로 직접 고쳐 봅니다.
+진행은 이렇게 합니다. 팀원마다 자기 환경에 Juice Shop을 띄우고 엔드포인트별로 정찰합니다. 찾은 취약점은 PoC까지 재현합니다. 거기서 끝내지 않고 라우트 소스코드에서 원인을 찾고, 시큐어 코딩으로 직접 고쳐 봅니다.
 
-지금까지 다룬 건 아래 정도예요.
+지금까지 다룬 취약점은 아래와 같습니다.
 
 | 유형 | 원인 |
 | --- | --- |
@@ -33,8 +33,8 @@ tags: [bug-bounty, web, owasp]
 | XXE | XML 파싱에서 외부 엔티티를 허용 |
 | Reflected XSS | 출력할 때 이스케이프를 안 함 |
 
-도구는 Burp Suite, sqlmap, nuclei, ffuf, feroxbuster, dalfox를 썼어요.
+도구는 Burp Suite, sqlmap, nuclei, ffuf, feroxbuster, dalfox를 썼습니다 :)
 
 ## 같이 공부한 것
 
-PortSwigger Web Security Academy로 Blind SQLi, Padding Oracle, 메서드 기반 접근제어 우회, OAuth 공격을 익혔어요. 실제로 제보한 사례가 생기면 공개해도 되는 만큼 여기에 정리할게요.
+PortSwigger Web Security Academy로 Blind SQLi, Padding Oracle, 메서드 기반 접근제어 우회, OAuth 공격을 익혔습니다.
