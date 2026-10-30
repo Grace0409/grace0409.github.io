@@ -1,0 +1,44 @@
+<aside class="sidebar" id="sidebar">
+  <a class="profile" href="{{ '/' | relative_url }}">
+    <img class="avatar" src="{{ '/assets/img/avatar.svg' | relative_url }}" alt="OVAN 프로필" width="72" height="72">
+    <div>
+      <p class="profile-name">{{ site.author.nickname }}</p>
+      <p class="profile-sub">{{ site.author.name }}<br>Knights Frontier 3기</p>
+    </div>
+  </a>
+  <p class="profile-bio">{{ site.tagline }}</p>
+
+  <nav class="nav" aria-label="메인 메뉴">
+    <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>{% include icon.html name="home" %}<span>Home</span></a>
+    <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>{% include icon.html name="user" %}<span>About</span></a>
+    <a href="{{ '/archive/' | relative_url }}" {% if page.url == '/archive/' %}class="active"{% endif %}>{% include icon.html name="archive" %}<span>Archive</span></a>
+  </nav>
+
+  <p class="nav-label">Categories</p>
+  <nav class="nav nav-cats" aria-label="카테고리">
+    {%- for c in site.data.categories -%}
+    {%- assign c_url = '/categories/' | append: c.slug | append: '/' -%}
+    {%- assign c_posts = site.categories[c.slug] -%}
+    <a href="{{ c_url | relative_url }}" style="--c: {{ c.color }}" {% if page.url == c_url or page.category == c.slug %}class="active"{% endif %}>
+      <span class="cat-icon">{% include icon.html name=c.icon px=16 %}</span>
+      <span>{{ c.name }}</span>
+      <span class="count">{{ c_posts | size }}</span>
+    </a>
+    {%- endfor -%}
+  </nav>
+
+  <div class="sidebar-foot">
+    <div class="links">
+      <a href="mailto:{{ site.author.email }}" aria-label="이메일" title="{{ site.author.email }}">{% include icon.html name="mail" %}</a>
+      {%- if site.author.github != "" -%}
+      <a href="https://github.com/{{ site.author.github }}" aria-label="GitHub" title="GitHub">{% include icon.html name="github" %}</a>
+      {%- endif -%}
+      <a href="{{ '/feed.xml' | relative_url }}" aria-label="RSS" title="RSS">{% include icon.html name="rss" %}</a>
+      <button class="theme-toggle" type="button" aria-label="테마 전환" title="라이트/다크 전환">
+        <span class="when-dark">{% include icon.html name="sun" %}</span>
+        <span class="when-light">{% include icon.html name="moon" %}</span>
+      </button>
+    </div>
+    <p class="copy">© {{ site.time | date: '%Y' }} {{ site.author.nickname }}</p>
+  </div>
+</aside>

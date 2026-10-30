@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'ko' }}">
+{% include head.html %}
+<body>
+  <header class="topbar">
+    <a class="topbar-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-controls="sidebar" aria-expanded="false">{% include icon.html name="menu" px=22 %}</button>
+  </header>
+  <div class="scrim" hidden></div>
+
+  <div class="layout">
+    {% include sidebar.html %}
+    <main class="main">
+      {{ content }}
+    </main>
+  </div>
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

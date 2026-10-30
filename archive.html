@@ -1,0 +1,22 @@
+---
+layout: default
+title: Archive
+permalink: /archive/
+---
+<header class="page-header">
+  <p class="eyebrow">All posts · {{ site.posts | size }}</p>
+  <h1>Archive</h1>
+</header>
+
+{%- assign by_year = site.posts | group_by_exp: "p", "p.date | date: '%Y'" -%}
+{%- if by_year.size == 0 -%}
+<p class="empty">아직 작성한 글이 없습니다.</p>
+{%- endif -%}
+{%- for y in by_year -%}
+<h2 class="archive-year">{{ y.name }}</h2>
+<ul class="post-list">
+  {%- for post in y.items -%}
+  {% include post-item.html post=post %}
+  {%- endfor -%}
+</ul>
+{%- endfor -%}

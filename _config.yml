@@ -1,0 +1,54 @@
+# ─────────────────────────────────────────────
+#  OVAN.log 기본 설정
+#  이 파일을 수정한 뒤에는 로컬 서버를 재시작해야 반영됩니다.
+# ─────────────────────────────────────────────
+
+title: OVAN.log
+tagline: "배우고, 부딪히고, 기록합니다."
+description: 김가영(OVAN)의 보안 학습과 활동 기록 블로그
+lang: ko
+timezone: Asia/Seoul
+
+author:
+  name: 김가영
+  nickname: OVAN
+  email: lovecarnin0928@gmail.com
+  github: ""            # GitHub 아이디를 적으면 사이드바에 링크가 생깁니다
+  bio: "Knights Frontier 3기 · 보안을 공부하며 배운 것을 기록합니다."
+
+url: ""                 # 예) https://아이디.github.io
+baseurl: ""
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+permalink: /posts/:title/
+future: true
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .jekyll-cache
