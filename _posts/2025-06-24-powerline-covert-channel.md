@@ -1,19 +1,19 @@
 ---
 title: "에어갭을 넘는 전원선 은닉 채널, 탐지하고 차단하기"
 description: CISC-S'25 발표와 제8회 부채널 정보분석 경진대회 회장상으로 이어진 전원선 변조 공격 방어 연구입니다.
-date: 2026-10-30 22:50:00 +0900
+date: 2025-06-24 10:00:00 +0900
 category: paper-conference
 tags: [side-channel, air-gap, covert-channel, award]
 ---
 
 <div class="paper-card">
-  <span class="paper-venue">CISC-S'25 · Gyeongju · 2025.06</span>
+  <span class="paper-venue">CISC-S'25 · 경주 · 2025.06.24–25</span>
   <b>에어갭 환경에서 전원선 변조 기반 암묵적 채널 공격에 대한 적응형 방어 시스템</b>
   <span class="paper-authors"><u>김가영</u>, 박나은, 이일구</span>
 </div>
 
 <div class="paper-card">
-  <span class="paper-venue">제8회 부채널 정보분석 경진대회 · 2025.07</span>
+  <span class="paper-venue">제8회 부채널 정보분석 경진대회 · 2025.07.02 시상</span>
   <b>전원선 변조 공격의 실시간 주기 패턴 탐지 및 적응형 노이즈 차단 시스템</b>
   <span class="paper-authors"><u>김가영</u>, 박나은, 이일구</span>
   <span class="paper-badges"><i class="gold">🏆 한국정보보호학회 회장상</i></span>
