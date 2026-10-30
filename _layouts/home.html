@@ -2,35 +2,55 @@
 layout: default
 ---
 <section class="hero">
-  <div class="terminal" role="img" aria-label="자기소개 터미널">
-    <div class="terminal-bar"><i></i><i></i><i></i><span>ovan@frontier: ~</span></div>
-    <pre class="terminal-body"><span class="pr">ovan@frontier:~$</span> whoami
-<b>김가영 (OVAN)</b>
+  <div class="hero-main">
+    <p class="hero-cmd">root@knights-frontier:~# <b>whoami</b><span class="cursor"></span></p>
+    <p class="hero-kicker"><span>KNIGHTS FRONTIER</span><span>3RD GEN</span></p>
+    <h1 class="hero-title">OVAN</h1>
+    <p class="hero-role"><b>김가영</b> &nbsp;/&nbsp; SECURITY TRAINEE</p>
+    <p class="hero-tagline">{{ site.tagline }}</p>
+  </div>
 
-<span class="pr">ovan@frontier:~$</span> cat about.txt
-Knights Frontier 3기에서 보안을 공부하고 있습니다.
-배운 것, 풀어본 것, 도전한 것을 이곳에 기록합니다.
+  <div class="hero-badge" aria-hidden="true">
+    {% include starburst.html %}
+  </div>
 
-<span class="pr">ovan@frontier:~$</span> ls ./categories
-{% for c in site.data.categories %}<span style="color: {{ c.color }}">{{ c.slug }}/</span>  {% endfor %}
-
-<span class="pr">ovan@frontier:~$</span> <span class="cursor"></span></pre>
+  <div class="hero-stats">
+    <div class="stat"><span>POSTS</span><b>{{ site.posts | size }}</b></div>
+    <div class="stat"><span>CATEGORIES</span><b>{{ site.data.categories | size }}</b></div>
+    <div class="stat"><span>SINCE</span><b>2026</b></div>
+    <div class="mission">
+      <span>MISSION 01</span>
+      <p>github.io 블로그 만들기 <b>CLEAR!</b></p>
+      <div class="bar"><i style="width: 100%"></i></div>
+    </div>
   </div>
 </section>
 
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    {%- for i in (1..2) -%}
+    <span>KNIGHTS FRONTIER</span><i>✦</i>
+    {%- for c in site.data.categories -%}
+    <span>{{ c.name }}</span><i>✦</i>
+    {%- endfor -%}
+    {%- endfor -%}
+  </div>
+</div>
+
 <section class="section">
   <div class="section-head">
-    <h2>Categories</h2>
-    <p>{{ site.posts | size }}개의 글</p>
+    <h2>CATEGORIES</h2>
+    <p>{{ site.posts | size }} LOGS</p>
   </div>
   <div class="cat-grid">
     {%- for c in site.data.categories -%}
     {%- assign c_posts = site.categories[c.slug] -%}
     <a class="cat-card" href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}" style="--c: {{ c.color }}">
+      <span class="cat-card-no" aria-hidden="true">0{{ forloop.index }}</span>
       <span class="cat-card-icon">{% include icon.html name=c.icon px=22 %}</span>
       <span class="cat-card-name">{{ c.name }}</span>
       <span class="cat-card-desc">{{ c.desc }}</span>
-      <span class="cat-card-count">{{ c_posts | size }} posts {% include icon.html name="arrow-right" px=14 %}</span>
+      <span class="cat-card-count">{{ c_posts | size }} POSTS {% include icon.html name="arrow-right" px=14 %}</span>
     </a>
     {%- endfor -%}
   </div>
@@ -38,8 +58,8 @@ Knights Frontier 3기에서 보안을 공부하고 있습니다.
 
 <section class="section">
   <div class="section-head">
-    <h2>Recent Posts</h2>
-    <a class="more" href="{{ '/archive/' | relative_url }}">전체 보기 {% include icon.html name="arrow-right" px=14 %}</a>
+    <h2>RECENT</h2>
+    <a class="more" href="{{ '/archive/' | relative_url }}">VIEW ALL {% include icon.html name="arrow-right" px=14 %}</a>
   </div>
   {%- if site.posts.size > 0 -%}
   <ul class="post-list">
@@ -48,6 +68,6 @@ Knights Frontier 3기에서 보안을 공부하고 있습니다.
     {%- endfor -%}
   </ul>
   {%- else -%}
-  <p class="empty">아직 작성한 글이 없습니다.</p>
+  <div class="empty"><strong>NO DATA</strong><p>아직 작성한 글이 없습니다.</p></div>
   {%- endif -%}
 </section>

@@ -3,35 +3,35 @@
 - slug: dev
   name: 개발
   icon: code
-  color: "#4f9dff"
+  color: "#4dd8ff"
   desc: 직접 만들고 부딪히며 배운 개발 기록
 
 - slug: ctf-wargame
   name: CTF/Wargame
   icon: flag
-  color: "#ff6b6b"
+  color: "#ff2e88"
   desc: CTF 대회 참가 후기와 워게임 문제 풀이(Write-up)
 
 - slug: bug-bounty
   name: Bug Bounty
   icon: bug
-  color: "#ffb84d"
+  color: "#ffd23f"
   desc: 취약점을 찾고 제보하는 과정과 버그바운티 활동
 
 - slug: tech-docs
   name: 블로그/기술문서
   icon: pen
-  color: "#3ddc97"
+  color: "#b8ff4d"
   desc: 공부한 개념과 기술을 내 언어로 정리한 문서
 
 - slug: paper-conference
   name: 논문/컨퍼런스
   icon: book
-  color: "#b58cff"
+  color: "#b78cff"
   desc: 읽은 논문 리뷰와 보안 컨퍼런스 참관기
 
 - slug: contest-cert
   name: 공모전/자격증
   icon: award
-  color: "#ff8fc7"
+  color: "#ff8a3d"
   desc: 공모전 도전기와 자격증 준비·취득 기록

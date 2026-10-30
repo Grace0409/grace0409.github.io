@@ -10,7 +10,7 @@ permalink: /archive/
 
 {%- assign by_year = site.posts | group_by_exp: "p", "p.date | date: '%Y'" -%}
 {%- if by_year.size == 0 -%}
-<p class="empty">아직 작성한 글이 없습니다.</p>
+<div class="empty"><strong>NO DATA</strong><p>아직 작성한 글이 없습니다.</p></div>
 {%- endif -%}
 {%- for y in by_year -%}
 <h2 class="archive-year">{{ y.name }}</h2>

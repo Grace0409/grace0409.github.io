@@ -3,10 +3,11 @@
 {% include head.html %}
 <body>
   <header class="topbar">
-    <a class="topbar-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a class="topbar-brand" href="{{ '/' | relative_url }}">OVAN<span>.log</span></a>
     <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-controls="sidebar" aria-expanded="false">{% include icon.html name="menu" px=22 %}</button>
   </header>
   <div class="scrim" hidden></div>
+  <div class="bg-deco" aria-hidden="true"></div>
 
   <div class="layout">
     {% include sidebar.html %}

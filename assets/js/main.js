@@ -43,4 +43,22 @@
     });
     block.appendChild(btn);
   });
+
+  // 클릭하면 별 조각이 튀는 효과
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.addEventListener("pointerdown", function (e) {
+      for (var i = 0; i < 7; i++) {
+        var s = document.createElement("span");
+        var a = (Math.PI * 2 * i) / 7 + Math.random() * 0.5;
+        var d = 26 + Math.random() * 22;
+        s.className = "spark";
+        s.style.left = e.clientX + "px";
+        s.style.top = e.clientY + "px";
+        s.style.setProperty("--dx", Math.cos(a) * d + "px");
+        s.style.setProperty("--dy", Math.sin(a) * d + "px");
+        document.body.appendChild(s);
+        setTimeout(s.remove.bind(s), 600);
+      }
+    });
+  }
 })();
