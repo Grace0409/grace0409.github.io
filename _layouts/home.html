@@ -1,0 +1,53 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="terminal" role="img" aria-label="자기소개 터미널">
+    <div class="terminal-bar"><i></i><i></i><i></i><span>ovan@frontier: ~</span></div>
+    <pre class="terminal-body"><span class="pr">ovan@frontier:~$</span> whoami
+<b>김가영 (OVAN)</b>
+
+<span class="pr">ovan@frontier:~$</span> cat about.txt
+Knights Frontier 3기에서 보안을 공부하고 있습니다.
+배운 것, 풀어본 것, 도전한 것을 이곳에 기록합니다.
+
+<span class="pr">ovan@frontier:~$</span> ls ./categories
+{% for c in site.data.categories %}<span style="color: {{ c.color }}">{{ c.slug }}/</span>  {% endfor %}
+
+<span class="pr">ovan@frontier:~$</span> <span class="cursor"></span></pre>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Categories</h2>
+    <p>{{ site.posts | size }}개의 글</p>
+  </div>
+  <div class="cat-grid">
+    {%- for c in site.data.categories -%}
+    {%- assign c_posts = site.categories[c.slug] -%}
+    <a class="cat-card" href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}" style="--c: {{ c.color }}">
+      <span class="cat-card-icon">{% include icon.html name=c.icon px=22 %}</span>
+      <span class="cat-card-name">{{ c.name }}</span>
+      <span class="cat-card-desc">{{ c.desc }}</span>
+      <span class="cat-card-count">{{ c_posts | size }} posts {% include icon.html name="arrow-right" px=14 %}</span>
+    </a>
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Recent Posts</h2>
+    <a class="more" href="{{ '/archive/' | relative_url }}">전체 보기 {% include icon.html name="arrow-right" px=14 %}</a>
+  </div>
+  {%- if site.posts.size > 0 -%}
+  <ul class="post-list">
+    {%- for post in site.posts limit: 6 -%}
+    {% include post-item.html post=post %}
+    {%- endfor -%}
+  </ul>
+  {%- else -%}
+  <p class="empty">아직 작성한 글이 없습니다.</p>
+  {%- endif -%}
+</section>

@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{%- assign c = site.data.categories | where: "slug", page.cat | first -%}
+{%- assign c_posts = site.categories[page.cat] -%}
+<header class="page-header cat-header" style="--c: {{ c.color }}">
+  <span class="cat-card-icon">{% include icon.html name=c.icon px=26 %}</span>
+  <div>
+    <p class="eyebrow">Category · {{ c_posts | size }} posts</p>
+    <h1>{{ c.name }}</h1>
+    <p class="page-desc">{{ c.desc }}</p>
+  </div>
+</header>
+
+{%- if c_posts.size > 0 -%}
+<ul class="post-list">
+  {%- for post in c_posts -%}
+  {% include post-item.html post=post %}
+  {%- endfor -%}
+</ul>
+{%- else -%}
+<div class="empty">
+  <p><code>$ ls ./{{ c.slug }}</code></p>
+  <p>아직 이 카테고리에 작성한 글이 없습니다. 곧 채워질 예정이에요!</p>
+</div>
+{%- endif -%}

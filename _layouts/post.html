@@ -1,0 +1,35 @@
+---
+layout: default
+---
+{%- assign pc = site.data.categories | where: "slug", page.category | first -%}
+{%- assign words = content | strip_html | size -%}
+{%- assign minutes = words | divided_by: 500 | plus: 1 -%}
+<article class="post">
+  <header class="post-header">
+    {%- if pc %}
+    <a class="chip" style="--c: {{ pc.color }}" href="{{ '/categories/' | append: pc.slug | append: '/' | relative_url }}">{{ pc.name }}</a>
+    {%- endif %}
+    <h1>{{ page.title }}</h1>
+    {%- if page.description %}<p class="post-desc">{{ page.description }}</p>{% endif %}
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
+      <span>{% include icon.html name="clock" px=14 %} {{ minutes }}분</span>
+      {%- if page.tags.size > 0 -%}
+      <span class="tags">{% for t in page.tags %}<span>#{{ t }}</span>{% endfor %}</span>
+      {%- endif -%}
+    </div>
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <nav class="post-nav" aria-label="이전/다음 글">
+    {%- if page.previous -%}
+    <a class="prev" href="{{ page.previous.url | relative_url }}"><small>{% include icon.html name="arrow-left" px=14 %} 이전 글</small><span>{{ page.previous.title }}</span></a>
+    {%- else -%}<span></span>{%- endif -%}
+    {%- if page.next -%}
+    <a class="next" href="{{ page.next.url | relative_url }}"><small>다음 글 {% include icon.html name="arrow-right" px=14 %}</small><span>{{ page.next.title }}</span></a>
+    {%- endif -%}
+  </nav>
+</article>

@@ -1,0 +1,12 @@
+{%- assign p = include.post -%}
+{%- assign pc = site.data.categories | where: "slug", p.category | first -%}
+<li class="post-item">
+  <a href="{{ p.url | relative_url }}">
+    <div class="post-item-meta">
+      <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%Y.%m.%d" }}</time>
+      {%- if pc %}<span class="chip" style="--c: {{ pc.color }}">{{ pc.name }}</span>{% endif -%}
+    </div>
+    <h3>{{ p.title }}</h3>
+    <p>{{ p.description | default: p.excerpt | strip_html | strip_newlines | truncate: 120 }}</p>
+  </a>
+</li>
