@@ -6,7 +6,7 @@ category: paper-conference
 tags: [system-security, dma, kci, award]
 ---
 
-학부연구생이 되고 처음 잡은 주제예요. 내가 만든 시스템을 내가 공격해 보고, 다시 막았습니다. 그렇게 다섯 편이 이어졌어요.
+학부연구생이 되고 처음 잡은 주제입니다. 내가 만든 시스템을 내가 공격해 보고, 다시 막았습니다. 그렇게 다섯 편이 이어졌습니다.
 
 ## 1. 제안, CPP-DMA
 
@@ -16,7 +16,7 @@ tags: [system-security, dma, kci, award]
   <span class="paper-authors"><u>김가영</u>, 문정민, 박나은, 이일구</span>
 </div>
 
-콘텐츠 인기도를 예측해서 메모리를 미리 나눠 주는 방식이에요. 처리 시간이 30.3% 줄었습니다.
+콘텐츠 인기도를 예측해서 메모리를 미리 나눠 주는 방식입니다. 처리 시간이 30.3% 줄었습니다.
 
 ## 2. 공격, 취약점 분석
 
@@ -27,7 +27,7 @@ tags: [system-security, dma, kci, award]
   <span class="paper-badges"><i>POSTER</i></span>
 </div>
 
-예측에 기대는 구조라는 게 곧 약점이었어요. 악의적인 트래픽으로 예측을 흔들면 할당이 틀어집니다. 이 구조적인 취약점을 직접 찾아서 분석했어요.
+예측에 기대는 구조라는 게 곧 약점이었습니다. 악의적인 트래픽으로 예측을 흔들면 할당이 틀어집니다. 이 구조적인 취약점을 직접 찾아서 분석했습니다.
 
 ## 3. 방어, ADE-DMA
 
@@ -38,7 +38,7 @@ tags: [system-security, dma, kci, award]
   <span class="paper-badges"><i class="gold">🏆 우수논문상</i></span>
 </div>
 
-악성 트래픽을 입력 단계에서 걸러 내는 방어 계층을 만들었어요. 공격 차단율은 87%였고, 이 논문으로 우수논문상을 받았습니다.
+악성 트래픽을 입력 단계에서 걸러 내는 방어 계층을 만들었습니다. 공격 차단율은 87%였고, 이 논문으로 우수논문상을 받았습니다!
 
 <div class="paper-card">
   <span class="paper-venue">MobiSec 2025, Sapporo, Japan, 2025.12.16~18</span>
@@ -47,7 +47,7 @@ tags: [system-security, dma, kci, award]
   <span class="paper-badges"><i>POSTER</i></span>
 </div>
 
-같은 방어 구조를 실시간 이상 탐지 쪽에서 다시 정리했어요. 삿포로에서 포스터로 발표했습니다.
+같은 방어 구조를 실시간 이상 탐지 쪽에서 다시 정리했습니다. 삿포로에서 포스터로 발표했습니다.
 
 ## 4. 저널
 
@@ -58,8 +58,8 @@ tags: [system-security, dma, kci, award]
   <span class="paper-badges"><i class="gold">KCI 등재</i></span>
 </div>
 
-1년 동안 한 걸 모아서 KCI 등재 저널에 실었어요.
+1년 동안 한 연구를 모아서 KCI 등재 저널에 실었습니다 :)
 
 ## 배운 것
 
-만든 사람이라서 제일 잘 보이는 약점도 있더라고요. 성능을 올리려고 넣은 설계가 그대로 공격 표면이 되기도 해요. 이 감각이 나중에 AVF와 SVF 연구로 이어졌습니다. 공격자가 규칙을 배우면 어떻게 될까, 그 질문이요.
+만든 사람이라서 제일 잘 보이는 약점도 있었습니다. 성능을 올리려고 넣은 설계가 그대로 공격 표면이 되기도 합니다. 이 감각이 나중에 AVF와 SVF 연구로 이어졌습니다. 공격자가 규칙을 배우면 어떻게 될까, 그 질문입니다.

@@ -7,9 +7,9 @@ permalink: /about/
 
 ## 안녕하세요, OVAN입니다!
 
-김가영(OVAN)이에요. 성신여자대학교 융합보안공학과에 다니고 있어요. 2025년 2월부터 학부연구생으로 연구하고 있고, 지금은 SSS Lab에 있습니다. 보안을 같이 공부하는 모임 Knights Frontier 3기에서도 활동해요.
+김가영(OVAN)입니다! 성신여자대학교 융합보안공학과에 다니고 있습니다. 2025년 2월부터 학부연구생으로 연구하고 있고, 지금은 SSS Lab에 있습니다. 보안을 같이 공부하는 모임 Knights Frontier 3기에서도 활동합니다.
 
-고정된 규칙에 기대는 보안 기법은 규칙을 배운 공격자한테 뚫려요. 저는 그 지점을 주로 파고들어요. 게임이론이나 이상 탐지 같은 수학적 모델로, 방어 판단이 상황에 맞춰 바뀌게 만드는 연구를 합니다. 연구 밖에서는 웹, 모바일, 바이너리를 직접 뜯어 보면서 공부해요.
+고정된 규칙에 기대는 보안 기법은 규칙을 배운 공격자에게 뚫립니다. 저는 그 지점을 주로 파고듭니다. 게임이론이나 이상 탐지 같은 수학적 모델로, 방어 판단이 상황에 맞춰 바뀌게 만드는 연구를 합니다. 연구 밖에서는 웹, 모바일, 바이너리를 직접 뜯어 보면서 공부합니다.
 
 <div class="hero-stats" style="margin: 0 0 1.6em;">
   <div class="stat"><span>PAPERS</span><b>12</b></div>
@@ -21,7 +21,7 @@ permalink: /about/
 ## 연구 분야
 
 <div class="fav-grid">
-  <div class="fav" style="--c: #4dd8ff"><i>DISTRIBUTED</i><b>적응형 이상 노드 탐지</b><span>AVF에서 SVF, ZT-SVF까지. Stackelberg 균형으로 검증해요</span></div>
+  <div class="fav" style="--c: #4dd8ff"><i>DISTRIBUTED</i><b>적응형 이상 노드 탐지</b><span>AVF에서 SVF, ZT-SVF까지. Stackelberg 균형으로 검증합니다</span></div>
   <div class="fav" style="--c: #ffd23f"><i>SYSTEM</i><b>동적 메모리 할당 보안</b><span>CPP-DMA를 제안하고, 뚫고, 막아서 KCI 저널까지</span></div>
   <div class="fav" style="--c: #ff2e88"><i>AI AGENT</i><b>AI 에이전트, 포렌식 보안</b><span>MCP 도구 연쇄 오염, 증거 속 프롬프트 인젝션</span></div>
   <div class="fav" style="--c: #b8ff4d"><i>CPS</i><b>물리 계층, 제어 시스템</b><span>전원선 은닉 채널, 스마트그리드 FDIA, ICS</span></div>
@@ -32,7 +32,7 @@ permalink: /about/
 <div class="fav-grid">
   <div class="fav" style="--c: #ff8a3d"><i>GAME</i><b>오버워치</b><span>탱딜힐 다 하는 올라운더! 같이 하실 분? 🙋‍♀️</span></div>
   <div class="fav" style="--c: #ff2e88"><i>GAME</i><b>페르소나</b><span>멋진 캐릭터들과 감동적인 스토리, 감각적인 디자인</span></div>
-  <div class="fav" style="--c: #b8ff4d"><i>STUDY</i><b>보안</b><span>이 규칙, 공격자가 알면 뚫리지 않을까? 그 질문을 따라가는 게 제일 재밌어요</span></div>
+  <div class="fav" style="--c: #b8ff4d"><i>STUDY</i><b>보안</b><span>이 규칙, 공격자가 알면 뚫리지 않을까? 그 질문을 따라가는 게 제일 재밌습니다 :)</span></div>
 </div>
 
 ## 활동 기록
@@ -61,4 +61,4 @@ permalink: /about/
 
 ## Contact
 
-메일은 [20240925@sungshin.ac.kr](mailto:20240925@sungshin.ac.kr)로 주세요. 코드는 GitHub [Grace0409](https://github.com/Grace0409)에, 연구 목록은 [Google Sites](https://sites.google.com/sungshin.ac.kr/gayeongkim/%ED%99%88)에 있어요.
+메일은 [20240925@sungshin.ac.kr](mailto:20240925@sungshin.ac.kr)로 보내 주세요. 코드는 GitHub [Grace0409](https://github.com/Grace0409)에, 연구 목록은 [Google Sites](https://sites.google.com/sungshin.ac.kr/gayeongkim/%ED%99%88)에 있습니다 :)
