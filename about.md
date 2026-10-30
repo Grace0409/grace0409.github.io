@@ -61,6 +61,6 @@ permalink: /about/
 
 ## Contact
 
-- Email: [lovecarnin0928@gmail.com](mailto:lovecarnin0928@gmail.com)
+- Email: [20240925@sungshin.ac.kr](mailto:20240925@sungshin.ac.kr)
 - GitHub: [Grace0409](https://github.com/Grace0409)
 - Research profile: [Google Sites](https://sites.google.com/sungshin.ac.kr/gayeongkim/%ED%99%88)
