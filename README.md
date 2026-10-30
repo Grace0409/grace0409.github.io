@@ -29,11 +29,11 @@ tags: [pwnable, writeup]
 
 ## 자주 고치는 곳
 
-- 이름·소개·GitHub 아이디: `_config.yml`의 `author`
+- 이름, 소개, GitHub 아이디: `_config.yml`의 `author`
 - 메인 터미널 소개 문구: `_layouts/home.html`
-- 카테고리 이름·설명·색상: `_data/categories.yml`
+- 카테고리 이름, 설명, 색상: `_data/categories.yml`
 - About 페이지: `about.md`
-- 색상·폰트: `assets/css/style.css` 맨 위 변수
+- 색상, 폰트: `assets/css/style.css` 맨 위 변수
 
 ## 로컬 미리보기 (Docker)
 
