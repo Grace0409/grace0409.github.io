@@ -1,12 +1,12 @@
 ---
 title: "OVAN.log를 시작하며"
-description: Knights Frontier 3기 첫 미션으로 블로그를 열었습니다. 여기에 무엇을 남길지 적어 봤습니다.
+description: 보안 공부 기록을 남기려고 블로그를 열었습니다. 여기에 무엇을 적을지 정리해 봤습니다.
 date: 2026-10-30 21:00:00 +0900
 category: tech-docs
-tags: [blog, knights-frontier]
+tags: [blog, security]
 ---
 
-Knights Frontier 3기 첫 미션으로 블로그를 열었습니다!
+보안 공부 기록을 남기려고 블로그를 열었습니다!
 
 공부한 건 머릿속에만 두면 금방 흐려집니다. 이제부터는 여기에 꾸준히 남겨 보려고 합니다.
 
