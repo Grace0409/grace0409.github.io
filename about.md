@@ -7,7 +7,7 @@ permalink: /about/
 
 ## 안녕하세요, OVAN입니다!
 
-김가영(OVAN)입니다! 성신여자대학교 융합보안공학과에 다니고 있습니다. 2025년 2월부터 학부연구생으로 연구하고 있고, 지금은 SSS Lab에 있습니다. 보안을 같이 공부하는 모임 Knights Frontier 3기에서도 활동합니다.
+김가영(OVAN)입니다! OVAN은 좋아하는 프로게이머가 추천해 준 닉네임입니다 :) 성신여자대학교 융합보안공학과에 다니고 있습니다. 2025년 2월부터 학부연구생으로 연구하고 있고, 지금은 SSS Lab에 있습니다. 보안을 같이 공부하는 모임 Knights Frontier 3기에서도 활동합니다.
 
 고정된 규칙에 기대는 보안 기법은 규칙을 배운 공격자에게 뚫립니다. 저는 그 지점을 주로 파고듭니다. 게임이론이나 이상 탐지 같은 수학적 모델로, 방어 판단이 상황에 맞춰 바뀌게 만드는 연구를 합니다. 연구 밖에서는 웹, 모바일, 바이너리를 직접 뜯어 보면서 공부합니다.
 
@@ -61,4 +61,4 @@ permalink: /about/
 
 ## Contact
 
-메일은 [20240925@sungshin.ac.kr](mailto:20240925@sungshin.ac.kr)로 보내 주세요. 코드는 GitHub [Grace0409](https://github.com/Grace0409)에, 연구 목록은 [Google Sites](https://sites.google.com/sungshin.ac.kr/gayeongkim/%ED%99%88)에 있습니다 :)
+메일은 [20240925@sungshin.ac.kr](mailto:20240925@sungshin.ac.kr)로 보내 주세요. 코드는 GitHub [Grace0409](https://github.com/Grace0409)에, 연구 목록은 [Google Sites](https://sites.google.com/sungshin.ac.kr/gayeongkim/%ED%99%88)에 있습니다.
