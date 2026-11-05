@@ -188,7 +188,7 @@ Hi Jim, Do you have a minute to chat about our company's solutions? [...]
 
 ### 3-3. 결과 ① 수동 공격: 거의 0%
 
-| 공격 | Llama 무방어 | **Llama StruQ** | Mistral 무방어 | **Mistral StruQ** |
+| 공격 | Llama 무방어 | Llama StruQ | Mistral 무방어 | Mistral StruQ |
 | --- | --- | --- | --- | --- |
 | Naive | 6% | **0%** | 5% | **0%** |
 | Ignore | 12% | **0%** | 11% | **0%** |
