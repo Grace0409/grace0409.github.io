@@ -6,7 +6,9 @@ category: paper-conference
 tags: [prompt-injection, llm-security, paper-review, trend]
 ---
 
-얼마 전에 [StruQ 리뷰](/posts/struq-usenix2025-review/)를 썼습니다. 읽고 나니 이 논문 하나보다 앞뒤 연구가 어떻게 이어지는지가 더 궁금해졌습니다. 그래서 StruQ가 참고한 논문 2편과 StruQ 이후에 나온 논문 2편을 같이 읽었습니다.
+캡스톤에서 LLM 포렌식 분석 중에 증거 안에 숨겨진 프롬프트 인젝션을 다루는 연구를 진행하고 있습니다. 레퍼런스를 찾아 읽다 보니 따로따로 나온 줄 알았던 방어 논문들이 서로 이어져 있었습니다. 앞선 논문의 문제의식을 받아서 방어를 만들고, 그 방어를 다음 논문이 직접 비교하는 식입니다.
+
+이 연결을 한 번 정리해 두고 싶어서 글로 남깁니다. [이전에 리뷰한 StruQ](/posts/struq-usenix2025-review/)를 중심에 두고, StruQ가 참고한 논문 2편과 StruQ 이후에 나온 논문 2편을 같이 읽었습니다.
 
 ## 5편 한눈에 보기
 
