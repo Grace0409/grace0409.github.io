@@ -23,7 +23,7 @@
   --line-soft: #f0c3d6;
   --accent: #e0006e;
   --on-accent: #ffffff;
-  --dots: rgba(224, 0, 110, .16);
+  --dots: rgba(224, 0, 110, .08);
   --outline: rgba(11, 10, 14, .12);
 }
 
@@ -38,7 +38,7 @@
   --line-soft: #2a2430;
   --accent: #ff2e88;
   --on-accent: #0b0a0e;
-  --dots: rgba(255, 46, 136, .18);
+  --dots: rgba(255, 46, 136, .09);
   --outline: rgba(255, 255, 255, .1);
 }
 
@@ -345,7 +345,7 @@ img { max-width: 100%; height: auto; }
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 46, 136, .35) 1.3px, transparent 1.7px);
+  background-image: radial-gradient(rgba(255, 46, 136, .13) 1.3px, transparent 1.7px);
   background-size: 12px 12px;
   -webkit-mask-image: linear-gradient(115deg, transparent 45%, #000 85%);
   mask-image: linear-gradient(115deg, transparent 45%, #000 85%);
@@ -1132,3 +1132,12 @@ img { max-width: 100%; height: auto; }
 /* about 페이지 안의 HUD 통계 */
 .prose .hero-stats .stat, .prose .hero-stats .mission { color: #fff; background: var(--black); }
 .prose .hero-stats .mission p { margin: 2px 0 6px; color: #fff; }
+
+/* 모션: 티커 hover 정지 + prefers-reduced-motion 존중 */
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+  .ticker { justify-content: center; }
+  .hero-badge .burst { animation: none; }
+  .hero-cmd .cursor { animation: none; }
+}
