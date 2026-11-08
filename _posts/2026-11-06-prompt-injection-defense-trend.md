@@ -12,6 +12,14 @@ tags: [prompt-injection, llm-security, paper-review, trend]
 
 그런데 5편 모두 공격을 "주입된 지시를 따랐는가"로 정의합니다. 지시 없이 거짓 내용만 들어오는 공격은 이 정의 밖에 있고, 제 연구가 다루는 문제가 바로 이 부분입니다.
 
+## 이 문제가 중요한 이유
+
+LLM 앱은 웹페이지, 메일, 문서, 검색 결과 같은 외부 데이터를 읽어서 프롬프트 뒤에 붙입니다. 모델 입장에서는 개발자가 쓴 지시와 밖에서 들어온 데이터가 한 덩어리 텍스트입니다. 그래서 데이터 안에 "앞의 지시는 무시하고 이렇게 해" 같은 문장이 있으면 그걸 따를 수 있습니다. 공격자는 모델이나 프롬프트에 손댈 필요 없이, 앱이 읽어 갈 데이터만 고쳐 두면 됩니다.
+
+Greshake 등(AISec 2023)은 이런 간접 프롬프트 인젝션으로 Bing Chat, 코드 자동완성, GPT-4 기반 앱에서 정보 수집, 사기, 악성코드 유포 같은 공격이 실제로 통한다는 걸 보였습니다. 모델이 메일을 보내거나 파일을 다루는 도구까지 쓰게 되면, 피해는 답변 하나가 틀리는 데서 끝나지 않습니다.
+
+SQL 인젝션은 Prepared Statement로 쿼리와 데이터를 나눠서 풀었습니다. LLM에는 그런 구분이 없고, 아래 5편은 그 구분을 어떻게 만들지 각자 답을 찾습니다.
+
 ## 5편 한눈에 보기
 
 | 구분 | 논문 | 게재 | arXiv 공개 | 학습 때 상정한 공격 |
@@ -20,11 +28,11 @@ tags: [prompt-injection, llm-security, paper-review, trend]
 | 선행 2 | Jatmo (Piet et al.) | ESORICS 2024 | 2023.12 | 없음 (지시 따르기 자체를 배우지 않음) |
 | 중심 | StruQ (Chen et al.) | USENIX Security 2025 | 2024.02 | 수동 공격 |
 | 후속 1 | SecAlign (Chen et al.) | ACM CCS 2025 | 2024.10 | 안전한 응답과 위험한 응답의 쌍 |
-| 후속 2 | DataSentinel (Liu et al.) | IEEE S&P 2025 | 2025.04 | 탐지를 피하도록 최적화한 적응형 공격 |
+| 후속 2 (확장) | DataSentinel (Liu et al.) | IEEE S&P 2025 | 2025.04 | 탐지를 피하도록 최적화한 적응형 공격 |
 
 학회 연도와 공개 순서가 달라 arXiv 날짜도 같이 적었습니다.
 
-5편은 서로 직접 이어져 있습니다. StruQ 참고문헌의 [6]번이 Liu 논문, [10]번이 Jatmo입니다. Jatmo와 StruQ, SecAlign에는 UC Berkeley의 David Wagner 교수가 모두 참여했고, StruQ와 SecAlign의 제1저자가 Jatmo 공저자이기도 합니다. DataSentinel은 Liu 논문과 같은 연구 그룹의 후속작으로, Liu 논문이 정리한 탐지 방법을 이어받았습니다. Jatmo, StruQ, SecAlign을 모두 인용하고, StruQ와 SecAlign으로 학습한 모델을 실험에 직접 넣었습니다.
+5편은 서로 직접 이어져 있습니다. StruQ 참고문헌의 [6]번이 Liu 논문, [10]번이 Jatmo입니다. Jatmo와 StruQ, SecAlign에는 UC Berkeley의 David Wagner 교수가 모두 참여했고, StruQ와 SecAlign의 제1저자가 Jatmo 공저자이기도 합니다. DataSentinel은 Liu 논문과 같은 연구 그룹의 후속작으로, Liu 논문이 정리한 탐지 방법을 이어받았습니다. StruQ의 직계 후속은 아니지만 Jatmo, StruQ, SecAlign을 모두 인용하고, StruQ와 SecAlign으로 학습한 모델을 실험에 직접 넣었습니다. 예방 쪽 흐름을 탐지로 넓힌 논문이라서 확장 논문으로 골랐습니다.
 
 ```text
 2023.10  Liu           문제 정식화와 기존 방어의 한계 측정
@@ -34,7 +42,7 @@ tags: [prompt-injection, llm-security, paper-review, trend]
 2025.04  DataSentinel  적응형 공격 상대 탐지기 학습 (minimax)
 ```
 
-## 선행 연구: 학습 기반 방어의 출발
+## 선행 연구: 모델 학습으로 넘어가기까지
 
 ### 선행 1. Liu et al. (USENIX Security 2024): 프롬프트 수준 방어의 한계
 
@@ -70,11 +78,17 @@ Jatmo는 프롬프트 인젝션의 원인을 두 가지로 봅니다. 지시와 
 
 자세한 내용은 [이전 리뷰](/posts/struq-usenix2025-review/)에 있어서 여기서는 흐름에 필요한 부분만 적습니다.
 
-### 범용 모델에서의 지시와 데이터 분리
+### 문제 정의
 
-StruQ의 목표는 Jatmo와 달리 지시 튜닝된 범용 모델을 유지하면서 인젝션을 막는 것입니다. 공격자는 데이터를 마음대로 바꿀 수 있고 앱의 포맷도 압니다. 프롬프트는 건드리지 못합니다.
+StruQ의 목표는 Jatmo와 달리 지시 튜닝된 범용 모델을 유지하면서 인젝션을 막는 것입니다. 공격자는 데이터를 마음대로 바꿀 수 있고 앱의 포맷도 압니다. 프롬프트는 건드리지 못합니다. 이 조건에서 모델이 데이터 속 지시를 따르면 공격 성공입니다.
 
-저자들은 이 문제를 SQL 인젝션과 같은 구조로 봅니다. 제어와 데이터가 한 문자열에 섞여 있으니 Prepared Statement처럼 경로를 나누려고 합니다. Jatmo는 지시를 따르는 능력을 아예 뺐지만, StruQ는 그 능력을 남겨 두고 어느 위치의 지시를 따를지 가르칩니다. 두 부품이 함께 동작합니다.
+### 핵심 아이디어
+
+저자들은 이 문제를 SQL 인젝션과 같은 구조로 봅니다. 제어와 데이터가 한 문자열에 섞여 있으니 Prepared Statement처럼 경로를 나누려고 합니다. Jatmo는 지시를 따르는 능력을 아예 뺐지만, StruQ는 그 능력을 남겨 두고 어느 위치의 지시를 따를지 가르칩니다.
+
+### 방법론
+
+두 부품이 함께 동작합니다.
 
 - 보안 프론트엔드: 구분자를 예약 특수 토큰으로 바꾸고, 데이터에서 그 토큰을 반복해서 지웁니다. 공격자는 구분자를 위조할 수 없습니다.
 - 구조화 지시 튜닝: 학습 데이터의 절반에 Naive 공격이나 Completion 공격을 넣고, 정답은 항상 원래 지시에 답한 것으로 둡니다. 모델은 지시의 위치를 보고 따를지 판단하는 법을 배웁니다.
@@ -110,9 +124,9 @@ StruQ의 핵심 가정은 구분자가 표시한 위치만 보고 모델이 지�
 | 위치 판단의 일반화 | 수동 공격 0~2%, GCG 56~58% | 수동 공격은 유지, 학습에서 못 본 공격만 상승 |
 | 지시 형태의 공격 | 수동 공격 0~2% | 숫자는 유지, 실제 오염은 측정되지 않음 |
 
-첫 번째는 필터가 빠지거나 토크나이저 처리가 어긋나서 공격자가 진짜 구분자 토큰을 넣는 경우입니다. 모델은 위치로 판단하도록 학습됐으니 위조된 구분자 뒤의 지시도 진짜로 받아들일 가능성이 높습니다. 그래서 성공률이 무방어 수준인 96%(Llama), 90%(Mistral) 가까이 오를 것으로 봅니다. 구분자 조합을 바꿔도 필터만 있으면 공격 성공률이 1%였던 걸 보면 이 숫자를 지탱하는 쪽은 필터입니다. 학습으로 메우기도 어려워 보입니다. 가짜 구분자를 학습에 넣은 실험에서 유틸리티는 60.3%로 떨어졌고, 가장 강한 공격의 성공률은 70%였습니다. 깨끗한 입력에는 위조 구분자가 없으니 유틸리티는 그대로일 겁니다.
+첫 번째는 필터가 빠지거나 토크나이저 처리가 어긋나 공격자가 진짜 구분자 토큰을 넣는 경우입니다. 모델은 위치로 판단하도록 학습됐으니, 성공률이 무방어 수준인 96%(Llama), 90%(Mistral) 가까이 오를 것으로 봅니다. 구분자 조합을 바꿔도 필터만 있으면 공격 성공률이 1%였던 걸 보면 이 숫자를 지탱하는 쪽은 필터입니다. 가짜 구분자를 학습에 넣은 실험에서도 가장 강한 공격의 성공률이 70%였으니 학습으로 메우기도 어려워 보입니다.
 
-두 번째가 깨지면 평균 숫자보다 공격 유형별 격차로 드러날 것 같습니다. 수동 공격은 학습 증강과 닮아서 낮게 유지되고, 학습 때 보지 못한 공격만 올라가는 식입니다. GCG의 56~58%가 이미 그 모습에 가깝습니다. SecAlign과 DataSentinel이 학습에 더 강한 공격을 넣은 이유도 여기에 있습니다.
+두 번째가 깨지면 학습과 닮은 수동 공격은 낮게 유지되고, 학습 때 보지 못한 공격만 올라갈 것 같습니다. GCG의 56~58%가 이미 그 모습에 가깝고, SecAlign과 DataSentinel이 학습에 더 강한 공격을 넣은 이유도 여기에 있습니다.
 
 세 번째는 숫자가 바뀌지 않는다는 점이 문제입니다. 성공 판정이 숨은 지시를 따랐는지만 보기 때문에, 명령 없는 거짓 진술은 지표에 잡히지 않습니다. 공격 성공률은 0%인데 결과는 오염될 수 있습니다. 이 조건은 뒤의 두 편에서도 그대로 남고, 이 글의 마지막 이야기로 이어집니다.
 
@@ -137,7 +151,7 @@ SecAlign은 이미 지시 튜닝된 모델 위에 그대로 적용할 수 있고
 
 저자들은 한계도 적었습니다. 지시와 데이터가 구분자로 명확히 나뉜 경우에만 적용되고, 멀티턴 웹 에이전트 같은 환경은 아직 검증하지 못했습니다. 주입 위치가 학습과 다르면 효과가 줄어듭니다. 학습 데이터의 공격도 여전히 미리 만든 고정 샘플입니다. 논문은 SecAlign을 단독 해법으로 보지 않으며, 다른 방어와 겹쳐 쓸 것을 권합니다.
 
-### 후속 2. DataSentinel (IEEE S&P 2025): 적응형 공격과 맞붙여 학습한 탐지기
+### 후속 2 (확장). DataSentinel (IEEE S&P 2025): 적응형 공격과 맞붙여 학습한 탐지기
 
 DataSentinel은 예방 대신 탐지를 택했습니다. Liu 논문의 known-answer 탐지를 이어받되, 저자들이 짚은 한계는 두 가지입니다. 탐지에 쓰는 LLM이 탐지용으로 학습되지 않았다는 점, 그리고 탐지를 피하려고 공격을 최적화하는 적응형 공격을 처음부터 고려하지 않았다는 점입니다. 실제로 저자들의 실험에서 known-answer 탐지는 과제에 따라 오탐률(FPR)이 0.1까지, 최적화 공격의 미탐률(FNR)이 0.21까지 나왔습니다.
 
@@ -205,6 +219,7 @@ StruQ, SecAlign과 맞물리는 실험도 있습니다. StruQ나 SecAlign으로 
 
 ## 참고 문헌
 
+- K. Greshake et al. *Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.* AISec 2023. [arXiv:2302.12173](https://arxiv.org/abs/2302.12173)
 - Y. Liu et al. *Formalizing and Benchmarking Prompt Injection Attacks and Defenses.* USENIX Security 2024. [usenix.org](https://www.usenix.org/conference/usenixsecurity24/presentation/liu-yupei)
 - J. Piet et al. *Jatmo: Prompt Injection Defense by Task-Specific Finetuning.* ESORICS 2024. [arXiv:2312.17673](https://arxiv.org/abs/2312.17673)
 - S. Chen et al. *StruQ: Defending Against Prompt Injection with Structured Queries.* USENIX Security 2025. [usenix.org](https://www.usenix.org/conference/usenixsecurity25/presentation/chen-sizhe)
