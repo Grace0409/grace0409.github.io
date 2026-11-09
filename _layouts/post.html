@@ -2,7 +2,18 @@
 layout: default
 ---
 {%- assign pc = site.data.categories | where: "slug", page.category | first -%}
-{%- assign words = content | strip_html | size -%}
+{%- comment -%} 읽기 시간은 코드 블록(<pre>)을 빼고 셉니다. {%- endcomment -%}
+{%- assign prose = "" -%}
+{%- assign pre_chunks = content | split: "<pre" -%}
+{%- for chunk in pre_chunks -%}
+  {%- if forloop.first -%}
+    {%- assign prose = prose | append: chunk -%}
+  {%- else -%}
+    {%- assign after_pre = chunk | append: " " | split: "</pre>" | last -%}
+    {%- assign prose = prose | append: after_pre -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign words = prose | strip_html | size -%}
 {%- assign minutes = words | divided_by: 500 | plus: 1 -%}
 <article class="post">
   <header class="post-header">
