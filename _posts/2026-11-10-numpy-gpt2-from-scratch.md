@@ -54,7 +54,7 @@ Paris는 5위입니다. GPT-2는 질문에 답하는 모델이 아니라 웹 문
 
 같은 뜻의 한국어, 영어 문장 8쌍을 tiktoken으로 세었습니다. 비교한 것은 gpt2, cl100k\_base, o200k\_base입니다. 모두 BPE 계열이고 어휘가 점점 커진 세 세대라서, 세대가 바뀌며 한국어 비용이 얼마나 줄었는지 볼 수 있습니다. 문장이 8쌍뿐이라 비율은 대략의 감으로 읽는 것이 맞습니다.
 
-![토큰 수 비교](/assets/img/gpt2-numpy/token_counts.png?v=bw)
+![토큰 수 비교](/assets/img/gpt2-numpy/token_counts.png?v=sans)
 
 | 인코딩 | 한국어 | 영어 | 비율 |
 |---|---:|---:|---:|
@@ -134,7 +134,7 @@ out = (weights @ v).transpose(0, 2, 1, 3).reshape(B, T, D)
 
 "The animal didn't cross the street because it was too tired"에서 `it`이 누구를 보는지 그렸습니다. 흔히 "어텐션이 it이 animal을 가리킨다는 것을 학습한다"고 설명하는 예시입니다.
 
-![어텐션 맵](/assets/img/gpt2-numpy/attention_map.png?v=bw)
+![어텐션 맵](/assets/img/gpt2-numpy/attention_map.png?v=sans)
 
 실제로는 그렇게 깔끔하지 않았습니다.
 
@@ -227,7 +227,7 @@ def gelu(x):
 - top-k: 상위 k개 안에서만 뽑습니다.
 - top-p: 확률을 큰 것부터 더해서 p(예: 0.9)가 될 때까지만 후보로 남깁니다.
 
-![온도별 분포](/assets/img/gpt2-numpy/temperature.png?v=bw)
+![온도별 분포](/assets/img/gpt2-numpy/temperature.png?v=sans)
 
 세 프롬프트에서 전략마다 64개씩, 50토큰을 생성해 비교했습니다. 샘플 하나로는 분포의 성질을 알 수 없어서 64개씩 뽑았습니다. 반복률은 같은 4개 토큰 묶음이 되풀이되는 비율이고, 평균 로그확률은 원래 모델이 그 글을 얼마나 그럴듯하게 보는지입니다.
 
@@ -302,7 +302,7 @@ Tiny Shakespeare에서 128토큰 창 16개로 쟀습니다. 손실은 낮을수�
 
 손실은 두 가지로 쟀습니다. 학습 때 손실은 모든 위치의 평균입니다. 마지막 위치 손실은 맨 뒤 한 칸만 잰 값입니다. 글을 생성할 때는 마지막 위치 뒤에 아무것도 없으니 이쪽이 실제 성능에 가깝습니다. 비교 기준은 두 개 계산했습니다. 글자 빈도만으로 예측하면 3.347이고, 바로 앞 글자만 보는 모델은 2.482입니다.
 
-![처음부터 학습한 결과](/assets/img/gpt2-numpy/train_ablation.png?v=bw)
+![처음부터 학습한 결과](/assets/img/gpt2-numpy/train_ablation.png?v=sans)
 
 ### 질문 1. √d\_k로 나누는 이유
 
@@ -341,7 +341,7 @@ causal mask 제거: ROMEO:\nOPOMOMMMOOMAMAMMMALMWAMMEMAMAMAMAOMMAMMIMAMMMAMA
 
 처음에는 층이 깊어서 기울기가 사라지는 문제일 거라고 생각했습니다. 그래서 층 수를 바꿔 학습해 봤습니다.
 
-![층 수에 따른 결과](/assets/img/gpt2-numpy/depth.png?v=bw)
+![층 수에 따른 결과](/assets/img/gpt2-numpy/depth.png?v=sans)
 
 | 층 수 | 잔차 있음 | 잔차 없음 |
 |---:|---:|---:|
@@ -443,7 +443,7 @@ L = −log σ(β · margin)
 
 같은 GPT-2에서 시작해 30스텝씩 학습했습니다(Adam, lr=2×10⁻⁵). 역전파에만 PyTorch를 쓰고, 학습된 가중치는 다시 NumPy 구현에 올려 측정했습니다. 프롬프트는 `Question: What is the capital of France?\nAnswer:`, 좋은 답은 ` The capital of France is Paris.`, 나쁜 답은 ` I don't know.`입니다. RLHF의 보상은 "답변에 Paris가 있으면 1, 없으면 0"이라는 단순한 규칙으로 했습니다.
 
-![파인튜닝 비교](/assets/img/gpt2-numpy/fine_tuning.png?v=bw)
+![파인튜닝 비교](/assets/img/gpt2-numpy/fine_tuning.png?v=sans)
 
 | 측정값 | 시작 | SFT | RLHF(PPO) | DPO |
 |---|---:|---:|---:|---:|
