@@ -46,6 +46,8 @@ body_class: intro
 
   {%- assign tilt = "-3,-1,-4,-2,-5,-2,-1,-3,-2,-4" | split: "," -%}
   {%- assign n = site.data.categories.size %}
+  {%- comment -%} 폰에서 카드가 메뉴 구간에서만 따라오도록 메뉴와 카드를 한 상자에 담는다 (데스크톱에서는 상자가 없는 것처럼 동작) {%- endcomment %}
+  <div class="pickzone">
   <ul class="menu" id="menu" aria-label="메뉴">
     {%- for c in site.data.categories %}
     <li style="--i:{{ forloop.index0 }};--r:{{ tilt[forloop.index0] }}deg"><a class="mi" href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}">{{ c.en }}<span class="ko">{{ c.ko }}<span class="n">{{ site.categories[c.slug].size | default: 0 }}</span></span></a></li>
@@ -56,6 +58,7 @@ body_class: intro
   <p class="tap">고른 항목을 한 번 더 누르면 열립니다.</p>
 
   <div class="card" id="card"><div class="card-in" id="cardIn"></div><div class="slash" id="slash"></div><div class="slash2" id="slash2"></div></div>
+  </div>
   <aside class="brief" aria-live="polite"><div class="brief-in" id="brief"></div></aside>
 
   <div class="hints" aria-hidden="true">
