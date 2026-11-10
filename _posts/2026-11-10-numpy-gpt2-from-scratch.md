@@ -18,7 +18,7 @@ ChatGPT 같은 언어 모델은 "다음에 올 토큰 하나"를 계속 고르�
 | 가장 큰 구현 실수 | GELU를 다른 식으로 구현해 logits 오차 2.05 발생 |
 | 탐구 질문 3개 | 8장 끝에서 표로 정리 |
 
-코드는 `gpt2.py`(모델), `bpe.py`(토크나이저), `sampling.py`(샘플링)와 실험 스크립트로 나눴습니다. 구조는 GPT-2 논문 2.3절([Radford 외, 2019](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf))과 Hugging Face의 [openai-community/gpt2](https://huggingface.co/openai-community/gpt2) 가중치 파일을 기준으로 맞췄습니다. NumPy로 GPT-2를 구현한 글로는 Jay Mody의 [GPT in 60 Lines of NumPy](https://jaykmody.com/blog/gpt-from-scratch/)(코드는 [picoGPT](https://github.com/jaymody/picoGPT))도 있습니다.
+코드는 `gpt2.py`(모델), `bpe.py`(토크나이저), `sampling.py`(샘플링)와 실험 스크립트로 나눴습니다. GPT-2 순전파는 전부 NumPy이고, 기울기 계산(역전파)이 필요한 8장의 소형 모델 학습과 9장의 파인튜닝만 PyTorch를 썼습니다. 구조는 GPT-2 논문 2.3절([Radford 외, 2019](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf))과 Hugging Face의 [openai-community/gpt2](https://huggingface.co/openai-community/gpt2) 가중치 파일을 기준으로 맞췄습니다. NumPy로 GPT-2를 구현한 글로는 Jay Mody의 [GPT in 60 Lines of NumPy](https://jaykmody.com/blog/gpt-from-scratch/)(코드는 [picoGPT](https://github.com/jaymody/picoGPT))도 있습니다.
 
 ---
 
@@ -299,6 +299,7 @@ Tiny Shakespeare에서 128토큰 창 16개로 쟀습니다. 손실은 낮을수�
 - 모델: 8층, 헤드 4개, 임베딩 128차원(d\_k=32), 문맥 64글자
 - 학습: AdamW, 학습률 1e-3, 배치 64, 1,500스텝, 시드 3개 평균
 - 초기화: 표준편차 0.02의 정규분포. 잔차 경로로 들어가는 가중치는 1/√(2×층 수)배로 줄임(GPT-2 논문 방식)
+- 구현: 학습에는 역전파가 필요해서 이 실험만 PyTorch로 같은 구조를 만들었습니다(NumPy 구현은 순전파만 합니다)
 
 손실은 두 가지로 쟀습니다. 학습 때 손실은 모든 위치의 평균입니다. 마지막 위치 손실은 맨 뒤 한 칸만 잰 값입니다. 글을 생성할 때는 마지막 위치 뒤에 아무것도 없으니 이쪽이 실제 성능에 가깝습니다. 비교 기준은 두 개 계산했습니다. 글자 빈도만으로 예측하면 3.347이고, 바로 앞 글자만 보는 모델은 2.482입니다.
 
