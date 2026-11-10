@@ -3,6 +3,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#0b0a0e">
+  <script>/* 움직임을 꺼 둔 사람은 첫 화면부터 멈춘 상태로 */try{if(localStorage.getItem('ovan-motion')==='off')document.documentElement.classList.add('paused')}catch(_){}</script>
   {%- if page.layout == 'home' %}
   <script>
     /* 타이틀 화면을 띄울지 그리기 전에 정해서 메뉴가 먼저 번쩍 보이지 않게 한다 */

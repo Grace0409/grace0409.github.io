@@ -1,6 +1,6 @@
 // 홈: 타이틀 화면, 일시정지 메뉴, 영웅 선택 카드, 브리핑 창
 (()=>{
-const {CATS,P,md,byCat,last,icon,catUrl,LINKS,pix,navi}=OVAN,TOTAL=P.length;
+const {CATS,P,PAPERS,md,byCat,last,icon,catUrl,LINKS,pix,navi}=OVAN,TOTAL=P.length;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const phone=matchMedia('(max-width:900px)');
 // 메뉴 순서와 같다: 카테고리들, 그다음 About, Archive (_layouts/home.html)
@@ -51,13 +51,13 @@ function render(e){
   const lp=e.posts.length?last(e.posts):null;
   const chips=e.kind==='cat'
     ?[['POSTS',e.posts.length],['SHARE',Math.round(e.posts.length/TOTAL*100)+'%'],['LAST',lp?md(lp.d):'-']]
-    :e.key==='about'?[['LOGS',TOTAL],['PAPERS',byCat('paper-conference').length],['SINCE','2026']]
+    :e.key==='about'?[['LOGS',TOTAL],['PAPERS',PAPERS],['SINCE','2026']]
     :[['LOGS',TOTAL],['FIRST',P[TOTAL-1].d.slice(0,7).replace('-','.')],['LAST',md(last(P).d)]];
   brief.innerHTML=`<div class="navi"><span class="ufo">${pix('ufo')}</span><p class="say"><span class="who">NAVI</span><span class="nsay"></span></p></div>
     <p class="lead">${esc(e.desc)}</p>
     <div class="chips">${chips.map(([k,v])=>`<div class="chip"><span>${k}</span><b>${v}</b></div>`).join('')}</div>
     <ul class="list">${e.posts.slice(0,3).map(p=>`<li><a href="${p.url}" data-go><time>${md(p.d)}</time><span>${esc(p.t)}</span></a></li>`).join('')}</ul>
-    <a class="pick" href="${e.url}" data-go><b>SELECT</b><span>${e.kind==='cat'?'카테고리 열기':esc(e.ko)+' 열기'}</span></a>`;
+    <a class="pick" href="${e.url}" data-go${e.kind==='cat'?' data-morph':''}><b>SELECT</b><span>${e.kind==='cat'?'카테고리 열기':esc(e.ko)+' 열기'}</span></a>`;
   navi(brief.querySelector('.nsay'),line(e));
 }
 
@@ -109,7 +109,7 @@ items.forEach((a,i)=>{
     if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
     e.preventDefault();
     if(phone.matches&&cur!==i){select(i);return}
-    leave(E[i].url);
+    leave(E[i].url,{morph:E[i].kind==='cat'});
   });
 });
 document.addEventListener('keydown',e=>{
@@ -119,7 +119,7 @@ document.addEventListener('keydown',e=>{
   const k=e.key.toLowerCase();
   if(k==='arrowdown'||k==='s'||k==='arrowright'||k==='d'){e.preventDefault();select(cur+1,true)}
   else if(k==='arrowup'||k==='w'||k==='arrowleft'||k==='a'){e.preventDefault();select(cur-1,true)}
-  else if(k==='enter'){e.preventDefault();leave(E[cur].url)}
+  else if(k==='enter'){e.preventDefault();leave(E[cur].url,{morph:E[cur].kind==='cat'})}
 });
 
 select(Math.min(1,E.length-1));
@@ -134,7 +134,7 @@ if(!title||!document.documentElement.classList.contains('t-on')){startIntro();re
 const run=document.getElementById('tRun');
 document.getElementById('tPress').focus({preventScroll:true});
 // 15초 동안 그대로 두면 여우가 한 번씩 지나간다
-const idle=setInterval(()=>{if(reduced)return;
+const idle=setInterval(()=>{if(reduced||OVAN.paused())return;
   run.animate([{opacity:1,transform:'translateX(-80px)'},{opacity:1,transform:`translateX(${innerWidth+40}px)`}],{duration:2400,easing:'linear'});
   run.firstElementChild.animate([{transform:'none'},{transform:'translateY(-6px)'},{transform:'none'}],{duration:240,iterations:10,easing:'steps(2)'});
 },15000);

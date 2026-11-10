@@ -1,0 +1,26 @@
+{%- comment -%} 논문 목록: _data/papers.yml을 퀘스트 기록처럼 보여 준다 {%- endcomment -%}
+{%- assign n_done = 0 -%}{%- assign n_next = 0 -%}{%- assign n_wip = 0 -%}
+{%- for g in site.data.papers %}{% for p in g.items %}
+  {%- case p.status %}{% when 'done' %}{% assign n_done = n_done | plus: 1 %}{% when 'next' %}{% assign n_next = n_next | plus: 1 %}{% else %}{% assign n_wip = n_wip | plus: 1 %}{% endcase -%}
+{%- endfor %}{% endfor -%}
+<section class="sec" id="quests">
+  <h2 class="h">Quest log <small>논문 기록</small></h2>
+  <p class="qsum"><span><b>{{ n_done }}</b>CLEAR</span><span><b>{{ n_next }}</b>NEXT</span><span><b>{{ n_wip }}</b>WIP</span></p>
+  {%- for g in site.data.papers %}
+  <h3 class="qg">{{ g.group }} <span>{{ g.ko }}</span></h3>
+  <ul class="quests">
+    {%- for p in g.items %}
+    {%- if p.post %}{% assign qp = site.posts | where_exp: "x", "x.url contains p.post" | first %}{% else %}{% assign qp = nil %}{% endif %}
+    <li class="q q-{{ p.status }}">
+      <span class="qs">{% case p.status %}{% when 'done' %}CLEAR{% when 'next' %}NEXT{% else %}WIP{% endcase %}</span>
+      <div class="qb">
+        <b>{{ p.title }}</b>
+        <span class="qv">{{ p.venue }}{% if p.kind %}, {{ p.kind }}{% endif %}</span>
+        {%- if p.award %}<span class="qa">🏆 {{ p.award }}</span>{% endif %}
+      </div>
+      <div class="qm"><time>{{ p.date }}</time>{% if qp %}<a href="{{ qp.url | relative_url }}" data-go>기록 보기 ▸</a>{% endif %}</div>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- endfor %}
+</section>

@@ -31,6 +31,8 @@ mission: { text: "MobiSec 2026 구두발표", when: "2026.12", progress: 80 }
   </ul>
 </section>
 
+{% include quest-log.html %}
+
 <section class="sec">
   <h2 class="h">Mains <small>좋아하는 것</small></h2>
   <div class="mains">

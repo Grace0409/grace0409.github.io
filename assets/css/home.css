@@ -124,7 +124,8 @@
   /* overflow:hidden이면 sticky가 안 먹으므로 clip으로 자른다 */
   .stage{height:auto;min-height:0;padding:18px 16px 30px;display:flex;flex-direction:column;overflow:clip}
   .top{position:static;padding:0 0 18px}
-  .stats,.ext,.hints{display:none}
+  .stat,.ext,.hints{display:none}
+  .stats{align-self:flex-start}
   /* 카드는 화면 위에 붙어 있어서, 아래쪽 메뉴를 눌러도 모션이 보인다 */
   /* 카드는 메뉴 상자 안에서만 붙어 다니고, 낮은 화면에서는 키가 줄어든다 */
   .pickzone{display:flex;flex-direction:column;order:1}
@@ -197,3 +198,4 @@
 }
 @keyframes tslabM{from{clip-path:polygon(0 0,100% 0,100% 0,0 0)}}
 @keyframes tstripeM{from{clip-path:polygon(0 12px,100% 12px,100% 20px,0 20px)}}
+.card{view-transition-name:hero-card}

@@ -1,0 +1,33 @@
+# 논문 목록 (소개 페이지의 "Quest log"에 그대로 나옵니다)
+# 새 논문이 생기면 맞는 그룹의 items 맨 위에 한 줄 추가합니다.
+#   status : done(발표/게재 끝) | next(일정 잡힘) | wip(진행 중)
+#   post   : 관련 글의 파일 이름에서 날짜를 뺀 부분 (없으면 비워 둠)
+#   award  : 받은 상 (없으면 비워 둠)
+- group: Journal
+  ko: 저널
+  items:
+    - { date: "2026.03", status: done, title: "Anomalous Traffic Input Sanitization for Enhancing the Security of Popularity Prediction-Based Dynamic Memory Allocation", venue: "융합보안논문지 Vol.26 No.2, KCI 등재", post: dma-security-series }
+
+- group: International
+  ko: 국제학술대회
+  items:
+    - { date: "2026.12.15~17", status: next, title: "ZT-SVF: A Stackelberg Equilibrium-Based Zero Trust Reauthentication Framework Robust to Reconnaissance-Based Evasion Attacks", venue: "MobiSec 2026, Taichung, Taiwan", kind: "구두발표", post: zt-svf-mobisec2026 }
+    - { date: "2026.08.26~28", status: done, title: "SVF: A Stackelberg Game-Theoretic Strategic Verification Framework for Distributed Trust Systems", venue: "WISA 2026, Jeju", kind: "Poster", post: svf-wisa2026 }
+    - { date: "2025.12.16~18", status: done, title: "Real-time Anomaly Detection-enhanced Defense for Dynamic Memory Allocation", venue: "MobiSec 2025, Sapporo, Japan", kind: "Poster", post: dma-security-series }
+    - { date: "2025.08.20~22", status: done, title: "Security Vulnerability Analysis of Real-time Content Popularity Prediction-based Dynamic Memory Allocation System", venue: "WISA 2025, Jeju", kind: "Poster", post: dma-security-series }
+
+- group: Domestic
+  ko: 국내학술대회
+  items:
+    - { date: "진행 중", status: wip, title: "MCP 다중 도구 연쇄 오염 자동 탐지", venue: "CISC-W 2026" }
+    - { date: "2026.11.05~07", status: done, title: "시간축 상태추정 변화량 기반 스마트그리드 스텔스 허위데이터 주입 공격 탐지", venue: "ACK 2026, 세종대학교", post: fdia-ack2026 }
+    - { date: "2026.06.25~27", status: done, title: "분산 네트워크를 위한 위험도 기반 적응형 이상 노드 탐지 기법 (AVF)", venue: "한국융합보안학회 하계 2026", post: avf-kcsa2026 }
+    - { date: "2025.11.27~28", status: done, title: "ATB-Insider: 시계열 이상 탐지를 활용한 실시간 내부자 위협 탐지 모델", venue: "CISC-W'25, 곤지암" }
+    - { date: "2025.11.07", status: done, title: "ADE-DMA: 이상 감지 및 입력 데이터 정제 기반의 향상된 동적 메모리 할당 기법", venue: "한국융합보안학회 추계 2025", award: "우수논문상", post: dma-security-series }
+    - { date: "2025.06.24~25", status: done, title: "에어갭 환경에서 전원선 변조 기반 암묵적 채널 공격에 대한 적응형 방어 시스템", venue: "CISC-S'25, 경주", post: powerline-covert-channel }
+    - { date: "2025.05.29~31", status: done, title: "콘텐츠 인기도 예측 기반의 동적 메모리 할당 메커니즘 (CPP-DMA)", venue: "ASK 2025 (KIPS), 경북대학교", post: dma-security-series }
+
+- group: Contest
+  ko: 경진대회 논문
+  items:
+    - { date: "2025.07.02", status: done, title: "전원선 변조 공격의 실시간 주기 패턴 탐지 및 적응형 노이즈 차단 시스템", venue: "제8회 부채널 정보분석 경진대회", award: "한국정보보호학회 회장상", post: powerline-covert-channel }

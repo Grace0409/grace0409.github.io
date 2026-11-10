@@ -69,7 +69,7 @@ const navi=(el,text)=>{
   const ch=[...text];let n=0;el.textContent='';
   el._t=setInterval(()=>{el.textContent=ch.slice(0,++n).join('');if(n>=ch.length)clearInterval(el._t)},22);
 };
-return {CATS,P,md,byCat,last,catUrl,LINKS,icon,pix,navi};
+return {CATS,P,PAPERS:D.papers||0,md,byCat,last,catUrl,LINKS,icon,pix,navi};
 })();
 
 // data-pix 자리에 픽셀 그림을 채운다
@@ -77,19 +77,40 @@ document.querySelectorAll('[data-pix]').forEach(el=>{el.innerHTML=OVAN.pix(el.da
 // "최근 기록" 날짜는 미리 잡아 둔 글을 빼고 다시 적는다
 document.querySelectorAll('.js-last').forEach(el=>{const p=OVAN.last(OVAN.P);if(p)el.textContent=OVAN.md(p.d)});
 
+// 일시정지 버튼: 반복 움직임을 멈추고, 다음 방문에도 기억한다
+(()=>{
+  const root=document.documentElement;
+  const sync=()=>{const p=root.classList.contains('paused');document.querySelectorAll('.pausebtn').forEach(b=>{b.setAttribute('aria-pressed',String(p));b.setAttribute('aria-label',p?'배경 움직임 다시 켜기':'배경 움직임 멈추기')})};
+  document.querySelectorAll('.pausebtn').forEach(b=>b.addEventListener('click',()=>{
+    const p=root.classList.toggle('paused');
+    try{localStorage.setItem('ovan-motion',p?'off':'on')}catch(_){}
+    sync();
+  }));
+  sync();
+})();
+OVAN.paused=()=>document.documentElement.classList.contains('paused');
+
 // 페이지 이동 와이프. 핑크 판 앞머리를 픽셀 여우가 달려 나간다.
 (()=>{
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const w=document.createElement('div');w.className='wipe';w.setAttribute('aria-hidden','true');w.innerHTML='<i></i><i></i><b class="wfox">'+OVAN.pix('fox')+'</b>';
   document.body.appendChild(w);
-  window.leave=url=>{if(reduced){location.href=url;return}w.classList.add('go');setTimeout(()=>{location.href=url},520)};
+  // 홈 카드 → 카테고리 머리: 브라우저가 페이지 전환(View Transitions)을 지원하면 카드가 그대로 날아가 붙는다.
+  // 그 밖의 이동은 기존 와이프를 쓰고, 카드를 전환에서 빼서 와이프 화면이 새 페이지로 부드럽게 바뀌게 한다.
+  const canMorph='onpageswap' in window&&!reduced;
+  window.leave=(url,o={})=>{
+    if(o.morph&&canMorph){location.href=url;return}
+    document.querySelectorAll('.card').forEach(c=>c.style.viewTransitionName='none');
+    if(reduced){location.href=url;return}
+    w.classList.add('go');setTimeout(()=>{location.href=url},520);
+  };
   document.addEventListener('click',e=>{
     const a=e.target.closest('a[data-go]');
     if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank')return;
     if(a.origin!==location.origin)return;
     // 같은 페이지 안의 #앵커는 그냥 스크롤
     if(a.pathname===location.pathname&&a.hash)return;
-    e.preventDefault();leave(a.href);
+    e.preventDefault();leave(a.href,{morph:a.hasAttribute('data-morph')});
   });
-  addEventListener('pageshow',()=>w.classList.remove('go'));
+  addEventListener('pageshow',()=>{w.classList.remove('go');document.querySelectorAll('.card').forEach(c=>c.style.viewTransitionName='')});
 })();

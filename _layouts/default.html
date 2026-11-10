@@ -14,6 +14,7 @@ layout: base
     {%- endif %}
     <a href="{{ '/archive/' | relative_url }}" data-go{% if page.url == '/archive/' %} aria-current="page"{% endif %}><span>ARCHIVE</span></a>
     <a href="{{ '/about/' | relative_url }}" data-go{% if page.url == '/about/' %} aria-current="page"{% endif %}><span>ABOUT</span></a>
+    <button class="pausebtn" type="button" aria-pressed="false" aria-label="배경 움직임 멈추기"><span class="pi" aria-hidden="true"></span><span class="p-on">PAUSE</span><span class="p-off">RESUME</span></button>
   </nav>
 </header>
 

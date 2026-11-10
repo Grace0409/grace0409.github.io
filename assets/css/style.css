@@ -179,3 +179,29 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .phero .pk{font:700 13px/1 var(--lat);letter-spacing:.24em;color:var(--ink);text-transform:uppercase}
 .phero .ph1{margin:8px 0 6px;font:900 italic clamp(64px,9vw,124px)/.84 var(--lat);color:var(--ink)}
 .phero .pdesc{margin:0;font:600 17px/1.5 var(--sans);color:var(--ink);max-width:40em}
+
+/* 일시정지: 숨 쉬는 스프라이트, 떠다니는 UFO 같은 반복 움직임을 멈춘다 */
+.pausebtn{display:inline-flex;align-items:center;gap:7px;align-self:center;padding:8px 10px 7px;background:var(--ink);border:1px solid var(--rule);font:700 13px/1 var(--lat);letter-spacing:.16em;color:var(--muted);transform:skewX(-10deg);transition:background .15s,color .15s}
+.pausebtn>*{transform:skewX(10deg)}
+.pausebtn:hover,.pausebtn:focus-visible{background:var(--paper);color:var(--ink);outline:none}
+.pausebtn .pi{width:9px;height:11px;border-left:3px solid currentColor;border-right:3px solid currentColor}
+.pausebtn .p-off{display:none}
+.paused .pausebtn{color:var(--paper);border-color:var(--pink)}
+.paused .pausebtn .pi{border:0;background:currentColor;clip-path:polygon(0 0,100% 50%,0 100%)}
+.paused .pausebtn .p-on{display:none}
+.paused .pausebtn .p-off{display:inline}
+.paused :is(.px,.navi .ufo,.t-ufo,.t-press .chev,.foxtop svg){animation:none!important}
+
+/* 페이지 전환: 홈의 흰 카드와 카테고리 머리의 흰 카드를 같은 이름으로 묶는다 (지원하는 브라우저만) */
+@view-transition{navigation:auto}
+@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}
+::view-transition-group(hero-card){animation-duration:.5s;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.3s}
+/* 폰에서는 메뉴 칸이 좁아 아이콘만 남긴다 (이름은 aria-label로 읽힌다) */
+@media (max-width:700px){
+  .pausebtn{padding:9px 11px 8px}
+  .pausebtn :is(.p-on,.p-off),.paused .pausebtn .p-off{display:none}
+  /* 다른 메뉴가 켜져 있으면 HOME은 왼쪽 로고가 대신한다 */
+  .sb-nav a:first-child:has(~a[aria-current]){display:none}
+  .sbar{gap:10px}
+}

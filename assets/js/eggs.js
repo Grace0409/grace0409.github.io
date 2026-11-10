@@ -34,7 +34,7 @@ function say(title,html,ms=4200){
 
 // 여우와 UFO가 화면 아래를 줄지어 지나간다
 function parade(){
-  if(reduced||document.querySelector('.parade'))return;
+  if(reduced||OVAN.paused()||document.querySelector('.parade'))return;
   const p=document.createElement('div');p.className='parade';p.setAttribute('aria-hidden','true');
   const seq=['fox','ufo','fox','fox','ufo','fox'];
   p.innerHTML=seq.map(n=>`<b>${pix(n)}</b>`).join('');document.body.append(p);
