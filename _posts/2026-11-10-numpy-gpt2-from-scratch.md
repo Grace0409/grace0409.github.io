@@ -44,7 +44,7 @@ GPT-2 small의 크기는 어휘 50,257개, 최대 길이 1,024토큰, 임베딩 
 
 Paris는 5위입니다. GPT-2는 질문에 답하는 모델이 아니라 웹 문서의 다음 토큰을 예측하는 모델이라서 그렇습니다. 이 차이는 9장에서 다시 나옵니다.
 
-> 참고: 구조를 그림으로 설명한 [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2/), 브라우저에서 GPT-2를 직접 돌려 보며 다음 토큰이 정해지는 과정을 보여 주는 [Transformer Explainer](https://poloclub.github.io/transformer-explainer/), 한국어 설명인 [위키독스 트랜스포머](https://wikidocs.net/31379), 모델 문서인 [Hugging Face GPT-2 문서](https://huggingface.co/docs/transformers/model_doc/gpt2).
+<small>참고: [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2/), [Transformer Explainer](https://poloclub.github.io/transformer-explainer/), [위키독스 트랜스포머](https://wikidocs.net/31379), [Hugging Face GPT-2 문서](https://huggingface.co/docs/transformers/model_doc/gpt2)</small>
 
 ---
 
@@ -81,7 +81,7 @@ BPE(Byte Pair Encoding)는 글을 바이트로 쪼갠 뒤, 가장 자주 붙어 
 
 이 병합을 한국어 문장에 적용하면 433바이트가 433토큰 그대로입니다. 병합 1,000개 중 한국어에 쓸 수 있는 것이 하나도 없었습니다. 토크나이저의 효율은 언어 자체보다 학습 말뭉치에 무엇이 많았느냐로 정해진다는 것을 작은 규모로 확인했습니다.
 
-> 참고: 작은 예제로 BPE 과정을 보여 주는 [Hugging Face LLM 강의의 BPE 장](https://huggingface.co/learn/llm-course/chapter6/5), 한국어 설명인 [위키독스 BPE](https://wikidocs.net/22592), 바이트 단위 BPE의 최소 구현인 [minbpe](https://github.com/karpathy/minbpe), 토큰 수를 세는 방법을 적은 [OpenAI Cookbook](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken). 비교 기준으로 쓴 라이브러리는 [tiktoken](https://github.com/openai/tiktoken)입니다.
+<small>참고: [Hugging Face LLM 강의 BPE](https://huggingface.co/learn/llm-course/chapter6/5), [위키독스 BPE](https://wikidocs.net/22592), [minbpe](https://github.com/karpathy/minbpe), [tiktoken](https://github.com/openai/tiktoken)</small>
 
 ---
 
@@ -106,7 +106,7 @@ def embed(self, ids, start=0):
 
 비슷한 뜻일수록 값이 큽니다. 위치 벡터의 평균 크기(3.39)는 토큰 벡터(3.96)와 비슷해서, 위치 정보가 토큰 정보와 대등하게 섞입니다. 같은 ` the`라도 위치 0과 위치 100에서의 입력 벡터는 유사도가 0.386까지 떨어집니다. 8장에서 보듯 위치 임베딩을 빼면 성능이 크게 나빠집니다.
 
-> 참고: [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/), 위치 임베딩 비교는 [Vaswani 외(2017)](https://arxiv.org/abs/1706.03762)의 표 3.
+<small>참고: [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/), [Vaswani 외(2017)](https://arxiv.org/abs/1706.03762) 표 3</small>
 
 ---
 
@@ -145,7 +145,7 @@ out = (weights @ v).transpose(0, 2, 1, 3).reshape(B, T, D)
 
 단일 헤드의 높은 값을 곧바로 "모델이 이해했다"로 읽으면 안 된다는 것을 배웠습니다.
 
-> 참고: 어텐션을 그림으로 설명한 [3Blue1Brown 어텐션 강의](https://www.3blue1brown.com/lessons/attention), [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/), 수식과 마스킹은 [Vaswani 외(2017)](https://arxiv.org/abs/1706.03762), 첫 토큰 현상은 [Attention Sinks in LLMs for endless fluency](https://huggingface.co/blog/tomaarsen/attention-sinks).
+<small>참고: [3Blue1Brown 어텐션 강의](https://www.3blue1brown.com/lessons/attention), [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/), [Vaswani 외(2017)](https://arxiv.org/abs/1706.03762), [Attention Sinks 글](https://huggingface.co/blog/tomaarsen/attention-sinks)</small>
 
 ---
 
@@ -170,7 +170,7 @@ def block(x, ...):
 out.logits = x @ self.p["wte.weight"].T
 ```
 
-> 참고: [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2/)의 블록 설명, 같은 구조를 NumPy로 짠 [GPT in 60 Lines of NumPy](https://jaykmody.com/blog/gpt-from-scratch/), 구조 변경 사항은 [GPT-2 논문](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) 2.3절.
+<small>참고: [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2/), [GPT in 60 Lines of NumPy](https://jaykmody.com/blog/gpt-from-scratch/), [GPT-2 논문](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) 2.3절</small>
 
 ---
 
@@ -214,7 +214,7 @@ def gelu(x):
 
 손실을 비교할 때도 작은 함정이 있었습니다. float64인데 1.3×10⁻⁵ 차이가 났는데, Hugging Face의 손실 함수가 계산 전에 logits를 float32로 내리기 때문이었습니다.
 
-> 참고: [Hugging Face GPT-2 문서](https://huggingface.co/docs/transformers/model_doc/gpt2), `gelu_new`가 정의된 [transformers의 activations.py](https://github.com/huggingface/transformers/blob/main/src/transformers/activations.py), 같은 구조의 GELU 구현이 나오는 [GPT in 60 Lines of NumPy](https://jaykmody.com/blog/gpt-from-scratch/).
+<small>참고: [Hugging Face GPT-2 문서](https://huggingface.co/docs/transformers/model_doc/gpt2), [transformers의 activations.py](https://github.com/huggingface/transformers/blob/main/src/transformers/activations.py), [GPT in 60 Lines of NumPy](https://jaykmody.com/blog/gpt-from-scratch/)</small>
 
 ---
 
@@ -260,7 +260,7 @@ def gelu(x):
 
 </details>
 
-> 참고: greedy, beam, 샘플링 방식을 GPT-2 예제로 설명한 [Hugging Face의 How to generate text](https://huggingface.co/blog/how-to-generate), top-p(nucleus) 샘플링을 제안한 [Holtzman 외(2020)](https://arxiv.org/abs/1904.09751).
+<small>참고: [How to generate text](https://huggingface.co/blog/how-to-generate), [Holtzman 외(2020)](https://arxiv.org/abs/1904.09751)</small>
 
 ---
 
@@ -360,7 +360,7 @@ causal mask 제거: ROMEO:\nOPOMOMMMOOMAMAMMMALMWAMMEMAMAMAMAOMMAMMIMAMMMAMA
 | causal mask가 없으면 | 다음 글자를 베끼는 법을 배웁니다. 학습 손실은 좋아지지만 생성에는 쓸 수 없는 모델이 됩니다. | 학습 손실 0.037(기준 1.694), 마지막 위치 손실 2.294(기준 1.668) |
 | 잔차 연결이 없으면 | 글자 빈도만 배우고 멈춥니다. 층 수를 줄여도 같습니다. | 2층, 4층, 8층, 16층 모두 마지막 위치 손실 3.28(글자 빈도 기준선 3.347), 어텐션 엔트로피 1.000. 앞 층의 정보를 넘길 통로가 없기 때문으로 추정하며 직접 검증하지는 못했습니다 |
 
-> 참고: √d\_k와 마스킹은 [Vaswani 외(2017)](https://arxiv.org/abs/1706.03762)의 3.2절, 글자 단위 소형 GPT와 Tiny Shakespeare 학습은 [Karpathy의 Let's build GPT](https://www.youtube.com/watch?v=kCc8FmEb1nY)와 [nanoGPT](https://github.com/karpathy/nanoGPT), 데이터는 [char-rnn 저장소의 tinyshakespeare](https://github.com/karpathy/char-rnn/tree/master/data/tinyshakespeare), 어텐션 계산은 [3Blue1Brown 어텐션 강의](https://www.3blue1brown.com/lessons/attention).
+<small>참고: [Vaswani 외(2017)](https://arxiv.org/abs/1706.03762) 3.2절, [Let's build GPT](https://www.youtube.com/watch?v=kCc8FmEb1nY), [nanoGPT](https://github.com/karpathy/nanoGPT), [tinyshakespeare](https://github.com/karpathy/char-rnn/tree/master/data/tinyshakespeare), [3Blue1Brown 어텐션 강의](https://www.3blue1brown.com/lessons/attention)</small>
 
 ---
 
@@ -458,7 +458,7 @@ L = −log σ(β · margin)
 - RLHF는 보상을 올립니다. 평균 보상이 0.06에서 0.91로 올랐는데 출력은 "The capital of Paris is the Paris Convention"입니다. 규칙이 "Paris가 있으면 만점"이라 모델은 그것만 맞춘 것입니다. 보상 모델이 허술하면 생기는 문제(reward hacking)를 아주 작게 재현한 셈입니다.
 - 세 방법 모두 Shakespeare 손실이 올라, 원래 능력을 조금씩 잃었습니다. 예시 하나에 과적합한 결과이기도 합니다.
 
-> 참고: RLHF의 세 단계를 그림으로 설명한 [Illustrating RLHF](https://huggingface.co/blog/rlhf), PPO-Clip은 [OpenAI Spinning Up의 PPO 문서](https://spinningup.openai.com/en/latest/algorithms/ppo.html), DPO와 비슷한 방법의 비교는 [Hugging Face의 Preference Tuning LLMs with DPO Methods](https://huggingface.co/blog/pref-tuning), 원 논문은 [Rafailov 외(2023)](https://arxiv.org/abs/2305.18290).
+<small>참고: [Illustrating RLHF](https://huggingface.co/blog/rlhf), [Spinning Up의 PPO](https://spinningup.openai.com/en/latest/algorithms/ppo.html), [Preference Tuning with DPO](https://huggingface.co/blog/pref-tuning), [Rafailov 외(2023)](https://arxiv.org/abs/2305.18290)</small>
 
 ---
 
@@ -481,21 +481,8 @@ L = −log σ(β · margin)
 
 ---
 
-## 11. 참고 자료
+## 11. 참고 논문
 
-처음 개념을 잡을 때 보기 좋은 자료입니다.
+각 장 끝에 적은 링크가 참고한 자료 전부입니다. 그중 논문은 네 편입니다.
 
-- 구조: [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/), [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2/), [Transformer Explainer](https://poloclub.github.io/transformer-explainer/), [위키독스 트랜스포머](https://wikidocs.net/31379), [3Blue1Brown 어텐션 강의](https://www.3blue1brown.com/lessons/attention)
-- 구현: [GPT in 60 Lines of NumPy](https://jaykmody.com/blog/gpt-from-scratch/)와 [picoGPT](https://github.com/jaymody/picoGPT), [Karpathy의 Let's build GPT](https://www.youtube.com/watch?v=kCc8FmEb1nY)와 [nanoGPT](https://github.com/karpathy/nanoGPT)
-- 토크나이저: [Hugging Face LLM 강의의 BPE 장](https://huggingface.co/learn/llm-course/chapter6/5), [위키독스 BPE](https://wikidocs.net/22592), [minbpe](https://github.com/karpathy/minbpe), [tiktoken](https://github.com/openai/tiktoken), [OpenAI Cookbook](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken)
-- 샘플링: [How to generate text](https://huggingface.co/blog/how-to-generate)
-- 어텐션 싱크: [Attention Sinks in LLMs for endless fluency](https://huggingface.co/blog/tomaarsen/attention-sinks)
-- RLHF, PPO, DPO: [Illustrating RLHF](https://huggingface.co/blog/rlhf), [Spinning Up의 PPO](https://spinningup.openai.com/en/latest/algorithms/ppo.html), [Preference Tuning LLMs with DPO Methods](https://huggingface.co/blog/pref-tuning)
-- 코드와 데이터: [openai-community/gpt2](https://huggingface.co/openai-community/gpt2), [Hugging Face GPT-2 문서](https://huggingface.co/docs/transformers/model_doc/gpt2), [tinyshakespeare](https://github.com/karpathy/char-rnn/tree/master/data/tinyshakespeare)
-
-꼭 필요한 논문은 네 편입니다.
-
-- Vaswani 외 (2017), [Attention Is All You Need](https://arxiv.org/abs/1706.03762). 어텐션 수식, √d\_k, 마스킹
-- Radford 외 (2019), [Language Models are Unsupervised Multitask Learners](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf). GPT-2 구조, 바이트 단위 BPE
-- Holtzman 외 (2020), [The Curious Case of Neural Text Degeneration](https://arxiv.org/abs/1904.09751). top-p 샘플링
-- Rafailov 외 (2023), [Direct Preference Optimization](https://arxiv.org/abs/2305.18290). DPO
+<small>[Vaswani 외(2017) Attention Is All You Need](https://arxiv.org/abs/1706.03762), [Radford 외(2019) GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf), [Holtzman 외(2020) top-p 샘플링](https://arxiv.org/abs/1904.09751), [Rafailov 외(2023) DPO](https://arxiv.org/abs/2305.18290)</small>
