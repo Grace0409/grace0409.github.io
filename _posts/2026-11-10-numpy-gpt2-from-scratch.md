@@ -34,13 +34,13 @@ GPT-2 small의 크기는 어휘 50,257개, 최대 길이 1,024토큰, 임베딩 
 
 | 토큰 | 확률 |
 |---|---|
-| ` the` | 8.46% |
-| ` now` | 4.79% |
-| ` a` | 4.62% |
-| ` France` | 3.24% |
-| ` Paris` | 3.22% |
+| ␣the | 8.46% |
+| ␣now | 4.79% |
+| ␣a | 4.62% |
+| ␣France | 3.24% |
+| ␣Paris | 3.22% |
 
-Paris는 5위입니다. GPT-2는 질문에 답하는 모델이 아니라 웹 문서의 다음 토큰을 예측하는 모델이기 때문입니다.
+토큰 앞의 ␣는 공백입니다. GPT-2에서는 단어 앞의 공백도 토큰의 일부입니다. Paris는 5위인데, GPT-2가 질문에 답하는 모델이 아니라 웹 문서의 다음 토큰을 예측하는 모델이기 때문입니다.
 
 <small>참고: [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2/), [Transformer Explainer](https://poloclub.github.io/transformer-explainer/), [위키독스 트랜스포머](https://wikidocs.net/31379), [Hugging Face GPT-2 문서](https://huggingface.co/docs/transformers/model_doc/gpt2)</small>
 
