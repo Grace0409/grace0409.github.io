@@ -1,0 +1,41 @@
+/* 홈에서 고른 흰 카드가 그대로 이 페이지의 머리가 된다 */
+.phero{--sa:31%;--sb:21%}
+.ch{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center;max-width:1180px}
+.card{position:relative;width:clamp(240px,24vw,320px);aspect-ratio:3/4;background:var(--paper);color:var(--ink);overflow:hidden;clip-path:polygon(9% 0,100% 0,91% 100%,0 100%)}
+.ghost{position:absolute;left:3%;top:0;bottom:0;writing-mode:vertical-rl;rotate:180deg;font:900 italic 130px/.8 var(--lat);color:rgba(11,10,14,.07);text-transform:uppercase;white-space:nowrap}
+.type{position:absolute;left:17%;top:22px;display:flex;align-items:center;gap:8px}
+.type span{font:600 12px/1 var(--lat);letter-spacing:.22em;color:#5c5262}
+.type b{font:900 italic 17px/1 var(--lat);letter-spacing:.08em;background:var(--pink);color:var(--ink);padding:5px 9px 4px;transform:skewX(-10deg)}
+.portrait{position:absolute;left:50%;top:56%;width:52%;translate:-50% -50%}
+.portrait::after{content:"";position:absolute;inset:-12% -10%;z-index:-1;background:var(--pink);clip-path:polygon(6% 0,100% 8%,94% 100%,0 92%);rotate:8deg}
+.portrait .ic{display:block;width:100%;height:auto;stroke-width:1.5}
+.info h1{margin:12px 0 10px;font:900 italic clamp(56px,7vw,104px)/.85 var(--lat);text-transform:uppercase}
+.info .desc{margin:0 0 20px;font:600 18px/1.55 var(--sans);max-width:36em}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.chip{padding:8px 14px 7px;border:1px solid var(--rule);background:var(--ink);transform:skewX(-10deg)}
+.chip>*{display:block;transform:skewX(10deg)}
+.chip span{font:600 12px/1 var(--lat);letter-spacing:.2em;color:var(--muted)}
+.chip b{font:800 italic 26px/1.1 var(--lat)}
+.info .navi{max-width:460px}
+
+.body{padding:44px clamp(20px,6vw,104px) 72px;max-width:1180px}
+.h{display:flex;align-items:center;gap:14px;margin:0 0 18px;font:900 italic 34px/1 var(--lat);text-transform:uppercase}
+.h small{font:400 15px/1 var(--kor);background:var(--paper);color:var(--ink);padding:5px 8px 4px;rotate:-3deg}
+.others{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
+.others a{display:flex;align-items:center;gap:10px;padding:10px 16px 9px;background:var(--panel-2);transform:skewX(-10deg);transition:background .15s,color .15s;outline:none}
+.others a>*{transform:skewX(10deg)}
+.others .ic{width:18px;height:18px}
+.others span{font:400 15px/1 var(--kor)}
+.others a:hover,.others a:focus-visible{background:var(--paper);color:var(--ink)}
+
+@media (max-width:760px){
+  /* 카드만 핑크 위에, 글은 검은 바탕 위에 */
+  .phero{padding:28px 16px 30px}
+  .phero::before{clip-path:polygon(0 0,100% 0,100% 28%,0 46%)}
+  .phero::after{clip-path:polygon(0 calc(46% + 10px),100% calc(28% + 10px),100% calc(28% + 16px),0 calc(46% + 16px))}
+  .ch{grid-template-columns:minmax(0,1fr)}
+  .card{width:min(62vw,240px);justify-self:start}
+  .info .desc{color:var(--paper)}
+  .body{padding:32px 16px 56px}
+}
+.empty{margin:0;padding:28px 18px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);color:var(--muted)}

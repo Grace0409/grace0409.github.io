@@ -1,21 +1,28 @@
-<!doctype html>
-<html lang="{{ site.lang | default: 'ko' }}">
-{% include head.html %}
-<body>
-  <header class="topbar">
-    <a class="topbar-brand" href="{{ '/' | relative_url }}">OVAN<span>.log</span></a>
-    <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-controls="sidebar" aria-expanded="false">{% include icon.html name="menu" px=22 %}</button>
-  </header>
-  <div class="scrim" hidden></div>
-  <div class="bg-deco" aria-hidden="true"></div>
+---
+layout: base
+---
+{%- comment -%} 홈을 뺀 모든 페이지: 위쪽 바, 본문, 꼬리말 {%- endcomment -%}
+{%- assign here = page.category | default: page.cat -%}
+{%- assign hc = site.data.categories | where: "slug", here | first -%}
+<header class="sbar">
+  <a class="sb-brand" href="{{ '/' | relative_url }}" data-go><span class="badge">OV</span><b>OVAN.log</b></a>
+  <nav class="sb-nav" aria-label="사이트">
+    <a href="{{ '/' | relative_url }}" data-go><span>HOME</span></a>
+    {%- if hc %}
+    {%- assign hc_url = '/categories/' | append: hc.slug | append: '/' %}
+    <a href="{{ hc_url | relative_url }}" data-go{% if page.url == hc_url %} aria-current="page"{% endif %}><span>{{ hc.en | upcase }}</span></a>
+    {%- endif %}
+    <a href="{{ '/archive/' | relative_url }}" data-go{% if page.url == '/archive/' %} aria-current="page"{% endif %}><span>ARCHIVE</span></a>
+    <a href="{{ '/about/' | relative_url }}" data-go{% if page.url == '/about/' %} aria-current="page"{% endif %}><span>ABOUT</span></a>
+  </nav>
+</header>
 
-  <div class="layout">
-    {% include sidebar.html %}
-    <main class="main">
-      {{ content }}
-    </main>
-  </div>
+<main id="main">
+{{ content }}
+</main>
 
-  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
-</body>
-</html>
+<footer class="sfoot">
+  <span>© {{ site.time | date: '%Y' }} {{ site.author.nickname }}</span>
+  <nav aria-label="외부 링크"><a href="https://github.com/{{ site.author.github }}">GITHUB</a><a href="{{ '/feed.xml' | relative_url }}">RSS</a></nav>
+</footer>
+<script defer src="{{ '/assets/js/sub.js' | relative_url }}"></script>

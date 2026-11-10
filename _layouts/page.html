@@ -1,13 +1,11 @@
 ---
 layout: default
 ---
-<header class="page-header">
-  <div>
-    {%- if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
-    <h1>{{ page.title }}</h1>
-    {%- if page.description %}<p class="page-desc">{{ page.description }}</p>{% endif %}
-  </div>
+<header class="phero">
+  {%- if page.eyebrow %}<div class="pk">{{ page.eyebrow }}</div>{% endif %}
+  <h1 class="ph1">{{ page.title }}</h1>
+  {%- if page.description %}<p class="pdesc">{{ page.description }}</p>{% endif %}
 </header>
-<div class="prose">
+<div class="pg-body prose">
   {{ content }}
 </div>

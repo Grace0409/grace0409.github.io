@@ -1,37 +1,47 @@
-# 블로그 카테고리 목록
+# 블로그 카테고리 목록 (이 순서대로 홈 메뉴에 놓입니다)
 # 글을 쓸 때 front matter에 `category: <slug>` 로 지정합니다.
+#   name : 페이지 제목, 검색 결과에 쓰는 이름
+#   en   : 홈 메뉴와 카드에 크게 들어가는 영문 이름
+#   ko   : 영문 옆에 붙는 짧은 한글 이름
+#   type : 카드 위 라벨 (게임의 역할군 자리)
 - slug: dev
   name: 개발
-  icon: code
-  color: "#4dd8ff"
+  en: Dev
+  ko: 개발
+  type: BUILD
   desc: 직접 만들고 부딪히며 배운 개발 기록
 
 - slug: ctf-wargame
   name: CTF/Wargame
-  icon: flag
-  color: "#ff2e88"
+  en: CTF / Wargame
+  ko: CTF/Wargame
+  type: ATTACK
   desc: CTF 대회 참가 후기와 워게임 문제 풀이(Write-up)
 
 - slug: bug-bounty
   name: Bug Bounty
-  icon: bug
-  color: "#ffd23f"
+  en: Bug Bounty
+  ko: 버그바운티
+  type: HUNT
   desc: 취약점을 찾고 제보하는 과정과 버그바운티 활동
 
 - slug: tech-docs
   name: 블로그/기술문서
-  icon: pen
-  color: "#b8ff4d"
+  en: Tech Docs
+  ko: 기술문서
+  type: STUDY
   desc: 공부한 개념과 기술을 내 언어로 정리한 문서
 
 - slug: paper-conference
   name: 논문/컨퍼런스
-  icon: book
-  color: "#b78cff"
+  en: Papers
+  ko: 논문/컨퍼런스
+  type: RESEARCH
   desc: 읽은 논문 리뷰와 보안 컨퍼런스 참관기
 
 - slug: contest-cert
   name: 공모전/자격증
-  icon: award
-  color: "#ff8a3d"
+  en: Contests
+  ko: 공모전/자격증
+  type: CHALLENGE
   desc: 공모전 도전기와 자격증 준비, 취득 기록

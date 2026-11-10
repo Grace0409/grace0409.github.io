@@ -1,27 +1,51 @@
 ---
 layout: default
 ---
+{%- comment -%} 홈에서 고른 흰 카드가 그대로 이 페이지의 머리가 된다 {%- endcomment -%}
 {%- assign c = site.data.categories | where: "slug", page.cat | first -%}
 {%- assign c_posts = site.categories[page.cat] -%}
-<header class="page-header cat-header" style="--c: {{ c.color }}">
-  <span class="cat-card-icon">{% include icon.html name=c.icon px=26 %}</span>
-  <div>
-    <p class="eyebrow">Category / {{ c_posts | size }} posts</p>
-    <h1>{{ c.name }}</h1>
-    <p class="page-desc">{{ c.desc }}</p>
+{%- assign share = c_posts.size | times: 100 | divided_by: site.posts.size -%}
+<header class="phero">
+  <div class="ch">
+    <div class="card">
+      <div class="ghost" aria-hidden="true">{{ c.en }}</div>
+      <div class="type"><span>TYPE</span><b>{{ c.type }}</b></div>
+      <div class="portrait">{% include icon.html k=c.slug %}</div>
+    </div>
+    <div class="info">
+      <span class="chip-ko">{{ c.ko }}</span>
+      <h1>{{ c.en }}</h1>
+      <p class="desc">{{ c.desc }}</p>
+      <div class="chips">
+        <div class="chip"><span>POSTS</span><b>{{ c_posts.size }}</b></div>
+        <div class="chip"><span>SHARE</span><b>{{ share }}%</b></div>
+        {%- if c_posts.size > 0 %}
+        <div class="chip"><span>LAST LOG</span><b>{{ c_posts.first.date | date: "%m.%d" }}</b></div>
+        <div class="chip"><span>FIRST</span><b>{{ c_posts.last.date | date: "%m.%d" }}</b></div>
+        {%- endif %}
+      </div>
+      <div class="navi"><span class="ufo" data-pix="ufo"></span><p class="say" aria-live="polite"><span class="who">NAVI</span><span id="say" data-cat="{{ c.slug }}">기록 {{ c_posts.size }}개가 있어.</span></p></div>
+    </div>
   </div>
 </header>
 
-{%- if c_posts.size > 0 -%}
-<ul class="post-list">
-  {%- for post in c_posts -%}
-  {% include post-item.html post=post %}
-  {%- endfor -%}
-</ul>
-{%- else -%}
-<div class="empty">
-  <strong>NO DATA</strong>
-  <p><code>$ ls ./{{ c.slug }}</code></p>
-  <p>아직 이 카테고리에 작성한 글이 없습니다. 곧 채워질 예정이에요!</p>
-</div>
-{%- endif -%}
+<section class="body">
+  <h2 class="h">Log history <small>{{ c_posts.size }}개</small></h2>
+  {%- if c_posts.size > 0 %}
+  <ul class="hist">
+    {%- for p in c_posts %}
+    {%- assign w = p.date | date: "%w" | plus: 0 %}
+    <li><a href="{{ p.url | relative_url }}" data-go><span class="day"><b>{{ p.date | date: "%m/%d" }}</b><i{% if w == 0 or w == 6 %} class="we"{% endif %}>{{ p.date | date: "%a" | upcase }}</i></span>
+      <div><h3>{{ p.title }}</h3>{% if p.description %}<p>{{ p.description }}</p>{% endif %}</div></a></li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p class="empty">아직 이 카테고리에 쓴 글이 없습니다. 곧 채워질 예정이에요!</p>
+  {%- endif %}
+  <nav class="others" aria-label="다른 카테고리">
+    {%- for o in site.data.categories %}{% if o.slug != c.slug %}
+    <a href="{{ '/categories/' | append: o.slug | append: '/' | relative_url }}" data-go>{% include icon.html k=o.slug %}<span>{{ o.ko }}</span></a>
+    {%- endif %}{% endfor %}
+  </nav>
+</section>
+<script defer src="{{ '/assets/js/category.js' | relative_url }}"></script>

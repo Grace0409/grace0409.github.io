@@ -1,72 +1,83 @@
 ---
-layout: default
+layout: base
+body_class: intro
 ---
-<section class="hero">
-  <div class="hero-main">
-    <p class="hero-cmd">root@ovan-log:~# <b>whoami</b><span class="cursor"></span></p>
-    <h1 class="hero-title">OVAN</h1>
-    <p class="hero-role"><b>김가영</b> &nbsp;/&nbsp; SECURITY RESEARCHER</p>
-    <p class="hero-tagline">{{ site.tagline }}</p>
+{%- comment -%}
+  홈: 처음 오면 타이틀 화면, 아무 키나 누르면 일시정지 메뉴.
+  메뉴에서 고른 항목은 오른쪽 흰 카드와 브리핑 창이 받는다.
+{%- endcomment -%}
+<div class="title" id="title" role="dialog" aria-modal="true" aria-labelledby="tWord">
+  <div class="t-slab"></div><div class="t-stripe"></div>
+  <div class="t-logo">
+    <div class="t-kick">SECURITY RESEARCH LOG</div>
+    <div class="t-word" id="tWord" aria-label="OVAN.log"><span style="--k:0">O</span><span style="--k:1">V</span><span style="--k:2">A</span><span style="--k:3">N</span></div>
+    <span class="t-log" aria-hidden="true">.log</span>
+    <p class="t-tag">{{ site.tagline }}</p>
   </div>
-
-  <div class="hero-badge" aria-hidden="true">
-    {% include starburst.html %}
+  <div class="t-ufo" aria-hidden="true" data-pix="ufo"></div>
+  <div class="t-side">
+    <div class="t-stat"><span>LOGS<b>{{ site.posts.size }}</b></span><span>LAST LOG<b class="js-last">{{ site.posts.first.date | date: "%m.%d" }}</b></span></div>
+    <button class="t-press" id="tPress" type="button"><span class="t-key">PRESS ANY KEY</span><span class="t-tap">TAP TO START</span><span class="chev" aria-hidden="true">›››</span><b class="t-fox" aria-hidden="true" data-pix="fox"></b></button>
   </div>
-
-  <div class="hero-stats">
-    <div class="stat"><span>POSTS</span><b>{{ site.posts | size }}</b></div>
-    <div class="stat"><span>CATEGORIES</span><b>{{ site.data.categories | size }}</b></div>
-    <div class="stat"><span>SINCE</span><b>2026</b></div>
-    <div class="mission">
-      <span>LOG</span>
-      <p>워게임, 논문 기록 중 <b>ON</b></p>
-      <div class="bar"><i style="width: 100%"></i></div>
-    </div>
-  </div>
-</section>
-
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    {%- for i in (1..2) -%}
-    <span>SECURITY RESEARCH</span><i>✦</i>
-    {%- for c in site.data.categories -%}
-    <span>{{ c.name }}</span><i>✦</i>
-    {%- endfor -%}
-    {%- endfor -%}
-  </div>
+  <div class="t-foot"><span>© {{ site.time | date: '%Y' }} {{ site.author.nickname }}</span><span>BUILD {{ site.time | date: '%Y.%m.%d' }}</span></div>
+  <b class="t-run" id="tRun" aria-hidden="true" data-pix="fox"></b>
 </div>
 
-<section class="section">
-  <div class="section-head">
-    <h2>CATEGORIES</h2>
-    <p>{{ site.posts | size }} LOGS</p>
-  </div>
-  <div class="cat-grid">
-    {%- for c in site.data.categories -%}
-    {%- assign c_posts = site.categories[c.slug] -%}
-    <a class="cat-card" href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}" style="--c: {{ c.color }}">
-      <span class="cat-card-no" aria-hidden="true">0{{ forloop.index }}</span>
-      <span class="cat-card-icon">{% include icon.html name=c.icon px=22 %}</span>
-      <span class="cat-card-name">{{ c.name }}</span>
-      <span class="cat-card-desc">{{ c.desc }}</span>
-      <span class="cat-card-count">{{ c_posts | size }} POSTS {% include icon.html name="arrow-right" px=14 %}</span>
+<section class="stage" id="stage">
+  <h1 class="vh">{{ site.title }}, {{ site.description }}</h1>
+  <div class="slab" id="slab"></div>
+  <div class="stripe" id="stripe"></div>
+
+  <header class="top">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="badge">OV</span>
+      <span><b>{{ site.title }}</b><small>{{ site.tagline }}</small></span>
     </a>
-    {%- endfor -%}
+    <div class="stats">
+      <div class="stat"><span>POSTS</span><b>{{ site.posts.size }}</b></div>
+      <div class="stat"><span>SINCE</span><b>2026</b></div>
+      <div class="stat"><span>LAST LOG</span><b class="js-last">{{ site.posts.first.date | date: "%m.%d" }}</b></div>
+      <nav class="ext" aria-label="외부 링크">
+        <a href="https://github.com/{{ site.author.github }}">GITHUB</a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      </nav>
+    </div>
+  </header>
+
+  {%- assign tilt = "-3,-1,-4,-2,-5,-2,-1,-3,-2,-4" | split: "," -%}
+  {%- assign n = site.data.categories.size %}
+  <ul class="menu" id="menu" aria-label="메뉴">
+    {%- for c in site.data.categories %}
+    <li style="--i:{{ forloop.index0 }};--r:{{ tilt[forloop.index0] }}deg"><a class="mi" href="{{ '/categories/' | append: c.slug | append: '/' | relative_url }}">{{ c.en }}<span class="ko">{{ c.ko }}<span class="n">{{ site.categories[c.slug].size | default: 0 }}</span></span></a></li>
+    {%- endfor %}
+    <li class="sys gap" style="--i:.5;--r:-1deg"><a class="mi" href="{{ '/about/' | relative_url }}">About<span class="ko">플레이어 정보</span></a></li>
+    <li class="sys" style="--i:1.5;--r:-3deg"><a class="mi" href="{{ '/archive/' | relative_url }}">Archive<span class="ko">전체 기록</span></a></li>
+  </ul>
+  <p class="tap">고른 항목을 한 번 더 누르면 열립니다.</p>
+
+  <div class="card" id="card"><div class="card-in" id="cardIn"></div><div class="slash" id="slash"></div><div class="slash2" id="slash2"></div></div>
+  <aside class="brief" aria-live="polite"><div class="brief-in" id="brief"></div></aside>
+
+  <div class="hints" aria-hidden="true">
+    <span><i class="kc">↑</i><i class="kc">↓</i>선택</span>
+    <span><i class="kc">ENTER</i>열기</span>
   </div>
+  <a class="down" href="#log">최근 기록
+    <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M2 6l7 7 7-7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg>
+  </a>
 </section>
 
-<section class="section">
-  <div class="section-head">
-    <h2>RECENT</h2>
-    <a class="more" href="{{ '/archive/' | relative_url }}">VIEW ALL {% include icon.html name="arrow-right" px=14 %}</a>
-  </div>
-  {%- if site.posts.size > 0 -%}
-  <ul class="post-list">
-    {%- for post in site.posts limit: 6 -%}
-    {% include post-item.html post=post %}
-    {%- endfor -%}
+<section class="log" id="log">
+  <h2>Recent log <small>최근 기록</small></h2>
+  <ul class="rows">
+    {%- for p in site.posts limit: 8 %}
+    <li class="row"><a href="{{ p.url | relative_url }}" data-go>
+      <span class="ri">{% include icon.html k=p.category %}</span><time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%m.%d" }}</time><div><h3>{{ p.title }}</h3>{% if p.description %}<p>{{ p.description }}</p>{% endif %}</div></a></li>
+    {%- endfor %}
   </ul>
-  {%- else -%}
-  <div class="empty"><strong>NO DATA</strong><p>아직 작성한 글이 없습니다.</p></div>
-  {%- endif -%}
 </section>
+<footer class="foot">
+  <span>© {{ site.time | date: '%Y' }} {{ site.author.nickname }}</span>
+  <a href="{{ '/archive/' | relative_url }}" data-go><i class="kc">▸</i>전체 기록 보기</a>
+</footer>
+<script defer src="{{ '/assets/js/home.js' | relative_url }}"></script>

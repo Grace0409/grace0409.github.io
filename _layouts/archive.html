@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{%- comment -%} 달력처럼 달마다 묶는다. 달 머리는 스크롤해도 위에 붙는다. {%- endcomment -%}
+{%- assign months = site.posts | group_by_exp: "p", "p.date | date: '%Y-%m'" -%}
+{%- assign max = 1 -%}
+{%- for g in months %}{% if g.items.size > max %}{% assign max = g.items.size %}{% endif %}{% endfor -%}
+<header class="phero">
+  <div class="k">ALL LOGS</div>
+  <h1>Archive</h1>
+  <p>기록 {{ site.posts.size }}개, {{ months.size }}개 달에 걸쳐 있습니다.</p>
+  <nav class="jump" aria-label="달로 건너뛰기">
+    {%- for g in months %}
+    <a href="#m{{ g.name }}"><b>{{ g.name | replace: '-', '.' }}<small>{{ g.items.size }}</small></b></a>
+    {%- endfor %}
+  </nav>
+</header>
+
+<section class="body">
+  {%- for g in months %}
+  {%- assign first = g.items.first %}
+  <section class="month">
+    <h2 class="mh" id="m{{ g.name }}"><b>{{ first.date | date: "%m" }}</b><span class="mt"><span>{{ first.date | date: "%b %Y" | upcase }}</span><small>{{ g.items.size }} LOGS</small></span><span class="bar"><i style="width:{{ g.items.size | times: 100 | divided_by: max }}%"></i></span></h2>
+    <ul class="hist">
+      {%- for p in g.items %}
+      {%- assign pc = site.data.categories | where: "slug", p.category | first %}
+      {%- assign w = p.date | date: "%w" | plus: 0 %}
+      <li><a href="{{ p.url | relative_url }}" data-go><span class="day"><b>{{ p.date | date: "%d" }}</b><i{% if w == 0 or w == 6 %} class="we"{% endif %}>{{ p.date | date: "%a" | upcase }}</i></span>
+        <div><h3>{{ p.title }}</h3></div>{% if pc %}<span class="tag">{{ pc.en }}</span>{% endif %}</a></li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endfor %}
+</section>

@@ -15,32 +15,40 @@ layout: default
 {%- endfor -%}
 {%- assign words = prose | strip_html | size -%}
 {%- assign minutes = words | divided_by: 500 | plus: 1 -%}
-<article class="post">
-  <header class="post-header">
+<header class="phero">
+  <div class="ph-in">
     {%- if pc %}
-    <a class="chip" style="--c: {{ pc.color }}" href="{{ '/categories/' | append: pc.slug | append: '/' | relative_url }}">{{ pc.name }}</a>
+    <div class="ph-cat"><a class="chip-ko" href="{{ '/categories/' | append: pc.slug | append: '/' | relative_url }}" data-go>{{ pc.ko }}</a><b>{{ pc.type }}{% if page.tags.size > 0 %} ▸ {{ page.tags[0] }}{% endif %}</b></div>
     {%- endif %}
-    <h1><span>{{ page.title }}</span></h1>
-    {%- if page.description %}<p class="post-desc">{{ page.description }}</p>{% endif %}
-    <div class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
-      <span>{% include icon.html name="clock" px=14 %} {{ minutes }}분</span>
-      {%- if page.tags.size > 0 -%}
-      <span class="tags">{% for t in page.tags %}<span>#{{ t }}</span>{% endfor %}</span>
-      {%- endif -%}
+    <h1>{{ page.title }}</h1>
+    {%- if page.description %}<p class="desc">{{ page.description }}</p>{% endif %}
+    <div class="meta">
+      <time class="m" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time><span class="m">{{ minutes }} MIN</span>
+      {%- if page.tags.size > 0 %}
+      <span class="tags">{% for t in page.tags %}<span>{{ t | upcase }}</span>{% endfor %}</span>
+      {%- endif %}
     </div>
-  </header>
-
-  <div class="prose">
-    {{ content }}
   </div>
+</header>
 
-  <nav class="post-nav" aria-label="이전/다음 글">
-    {%- if page.previous -%}
-    <a class="prev" href="{{ page.previous.url | relative_url }}"><small>{% include icon.html name="arrow-left" px=14 %} 이전 글</small><span>{{ page.previous.title }}</span></a>
-    {%- else -%}<span></span>{%- endif -%}
-    {%- if page.next -%}
-    <a class="next" href="{{ page.next.url | relative_url }}"><small>다음 글 {% include icon.html name="arrow-right" px=14 %}</small><span>{{ page.next.title }}</span></a>
-    {%- endif -%}
+<div class="pgrid">
+  <article class="prose" id="post" data-min="{{ minutes }}">
+    {{ content }}
+  </article>
+
+  <aside class="side" aria-label="읽기 안내">
+    <div class="navi"><span class="ufo" data-pix="ufo"></span><p class="say" aria-live="polite"><span class="who">NAVI</span><span id="say">읽는 데 {{ minutes }}분쯤 걸려.</span></p></div>
+    <ol class="toc" id="toc"></ol>
+    <div class="pct"><span>READ</span><b id="pct">0%</b></div>
+  </aside>
+
+  <nav class="after" aria-label="이전 글, 다음 글">
+    {%- if page.previous %}
+    <a class="pn prev" href="{{ page.previous.url | relative_url }}" data-go><span>◂ PREV LOG</span><b>{{ page.previous.title }}</b></a>
+    {%- else %}<span></span>{% endif %}
+    {%- if page.next %}
+    <a class="pn next" href="{{ page.next.url | relative_url }}" data-go><span>NEXT LOG ▸</span><b>{{ page.next.title }}</b></a>
+    {%- endif %}
   </nav>
-</article>
+</div>
+<script defer src="{{ '/assets/js/post.js' | relative_url }}"></script>

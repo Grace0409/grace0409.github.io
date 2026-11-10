@@ -1,0 +1,27 @@
+/* 달력처럼 달마다 묶는다. 달 머리는 스크롤해도 위에 붙는다. */
+.phero{--sa:52%;--sb:40%}
+.phero .k{font:700 13px/1 var(--lat);letter-spacing:.24em;color:var(--ink)}
+.phero h1{margin:8px 0 6px;font:900 italic clamp(72px,10vw,140px)/.82 var(--lat);color:var(--ink)}
+.phero p{margin:0;font:600 17px/1.5 var(--sans);color:var(--ink)}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
+.jump a{padding:8px 12px 7px;background:var(--ink);color:var(--paper);font:800 italic 15px/1 var(--lat);letter-spacing:.08em;transform:skewX(-10deg);transition:background .15s,color .15s;outline:none}
+.jump a b{display:inline-block;transform:skewX(10deg)}
+.jump a small{font:700 12px/1 var(--lat);color:var(--pink);margin-left:6px}
+.jump a:hover,.jump a:focus-visible{background:var(--paper);color:var(--ink)}
+
+.body{padding:24px clamp(20px,6vw,104px) 72px;max-width:1180px}
+.month{margin-top:28px}
+.mh{margin:0;font:inherit;position:sticky;top:0;z-index:5;display:flex;align-items:flex-end;gap:16px;padding:14px 0 12px;background:var(--ink);scroll-margin-top:0}
+.mh b{font:900 italic 64px/.8 var(--lat);color:var(--pink)}
+.mh .mt{display:block;padding-bottom:4px}
+.mh span{display:block;font:800 italic 20px/1 var(--lat);letter-spacing:.12em}
+.mh small{display:block;font:600 12px/1 var(--lat);letter-spacing:.2em;color:var(--muted);margin-top:5px}
+.mh .bar{flex:1;align-self:center;height:8px;margin-left:8px;background:rgba(255,255,255,.08);transform:skewX(-14deg);overflow:hidden}
+.mh .bar i{display:block;height:100%;background:var(--paper)}
+
+@media (max-width:700px){
+  .phero{padding:30px 16px 28px}
+  .body{padding:12px 16px 56px}
+  .mh b{font-size:48px}
+  .jump a{font-size:14px}
+}

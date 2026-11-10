@@ -1,0 +1,195 @@
+/* 홈: 일시정지 메뉴로 고르고, 영웅 선택 카드가 받는다. 처음 오면 타이틀 화면부터. */
+.stage{position:relative;height:100svh;min-height:700px;overflow:hidden;isolation:isolate}
+.slab,.stripe{position:absolute;inset:0;z-index:-1;transition:clip-path .55s var(--pop)}
+.slab{background:var(--pink);clip-path:polygon(0px 0px,0px 0px,0px 100%,0px 100%)}
+.stripe{background:var(--paper);clip-path:polygon(0px 0px,0px 0px,0px 100%,0px 100%)}
+
+.top{position:absolute;inset:0 0 auto;display:flex;justify-content:space-between;align-items:flex-start;padding:22px clamp(20px,3vw,40px);z-index:4}
+.stats{display:flex;gap:28px;align-items:flex-end}
+.stat{text-align:right}
+.stat span{display:block;font:600 12px/1 var(--lat);letter-spacing:.2em;color:var(--muted)}
+.stat b{display:block;font:800 italic 30px/1.05 var(--lat)}
+.ext{display:flex;gap:8px;align-self:center}
+.ext a{font:700 13px/1 var(--lat);letter-spacing:.16em;padding:8px 10px;border:1px solid var(--rule);transition:background .15s,color .15s;outline:none}
+.ext a:hover,.ext a:focus-visible{background:var(--paper);color:var(--ink)}
+
+/* 메뉴 */
+.menu{position:absolute;left:clamp(24px,5vw,88px);top:calc(50% + 14px);transform:translateY(-50%);margin:0;padding:0;list-style:none;z-index:2}
+.menu li{--step:28px;width:max-content;margin-left:calc(var(--i)*var(--step));rotate:var(--r);transform-origin:left center;
+  transition:opacity .3s var(--out),translate .5s var(--pop);transition-delay:calc(var(--i)*45ms + 140ms)}
+.menu li+li{margin-top:clamp(2px,.7vh,8px)}
+.menu li.gap{margin-top:clamp(14px,2.6vh,30px)}
+.mi{position:relative;isolation:isolate;display:inline-flex;align-items:center;gap:.32em;padding:.03em .3em .07em .2em;
+  font:900 italic min(4.6vw,7vh)/.95 var(--lat);text-transform:uppercase;color:var(--paper);text-shadow:.045em .05em 0 var(--ink);
+  outline:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.sys .mi{font-size:min(2.6vw,4vh)}
+.mi .ko{font:400 clamp(14px,1.1vw,17px)/1 var(--kor);text-transform:none;letter-spacing:0;text-shadow:none;
+  background:var(--ink);color:var(--paper);padding:.3em .45em .25em;rotate:-2deg;white-space:nowrap}
+.mi .n{font:800 italic 15px/1 var(--lat);margin-left:7px;opacity:.75}
+.mi::before,.mi::after{content:"";position:absolute;inset:-.05em -.14em -.03em -.1em;transform:scaleX(0);transform-origin:left;transition:transform .26s var(--pop)}
+.mi::before{z-index:-1;background:var(--paper);clip-path:polygon(0 14%,100% 0,98% 86%,2% 100%)}
+.mi::after{z-index:-2;background:var(--ink);translate:.13em .11em;clip-path:polygon(1% 0,99% 12%,100% 100%,0 86%)}
+.mi.on{color:var(--ink);text-shadow:none}
+.mi.on::before,.mi.on::after{transform:scaleX(1)}
+.mi.on::after{transition-delay:.05s}
+.mi.on .ko{background:var(--pink);color:var(--ink)}
+
+/* 초상화 카드: 메뉴에서 고른 흰 조각이 그대로 커진 것처럼 흰 바탕 */
+.card{position:absolute;right:clamp(200px,21vw,340px);top:50%;translate:0 -53%;width:min(29vw,400px);height:min(64vh,600px);z-index:2;
+  background:var(--paper);color:var(--ink);overflow:hidden;clip-path:polygon(9% 0,100% 0,91% 100%,0 100%);isolation:isolate}
+.card-in{position:absolute;inset:0}
+.ghost{position:absolute;left:3%;top:0;bottom:0;writing-mode:vertical-rl;rotate:180deg;font:900 italic min(16vh,170px)/.8 var(--lat);color:rgba(11,10,14,.07);text-transform:uppercase;white-space:nowrap;pointer-events:none}
+.head{position:absolute;left:17%;right:11%;top:28px}
+.type{display:flex;align-items:center;gap:8px}
+.type span{font:600 12px/1 var(--lat);letter-spacing:.22em;color:#5c5262}
+.type b{font:900 italic 18px/1 var(--lat);letter-spacing:.08em;background:var(--pink);color:var(--ink);padding:5px 10px 4px;transform:skewX(-10deg)}
+.name small{display:inline-block;font:400 18px/1 var(--kor);background:var(--ink);color:var(--paper);padding:5px 8px 4px;rotate:-2deg;margin-top:16px}
+.name b{display:block;font:900 italic clamp(40px,3.8vw,64px)/.9 var(--lat);text-transform:uppercase;margin-top:6px}
+.portrait{position:absolute;left:42%;top:64%;width:42%;translate:-50% -50%}
+.portrait::after{content:"";position:absolute;inset:-12% -10%;z-index:-1;background:var(--pink);clip-path:polygon(6% 0,100% 8%,94% 100%,0 92%);rotate:8deg}
+/* 아이콘을 24×24 격자로 다시 찍은 픽셀 스프라이트. 흰 그림자 한 칸, 두 박자로 숨 쉰다. */
+.px{display:block;width:100%;height:auto;shape-rendering:crispEdges;animation:idle 1.1s steps(1) infinite}
+.px .s{fill:var(--paper)}
+.px .k{fill:var(--ink)}
+@keyframes idle{50%{transform:translateY(-3%)}}
+.slash,.slash2{position:absolute;top:-20%;bottom:-20%;left:0;transform:translateX(-200%) skewX(-18deg);z-index:3;pointer-events:none}
+.slash{width:34%;background:var(--pink)}
+.slash2{width:5%;background:var(--ink)}
+
+/* 브리핑 창: 카드 아래 모서리에 겹친다 */
+.brief{position:absolute;right:clamp(40px,4vw,64px);bottom:8vh;width:min(25vw,350px);z-index:3;rotate:-1.5deg;
+  background:var(--panel);clip-path:polygon(18px 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%,0 18px)}
+.brief::before{content:"";position:absolute;left:18px;right:0;top:0;height:3px;background:var(--pink)}
+.brief-in{padding:22px 24px 20px}
+.brief .lead{font:600 16px/1.5 var(--sans);margin:14px 0 14px;color:var(--muted)}
+.navi{display:grid;grid-template-columns:38px minmax(0,1fr);gap:10px;align-items:start}
+.navi .ufo{display:block;width:38px;padding:5px 4px;background:var(--pink);clip-path:polygon(4px 0,100% 0,calc(100% - 4px) 100%,0 100%);animation:hover 1.4s steps(1) infinite}
+@keyframes hover{50%{transform:translateY(-3px)}}
+.navi .say{margin:0;background:var(--paper);color:var(--ink);padding:8px 11px;font:600 15px/1.45 var(--sans);min-height:4.2em;clip-path:polygon(8px 0,100% 0,100% 100%,0 100%,0 14px)}
+.navi .who{display:block;font:800 italic 12px/1 var(--lat);letter-spacing:.2em;color:var(--pink);margin-bottom:3px}
+.chips{display:flex;gap:8px;margin-bottom:14px}
+.chip{padding:6px 11px 5px;border:1px solid var(--rule);transform:skewX(-10deg)}
+.chip>*{display:block;transform:skewX(10deg)}
+.chip span{font:600 11px/1 var(--lat);letter-spacing:.2em;color:var(--muted)}
+.chip b{font:800 italic 21px/1.1 var(--lat)}
+.list{list-style:none;margin:0 0 16px;padding:0;border-top:1px solid var(--rule)}
+.list li{border-bottom:1px solid var(--rule)}
+.list a{display:grid;grid-template-columns:46px 1fr;gap:10px;padding:8px 0;align-items:baseline;outline:none}
+.list time{font:800 italic 17px/1 var(--lat);color:var(--pink)}
+.list span{font-size:16px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.list a:hover span,.list a:focus-visible span{text-decoration:underline 2px var(--pink);text-underline-offset:3px}
+.pick{display:inline-flex;align-items:center;gap:12px;padding:10px 22px 9px 18px;background:var(--paper);color:var(--ink);
+  clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);transition:background .15s,translate .2s var(--pop);outline:none}
+.pick b{font:900 italic 26px/1 var(--lat);letter-spacing:.04em}
+.pick span{font:400 15px/1 var(--kor)}
+.pick:hover,.pick:focus-visible{background:var(--pink);translate:4px 0}
+
+.hints{position:absolute;left:50%;bottom:22px;translate:-50% 0;display:flex;gap:20px;align-items:center;z-index:2;
+  font:700 14px/1 var(--lat);letter-spacing:.14em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
+.hints span{display:flex;align-items:center;gap:8px}
+.down{position:absolute;left:clamp(24px,5vw,88px);bottom:24px;z-index:2;display:flex;align-items:center;gap:10px;color:var(--ink);font:400 16px/1 var(--kor)}
+.down svg{width:18px;height:18px;transition:translate .2s var(--pop)}
+.down:hover svg,.down:focus-visible svg{translate:0 4px}
+.tap{display:none}
+
+.intro .menu li{opacity:0;translate:-56px 0}
+.intro .card{opacity:0;transform:translateX(40px)}
+.intro .brief{opacity:0;transform:translateY(24px)}
+.card{transition:opacity .4s var(--out) .25s,transform .55s var(--pop) .25s}
+.brief{transition:opacity .4s var(--out) .4s,transform .55s var(--pop) .4s}
+
+/* 최근 기록 */
+.log{padding:clamp(72px,11vh,128px) clamp(16px,6vw,104px) 40px;max-width:1280px}
+.log h2{margin:0 0 30px;display:flex;align-items:center;gap:16px;font:900 italic clamp(44px,6vw,76px)/1 var(--lat);text-transform:uppercase}
+.log h2 small{font:400 18px/1 var(--kor);padding:6px 9px 5px;background:var(--pink);color:var(--ink);rotate:-3deg}
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.row a{position:relative;isolation:isolate;display:grid;grid-template-columns:56px 104px minmax(0,1fr);gap:6px 24px;padding:20px 16px;border-bottom:1px solid var(--rule);align-items:center;outline:none}
+.row a::before{content:"";position:absolute;inset:0 -6px;z-index:-1;background:var(--pink);transform:skewX(-12deg) scaleX(0);transform-origin:left;transition:transform .32s var(--pop)}
+.row a:hover::before,.row a:focus-visible::before{transform:skewX(-12deg) scaleX(1)}
+.row a:hover,.row a:focus-visible{color:var(--ink)}
+.row .ri{width:48px;height:48px;display:grid;place-items:center;background:var(--panel-2);transform:skewX(-10deg);transition:background .15s,color .15s}
+.row .ri .ic{width:22px;height:22px;transform:skewX(10deg)}
+.row a:hover .ri,.row a:focus-visible .ri{background:var(--ink);color:var(--pink)}
+.row time{font:900 italic 36px/.9 var(--lat);color:var(--pink);transition:color .15s}
+.row h3{margin:0;font:700 19px/1.4 var(--sans)}
+.row p{margin:4px 0 0;color:var(--muted);max-width:68ch;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;transition:color .15s}
+.row a:hover :is(time,p),.row a:focus-visible :is(time,p){color:var(--ink)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:28px clamp(16px,6vw,104px) 80px;font:700 14px/1 var(--lat);letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+.foot a{display:flex;align-items:center;gap:10px;color:var(--paper)}
+
+/* 폰: 카드가 위, 메뉴가 아래. 한 번 누르면 고르고, 한 번 더 누르면 연다. */
+@media (max-width:900px){
+  /* overflow:hidden이면 sticky가 안 먹으므로 clip으로 자른다 */
+  .stage{height:auto;min-height:0;padding:18px 16px 30px;display:flex;flex-direction:column;overflow:clip}
+  .top{position:static;padding:0 0 18px}
+  .stats,.ext,.hints{display:none}
+  /* 카드는 화면 위에 붙어 있어서, 아래쪽 메뉴를 눌러도 모션이 보인다 */
+  .card{position:sticky;inset:auto;top:8px;z-index:5;translate:none;width:100%;height:210px;order:1}
+  .ghost{font-size:96px}
+  .head{top:20px;right:42%}
+  .name small{font-size:15px;margin-top:10px}
+  .name b{font-size:clamp(28px,8.4vw,42px)}
+  .portrait{left:auto;right:9%;top:54%;width:30%;translate:0 -50%}
+  .menu{position:static;transform:none;margin-top:22px;order:2}
+  .menu li{--step:10px;width:auto}
+  .mi{font-size:clamp(32px,9.6vw,56px);flex-wrap:wrap;row-gap:6px}
+  .sys .mi{font-size:clamp(24px,7vw,36px)}
+  .mi .ko{font-size:14px}
+  .tap{display:block;order:3;margin-top:14px;font:400 14px/1.4 var(--kor);color:var(--muted)}
+  .brief{position:relative;inset:auto;width:auto;rotate:none;margin-top:18px;order:4}
+  .down{position:static;order:5;margin-top:26px;color:var(--paper)}
+  .row a{grid-template-columns:44px minmax(0,1fr);padding:16px 4px}
+  .row .ri{width:40px;height:40px;grid-row:span 2}
+  .row time{font-size:24px}
+  .row h3{font-size:17px}
+}
+
+/* 타이틀 화면: 세션마다 한 번, 아무 키나 누르면 메뉴로 */
+.title{display:none;position:fixed;inset:0;z-index:70;background:var(--ink);overflow:hidden;isolation:isolate;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.t-on .title{display:block}
+.t-on body{overflow:hidden}
+.t-slab,.t-stripe{position:absolute;inset:0;z-index:-1}
+.t-slab{background:var(--pink);clip-path:polygon(0 0,58% 0,44% 100%,0 100%);animation:tslab .7s var(--out) both}
+.t-stripe{background:var(--paper);clip-path:polygon(calc(58% + 16px) 0,calc(58% + 26px) 0,calc(44% + 26px) 100%,calc(44% + 16px) 100%);animation:tstripe .7s .1s var(--out) both}
+@keyframes tslab{from{clip-path:polygon(0 0,0 0,-14% 100%,0 100%)}}
+@keyframes tstripe{from{clip-path:polygon(16px 0,26px 0,calc(-14% + 26px) 100%,calc(-14% + 16px) 100%)}}
+.t-logo{position:absolute;left:clamp(24px,6vw,104px);top:47%;translate:0 -50%;color:var(--ink)}
+.t-kick{font:700 15px/1 var(--lat);letter-spacing:.32em}
+.t-word{display:flex;margin:.08em 0 0 -.05em;font:900 italic clamp(112px,16vw,250px)/.8 var(--lat)}
+.t-word span{display:block;animation:drop .6s var(--pop) both;animation-delay:calc(var(--k)*70ms + 260ms)}
+@keyframes drop{from{opacity:0;transform:translateY(-.35em) rotate(-8deg)}}
+.t-log{display:inline-block;margin-top:.12em;background:var(--ink);color:var(--paper);font:900 italic clamp(30px,3.4vw,50px)/1 var(--lat);padding:.1em .32em .12em;transform:skewX(-10deg) rotate(-3deg);animation:tin .4s .62s var(--out) both}
+.t-tag{margin:22px 0 0;font:400 clamp(19px,1.7vw,26px)/1.3 var(--kor);animation:tin .4s .72s var(--out) both}
+@keyframes tin{from{opacity:0;translate:-14px 0}}
+.t-ufo{position:absolute;right:clamp(28px,9vw,160px);top:clamp(72px,15vh,150px);width:clamp(68px,6vw,96px);animation:bob 1.6s steps(1) infinite}
+@keyframes bob{50%{transform:translateY(-5px)}}
+.t-side{position:absolute;right:clamp(24px,6vw,104px);bottom:clamp(96px,17vh,170px);display:flex;flex-direction:column;align-items:flex-end;gap:16px}
+.t-stat{display:flex;gap:22px;font:700 13px/1 var(--lat);letter-spacing:.2em;color:var(--muted);animation:tin .4s .9s var(--out) both}
+.t-stat b{color:var(--paper);font-weight:800;margin-left:6px}
+.t-press{position:relative;display:flex;align-items:center;gap:16px;padding:17px 26px 16px 24px;background:var(--paper);color:var(--ink);font:900 italic clamp(28px,2.6vw,40px)/1 var(--lat);letter-spacing:.06em;transform:skewX(-10deg);outline:none;animation:tin .45s 1s var(--out) both}
+.t-press>span{display:block;transform:skewX(10deg)}
+.t-press:focus-visible{box-shadow:0 0 0 3px var(--ink),0 0 0 6px var(--pink)}
+.t-press .chev{color:var(--pink);letter-spacing:-.08em;animation:chev 1s steps(3) infinite}
+@keyframes chev{to{translate:12px 0}}
+.t-press .t-tap{display:none}
+.t-fox{position:absolute;left:24px;bottom:100%;width:46px;margin-bottom:-2px;transform:skewX(10deg)}
+.t-run{position:fixed;left:0;bottom:30px;width:52px;pointer-events:none;opacity:0}
+.t-foot{position:absolute;left:clamp(24px,6vw,104px);right:clamp(24px,6vw,104px);bottom:24px;display:flex;justify-content:space-between;font:700 13px/1 var(--lat);letter-spacing:.2em}
+.t-foot span:first-child{color:var(--ink)}
+.t-foot span:last-child{color:var(--muted)}
+@media (hover:none) and (pointer:coarse){.t-press .t-key{display:none}.t-press .t-tap{display:block}}
+@media (max-width:700px){
+  .t-slab{clip-path:polygon(0 0,100% 0,100% 50%,0 62%);animation-name:tslabM}
+  .t-stripe{clip-path:polygon(0 calc(62% + 12px),100% calc(50% + 12px),100% calc(50% + 20px),0 calc(62% + 20px));animation-name:tstripeM}
+  .t-logo{top:13%;translate:none;left:20px}
+  .t-word{font-size:clamp(96px,30vw,150px)}
+  .t-tag{font-size:19px;margin-top:16px}
+  .t-ufo{top:auto;bottom:calc(38% - 10px);right:24px;width:64px}
+  .t-side{left:16px;right:16px;bottom:64px;align-items:stretch}
+  .t-stat{justify-content:flex-end}
+  .t-press{justify-content:center;font-size:28px}
+  .t-foot{left:16px;right:16px;bottom:22px;font-size:12px}
+  .t-foot span:first-child{color:var(--muted)}
+}
+@keyframes tslabM{from{clip-path:polygon(0 0,100% 0,100% 0,0 0)}}
+@keyframes tstripeM{from{clip-path:polygon(0 12px,100% 12px,100% 20px,0 20px)}}

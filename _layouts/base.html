@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'ko' }}">
+{% include head.html %}
+<body class="{{ page.body_class | default: layout.body_class }}" data-page="{{ page.nav | default: page.category | default: page.cat }}">
+{{ content }}
+</body>
+</html>

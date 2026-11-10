@@ -1,0 +1,62 @@
+.phero{--sa:60%;--sb:50%}
+.pro{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(20px,3vw,40px);align-items:end;max-width:1240px}
+.emblem{width:clamp(100px,10vw,140px);aspect-ratio:1;background:var(--ink);color:var(--pink);display:grid;place-items:center;font:900 italic clamp(50px,5vw,70px)/1 var(--lat);clip-path:polygon(8% 0,100% 6%,92% 100%,0 92%);rotate:-5deg}
+.who{color:var(--ink)}
+.who .k{font:700 13px/1 var(--lat);letter-spacing:.24em}
+.who h1{margin:6px 0 0;font:900 italic clamp(72px,9vw,124px)/.82 var(--lat)}
+.who .role{font:400 clamp(18px,1.6vw,22px)/1.3 var(--kor);margin-top:10px}
+.who .tl{font:600 16px/1.5 var(--sans);margin-top:4px;max-width:30em}
+.stats{min-width:300px;background:var(--ink)}
+.srow{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.srow div{padding:12px 16px 10px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.srow span,.mission span{display:block;font:600 12px/1 var(--lat);letter-spacing:.2em;color:var(--muted)}
+.srow b{display:block;font:800 italic 34px/1.05 var(--lat);margin-top:4px}
+.mission{padding:12px 16px 14px;border:1px solid var(--rule);border-top:0}
+.mission p{margin:6px 0 10px;font:600 16px/1.4 var(--sans)}
+.mission p b{font:800 italic 18px/1 var(--lat);color:var(--pink);margin-left:6px}
+.mission .bar{height:10px;background:rgba(255,255,255,.08);transform:skewX(-14deg);overflow:hidden}
+.mission .bar i{display:block;height:100%;width:80%;background:var(--pink)}
+
+.body{padding:24px clamp(20px,6vw,104px) 72px;max-width:1000px}
+.sec{margin-top:56px}
+.h{display:flex;align-items:center;gap:14px;margin:0 0 20px;font:900 italic 34px/1 var(--lat);text-transform:uppercase}
+.h small{font:400 15px/1 var(--kor);background:var(--paper);color:var(--ink);padding:5px 8px 4px;rotate:-3deg}
+
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.rows li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 24px;padding:16px 4px;border-bottom:1px solid var(--rule);align-items:baseline}
+.rows i{font:800 italic 15px/1.3 var(--lat);font-style:normal;letter-spacing:.14em;color:var(--pink)}
+.rows b{display:block;font:700 18px/1.45 var(--sans)}
+.rows span{display:block;color:var(--muted);margin-top:2px}
+
+/* 좋아하는 것: 픽셀 소품이 초상화 자리에 */
+.mains{display:grid;gap:12px}
+.main{display:grid;grid-template-columns:88px minmax(0,1fr);gap:20px;align-items:center;padding:16px 18px;background:var(--panel)}
+.main .face{width:88px;aspect-ratio:1;display:grid;place-items:center;background:var(--pink);clip-path:polygon(6% 0,100% 6%,94% 100%,0 94%)}
+.main .face svg{width:64%}
+.main .face .ic{color:var(--ink);stroke-width:2.2}
+.main .g{font:800 italic 14px/1 var(--lat);letter-spacing:.18em;color:var(--muted)}
+.main h3{margin:6px 0 4px;font:400 24px/1.25 var(--kor)}
+.main h3 em{font-style:normal;font:800 italic 15px/1 var(--lat);letter-spacing:.12em;background:var(--paper);color:var(--ink);padding:4px 8px 3px;margin-left:10px;vertical-align:4px}
+.main p{margin:0;color:#ddd5e2}
+.note{margin:14px 0 0;color:var(--muted);font-size:15px}
+
+.tline{list-style:none;margin:0;padding:0;border-left:2px solid var(--rule)}
+.tline li{position:relative;display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 20px;padding:10px 0 10px 22px}
+.tline li::before{content:"";position:absolute;left:-7px;top:17px;width:12px;height:12px;background:var(--ink);border:2px solid var(--pink);rotate:45deg}
+.tline time{font:800 italic 17px/1.5 var(--lat);color:var(--paper)}
+.tline li:first-child::before{background:var(--pink)}
+
+@media (max-width:980px){
+  .pro{grid-template-columns:auto minmax(0,1fr)}
+  .stats{grid-column:1/-1;margin-top:20px;min-width:0}
+}
+@media (max-width:700px){
+  .phero{padding:30px 16px 28px}
+  .pro{grid-template-columns:minmax(0,1fr)}
+  .emblem{width:84px;font-size:42px}
+  .body{padding:12px 16px 56px}
+  .rows li,.tline li{grid-template-columns:minmax(0,1fr)}
+  .main{grid-template-columns:64px minmax(0,1fr);gap:14px;padding:14px}
+  .main .face{width:64px}
+  .main h3 em{display:block;width:max-content;margin:6px 0 0;vertical-align:0}
+}

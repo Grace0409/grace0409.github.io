@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{%- comment -%} 플레이어 프로필. 숫자와 다음 미션은 about.md 맨 위에서 고칩니다. {%- endcomment -%}
+<header class="phero">
+  <div class="pro">
+    <div class="emblem" aria-hidden="true">OV</div>
+    <div class="who">
+      <div class="k">PLAYER PROFILE</div>
+      <h1>{{ site.author.nickname }}</h1>
+      <div class="role">{{ site.author.name }}, Security Researcher</div>
+      <div class="tl">{{ page.description }}</div>
+    </div>
+    <div class="stats">
+      <div class="srow">{% for s in page.stats %}<div><span>{{ s.label }}</span><b>{{ s.value }}</b></div>{% endfor %}</div>
+      {%- if page.mission %}
+      <div class="mission"><span>NEXT MISSION</span><p>{{ page.mission.text }}<b>{{ page.mission.when }}</b></p><div class="bar"><i style="width:{{ page.mission.progress }}%"></i></div></div>
+      {%- endif %}
+    </div>
+  </div>
+</header>
+
+<div class="body">
+{{ content }}
+</div>

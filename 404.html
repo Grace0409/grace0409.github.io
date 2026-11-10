@@ -4,15 +4,13 @@ title: 404
 permalink: /404.html
 sitemap: false
 ---
-<header class="page-header">
-  <p class="eyebrow">Not found</p>
-  <h1>404</h1>
+<header class="phero">
+  <div class="pk">Not found</div>
+  <h1 class="ph1">404</h1>
+  <p class="pdesc">요청한 페이지를 찾을 수 없습니다. 여우가 길을 잃었나 봐요.</p>
 </header>
-<div class="terminal">
-  <div class="terminal-bar"><i></i><i></i><i></i><span>ovan@ovan-log: ~</span></div>
-  <pre class="terminal-body"><span class="pr">ovan@ovan-log:~$</span> cat ./this-page
-cat: ./this-page: No such file or directory
-요청한 페이지를 찾을 수 없습니다.
-
-<span class="pr">ovan@ovan-log:~$</span> cd <a href="{{ '/' | relative_url }}" style="color:#3ddc97;text-decoration:underline">~</a> <span class="cursor"></span></pre>
+<div class="pg-body prose">
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">ovan@ovan-log:~$</span> cat ./this-page
+cat: ./this-page: No such file or directory</code></pre></div></div>
+  <p><a href="{{ '/' | relative_url }}" data-go>홈으로 돌아가기</a>, 또는 <a href="{{ '/archive/' | relative_url }}" data-go>전체 기록</a>에서 찾아보세요.</p>
 </div>
