@@ -50,6 +50,6 @@ python experiments/make_figures.py
 ## 알아 둘 점
 
 - GPT-2 순전파는 NumPy만 씁니다. 기울기가 필요한 `e6`, `e7`의 학습 부분만 PyTorch를 씁니다.
-- `e6`의 전체 실험은 학습 36회(시드 3개)이고, CPU 12코어에서 16시간 가까이 걸렸습니다. 그래서 `results/e6_runs/`에 저장된 결과를 넣어 두었고, `--summary-only`는 이 결과를 읽어 요약합니다. 학습 코드가 도는지 보려면 `--quick`(4가지, 300스텝)을 실행하면 됩니다.
+- `e6`의 전체 실험은 학습 36회(시드 3개)이고, CPU 12코어에서 16시간 가까이 걸렸습니다. 그래서 `results/e6_runs/`에 저장된 결과를 넣어 두었고, `--summary-only`는 이 결과를 읽어 요약합니다. 학습 코드가 도는지 보려면 `--quick`(4가지, 300스텝)을 실행하면 됩니다. 저장된 결과를 지우고 36회를 처음부터 다시 돌리려면 GPU 환경에서 `python experiments/e6_train_ablation.py --rerun`을 실행합니다.
 - 가중치와 데이터는 `download_data.py`가 `weights/`에 내려받고, `model.safetensors`는 공개된 해시와 대조합니다.
 - 그림의 글꼴은 NanumGothic입니다. Colab에서는 `fonts-nanum`을 설치합니다.

@@ -1,5 +1,7 @@
 import json
 import math
+import os
+import shutil
 import sys
 import time
 from collections import Counter
@@ -234,6 +236,8 @@ def baselines():
 def main():
     quick = "--quick" in sys.argv
     run_dir = QUICK_DIR if quick else RUN_DIR
+    if "--rerun" in sys.argv and not quick:
+        shutil.rmtree(run_dir, ignore_errors=True)
     run_dir.mkdir(parents=True, exist_ok=True)
     if quick:
         jobs = [(Run(seed=0, steps=300, **e), run_dir / f"{i:02d}_s0.json") for i, e in enumerate(EXPERIMENTS[:4])]
@@ -246,7 +250,7 @@ def main():
             for job in todo:
                 print(f"{time.strftime('%H:%M:%S')} finished {train(job).name}", flush=True)
         else:
-            with ProcessPoolExecutor(max_workers=min(WORKERS, len(todo))) as pool:
+            with ProcessPoolExecutor(max_workers=min(WORKERS, os.cpu_count() or 1, len(todo))) as pool:
                 for path in pool.map(train, todo):
                     print(f"{time.strftime('%H:%M:%S')} finished {path.name}", flush=True)
 
