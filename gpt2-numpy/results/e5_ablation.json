@@ -1,0 +1,260 @@
+{
+  "variants": {
+    "기준(GPT-2)": {
+      "loss": 4.836070755043046,
+      "top1_acc": 0.27099609375,
+      "attention_entropy_first": 0.641190082875842,
+      "attention_entropy_last": 0.5385884766612592,
+      "attention_max_mean": 0.5331995712268826,
+      "hidden_std_by_layer": [
+        0.174,
+        1.886,
+        2.879,
+        8.5,
+        9.112,
+        9.623,
+        9.975,
+        10.243,
+        10.509,
+        10.856,
+        11.383,
+        12.783,
+        9.344
+      ],
+      "logit_std": 54.544327346156514,
+      "greedy": " the capital of the French Republic, and the capital of the French Republic is the capital of the French"
+    },
+    "√d_k 제거": {
+      "loss": 6.952176032643881,
+      "top1_acc": 0.09521484375,
+      "attention_entropy_first": 0.12423658383300305,
+      "attention_entropy_last": 0.06882034638856613,
+      "attention_max_mean": 0.8806065172204649,
+      "hidden_std_by_layer": [
+        0.174,
+        2.075,
+        3.0,
+        9.914,
+        10.358,
+        10.766,
+        11.08,
+        11.31,
+        11.499,
+        11.722,
+        12.065,
+        13.323,
+        6.916
+      ],
+      "logit_std": 67.98431074395752,
+      "greedy": " France, the capital of the world, the French capital of the world, is the only place where"
+    },
+    "causal mask 제거": {
+      "loss": 5.482479181652986,
+      "top1_acc": 0.13671875,
+      "attention_entropy_first": 0.695564029192715,
+      "attention_entropy_last": 0.7363161846257028,
+      "attention_max_mean": 0.24633621726963562,
+      "hidden_std_by_layer": [
+        0.174,
+        1.732,
+        2.254,
+        7.668,
+        7.725,
+        7.836,
+        7.966,
+        8.079,
+        8.321,
+        8.518,
+        9.028,
+        10.373,
+        7.058
+      ],
+      "logit_std": 18.779242490351244,
+      "greedy": " the United States is the United States of France the United is the United is the United is the United"
+    },
+    "잔차 연결 제거": {
+      "loss": 11.111297860858205,
+      "top1_acc": 0.01025390625,
+      "attention_entropy_first": 0.641190082875842,
+      "attention_entropy_last": 0.9994921579038369,
+      "attention_max_mean": 0.13003542185133143,
+      "hidden_std_by_layer": [
+        0.174,
+        0.654,
+        2.017,
+        7.898,
+        4.367,
+        3.824,
+        2.692,
+        3.215,
+        3.51,
+        2.36,
+        3.123,
+        5.121,
+        8.573
+      ],
+      "logit_std": 25.425419455633016,
+      "greedy": "--------------------"
+    },
+    "위치 임베딩 제거": {
+      "loss": 8.535074626992351,
+      "top1_acc": 0.05859375,
+      "attention_entropy_first": 0.6055295114541882,
+      "attention_entropy_last": 0.7877713942972876,
+      "attention_max_mean": 0.3291473135167486,
+      "hidden_std_by_layer": [
+        0.115,
+        1.755,
+        1.899,
+        2.578,
+        2.659,
+        2.729,
+        2.902,
+        3.178,
+        3.895,
+        4.46,
+        5.776,
+        8.437,
+        7.216
+      ],
+      "logit_std": 54.14117332398226,
+      "greedy": " all all all all all all all all all all all all all all all all all all all all"
+    }
+  },
+  "uniform_loss": 10.82490511970208,
+  "leak": {
+    "edited_position": 8,
+    "기준(GPT-2)": {
+      "before_edit_max": 0.0,
+      "from_edit_max": 52.56759718015758,
+      "by_position": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        52.5676,
+        9.6186,
+        5.4092,
+        3.1084,
+        5.2609,
+        8.1285
+      ]
+    },
+    "causal mask 제거": {
+      "before_edit_max": 8.315868726735687,
+      "from_edit_max": 10.150209578899634,
+      "by_position": [
+        1.0404,
+        3.3001,
+        2.6162,
+        8.3159,
+        5.0307,
+        7.7232,
+        3.9612,
+        4.0934,
+        10.1502,
+        6.1444,
+        6.1819,
+        6.9653,
+        6.699,
+        7.7226
+      ]
+    }
+  },
+  "sqrt_dk": [
+    {
+      "d_k": 4,
+      "theory_std": 2.0,
+      "score_std": 1.9861961870186773,
+      "raw": {
+        "top_weight": 0.4256746793988258,
+        "entropy_ratio": 0.6392564350181389,
+        "jacobian_norm_median": 0.33283957713157974
+      },
+      "scaled": {
+        "top_weight": 0.23369767381021755,
+        "entropy_ratio": 0.8606515817698057,
+        "jacobian_norm_median": 0.29358887484396196
+      }
+    },
+    {
+      "d_k": 16,
+      "theory_std": 4.0,
+      "score_std": 3.9912948222574043,
+      "raw": {
+        "top_weight": 0.68144854847086,
+        "entropy_ratio": 0.32941605223377934,
+        "jacobian_norm_median": 0.3356233119977899
+      },
+      "scaled": {
+        "top_weight": 0.240636147960362,
+        "entropy_ratio": 0.8547765277027586,
+        "jacobian_norm_median": 0.30068052237917864
+      }
+    },
+    {
+      "d_k": 64,
+      "theory_std": 8.0,
+      "score_std": 7.9730327234160825,
+      "raw": {
+        "top_weight": 0.846481455253741,
+        "entropy_ratio": 0.14649121813347146,
+        "jacobian_norm_median": 0.10719691841623849
+      },
+      "scaled": {
+        "top_weight": 0.24534049057241158,
+        "entropy_ratio": 0.8513435656873738,
+        "jacobian_norm_median": 0.3025899859913794
+      }
+    },
+    {
+      "d_k": 256,
+      "theory_std": 16.0,
+      "score_std": 15.977562913291726,
+      "raw": {
+        "top_weight": 0.9229650523822991,
+        "entropy_ratio": 0.0700023321840906,
+        "jacobian_norm_median": 0.006512463600742332
+      },
+      "scaled": {
+        "top_weight": 0.24609638101367498,
+        "entropy_ratio": 0.8506029129620003,
+        "jacobian_norm_median": 0.30438474147760153
+      }
+    },
+    {
+      "d_k": 1024,
+      "theory_std": 32.0,
+      "score_std": 31.927073976587053,
+      "raw": {
+        "top_weight": 0.9629964245541449,
+        "entropy_ratio": 0.03267924358563234,
+        "jacobian_norm_median": 1.7658740283401697e-05
+      },
+      "scaled": {
+        "top_weight": 0.24760424196534891,
+        "entropy_ratio": 0.8496312850105847,
+        "jacobian_norm_median": 0.3039465460299684
+      }
+    },
+    {
+      "d_k": 4096,
+      "theory_std": 64.0,
+      "score_std": 64.13591652305982,
+      "raw": {
+        "top_weight": 0.9801501229980317,
+        "entropy_ratio": 0.017423640625542854,
+        "jacobian_norm_median": 3.7638593699188123e-10
+      },
+      "scaled": {
+        "top_weight": 0.24513109605474434,
+        "entropy_ratio": 0.850812139073121,
+        "jacobian_norm_median": 0.3039592545445924
+      }
+    }
+  ]
+}

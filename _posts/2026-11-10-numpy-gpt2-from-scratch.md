@@ -8,7 +8,7 @@ tags: [llm, gpt-2, numpy, transformer, attention, bpe, rlhf, dpo]
 
 ChatGPT 같은 언어 모델은 결국 "다음에 올 토큰 하나"를 계속 고르는 기계라고 합니다. 이 말이 실제 계산으로는 어떻게 이어지는지 따라가 보고 싶어서, 2019년에 공개된 작은 모델 GPT-2를 NumPy만으로 구현했습니다. NumPy는 파이썬의 행렬 계산 라이브러리라서 딥러닝 프레임워크 없이 손으로 짜는 셈입니다. 학습이 끝난 공개 가중치(숫자 묶음)를 넣어 Hugging Face와 같은 값이 나오는지 확인한 뒤, 같은 코드로 여러 실험을 했습니다.
 
-코드는 `gpt2.py`(모델), `bpe.py`(토크나이저), `sampling.py`(샘플링)와 실험 스크립트로 나눴습니다. GPT-2 순전파는 전부 NumPy이고, 기울기 계산(역전파)이 필요한 8장의 소형 모델 학습과 9장의 파인튜닝만 PyTorch를 썼습니다. 구조는 GPT-2 논문 2.3절([Radford 외, 2019](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf))과 Hugging Face의 [openai-community/gpt2](https://huggingface.co/openai-community/gpt2) 가중치 파일을 기준으로 맞췄습니다. NumPy로 GPT-2를 구현한 글로는 Jay Mody의 [GPT in 60 Lines of NumPy](https://jaykmody.com/blog/gpt-from-scratch/)(코드는 [picoGPT](https://github.com/jaymody/picoGPT))도 있습니다.
+코드는 `gpt2.py`(모델), `bpe.py`(토크나이저), `sampling.py`(샘플링)와 실험 스크립트로 나눴고, 전체 코드는 [GitHub 폴더](https://github.com/Grace0409/grace0409.github.io/tree/main/gpt2-numpy)에 올려 두었습니다. [Colab 노트북](https://colab.research.google.com/github/Grace0409/grace0409.github.io/blob/main/gpt2-numpy/gpt2_numpy.ipynb)을 위에서부터 실행하면 아래 숫자와 그림이 다시 만들어집니다. GPT-2 순전파는 전부 NumPy이고, 기울기 계산(역전파)이 필요한 8장의 소형 모델 학습과 9장의 파인튜닝만 PyTorch를 썼습니다. 구조는 GPT-2 논문 2.3절([Radford 외, 2019](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf))과 Hugging Face의 [openai-community/gpt2](https://huggingface.co/openai-community/gpt2) 가중치 파일을 기준으로 맞췄습니다. NumPy로 GPT-2를 구현한 글로는 Jay Mody의 [GPT in 60 Lines of NumPy](https://jaykmody.com/blog/gpt-from-scratch/)(코드는 [picoGPT](https://github.com/jaymody/picoGPT))도 있습니다.
 
 만들면서 예상과 달랐던 일이 세 번 있었습니다. 첫 비교에서 오차가 컸던 원인이 활성화 함수 한 줄이었던 것(6장), 어텐션 맵이 교과서 예시처럼 깔끔하지 않았던 것(4장), 잔차 연결을 빼면 기울기가 사라져서가 아니라 다른 이유로 학습이 멈췄던 것(8장)입니다. 이 셋을 따라가며 읽으시면 됩니다. 용어는 되도록 풀어 썼고, 자세한 표는 접어 두었습니다.
 
@@ -50,7 +50,7 @@ GPT-2 small의 크기는 어휘 50,257개, 최대 길이 1,024토큰, 임베딩 
 
 한국어 문장 8개를 tiktoken의 gpt2 인코딩에 넣었더니 372토큰이 나왔고, 같은 뜻의 영어 8문장은 75토큰이었습니다. 토크나이저는 글을 토큰으로 자르고 번호를 붙이는 도구이고, tiktoken은 OpenAI가 공개한 토크나이저 라이브러리입니다. 비교한 인코딩은 gpt2, cl100k\_base, o200k\_base로, 모두 BPE 계열이고 어휘가 점점 커진 세 세대입니다. 문장이 8쌍뿐이라 비율은 대략의 감으로만 읽어야 합니다.
 
-![토큰 수 비교](/assets/img/gpt2-numpy/token_counts.png?v=sans)
+![토큰 수 비교](/assets/img/gpt2-numpy/token_counts.png?v=code)
 
 | 인코딩 | 한국어 | 영어 | 비율 |
 |---|---:|---:|---:|
@@ -126,7 +126,7 @@ out = (weights @ v).transpose(0, 2, 1, 3).reshape(B, T, D)
 
 교과서에는 "The animal didn't cross the street because it was too tired"에서 어텐션이 `it`을 `animal`과 연결한다는 예시가 자주 나옵니다. 이 문장을 넣어 `it`이 누구를 보는지 그렸습니다.
 
-![어텐션 맵](/assets/img/gpt2-numpy/attention_map.png?v=sans)
+![어텐션 맵](/assets/img/gpt2-numpy/attention_map.png?v=code)
 
 예상만큼 깔끔하지 않았습니다.
 
@@ -184,7 +184,7 @@ def gelu(x):
 | 한국어 32토큰 | 1.14×10⁻⁴ | 2.13×10⁻¹³ |
 | Shakespeare 1,024토큰 | 4.16×10⁻³ | 4.29×10⁻¹² |
 
-입력 7가지(짧은 영어, 토큰 1개, 한국어, 한영 혼합, 긴 영어 문장, Shakespeare 256토큰과 1,024토큰) 모두 가장 높은 후보가 같았습니다. float32의 오차는 구현 차이가 아니라, 같은 코드를 float64로 바꾸면 약 10억 분의 1로 줄어드는 반올림 오차입니다. logits만 같고 중간 값이 다를 수도 있어서 13개 은닉 상태(4.95×10⁻¹²), 12개 층의 어텐션 가중치(3.72×10⁻¹⁴), K/V 캐시를 쓴 점진 생성(2.56×10⁻¹³), 다음 토큰 손실(5.33×10⁻¹⁵)도 함께 맞춰 봤습니다. 손실 비교에는 함정이 하나 더 있었습니다. float64인데 1.3×10⁻⁵ 차이가 났는데, Hugging Face의 손실 함수가 계산 전에 logits를 float32로 내리기 때문이었습니다.
+입력 7가지(짧은 영어, 토큰 1개, 한국어, 한영 혼합, 긴 영어 문장, Shakespeare 256토큰과 1,024토큰) 모두 가장 높은 후보가 같았습니다. float32의 오차는 구현 차이가 아니라, 같은 코드를 float64로 바꾸면 약 10억 분의 1로 줄어드는 반올림 오차입니다. 이 값은 실행 환경에 따라 달라져서, 환경을 새로 만들어 다시 돌렸을 때 긴 입력의 float32 오차가 2~3배 차이 났고 float64 오차는 같았습니다. logits만 같고 중간 값이 다를 수도 있어서 13개 은닉 상태(4.95×10⁻¹²), 12개 층의 어텐션 가중치(3.72×10⁻¹⁴), K/V 캐시를 쓴 점진 생성(2.56×10⁻¹³), 다음 토큰 손실(5.33×10⁻¹⁵)도 함께 맞춰 봤습니다. 손실 비교에는 함정이 하나 더 있었습니다. float64인데 1.3×10⁻⁵ 차이가 났는데, Hugging Face의 손실 함수가 계산 전에 logits를 float32로 내리기 때문이었습니다.
 
 <small>참고: [Hugging Face GPT-2 문서](https://huggingface.co/docs/transformers/model_doc/gpt2), `gelu_new`가 정의된 [transformers의 activations.py](https://github.com/huggingface/transformers/blob/main/src/transformers/activations.py), [GPT in 60 Lines of NumPy](https://jaykmody.com/blog/gpt-from-scratch/)</small>
 
@@ -194,7 +194,7 @@ def gelu(x):
 
 같은 점수표라도 어떻게 고르느냐에 따라 전혀 다른 글이 나옵니다. greedy는 항상 1등만 고르고, temperature는 점수를 T로 나눠 분포를 뾰족하게(T가 작을 때) 또는 평평하게(T가 클 때) 만듭니다. top-k는 상위 k개 안에서만, top-p는 확률이 큰 것부터 더해 p(예: 0.9)가 될 때까지만 후보로 남깁니다.
 
-![온도별 분포](/assets/img/gpt2-numpy/temperature.png?v=sans)
+![온도별 분포](/assets/img/gpt2-numpy/temperature.png?v=code)
 
 세 프롬프트에서 전략마다 64개씩, 50토큰을 생성해 비교했습니다. 샘플 하나로는 분포의 성질을 알 수 없어서 64개씩 뽑았습니다. 반복률은 같은 4개 토큰 묶음이 되풀이되는 비율이고, 평균 로그확률은 원래 모델이 그 글을 얼마나 그럴듯하게 보는지입니다.
 
@@ -258,7 +258,7 @@ Tiny Shakespeare에서 128토큰 창 16개로 쟀습니다. 손실은 낮을수�
 
 손실은 두 가지로 쟀습니다. 학습 때 손실은 모든 위치의 평균이고, 마지막 위치 손실은 맨 뒤 한 칸만 잰 값입니다. 글을 생성할 때는 마지막 위치 뒤에 아무것도 없으니 이쪽이 실제 성능에 가깝습니다. 비교 기준도 두 개 계산했습니다. 글자 빈도만으로 예측하면 3.347이고, 바로 앞 글자만 보는 모델은 2.482입니다.
 
-![처음부터 학습한 결과](/assets/img/gpt2-numpy/train_ablation.png?v=sans)
+![처음부터 학습한 결과](/assets/img/gpt2-numpy/train_ablation.png?v=code)
 
 ### 질문 1. √d\_k로 나누는 이유
 
@@ -297,7 +297,7 @@ causal mask 제거: ROMEO:\nOPOMOMMMOOMAMAMMMALMWAMMEMAMAMAMAOMMAMMIMAMMMAMA
 
 저는 처음에 층이 깊어서 기울기가 사라지는 문제일 거라고 생각했습니다. 그래서 층 수를 바꿔 학습해 봤습니다.
 
-![층 수에 따른 결과](/assets/img/gpt2-numpy/depth.png?v=sans)
+![층 수에 따른 결과](/assets/img/gpt2-numpy/depth.png?v=code)
 
 | 층 수 | 잔차 있음 | 잔차 없음 |
 |---:|---:|---:|
@@ -399,7 +399,7 @@ L = −log σ(β · margin)
 
 같은 GPT-2에서 시작해 30스텝씩 학습했습니다(Adam, lr=2×10⁻⁵). 역전파에만 PyTorch를 쓰고, 학습된 가중치는 다시 NumPy 구현에 올려 측정했습니다. 프롬프트는 `Question: What is the capital of France?\nAnswer:`, 좋은 답은 ` The capital of France is Paris.`, 나쁜 답은 ` I don't know.`입니다. RLHF의 보상은 "답변에 Paris가 있으면 1, 없으면 0"이라는 단순한 규칙으로 했습니다.
 
-![파인튜닝 비교](/assets/img/gpt2-numpy/fine_tuning.png?v=sans)
+![파인튜닝 비교](/assets/img/gpt2-numpy/fine_tuning.png?v=code)
 
 | 측정값 | 시작 | SFT | RLHF(PPO) | DPO |
 |---|---:|---:|---:|---:|

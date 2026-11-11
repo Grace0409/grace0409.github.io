@@ -1,0 +1,3964 @@
+{
+  "summary": {
+    "기준": {
+      "val_seen_mean": 1.6940447390079498,
+      "val_seen_std": 0.006248595765759584,
+      "val_deployed_mean": 1.667755663394928,
+      "val_deployed_std": 0.02163225803270225,
+      "first_block_grad": 3.075939178466797,
+      "last_block_grad": 1.887718915939331,
+      "attention_entropy": 0.40251969297726947,
+      "qkv_weight_rms": 0.04666639864444733,
+      "sample": "ROMEO:\nThy farms it when? I would nears! would gelst, great\nDess him thee recharn of bleshelf: in the contents,\nAlorniable mann"
+    },
+    "√d_k 제거": {
+      "val_seen_mean": 1.6857796212037404,
+      "val_seen_std": 0.009771082249774262,
+      "val_deployed_mean": 1.6583847602208455,
+      "val_deployed_std": 0.03155160453390287,
+      "first_block_grad": 3.0739684104919434,
+      "last_block_grad": 1.8845755656560261,
+      "attention_entropy": 0.26801685988903046,
+      "qkv_weight_rms": 0.03805499027172724,
+      "sample": "ROMEO:\nThou most keep selt me, calless'd you?\nIf let thanks you, how thereom he joint seemels!\nThen, impetiation porties, and c"
+    },
+    "causal mask 제거": {
+      "val_seen_mean": 0.03658819912622372,
+      "val_seen_std": 0.00048208225914863386,
+      "val_deployed_mean": 2.293549786011378,
+      "val_deployed_std": 0.029735500790149805,
+      "first_block_grad": 3.148809830347697,
+      "last_block_grad": 1.8722577095031738,
+      "attention_entropy": 0.8114902178446451,
+      "qkv_weight_rms": 0.030709729219476383,
+      "sample": "ROMEO:\nOPOMOMMMOOMAMAMMMALMWAMMEMAMAMAMAOMMAMMIMAMMMAMAMAMMMMMMAMOOPE:\nHeare ha?A Domos AHAFA:Bigeeerimy peatiory weait pee anc"
+    },
+    "잔차 연결 제거": {
+      "val_seen_mean": 3.334734986225764,
+      "val_seen_std": 0.0005027977207112072,
+      "val_deployed_mean": 3.283715099096298,
+      "val_deployed_std": 0.0012654507668606295,
+      "first_block_grad": 10.802424748738607,
+      "last_block_grad": 10.848851839701334,
+      "attention_entropy": 1.0,
+      "qkv_weight_rms": 0.02088044583797455,
+      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc"
+    },
+    "넓은 헤드 기준": {
+      "val_seen_mean": 2.626177708307902,
+      "val_seen_std": 0.07363393466189169,
+      "val_deployed_mean": 2.589530815680822,
+      "val_deployed_std": 0.03632865586700583,
+      "first_block_grad": 10.437488873799643,
+      "last_block_grad": 5.391833941141765,
+      "attention_entropy": 0.02802280367662509,
+      "qkv_weight_rms": 0.04159430911143621,
+      "sample": "ROMEO:\nt bremhise hawhselteilouca neaman youd INAlste gay ofuesy he nty\nTere heth thio ORielis sanongid\nWe.\nthory we w keer anc"
+    },
+    "넓은 헤드 √d_k 제거": {
+      "val_seen_mean": 2.7192023495833078,
+      "val_seen_std": 0.0957325271176066,
+      "val_deployed_mean": 2.7474779784679413,
+      "val_deployed_std": 0.07444352574600341,
+      "first_block_grad": 7.336011568705241,
+      "last_block_grad": 3.9602184295654297,
+      "attention_entropy": 0.001678665168583393,
+      "qkv_weight_rms": 0.03369909028212229,
+      "sample": "ROMEO:\nth remhis khe: selte,\nouca meaman youd Iotlste gM\n\no uesy h fnty here heth thio beielldseg serd Cse.\ntho y wr we per anc"
+    },
+    "깊이 2 잔차 있음": {
+      "val_seen_mean": 1.7078416893879573,
+      "val_seen_std": 0.006242533717602716,
+      "val_deployed_mean": 1.6401850084463756,
+      "val_deployed_std": 0.023399179779549646,
+      "first_block_grad": 2.6396222909291587,
+      "last_block_grad": 1.995071013768514,
+      "attention_entropy": 0.411313662926356,
+      "qkv_weight_rms": 0.04940697674949964,
+      "sample": "ROMEO:\nThy farms kill'd:\nTertouch means brother to the Mecome of his twener? hath think\nAnd is in the contints, your wake excha"
+    },
+    "깊이 4 잔차 있음": {
+      "val_seen_mean": 1.6832324514786403,
+      "val_seen_std": 0.005078170272572598,
+      "val_deployed_mean": 1.6202217439810436,
+      "val_deployed_std": 0.02214577306571683,
+      "first_block_grad": 3.1142513751983643,
+      "last_block_grad": 1.897750973701477,
+      "attention_entropy": 0.42863283554712933,
+      "qkv_weight_rms": 0.04915427044034004,
+      "sample": "ROMEO:\nThou must keep selted our peermant,\nAnd gels eagancors of his twere mayst and blessels!\nThese is stants, your way, aman."
+    },
+    "깊이 16 잔차 있음": {
+      "val_seen_mean": 1.688702513774236,
+      "val_seen_std": 0.0238692600940576,
+      "val_deployed_mean": 1.6445521712303162,
+      "val_deployed_std": 0.02862556911367658,
+      "first_block_grad": 3.4467164675394693,
+      "last_block_grad": 1.8067131042480469,
+      "attention_entropy": 0.3646417756875356,
+      "qkv_weight_rms": 0.04535000895460447,
+      "sample": "ROMEO:\nThy, more know sell Warwick expair,\nNow gels famancous with fot been charge.\n\nKING EDWABY:\nI he petiate, your wake a whe"
+    },
+    "깊이 2 잔차 없음": {
+      "val_seen_mean": 3.3350005547205606,
+      "val_seen_std": 0.000906060516140807,
+      "val_deployed_mean": 3.2842465241750083,
+      "val_deployed_std": 0.0020577038584781034,
+      "first_block_grad": 8.54393196105957,
+      "last_block_grad": 5.805064519246419,
+      "attention_entropy": 0.9999876618385315,
+      "qkv_weight_rms": 0.026000111053387325,
+      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc"
+    },
+    "깊이 4 잔차 없음": {
+      "val_seen_mean": 3.334876428047816,
+      "val_seen_std": 0.0006780200309517182,
+      "val_deployed_mean": 3.283926318089167,
+      "val_deployed_std": 0.0018959574336430524,
+      "first_block_grad": 9.753903865814209,
+      "last_block_grad": 8.638012568155924,
+      "attention_entropy": 1.0,
+      "qkv_weight_rms": 0.021804821987946827,
+      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc"
+    },
+    "깊이 16 잔차 없음": {
+      "val_seen_mean": 3.335075318813324,
+      "val_seen_std": 0.0,
+      "val_deployed_mean": 3.2850452661514282,
+      "val_deployed_std": 0.0,
+      "first_block_grad": 8.946840286254883,
+      "last_block_grad": 16.55039405822754,
+      "attention_entropy": 1.0,
+      "qkv_weight_rms": 0.020331721752882004,
+      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc"
+    }
+  },
+  "unigram_val_loss": 3.3473284841065922,
+  "bigram_val_loss": 2.4818894321158234,
+  "runs": [
+    {
+      "run": {
+        "label": "기준",
+        "seed": 0,
+        "n_layer": 8,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.200005233287811,
+          "val_deployed": 4.201473712921143
+        },
+        {
+          "step": 100,
+          "val_seen": 2.5330528914928436,
+          "val_deployed": 2.627020001411438
+        },
+        {
+          "step": 200,
+          "val_seen": 2.350825697183609,
+          "val_deployed": 2.436749666929245
+        },
+        {
+          "step": 300,
+          "val_seen": 2.226206958293915,
+          "val_deployed": 2.24913427233696
+        },
+        {
+          "step": 400,
+          "val_seen": 2.1169339418411255,
+          "val_deployed": 2.1624061465263367
+        },
+        {
+          "step": 500,
+          "val_seen": 2.0192487984895706,
+          "val_deployed": 2.062728449702263
+        },
+        {
+          "step": 600,
+          "val_seen": 1.9501333683729172,
+          "val_deployed": 1.8765173703432083
+        },
+        {
+          "step": 700,
+          "val_seen": 1.9130308479070663,
+          "val_deployed": 1.881811797618866
+        },
+        {
+          "step": 800,
+          "val_seen": 1.8676809966564178,
+          "val_deployed": 1.884549230337143
+        },
+        {
+          "step": 900,
+          "val_seen": 1.827033206820488,
+          "val_deployed": 1.8250453472137451
+        },
+        {
+          "step": 1000,
+          "val_seen": 1.7829622328281403,
+          "val_deployed": 1.8872083574533463
+        },
+        {
+          "step": 1100,
+          "val_seen": 1.7699191719293594,
+          "val_deployed": 1.6300843060016632
+        },
+        {
+          "step": 1200,
+          "val_seen": 1.7294743955135345,
+          "val_deployed": 1.7981487810611725
+        },
+        {
+          "step": 1300,
+          "val_seen": 1.7364728599786758,
+          "val_deployed": 1.682092308998108
+        },
+        {
+          "step": 1400,
+          "val_seen": 1.6858940720558167,
+          "val_deployed": 1.6774853467941284
+        },
+        {
+          "step": 1500,
+          "val_seen": 1.6857091337442398,
+          "val_deployed": 1.6895458698272705
+        }
+      ],
+      "first_block_grad": 2.893097400665283,
+      "last_block_grad": 1.8716212511062622,
+      "grads": [
+        2.893097400665283,
+        2.6001136302948,
+        2.4300122261047363,
+        2.24224853515625,
+        2.29226016998291,
+        2.1076738834381104,
+        1.941451907157898,
+        1.8716212511062622
+      ],
+      "last_layer_attention_entropy": 0.3793489336967468,
+      "qkv_weight_rms": 0.04622960463166237,
+      "sample": "ROMEO:\nThy farms it when? I would nears! would gelst, great\nDess him thee recharn of bleshelf: in the contents,\nAlorniable mann",
+      "seconds": 4034.8152203559875
+    },
+    {
+      "run": {
+        "label": "기준",
+        "seed": 1,
+        "n_layer": 8,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.182300567626953,
+          "val_deployed": 4.177683532238007
+        },
+        {
+          "step": 100,
+          "val_seen": 2.633103162050247,
+          "val_deployed": 2.679668962955475
+        },
+        {
+          "step": 200,
+          "val_seen": 2.4181117713451385,
+          "val_deployed": 2.4924837052822113
+        },
+        {
+          "step": 300,
+          "val_seen": 2.2700212001800537,
+          "val_deployed": 2.314405173063278
+        },
+        {
+          "step": 400,
+          "val_seen": 2.1486508548259735,
+          "val_deployed": 2.1874777376651764
+        },
+        {
+          "step": 500,
+          "val_seen": 2.0460290610790253,
+          "val_deployed": 2.1066186130046844
+        },
+        {
+          "step": 600,
+          "val_seen": 1.9839201718568802,
+          "val_deployed": 1.9639335721731186
+        },
+        {
+          "step": 700,
+          "val_seen": 1.951028198003769,
+          "val_deployed": 1.9421915113925934
+        },
+        {
+          "step": 800,
+          "val_seen": 1.890774354338646,
+          "val_deployed": 1.9153378456830978
+        },
+        {
+          "step": 900,
+          "val_seen": 1.8596668094396591,
+          "val_deployed": 1.7982809394598007
+        },
+        {
+          "step": 1000,
+          "val_seen": 1.8109884560108185,
+          "val_deployed": 1.9106002300977707
+        },
+        {
+          "step": 1100,
+          "val_seen": 1.7880806028842926,
+          "val_deployed": 1.693632572889328
+        },
+        {
+          "step": 1200,
+          "val_seen": 1.7569838911294937,
+          "val_deployed": 1.8263197243213654
+        },
+        {
+          "step": 1300,
+          "val_seen": 1.7254868000745773,
+          "val_deployed": 1.6584500521421432
+        },
+        {
+          "step": 1400,
+          "val_seen": 1.6975122839212418,
+          "val_deployed": 1.681060016155243
+        },
+        {
+          "step": 1500,
+          "val_seen": 1.7007533460855484,
+          "val_deployed": 1.67545685172081
+        }
+      ],
+      "first_block_grad": 3.178605556488037,
+      "last_block_grad": 1.8501073122024536,
+      "grads": [
+        3.178605556488037,
+        2.691939115524292,
+        2.365007162094116,
+        2.274764060974121,
+        2.062974452972412,
+        1.9504458904266357,
+        1.9408808946609497,
+        1.8501073122024536
+      ],
+      "last_layer_attention_entropy": 0.4503780007362366,
+      "qkv_weight_rms": 0.046588096767663956,
+      "sample": "ROMEO:\nThy fahell had selter our foes,\nAnd in I tost than of thy hatity\nThre hath hour beievis outs him; that's your way,\nFranc",
+      "seconds": 4035.2957594394684
+    },
+    {
+      "run": {
+        "label": "기준",
+        "seed": 2,
+        "n_layer": 8,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.192170321941376,
+          "val_deployed": 4.162201166152954
+        },
+        {
+          "step": 100,
+          "val_seen": 2.611082434654236,
+          "val_deployed": 2.6870360374450684
+        },
+        {
+          "step": 200,
+          "val_seen": 2.4049069583415985,
+          "val_deployed": 2.514565169811249
+        },
+        {
+          "step": 300,
+          "val_seen": 2.2432478070259094,
+          "val_deployed": 2.254272699356079
+        },
+        {
+          "step": 400,
+          "val_seen": 2.1176615357398987,
+          "val_deployed": 2.1952526718378067
+        },
+        {
+          "step": 500,
+          "val_seen": 2.0004589706659317,
+          "val_deployed": 2.075499087572098
+        },
+        {
+          "step": 600,
+          "val_seen": 1.9430245906114578,
+          "val_deployed": 1.848739206790924
+        },
+        {
+          "step": 700,
+          "val_seen": 1.9052620977163315,
+          "val_deployed": 1.9168016612529755
+        },
+        {
+          "step": 800,
+          "val_seen": 1.8415227383375168,
+          "val_deployed": 1.831530287861824
+        },
+        {
+          "step": 900,
+          "val_seen": 1.818465992808342,
+          "val_deployed": 1.7573815733194351
+        },
+        {
+          "step": 1000,
+          "val_seen": 1.7821055799722672,
+          "val_deployed": 1.8251810371875763
+        },
+        {
+          "step": 1100,
+          "val_seen": 1.755862519145012,
+          "val_deployed": 1.6262743175029755
+        },
+        {
+          "step": 1200,
+          "val_seen": 1.7199140787124634,
+          "val_deployed": 1.7835696190595627
+        },
+        {
+          "step": 1300,
+          "val_seen": 1.7208576798439026,
+          "val_deployed": 1.6980578005313873
+        },
+        {
+          "step": 1400,
+          "val_seen": 1.676258310675621,
+          "val_deployed": 1.643321469426155
+        },
+        {
+          "step": 1500,
+          "val_seen": 1.6956717371940613,
+          "val_deployed": 1.6382642686367035
+        }
+      ],
+      "first_block_grad": 3.1561145782470703,
+      "last_block_grad": 1.9414281845092773,
+      "grads": [
+        3.1561145782470703,
+        2.8278934955596924,
+        2.5978715419769287,
+        2.2754125595092773,
+        2.1302056312561035,
+        2.0142176151275635,
+        1.9297181367874146,
+        1.9414281845092773
+      ],
+      "last_layer_attention_entropy": 0.3778321444988251,
+      "qkv_weight_rms": 0.047181494534015656,
+      "sample": "ROMEO:\nThy fares it wisely it Haster hath, in I to tear\nThou, with that here hath think of lies.\nTell most at of to his permain",
+      "seconds": 4045.6228675842285
+    },
+    {
+      "run": {
+        "label": "√d_k 제거",
+        "seed": 0,
+        "n_layer": 8,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": false,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.200622618198395,
+          "val_deployed": 4.201680898666382
+        },
+        {
+          "step": 100,
+          "val_seen": 2.52570241689682,
+          "val_deployed": 2.6265611052513123
+        },
+        {
+          "step": 200,
+          "val_seen": 2.2672891318798065,
+          "val_deployed": 2.3411993086338043
+        },
+        {
+          "step": 300,
+          "val_seen": 2.1269248723983765,
+          "val_deployed": 2.1949777603149414
+        },
+        {
+          "step": 400,
+          "val_seen": 2.0441884994506836,
+          "val_deployed": 2.048129439353943
+        },
+        {
+          "step": 500,
+          "val_seen": 1.9661405086517334,
+          "val_deployed": 1.9973682314157486
+        },
+        {
+          "step": 600,
+          "val_seen": 1.8911118358373642,
+          "val_deployed": 1.810262843966484
+        },
+        {
+          "step": 700,
+          "val_seen": 1.8676959574222565,
+          "val_deployed": 1.8279818445444107
+        },
+        {
+          "step": 800,
+          "val_seen": 1.8400365561246872,
+          "val_deployed": 1.8217909187078476
+        },
+        {
+          "step": 900,
+          "val_seen": 1.8080554008483887,
+          "val_deployed": 1.7365205585956573
+        },
+        {
+          "step": 1000,
+          "val_seen": 1.7660797834396362,
+          "val_deployed": 1.8248687833547592
+        },
+        {
+          "step": 1100,
+          "val_seen": 1.7501698434352875,
+          "val_deployed": 1.5652373284101486
+        },
+        {
+          "step": 1200,
+          "val_seen": 1.7230526506900787,
+          "val_deployed": 1.7456431686878204
+        },
+        {
+          "step": 1300,
+          "val_seen": 1.704368233680725,
+          "val_deployed": 1.6724338978528976
+        },
+        {
+          "step": 1400,
+          "val_seen": 1.687751293182373,
+          "val_deployed": 1.6880012899637222
+        },
+        {
+          "step": 1500,
+          "val_seen": 1.6722798198461533,
+          "val_deployed": 1.6179344207048416
+        }
+      ],
+      "first_block_grad": 2.902397394180298,
+      "last_block_grad": 1.8731886148452759,
+      "grads": [
+        2.902397394180298,
+        2.600337028503418,
+        2.4263486862182617,
+        2.2373862266540527,
+        2.287031888961792,
+        2.0995187759399414,
+        1.9402780532836914,
+        1.8731886148452759
+      ],
+      "last_layer_attention_entropy": 0.2759535610675812,
+      "qkv_weight_rms": 0.037707243114709854,
+      "sample": "ROMEO:\nThou most keep selt me, calless'd you?\nIf let thanks you, how thereom he joint seemels!\nThen, impetiation porties, and c",
+      "seconds": 4010.3491747379303
+    },
+    {
+      "run": {
+        "label": "√d_k 제거",
+        "seed": 1,
+        "n_layer": 8,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": false,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.1833003759384155,
+          "val_deployed": 4.177800476551056
+        },
+        {
+          "step": 100,
+          "val_seen": 2.6080181300640106,
+          "val_deployed": 2.6810252368450165
+        },
+        {
+          "step": 200,
+          "val_seen": 2.342891037464142,
+          "val_deployed": 2.4184237718582153
+        },
+        {
+          "step": 300,
+          "val_seen": 2.1844097077846527,
+          "val_deployed": 2.2651157081127167
+        },
+        {
+          "step": 400,
+          "val_seen": 2.09619277715683,
+          "val_deployed": 2.0809154361486435
+        },
+        {
+          "step": 500,
+          "val_seen": 2.0196554511785507,
+          "val_deployed": 2.0250184237957
+        },
+        {
+          "step": 600,
+          "val_seen": 1.9668953567743301,
+          "val_deployed": 1.84541617333889
+        },
+        {
+          "step": 700,
+          "val_seen": 1.9390152990818024,
+          "val_deployed": 1.8461828231811523
+        },
+        {
+          "step": 800,
+          "val_seen": 1.8720248490571976,
+          "val_deployed": 1.8436755239963531
+        },
+        {
+          "step": 900,
+          "val_seen": 1.8271044194698334,
+          "val_deployed": 1.7860754877328873
+        },
+        {
+          "step": 1000,
+          "val_seen": 1.8183642625808716,
+          "val_deployed": 1.8755894005298615
+        },
+        {
+          "step": 1100,
+          "val_seen": 1.7888958901166916,
+          "val_deployed": 1.6594907343387604
+        },
+        {
+          "step": 1200,
+          "val_seen": 1.7505313009023666,
+          "val_deployed": 1.8189942687749863
+        },
+        {
+          "step": 1300,
+          "val_seen": 1.748162418603897,
+          "val_deployed": 1.654620736837387
+        },
+        {
+          "step": 1400,
+          "val_seen": 1.713050827383995,
+          "val_deployed": 1.6594345420598984
+        },
+        {
+          "step": 1500,
+          "val_seen": 1.6950844377279282,
+          "val_deployed": 1.6622978746891022
+        }
+      ],
+      "first_block_grad": 3.155359983444214,
+      "last_block_grad": 1.8424594402313232,
+      "grads": [
+        3.155359983444214,
+        2.679487466812134,
+        2.3565475940704346,
+        2.2711150646209717,
+        2.0587546825408936,
+        1.9461387395858765,
+        1.9352256059646606,
+        1.8424594402313232
+      ],
+      "last_layer_attention_entropy": 0.24544017016887665,
+      "qkv_weight_rms": 0.03808305785059929,
+      "sample": "ROMEO:\nThou make kiss! Then, our mueroan wounds,\nThe true of thy hathtereene hath this being some one,\nAnd at of to yield execu",
+      "seconds": 4013.780688047409
+    },
+    {
+      "run": {
+        "label": "√d_k 제거",
+        "seed": 2,
+        "n_layer": 8,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": false,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.192188143730164,
+          "val_deployed": 4.161300003528595
+        },
+        {
+          "step": 100,
+          "val_seen": 2.524464398622513,
+          "val_deployed": 2.6253546476364136
+        },
+        {
+          "step": 200,
+          "val_seen": 2.2817463874816895,
+          "val_deployed": 2.48592409491539
+        },
+        {
+          "step": 300,
+          "val_seen": 2.1350868344306946,
+          "val_deployed": 2.188756972551346
+        },
+        {
+          "step": 400,
+          "val_seen": 2.0370652973651886,
+          "val_deployed": 2.0781769305467606
+        },
+        {
+          "step": 500,
+          "val_seen": 1.9735224694013596,
+          "val_deployed": 1.994308888912201
+        },
+        {
+          "step": 600,
+          "val_seen": 1.9386557936668396,
+          "val_deployed": 1.827294483780861
+        },
+        {
+          "step": 700,
+          "val_seen": 1.8863170444965363,
+          "val_deployed": 1.8574809581041336
+        },
+        {
+          "step": 800,
+          "val_seen": 1.852083146572113,
+          "val_deployed": 1.9219087809324265
+        },
+        {
+          "step": 900,
+          "val_seen": 1.8144621402025223,
+          "val_deployed": 1.7687022238969803
+        },
+        {
+          "step": 1000,
+          "val_seen": 1.7779151052236557,
+          "val_deployed": 1.8332061022520065
+        },
+        {
+          "step": 1100,
+          "val_seen": 1.742234706878662,
+          "val_deployed": 1.5884731262922287
+        },
+        {
+          "step": 1200,
+          "val_seen": 1.7203360199928284,
+          "val_deployed": 1.7637825459241867
+        },
+        {
+          "step": 1300,
+          "val_seen": 1.7170164436101913,
+          "val_deployed": 1.6588803976774216
+        },
+        {
+          "step": 1400,
+          "val_seen": 1.692073792219162,
+          "val_deployed": 1.6843670308589935
+        },
+        {
+          "step": 1500,
+          "val_seen": 1.68997460603714,
+          "val_deployed": 1.6949219852685928
+        }
+      ],
+      "first_block_grad": 3.1641478538513184,
+      "last_block_grad": 1.9380786418914795,
+      "grads": [
+        3.1641478538513184,
+        2.8265836238861084,
+        2.5999131202697754,
+        2.2734594345092773,
+        2.1300971508026123,
+        2.013936758041382,
+        1.9210753440856934,
+        1.9380786418914795
+      ],
+      "last_layer_attention_entropy": 0.28265684843063354,
+      "qkv_weight_rms": 0.03837466984987259,
+      "sample": "ROMEO:\nThy father haste:\nWe would never by the gels froMe\nTo to givint bear change of so hell!\nThese is stants, your weapon and",
+      "seconds": 4015.140461921692
+    },
+    {
+      "run": {
+        "label": "causal mask 제거",
+        "seed": 0,
+        "n_layer": 8,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": false,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.199641466140747,
+          "val_deployed": 4.1979981660842896
+        },
+        {
+          "step": 100,
+          "val_seen": 2.5121205747127533,
+          "val_deployed": 2.6784905195236206
+        },
+        {
+          "step": 200,
+          "val_seen": 0.8197022899985313,
+          "val_deployed": 3.0490021109580994
+        },
+        {
+          "step": 300,
+          "val_seen": 0.0627275095321238,
+          "val_deployed": 2.823091745376587
+        },
+        {
+          "step": 400,
+          "val_seen": 0.049273863434791565,
+          "val_deployed": 2.6374679803848267
+        },
+        {
+          "step": 500,
+          "val_seen": 0.04684564797207713,
+          "val_deployed": 2.6897119283676147
+        },
+        {
+          "step": 600,
+          "val_seen": 0.044661388732492924,
+          "val_deployed": 2.625425159931183
+        },
+        {
+          "step": 700,
+          "val_seen": 0.04279680084437132,
+          "val_deployed": 2.573265105485916
+        },
+        {
+          "step": 800,
+          "val_seen": 0.04263021890074015,
+          "val_deployed": 2.6008910536766052
+        },
+        {
+          "step": 900,
+          "val_seen": 0.04162381263449788,
+          "val_deployed": 2.551880568265915
+        },
+        {
+          "step": 1000,
+          "val_seen": 0.04152057971805334,
+          "val_deployed": 2.5698441863059998
+        },
+        {
+          "step": 1100,
+          "val_seen": 0.040092401672154665,
+          "val_deployed": 2.493977576494217
+        },
+        {
+          "step": 1200,
+          "val_seen": 0.040692365262657404,
+          "val_deployed": 2.537360429763794
+        },
+        {
+          "step": 1300,
+          "val_seen": 0.037604786455631256,
+          "val_deployed": 2.3542997539043427
+        },
+        {
+          "step": 1400,
+          "val_seen": 0.0393342855386436,
+          "val_deployed": 2.469742774963379
+        },
+        {
+          "step": 1500,
+          "val_seen": 0.03720228746533394,
+          "val_deployed": 2.329048126935959
+        }
+      ],
+      "first_block_grad": 2.922614574432373,
+      "last_block_grad": 1.868977427482605,
+      "grads": [
+        2.922614574432373,
+        2.5955965518951416,
+        2.416226625442505,
+        2.248753547668457,
+        2.2729318141937256,
+        2.0956428050994873,
+        1.9231489896774292,
+        1.868977427482605
+      ],
+      "last_layer_attention_entropy": 0.7718130946159363,
+      "qkv_weight_rms": 0.031225435435771942,
+      "sample": "ROMEO:\nOPOMOMMMOOMAMAMMMALMWAMMEMAMAMAMAOMMAMMIMAMMMAMAMAMMMMMMAMOOPE:\nHeare ha?A Domos AHAFA:Bigeeerimy peatiory weait pee anc",
+      "seconds": 3911.6674807071686
+    },
+    {
+      "run": {
+        "label": "causal mask 제거",
+        "seed": 1,
+        "n_layer": 8,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": false,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.18261194229126,
+          "val_deployed": 4.180799424648285
+        },
+        {
+          "step": 100,
+          "val_seen": 2.5042261481285095,
+          "val_deployed": 2.669065237045288
+        },
+        {
+          "step": 200,
+          "val_seen": 0.7511826008558273,
+          "val_deployed": 3.1726712584495544
+        },
+        {
+          "step": 300,
+          "val_seen": 0.060813046991825104,
+          "val_deployed": 2.734626293182373
+        },
+        {
+          "step": 400,
+          "val_seen": 0.049810920376330614,
+          "val_deployed": 2.6608863472938538
+        },
+        {
+          "step": 500,
+          "val_seen": 0.045673344284296036,
+          "val_deployed": 2.6189563274383545
+        },
+        {
+          "step": 600,
+          "val_seen": 0.04330768436193466,
+          "val_deployed": 2.550738126039505
+        },
+        {
+          "step": 700,
+          "val_seen": 0.043442847207188606,
+          "val_deployed": 2.612918943166733
+        },
+        {
+          "step": 800,
+          "val_seen": 0.041146609000861645,
+          "val_deployed": 2.5143845081329346
+        },
+        {
+          "step": 900,
+          "val_seen": 0.04051487799733877,
+          "val_deployed": 2.494016319513321
+        },
+        {
+          "step": 1000,
+          "val_seen": 0.041595317889004946,
+          "val_deployed": 2.578438252210617
+        },
+        {
+          "step": 1100,
+          "val_seen": 0.041044965386390686,
+          "val_deployed": 2.5552367866039276
+        },
+        {
+          "step": 1200,
+          "val_seen": 0.041277683805674314,
+          "val_deployed": 2.576929062604904
+        },
+        {
+          "step": 1300,
+          "val_seen": 0.03865225985646248,
+          "val_deployed": 2.41585972905159
+        },
+        {
+          "step": 1400,
+          "val_seen": 0.03955794218927622,
+          "val_deployed": 2.483396351337433
+        },
+        {
+          "step": 1500,
+          "val_seen": 0.036537624429911375,
+          "val_deployed": 2.295324981212616
+        }
+      ],
+      "first_block_grad": 3.2794435024261475,
+      "last_block_grad": 1.8750501871109009,
+      "grads": [
+        3.2794435024261475,
+        2.820143699645996,
+        2.4611294269561768,
+        2.3386967182159424,
+        2.119231700897217,
+        1.9745384454727173,
+        1.9415359497070312,
+        1.8750501871109009
+      ],
+      "last_layer_attention_entropy": 0.7881956100463867,
+      "qkv_weight_rms": 0.031096408143639565,
+      "sample": "ROMEO:\nOE\nOL\nOMEEO:\nOE\nREO:\nREOLBOLEOLBOLAMEOOLEEOOOOLUMO:\nBORORE:\nBnty\nTere yeth Dooos chellesegeeer, the,\nthory oreit pee anc",
+      "seconds": 3909.037479162216
+    },
+    {
+      "run": {
+        "label": "causal mask 제거",
+        "seed": 2,
+        "n_layer": 8,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": false,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.191030025482178,
+          "val_deployed": 4.162065088748932
+        },
+        {
+          "step": 100,
+          "val_seen": 2.615373134613037,
+          "val_deployed": 2.7000825703144073
+        },
+        {
+          "step": 200,
+          "val_seen": 2.4234867691993713,
+          "val_deployed": 2.640858083963394
+        },
+        {
+          "step": 300,
+          "val_seen": 0.103730752132833,
+          "val_deployed": 3.1002936959266663
+        },
+        {
+          "step": 400,
+          "val_seen": 0.05477466667070985,
+          "val_deployed": 2.7644902169704437
+        },
+        {
+          "step": 500,
+          "val_seen": 0.047805946320295334,
+          "val_deployed": 2.6480210423469543
+        },
+        {
+          "step": 600,
+          "val_seen": 0.0445039551705122,
+          "val_deployed": 2.5887629091739655
+        },
+        {
+          "step": 700,
+          "val_seen": 0.04407274164259434,
+          "val_deployed": 2.6331842839717865
+        },
+        {
+          "step": 800,
+          "val_seen": 0.04280742257833481,
+          "val_deployed": 2.5956282019615173
+        },
+        {
+          "step": 900,
+          "val_seen": 0.040472442749887705,
+          "val_deployed": 2.4789671301841736
+        },
+        {
+          "step": 1000,
+          "val_seen": 0.04062540642917156,
+          "val_deployed": 2.5140508711338043
+        },
+        {
+          "step": 1100,
+          "val_seen": 0.040037102065980434,
+          "val_deployed": 2.484950512647629
+        },
+        {
+          "step": 1200,
+          "val_seen": 0.03995694313198328,
+          "val_deployed": 2.4861740469932556
+        },
+        {
+          "step": 1300,
+          "val_seen": 0.03861981350928545,
+          "val_deployed": 2.4139188826084137
+        },
+        {
+          "step": 1400,
+          "val_seen": 0.038694317918270826,
+          "val_deployed": 2.4201923310756683
+        },
+        {
+          "step": 1500,
+          "val_seen": 0.036024685483425856,
+          "val_deployed": 2.256276249885559
+        }
+      ],
+      "first_block_grad": 3.2443714141845703,
+      "last_block_grad": 1.8727455139160156,
+      "grads": [
+        3.2443714141845703,
+        2.9089555740356445,
+        2.617492198944092,
+        2.304396867752075,
+        2.0891246795654297,
+        2.015702486038208,
+        1.8683000802993774,
+        1.8727455139160156
+      ],
+      "last_layer_attention_entropy": 0.8744619488716125,
+      "qkv_weight_rms": 0.02980734407901764,
+      "sample": "ROMEO:\nMEORVORVOROFRORO:\nO:\n\nMRROOREOR:\n\nPEOR\nORIOOOR:\nMROR\nOOROOOO ROLOLO:\nO:\nIn DoRO O:\nAlld Tous houns wats, yoor we Mor ION",
+      "seconds": 3914.5869250297546
+    },
+    {
+      "run": {
+        "label": "잔차 연결 제거",
+        "seed": 0,
+        "n_layer": 8,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": false
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.164933919906616,
+          "val_deployed": 4.161123633384705
+        },
+        {
+          "step": 100,
+          "val_seen": 3.3577622175216675,
+          "val_deployed": 3.3985026478767395
+        },
+        {
+          "step": 200,
+          "val_seen": 3.3546424508094788,
+          "val_deployed": 3.4028597474098206
+        },
+        {
+          "step": 300,
+          "val_seen": 3.349170356988907,
+          "val_deployed": 3.3541676998138428
+        },
+        {
+          "step": 400,
+          "val_seen": 3.3513839840888977,
+          "val_deployed": 3.3372406661510468
+        },
+        {
+          "step": 500,
+          "val_seen": 3.352048844099045,
+          "val_deployed": 3.3394336104393005
+        },
+        {
+          "step": 600,
+          "val_seen": 3.3728383481502533,
+          "val_deployed": 3.3605674505233765
+        },
+        {
+          "step": 700,
+          "val_seen": 3.3695786595344543,
+          "val_deployed": 3.389443963766098
+        },
+        {
+          "step": 800,
+          "val_seen": 3.338447242975235,
+          "val_deployed": 3.3236582577228546
+        },
+        {
+          "step": 900,
+          "val_seen": 3.3552531003952026,
+          "val_deployed": 3.302275061607361
+        },
+        {
+          "step": 1000,
+          "val_seen": 3.3375052511692047,
+          "val_deployed": 3.3870293498039246
+        },
+        {
+          "step": 1100,
+          "val_seen": 3.345083475112915,
+          "val_deployed": 3.3470796644687653
+        },
+        {
+          "step": 1200,
+          "val_seen": 3.3511246740818024,
+          "val_deployed": 3.39407542347908
+        },
+        {
+          "step": 1300,
+          "val_seen": 3.3546974658966064,
+          "val_deployed": 3.368685305118561
+        },
+        {
+          "step": 1400,
+          "val_seen": 3.349901556968689,
+          "val_deployed": 3.382517486810684
+        },
+        {
+          "step": 1500,
+          "val_seen": 3.334024578332901,
+          "val_deployed": 3.2819729447364807
+        }
+      ],
+      "first_block_grad": 10.121604919433594,
+      "last_block_grad": 10.296011924743652,
+      "grads": [
+        10.121604919433594,
+        8.657413482666016,
+        11.210728645324707,
+        11.927136421203613,
+        13.541693687438965,
+        12.863346099853516,
+        13.023945808410645,
+        10.296011924743652
+      ],
+      "last_layer_attention_entropy": 1.0,
+      "qkv_weight_rms": 0.021070659160614014,
+      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc",
+      "seconds": 3978.026755332947
+    },
+    {
+      "run": {
+        "label": "잔차 연결 제거",
+        "seed": 1,
+        "n_layer": 8,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": false
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.151477694511414,
+          "val_deployed": 4.164126634597778
+        },
+        {
+          "step": 100,
+          "val_seen": 3.3593843579292297,
+          "val_deployed": 3.397403508424759
+        },
+        {
+          "step": 200,
+          "val_seen": 3.3522709012031555,
+          "val_deployed": 3.3973897993564606
+        },
+        {
+          "step": 300,
+          "val_seen": 3.3480373322963715,
+          "val_deployed": 3.346333682537079
+        },
+        {
+          "step": 400,
+          "val_seen": 3.3498858213424683,
+          "val_deployed": 3.3349148333072662
+        },
+        {
+          "step": 500,
+          "val_seen": 3.3562087416648865,
+          "val_deployed": 3.341889202594757
+        },
+        {
+          "step": 600,
+          "val_seen": 3.3671590387821198,
+          "val_deployed": 3.355581820011139
+        },
+        {
+          "step": 700,
+          "val_seen": 3.370531976222992,
+          "val_deployed": 3.390844315290451
+        },
+        {
+          "step": 800,
+          "val_seen": 3.3388770520687103,
+          "val_deployed": 3.3263115286827087
+        },
+        {
+          "step": 900,
+          "val_seen": 3.3551532328128815,
+          "val_deployed": 3.3007249534130096
+        },
+        {
+          "step": 1000,
+          "val_seen": 3.338479608297348,
+          "val_deployed": 3.3833844661712646
+        },
+        {
+          "step": 1100,
+          "val_seen": 3.3438591063022614,
+          "val_deployed": 3.345150351524353
+        },
+        {
+          "step": 1200,
+          "val_seen": 3.3527444303035736,
+          "val_deployed": 3.392195075750351
+        },
+        {
+          "step": 1300,
+          "val_seen": 3.3536312878131866,
+          "val_deployed": 3.3693041503429413
+        },
+        {
+          "step": 1400,
+          "val_seen": 3.3486432135105133,
+          "val_deployed": 3.387178987264633
+        },
+        {
+          "step": 1500,
+          "val_seen": 3.3350637555122375,
+          "val_deployed": 3.2842316031455994
+        }
+      ],
+      "first_block_grad": 9.914894104003906,
+      "last_block_grad": 11.443914413452148,
+      "grads": [
+        9.914894104003906,
+        10.335561752319336,
+        8.439937591552734,
+        9.496748924255371,
+        12.63308048248291,
+        12.37130355834961,
+        13.067519187927246,
+        11.443914413452148
+      ],
+      "last_layer_attention_entropy": 1.0,
+      "qkv_weight_rms": 0.020779874175786972,
+      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid Ig\nlstetUMeco ueByghd ntw\nherM hstn DoRo \neielCsBeg eehi \nstwatso ylor\ni kpee aRc",
+      "seconds": 3971.0969789028168
+    },
+    {
+      "run": {
+        "label": "잔차 연결 제거",
+        "seed": 2,
+        "n_layer": 8,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": false
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.1691113114356995,
+          "val_deployed": 4.186421871185303
+        },
+        {
+          "step": 100,
+          "val_seen": 3.3589335680007935,
+          "val_deployed": 3.3987329304218292
+        },
+        {
+          "step": 200,
+          "val_seen": 3.3530307710170746,
+          "val_deployed": 3.394930988550186
+        },
+        {
+          "step": 300,
+          "val_seen": 3.35010302066803,
+          "val_deployed": 3.354186236858368
+        },
+        {
+          "step": 400,
+          "val_seen": 3.3495316207408905,
+          "val_deployed": 3.3347727954387665
+        },
+        {
+          "step": 500,
+          "val_seen": 3.3562784790992737,
+          "val_deployed": 3.3470421135425568
+        },
+        {
+          "step": 600,
+          "val_seen": 3.3669537603855133,
+          "val_deployed": 3.3502000868320465
+        },
+        {
+          "step": 700,
+          "val_seen": 3.3700872361660004,
+          "val_deployed": 3.3944017589092255
+        },
+        {
+          "step": 800,
+          "val_seen": 3.337648183107376,
+          "val_deployed": 3.321991592645645
+        },
+        {
+          "step": 900,
+          "val_seen": 3.3547708690166473,
+          "val_deployed": 3.301943004131317
+        },
+        {
+          "step": 1000,
+          "val_seen": 3.3385814130306244,
+          "val_deployed": 3.390565723180771
+        },
+        {
+          "step": 1100,
+          "val_seen": 3.342122405767441,
+          "val_deployed": 3.3359560072422028
+        },
+        {
+          "step": 1200,
+          "val_seen": 3.3508624136447906,
+          "val_deployed": 3.3908631205558777
+        },
+        {
+          "step": 1300,
+          "val_seen": 3.3511509597301483,
+          "val_deployed": 3.3649754524230957
+        },
+        {
+          "step": 1400,
+          "val_seen": 3.348159283399582,
+          "val_deployed": 3.3838776648044586
+        },
+        {
+          "step": 1500,
+          "val_seen": 3.3351166248321533,
+          "val_deployed": 3.2849407494068146
+        }
+      ],
+      "first_block_grad": 12.37077522277832,
+      "last_block_grad": 10.806629180908203,
+      "grads": [
+        12.37077522277832,
+        11.596038818359375,
+        12.305558204650879,
+        15.67199993133545,
+        15.284598350524902,
+        13.170503616333008,
+        11.708359718322754,
+        10.806629180908203
+      ],
+      "last_layer_attention_entropy": 1.0,
+      "qkv_weight_rms": 0.02079080417752266,
+      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc",
+      "seconds": 3973.190541267395
+    },
+    {
+      "run": {
+        "label": "넓은 헤드 기준",
+        "seed": 0,
+        "n_layer": 4,
+        "n_head": 2,
+        "n_embd": 512,
+        "block": 64,
+        "batch": 32,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.197599232196808,
+          "val_deployed": 4.228965878486633
+        },
+        {
+          "step": 100,
+          "val_seen": 3.2193732261657715,
+          "val_deployed": 3.358142226934433
+        },
+        {
+          "step": 200,
+          "val_seen": 2.8704318404197693,
+          "val_deployed": 2.908288598060608
+        },
+        {
+          "step": 300,
+          "val_seen": 2.7408745884895325,
+          "val_deployed": 2.6528953909873962
+        },
+        {
+          "step": 400,
+          "val_seen": 2.6932546198368073,
+          "val_deployed": 2.7082704305648804
+        },
+        {
+          "step": 500,
+          "val_seen": 2.6701554656028748,
+          "val_deployed": 2.723957747220993
+        },
+        {
+          "step": 600,
+          "val_seen": 2.641190677881241,
+          "val_deployed": 2.622062474489212
+        },
+        {
+          "step": 700,
+          "val_seen": 2.63980695605278,
+          "val_deployed": 2.598660320043564
+        },
+        {
+          "step": 800,
+          "val_seen": 2.5950515270233154,
+          "val_deployed": 2.503942459821701
+        },
+        {
+          "step": 900,
+          "val_seen": 2.5716685950756073,
+          "val_deployed": 2.572762757539749
+        },
+        {
+          "step": 1000,
+          "val_seen": 2.5751223862171173,
+          "val_deployed": 2.5950632989406586
+        },
+        {
+          "step": 1100,
+          "val_seen": 2.5619324445724487,
+          "val_deployed": 2.5186142325401306
+        },
+        {
+          "step": 1200,
+          "val_seen": 2.563533216714859,
+          "val_deployed": 2.5549625754356384
+        },
+        {
+          "step": 1300,
+          "val_seen": 2.563554733991623,
+          "val_deployed": 2.507744997739792
+        },
+        {
+          "step": 1400,
+          "val_seen": 2.599780023097992,
+          "val_deployed": 2.556629627943039
+        },
+        {
+          "step": 1500,
+          "val_seen": 2.6662153601646423,
+          "val_deployed": 2.574851095676422
+        }
+      ],
+      "first_block_grad": 8.581646919250488,
+      "last_block_grad": 4.711995601654053,
+      "grads": [
+        8.581646919250488,
+        6.258528709411621,
+        5.157041549682617,
+        4.711995601654053
+      ],
+      "last_layer_attention_entropy": 0.012990427203476429,
+      "qkv_weight_rms": 0.040035586804151535,
+      "sample": "ROMEO:\nt bremhise hawhselteilouca neaman youd INAlste gay ofuesy he nty\nTere heth thio ORielis sanongid\nWe.\nthory we w keer anc",
+      "seconds": 19005.101920843124
+    },
+    {
+      "run": {
+        "label": "넓은 헤드 기준",
+        "seed": 1,
+        "n_layer": 4,
+        "n_head": 2,
+        "n_embd": 512,
+        "block": 64,
+        "batch": 32,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.386252462863922,
+          "val_deployed": 4.400015234947205
+        },
+        {
+          "step": 100,
+          "val_seen": 3.0229603350162506,
+          "val_deployed": 2.9736353754997253
+        },
+        {
+          "step": 200,
+          "val_seen": 2.74190491437912,
+          "val_deployed": 2.811587691307068
+        },
+        {
+          "step": 300,
+          "val_seen": 2.6312238574028015,
+          "val_deployed": 2.6135628819465637
+        },
+        {
+          "step": 400,
+          "val_seen": 2.5556010007858276,
+          "val_deployed": 2.5635469555854797
+        },
+        {
+          "step": 500,
+          "val_seen": 2.616928815841675,
+          "val_deployed": 2.641219526529312
+        },
+        {
+          "step": 600,
+          "val_seen": 2.5399621725082397,
+          "val_deployed": 2.645986318588257
+        },
+        {
+          "step": 700,
+          "val_seen": 2.5331235229969025,
+          "val_deployed": 2.4508485794067383
+        },
+        {
+          "step": 800,
+          "val_seen": 2.505665957927704,
+          "val_deployed": 2.3915047347545624
+        },
+        {
+          "step": 900,
+          "val_seen": 2.5241385996341705,
+          "val_deployed": 2.57850980758667
+        },
+        {
+          "step": 1000,
+          "val_seen": 2.5267226099967957,
+          "val_deployed": 2.568340629339218
+        },
+        {
+          "step": 1100,
+          "val_seen": 2.494170069694519,
+          "val_deployed": 2.5018769800662994
+        },
+        {
+          "step": 1200,
+          "val_seen": 2.6153821647167206,
+          "val_deployed": 2.5318737030029297
+        },
+        {
+          "step": 1300,
+          "val_seen": 2.502419590950012,
+          "val_deployed": 2.501214474439621
+        },
+        {
+          "step": 1400,
+          "val_seen": 2.5000962018966675,
+          "val_deployed": 2.4522849917411804
+        },
+        {
+          "step": 1500,
+          "val_seen": 2.5229082107543945,
+          "val_deployed": 2.5542322397232056
+        }
+      ],
+      "first_block_grad": 11.693981170654297,
+      "last_block_grad": 5.63336181640625,
+      "grads": [
+        11.693981170654297,
+        8.028151512145996,
+        6.442503452301025,
+        5.63336181640625
+      ],
+      "last_layer_attention_entropy": 0.0045102499425411224,
+      "qkv_weight_rms": 0.043352071195840836,
+      "sample": "ROMEO:\nt y, mof d hewhsellerlouca meaman youd Ighoste grecofuroy hiththerere he?\n\nDURI ORHARCUBESINUS: t t atho y we w ke RYale",
+      "seconds": 19492.813524246216
+    },
+    {
+      "run": {
+        "label": "넓은 헤드 기준",
+        "seed": 2,
+        "n_layer": 4,
+        "n_head": 2,
+        "n_embd": 512,
+        "block": 64,
+        "batch": 32,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.242711126804352,
+          "val_deployed": 4.289197146892548
+        },
+        {
+          "step": 100,
+          "val_seen": 3.0955244302749634,
+          "val_deployed": 3.0249496698379517
+        },
+        {
+          "step": 200,
+          "val_seen": 2.90312123298645,
+          "val_deployed": 2.982120245695114
+        },
+        {
+          "step": 300,
+          "val_seen": 2.8093817830085754,
+          "val_deployed": 2.715371310710907
+        },
+        {
+          "step": 400,
+          "val_seen": 2.693614572286606,
+          "val_deployed": 2.7127106487751007
+        },
+        {
+          "step": 500,
+          "val_seen": 2.6937791407108307,
+          "val_deployed": 2.7397373616695404
+        },
+        {
+          "step": 600,
+          "val_seen": 2.6805737018585205,
+          "val_deployed": 2.6333325803279877
+        },
+        {
+          "step": 700,
+          "val_seen": 2.6724580824375153,
+          "val_deployed": 2.6023544669151306
+        },
+        {
+          "step": 800,
+          "val_seen": 2.646430552005768,
+          "val_deployed": 2.539633959531784
+        },
+        {
+          "step": 900,
+          "val_seen": 2.6412485241889954,
+          "val_deployed": 2.653251349925995
+        },
+        {
+          "step": 1000,
+          "val_seen": 2.628040909767151,
+          "val_deployed": 2.628745973110199
+        },
+        {
+          "step": 1100,
+          "val_seen": 2.6496706902980804,
+          "val_deployed": 2.58959499001503
+        },
+        {
+          "step": 1200,
+          "val_seen": 2.6240800321102142,
+          "val_deployed": 2.5476327538490295
+        },
+        {
+          "step": 1300,
+          "val_seen": 2.6138219833374023,
+          "val_deployed": 2.6398713886737823
+        },
+        {
+          "step": 1400,
+          "val_seen": 2.643738031387329,
+          "val_deployed": 2.5269875228405
+        },
+        {
+          "step": 1500,
+          "val_seen": 2.689409554004669,
+          "val_deployed": 2.6395091116428375
+        }
+      ],
+      "first_block_grad": 11.03683853149414,
+      "last_block_grad": 5.83014440536499,
+      "grads": [
+        11.03683853149414,
+        7.746299743652344,
+        6.647548198699951,
+        5.83014440536499
+      ],
+      "last_layer_attention_entropy": 0.06656773388385773,
+      "qkv_weight_rms": 0.041395269334316254,
+      "sample": "ROMEO:\nThyremhOF kthorselterlooou meaman youd Ixelste gM cooue y hif ty here he?\n\nDooo berel sseanenhicheldathory or w kper acc",
+      "seconds": 19722.630159139633
+    },
+    {
+      "run": {
+        "label": "넓은 헤드 √d_k 제거",
+        "seed": 0,
+        "n_layer": 4,
+        "n_head": 2,
+        "n_embd": 512,
+        "block": 64,
+        "batch": 32,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": false,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.212378144264221,
+          "val_deployed": 4.236722707748413
+        },
+        {
+          "step": 100,
+          "val_seen": 3.066879689693451,
+          "val_deployed": 3.062790423631668
+        },
+        {
+          "step": 200,
+          "val_seen": 2.863148659467697,
+          "val_deployed": 2.9243923127651215
+        },
+        {
+          "step": 300,
+          "val_seen": 2.7854547798633575,
+          "val_deployed": 2.7411872148513794
+        },
+        {
+          "step": 400,
+          "val_seen": 2.7490673065185547,
+          "val_deployed": 2.7843970358371735
+        },
+        {
+          "step": 500,
+          "val_seen": 2.7568372786045074,
+          "val_deployed": 2.7881534695625305
+        },
+        {
+          "step": 600,
+          "val_seen": 2.7672495543956757,
+          "val_deployed": 2.8571106493473053
+        },
+        {
+          "step": 700,
+          "val_seen": 2.805174797773361,
+          "val_deployed": 2.79908087849617
+        },
+        {
+          "step": 800,
+          "val_seen": 2.7438303530216217,
+          "val_deployed": 2.6054393351078033
+        },
+        {
+          "step": 900,
+          "val_seen": 2.7565675377845764,
+          "val_deployed": 2.692804306745529
+        },
+        {
+          "step": 1000,
+          "val_seen": 2.7335892021656036,
+          "val_deployed": 2.7467992901802063
+        },
+        {
+          "step": 1100,
+          "val_seen": 2.7856086790561676,
+          "val_deployed": 2.7713749408721924
+        },
+        {
+          "step": 1200,
+          "val_seen": 2.7533114850521088,
+          "val_deployed": 2.705240488052368
+        },
+        {
+          "step": 1300,
+          "val_seen": 2.737366795539856,
+          "val_deployed": 2.6886264085769653
+        },
+        {
+          "step": 1400,
+          "val_seen": 2.7625361680984497,
+          "val_deployed": 2.590250164270401
+        },
+        {
+          "step": 1500,
+          "val_seen": 2.7952446937561035,
+          "val_deployed": 2.8113526105880737
+        }
+      ],
+      "first_block_grad": 6.495360374450684,
+      "last_block_grad": 3.548704147338867,
+      "grads": [
+        6.495360374450684,
+        4.603918075561523,
+        3.8627257347106934,
+        3.548704147338867
+      ],
+      "last_layer_attention_entropy": 0.005035995505750179,
+      "qkv_weight_rms": 0.034382231533527374,
+      "sample": "ROMEO:\nth remhis khe: selte,\nouca meaman youd Iotlste gM\n\no uesy h fnty here heth thio beielldseg serd Cse.\ntho y wr we per anc",
+      "seconds": 13732.49088358879
+    },
+    {
+      "run": {
+        "label": "넓은 헤드 √d_k 제거",
+        "seed": 1,
+        "n_layer": 4,
+        "n_head": 2,
+        "n_embd": 512,
+        "block": 64,
+        "batch": 32,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": false,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.341441094875336,
+          "val_deployed": 4.320729613304138
+        },
+        {
+          "step": 100,
+          "val_seen": 2.88118377327919,
+          "val_deployed": 2.953253209590912
+        },
+        {
+          "step": 200,
+          "val_seen": 2.751046061515808,
+          "val_deployed": 2.79154172539711
+        },
+        {
+          "step": 300,
+          "val_seen": 2.6890948712825775,
+          "val_deployed": 2.633919358253479
+        },
+        {
+          "step": 400,
+          "val_seen": 2.714345157146454,
+          "val_deployed": 2.6730563640594482
+        },
+        {
+          "step": 500,
+          "val_seen": 2.6986785531044006,
+          "val_deployed": 2.781709611415863
+        },
+        {
+          "step": 600,
+          "val_seen": 2.643837124109268,
+          "val_deployed": 2.7321190536022186
+        },
+        {
+          "step": 700,
+          "val_seen": 2.6609452664852142,
+          "val_deployed": 2.6530599296092987
+        },
+        {
+          "step": 800,
+          "val_seen": 2.6281113624572754,
+          "val_deployed": 2.565721273422241
+        },
+        {
+          "step": 900,
+          "val_seen": 2.618318021297455,
+          "val_deployed": 2.713386684656143
+        },
+        {
+          "step": 1000,
+          "val_seen": 2.567302852869034,
+          "val_deployed": 2.595254957675934
+        },
+        {
+          "step": 1100,
+          "val_seen": 2.557326167821884,
+          "val_deployed": 2.654458463191986
+        },
+        {
+          "step": 1200,
+          "val_seen": 2.5489306151866913,
+          "val_deployed": 2.5087560415267944
+        },
+        {
+          "step": 1300,
+          "val_seen": 2.5493725538253784,
+          "val_deployed": 2.5572092533111572
+        },
+        {
+          "step": 1400,
+          "val_seen": 2.538670390844345,
+          "val_deployed": 2.504375457763672
+        },
+        {
+          "step": 1500,
+          "val_seen": 2.5841747522354126,
+          "val_deployed": 2.6430645883083344
+        }
+      ],
+      "first_block_grad": 7.973562717437744,
+      "last_block_grad": 4.087593078613281,
+      "grads": [
+        7.973562717437744,
+        5.490925312042236,
+        4.5146403312683105,
+        4.087593078613281
+      ],
+      "last_layer_attention_entropy": -0.0,
+      "qkv_weight_rms": 0.03279951214790344,
+      "sample": "ROMEO:\n\n\nHy mhis keswhs:\n\n\nWIouca meaman youd Igelste grecofuroy hi ntherere hath thio beielis s. sirid\n\n\nMatho y or it per anc",
+      "seconds": 16323.624919652939
+    },
+    {
+      "run": {
+        "label": "넓은 헤드 √d_k 제거",
+        "seed": 2,
+        "n_layer": 4,
+        "n_head": 2,
+        "n_embd": 512,
+        "block": 64,
+        "batch": 32,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": false,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.265139877796173,
+          "val_deployed": 4.350450158119202
+        },
+        {
+          "step": 100,
+          "val_seen": 3.2071037590503693,
+          "val_deployed": 3.227634519338608
+        },
+        {
+          "step": 200,
+          "val_seen": 3.0307882130146027,
+          "val_deployed": 3.0580464005470276
+        },
+        {
+          "step": 300,
+          "val_seen": 2.9135019183158875,
+          "val_deployed": 2.8790607154369354
+        },
+        {
+          "step": 400,
+          "val_seen": 2.857737571001053,
+          "val_deployed": 2.849380373954773
+        },
+        {
+          "step": 500,
+          "val_seen": 2.860784560441971,
+          "val_deployed": 2.945381820201874
+        },
+        {
+          "step": 600,
+          "val_seen": 2.853587120771408,
+          "val_deployed": 2.8418830931186676
+        },
+        {
+          "step": 700,
+          "val_seen": 2.8476672768592834,
+          "val_deployed": 2.7472146451473236
+        },
+        {
+          "step": 800,
+          "val_seen": 2.842047482728958,
+          "val_deployed": 2.7352640628814697
+        },
+        {
+          "step": 900,
+          "val_seen": 2.868352323770523,
+          "val_deployed": 2.7993768453598022
+        },
+        {
+          "step": 1000,
+          "val_seen": 2.834025263786316,
+          "val_deployed": 2.7637946605682373
+        },
+        {
+          "step": 1100,
+          "val_seen": 2.806585043668747,
+          "val_deployed": 2.7244017720222473
+        },
+        {
+          "step": 1200,
+          "val_seen": 2.7944835424423218,
+          "val_deployed": 2.6952190697193146
+        },
+        {
+          "step": 1300,
+          "val_seen": 2.7724911272525787,
+          "val_deployed": 2.7170049250125885
+        },
+        {
+          "step": 1400,
+          "val_seen": 2.7829565703868866,
+          "val_deployed": 2.6708648800849915
+        },
+        {
+          "step": 1500,
+          "val_seen": 2.7781876027584076,
+          "val_deployed": 2.7880167365074158
+        }
+      ],
+      "first_block_grad": 7.539111614227295,
+      "last_block_grad": 4.244358062744141,
+      "grads": [
+        7.539111614227295,
+        5.305164813995361,
+        4.685392379760742,
+        4.244358062744141
+      ],
+      "last_layer_attention_entropy": -0.0,
+      "qkv_weight_rms": 0.033915527164936066,
+      "sample": "ROMEO:\nT: remhis kthorselteelouca meamanyyoud ngelste gancofueoy hd ntheeere hsth gou s oielousegeeerimosl.\n-No ylor w k we ahe",
+      "seconds": 14232.685097932816
+    },
+    {
+      "run": {
+        "label": "깊이 2 잔차 있음",
+        "seed": 0,
+        "n_layer": 2,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.2007253766059875,
+          "val_deployed": 4.202302396297455
+        },
+        {
+          "step": 100,
+          "val_seen": 2.447057366371155,
+          "val_deployed": 2.5489485263824463
+        },
+        {
+          "step": 200,
+          "val_seen": 2.27347069978714,
+          "val_deployed": 2.3268494307994843
+        },
+        {
+          "step": 300,
+          "val_seen": 2.142195075750351,
+          "val_deployed": 2.2481441497802734
+        },
+        {
+          "step": 400,
+          "val_seen": 2.0460237562656403,
+          "val_deployed": 2.1069058775901794
+        },
+        {
+          "step": 500,
+          "val_seen": 1.9700575470924377,
+          "val_deployed": 2.036390095949173
+        },
+        {
+          "step": 600,
+          "val_seen": 1.9084684401750565,
+          "val_deployed": 1.8529611378908157
+        },
+        {
+          "step": 700,
+          "val_seen": 1.8839204758405685,
+          "val_deployed": 1.8427661061286926
+        },
+        {
+          "step": 800,
+          "val_seen": 1.8419054597616196,
+          "val_deployed": 1.8401041477918625
+        },
+        {
+          "step": 900,
+          "val_seen": 1.81255704164505,
+          "val_deployed": 1.7778361290693283
+        },
+        {
+          "step": 1000,
+          "val_seen": 1.787886068224907,
+          "val_deployed": 1.8425137251615524
+        },
+        {
+          "step": 1100,
+          "val_seen": 1.7703414112329483,
+          "val_deployed": 1.6039657890796661
+        },
+        {
+          "step": 1200,
+          "val_seen": 1.7420934587717056,
+          "val_deployed": 1.8204487711191177
+        },
+        {
+          "step": 1300,
+          "val_seen": 1.741521179676056,
+          "val_deployed": 1.6653750389814377
+        },
+        {
+          "step": 1400,
+          "val_seen": 1.7042865008115768,
+          "val_deployed": 1.6528736799955368
+        },
+        {
+          "step": 1500,
+          "val_seen": 1.708530381321907,
+          "val_deployed": 1.6466599702835083
+        }
+      ],
+      "first_block_grad": 2.5041024684906006,
+      "last_block_grad": 1.7811555862426758,
+      "grads": [
+        2.5041024684906006,
+        1.7811555862426758
+      ],
+      "last_layer_attention_entropy": 0.4149811863899231,
+      "qkv_weight_rms": 0.049304451793432236,
+      "sample": "ROMEO:\nThy farms kill'd:\nTertouch means brother to the Mecome of his twener? hath think\nAnd is in the contints, your wake excha",
+      "seconds": 1008.7447578907013
+    },
+    {
+      "run": {
+        "label": "깊이 2 잔차 있음",
+        "seed": 1,
+        "n_layer": 2,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.187410056591034,
+          "val_deployed": 4.164153099060059
+        },
+        {
+          "step": 100,
+          "val_seen": 2.4703562259674072,
+          "val_deployed": 2.574387162923813
+        },
+        {
+          "step": 200,
+          "val_seen": 2.2897934913635254,
+          "val_deployed": 2.33372300863266
+        },
+        {
+          "step": 300,
+          "val_seen": 2.1500531435012817,
+          "val_deployed": 2.2345618903636932
+        },
+        {
+          "step": 400,
+          "val_seen": 2.0406022667884827,
+          "val_deployed": 2.085211008787155
+        },
+        {
+          "step": 500,
+          "val_seen": 1.9812032580375671,
+          "val_deployed": 2.0107577443122864
+        },
+        {
+          "step": 600,
+          "val_seen": 1.9134519845247269,
+          "val_deployed": 1.8021897375583649
+        },
+        {
+          "step": 700,
+          "val_seen": 1.891994833946228,
+          "val_deployed": 1.8704800754785538
+        },
+        {
+          "step": 800,
+          "val_seen": 1.846285104751587,
+          "val_deployed": 1.8237288445234299
+        },
+        {
+          "step": 900,
+          "val_seen": 1.8097397238016129,
+          "val_deployed": 1.7603663355112076
+        },
+        {
+          "step": 1000,
+          "val_seen": 1.7914985567331314,
+          "val_deployed": 1.834627389907837
+        },
+        {
+          "step": 1100,
+          "val_seen": 1.7801397293806076,
+          "val_deployed": 1.6160291582345963
+        },
+        {
+          "step": 1200,
+          "val_seen": 1.7441033869981766,
+          "val_deployed": 1.8041878193616867
+        },
+        {
+          "step": 1300,
+          "val_seen": 1.7368697673082352,
+          "val_deployed": 1.679689571261406
+        },
+        {
+          "step": 1400,
+          "val_seen": 1.7082904279232025,
+          "val_deployed": 1.669799730181694
+        },
+        {
+          "step": 1500,
+          "val_seen": 1.715119555592537,
+          "val_deployed": 1.6088434606790543
+        }
+      ],
+      "first_block_grad": 2.53181529045105,
+      "last_block_grad": 2.0084879398345947,
+      "grads": [
+        2.53181529045105,
+        2.0084879398345947
+      ],
+      "last_layer_attention_entropy": 0.4234094023704529,
+      "qkv_weight_rms": 0.05007205903530121,
+      "sample": "ROMEO:\nThou mhate hasts: the do didesman you.\nIf let the comminy his treear? hear thing the seep.\n\nShepherd:\nBo your welcome he",
+      "seconds": 1018.2703778743744
+    },
+    {
+      "run": {
+        "label": "깊이 2 잔차 있음",
+        "seed": 2,
+        "n_layer": 2,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.202507019042969,
+          "val_deployed": 4.1925448179244995
+        },
+        {
+          "step": 100,
+          "val_seen": 2.4718184769153595,
+          "val_deployed": 2.569997549057007
+        },
+        {
+          "step": 200,
+          "val_seen": 2.307790607213974,
+          "val_deployed": 2.4076468646526337
+        },
+        {
+          "step": 300,
+          "val_seen": 2.1577963531017303,
+          "val_deployed": 2.2055424749851227
+        },
+        {
+          "step": 400,
+          "val_seen": 2.0577490031719208,
+          "val_deployed": 2.1101774275302887
+        },
+        {
+          "step": 500,
+          "val_seen": 1.9704611152410507,
+          "val_deployed": 2.0079596042633057
+        },
+        {
+          "step": 600,
+          "val_seen": 1.9324456602334976,
+          "val_deployed": 1.8287596106529236
+        },
+        {
+          "step": 700,
+          "val_seen": 1.8965438455343246,
+          "val_deployed": 1.8780146539211273
+        },
+        {
+          "step": 800,
+          "val_seen": 1.8521624058485031,
+          "val_deployed": 1.8677831143140793
+        },
+        {
+          "step": 900,
+          "val_seen": 1.8218322545289993,
+          "val_deployed": 1.7805340439081192
+        },
+        {
+          "step": 1000,
+          "val_seen": 1.7894798666238785,
+          "val_deployed": 1.8683529496192932
+        },
+        {
+          "step": 1100,
+          "val_seen": 1.765584722161293,
+          "val_deployed": 1.6218977570533752
+        },
+        {
+          "step": 1200,
+          "val_seen": 1.7369303852319717,
+          "val_deployed": 1.8196003288030624
+        },
+        {
+          "step": 1300,
+          "val_seen": 1.738479733467102,
+          "val_deployed": 1.6868333518505096
+        },
+        {
+          "step": 1400,
+          "val_seen": 1.6957121938467026,
+          "val_deployed": 1.6412114351987839
+        },
+        {
+          "step": 1500,
+          "val_seen": 1.6998751312494278,
+          "val_deployed": 1.665051594376564
+        }
+      ],
+      "first_block_grad": 2.882949113845825,
+      "last_block_grad": 2.1955695152282715,
+      "grads": [
+        2.882949113845825,
+        2.1955695152282715
+      ],
+      "last_layer_attention_entropy": 0.395550400018692,
+      "qkv_weight_rms": 0.04884441941976547,
+      "sample": "ROMEO:\nTybrach, disssiselted?\nHow near you do I tose to you upon him:\nI have hath this being sook on these atter\nTo his permain",
+      "seconds": 1010.7052507400513
+    },
+    {
+      "run": {
+        "label": "깊이 4 잔차 있음",
+        "seed": 0,
+        "n_layer": 4,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.189716815948486,
+          "val_deployed": 4.204683184623718
+        },
+        {
+          "step": 100,
+          "val_seen": 2.485098361968994,
+          "val_deployed": 2.5830459892749786
+        },
+        {
+          "step": 200,
+          "val_seen": 2.308298647403717,
+          "val_deployed": 2.42551189661026
+        },
+        {
+          "step": 300,
+          "val_seen": 2.1704031229019165,
+          "val_deployed": 2.248800754547119
+        },
+        {
+          "step": 400,
+          "val_seen": 2.071856379508972,
+          "val_deployed": 2.1259006559848785
+        },
+        {
+          "step": 500,
+          "val_seen": 1.9889907985925674,
+          "val_deployed": 2.0265531688928604
+        },
+        {
+          "step": 600,
+          "val_seen": 1.9255709946155548,
+          "val_deployed": 1.8069762885570526
+        },
+        {
+          "step": 700,
+          "val_seen": 1.891000509262085,
+          "val_deployed": 1.8518115282058716
+        },
+        {
+          "step": 800,
+          "val_seen": 1.8559597730636597,
+          "val_deployed": 1.8295759409666061
+        },
+        {
+          "step": 900,
+          "val_seen": 1.8111102133989334,
+          "val_deployed": 1.732135608792305
+        },
+        {
+          "step": 1000,
+          "val_seen": 1.7837952226400375,
+          "val_deployed": 1.8539418876171112
+        },
+        {
+          "step": 1100,
+          "val_seen": 1.772078275680542,
+          "val_deployed": 1.650276318192482
+        },
+        {
+          "step": 1200,
+          "val_seen": 1.7233116179704666,
+          "val_deployed": 1.8086821883916855
+        },
+        {
+          "step": 1300,
+          "val_seen": 1.7211147844791412,
+          "val_deployed": 1.6659648716449738
+        },
+        {
+          "step": 1400,
+          "val_seen": 1.6920555084943771,
+          "val_deployed": 1.6331370323896408
+        },
+        {
+          "step": 1500,
+          "val_seen": 1.683953508734703,
+          "val_deployed": 1.603783518075943
+        }
+      ],
+      "first_block_grad": 2.7358081340789795,
+      "last_block_grad": 1.7088195085525513,
+      "grads": [
+        2.7358081340789795,
+        2.1066274642944336,
+        1.9356054067611694,
+        1.7088195085525513
+      ],
+      "last_layer_attention_entropy": 0.384468138217926,
+      "qkv_weight_rms": 0.04957672581076622,
+      "sample": "ROMEO:\nThou must keep selted our peermant,\nAnd gels eagancors of his twere mayst and blessels!\nThese is stants, your way, aman.",
+      "seconds": 1983.0819549560547
+    },
+    {
+      "run": {
+        "label": "깊이 4 잔차 있음",
+        "seed": 1,
+        "n_layer": 4,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.213087379932404,
+          "val_deployed": 4.177106261253357
+        },
+        {
+          "step": 100,
+          "val_seen": 2.4962466657161713,
+          "val_deployed": 2.585365891456604
+        },
+        {
+          "step": 200,
+          "val_seen": 2.2960270941257477,
+          "val_deployed": 2.385261833667755
+        },
+        {
+          "step": 300,
+          "val_seen": 2.1702925264835358,
+          "val_deployed": 2.2746706902980804
+        },
+        {
+          "step": 400,
+          "val_seen": 2.0409657955169678,
+          "val_deployed": 2.08396452665329
+        },
+        {
+          "step": 500,
+          "val_seen": 1.9693327099084854,
+          "val_deployed": 2.045804426074028
+        },
+        {
+          "step": 600,
+          "val_seen": 1.9100260734558105,
+          "val_deployed": 1.8194722533226013
+        },
+        {
+          "step": 700,
+          "val_seen": 1.876112014055252,
+          "val_deployed": 1.8771255761384964
+        },
+        {
+          "step": 800,
+          "val_seen": 1.8167043179273605,
+          "val_deployed": 1.768749639391899
+        },
+        {
+          "step": 900,
+          "val_seen": 1.790567472577095,
+          "val_deployed": 1.6887700855731964
+        },
+        {
+          "step": 1000,
+          "val_seen": 1.76129512488842,
+          "val_deployed": 1.9007970988750458
+        },
+        {
+          "step": 1100,
+          "val_seen": 1.7383575290441513,
+          "val_deployed": 1.605439156293869
+        },
+        {
+          "step": 1200,
+          "val_seen": 1.7066931426525116,
+          "val_deployed": 1.694578155875206
+        },
+        {
+          "step": 1300,
+          "val_seen": 1.702963501214981,
+          "val_deployed": 1.6523550748825073
+        },
+        {
+          "step": 1400,
+          "val_seen": 1.6784533858299255,
+          "val_deployed": 1.6325041353702545
+        },
+        {
+          "step": 1500,
+          "val_seen": 1.6766838878393173,
+          "val_deployed": 1.6053542494773865
+        }
+      ],
+      "first_block_grad": 3.3315765857696533,
+      "last_block_grad": 1.7857868671417236,
+      "grads": [
+        3.3315765857696533,
+        2.5343291759490967,
+        2.102795362472534,
+        1.7857868671417236
+      ],
+      "last_layer_attention_entropy": 0.49947381019592285,
+      "qkv_weight_rms": 0.049008436501026154,
+      "sample": "ROMEO:\nThore his kind selt it one means!\n\nPAULINA:\nAnd My pours, ho nay\nhere hath how she'ell seals him. But so your way,\nFor c",
+      "seconds": 1978.8028271198273
+    },
+    {
+      "run": {
+        "label": "깊이 4 잔차 있음",
+        "seed": 2,
+        "n_layer": 4,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.181231498718262,
+          "val_deployed": 4.148790180683136
+        },
+        {
+          "step": 100,
+          "val_seen": 2.498871684074402,
+          "val_deployed": 2.590522527694702
+        },
+        {
+          "step": 200,
+          "val_seen": 2.3144761323928833,
+          "val_deployed": 2.390518933534622
+        },
+        {
+          "step": 300,
+          "val_seen": 2.1852598190307617,
+          "val_deployed": 2.2402201294898987
+        },
+        {
+          "step": 400,
+          "val_seen": 2.084778070449829,
+          "val_deployed": 2.1535098999738693
+        },
+        {
+          "step": 500,
+          "val_seen": 1.984765186905861,
+          "val_deployed": 2.081081137061119
+        },
+        {
+          "step": 600,
+          "val_seen": 1.950765609741211,
+          "val_deployed": 1.8282049745321274
+        },
+        {
+          "step": 700,
+          "val_seen": 1.8852282911539078,
+          "val_deployed": 1.8561239391565323
+        },
+        {
+          "step": 800,
+          "val_seen": 1.8557230830192566,
+          "val_deployed": 1.8421445935964584
+        },
+        {
+          "step": 900,
+          "val_seen": 1.8159146755933762,
+          "val_deployed": 1.7378664761781693
+        },
+        {
+          "step": 1000,
+          "val_seen": 1.7818619757890701,
+          "val_deployed": 1.8982618004083633
+        },
+        {
+          "step": 1100,
+          "val_seen": 1.758182317018509,
+          "val_deployed": 1.6362982541322708
+        },
+        {
+          "step": 1200,
+          "val_seen": 1.7194904536008835,
+          "val_deployed": 1.7483321726322174
+        },
+        {
+          "step": 1300,
+          "val_seen": 1.716004565358162,
+          "val_deployed": 1.6443760693073273
+        },
+        {
+          "step": 1400,
+          "val_seen": 1.6880230903625488,
+          "val_deployed": 1.624950334429741
+        },
+        {
+          "step": 1500,
+          "val_seen": 1.6890599578619003,
+          "val_deployed": 1.651527464389801
+        }
+      ],
+      "first_block_grad": 3.27536940574646,
+      "last_block_grad": 2.1986465454101562,
+      "grads": [
+        3.27536940574646,
+        2.771728277206421,
+        2.653172016143799,
+        2.1986465454101562
+      ],
+      "last_layer_attention_entropy": 0.40195655822753906,
+      "qkv_weight_rms": 0.04887764900922775,
+      "sample": "ROMEO:\nThorefore knowns: tellow thee hand, in I then,\nAre poursed thoughter? he hath bloody soul.\n\nShepheps:\nNo your wake excuc",
+      "seconds": 1973.7164089679718
+    },
+    {
+      "run": {
+        "label": "깊이 16 잔차 있음",
+        "seed": 0,
+        "n_layer": 16,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.205338716506958,
+          "val_deployed": 4.222309827804565
+        },
+        {
+          "step": 100,
+          "val_seen": 3.355846732854843,
+          "val_deployed": 3.39631587266922
+        },
+        {
+          "step": 200,
+          "val_seen": 3.2102599442005157,
+          "val_deployed": 3.2311166524887085
+        },
+        {
+          "step": 300,
+          "val_seen": 2.7264510095119476,
+          "val_deployed": 2.688890516757965
+        },
+        {
+          "step": 400,
+          "val_seen": 2.4708126187324524,
+          "val_deployed": 2.4873507618904114
+        },
+        {
+          "step": 500,
+          "val_seen": 2.289383679628372,
+          "val_deployed": 2.3063455522060394
+        },
+        {
+          "step": 600,
+          "val_seen": 2.1673609018325806,
+          "val_deployed": 2.1470710784196854
+        },
+        {
+          "step": 700,
+          "val_seen": 2.0784339606761932,
+          "val_deployed": 2.0275327563285828
+        },
+        {
+          "step": 800,
+          "val_seen": 2.006271257996559,
+          "val_deployed": 2.005370408296585
+        },
+        {
+          "step": 900,
+          "val_seen": 1.9442632049322128,
+          "val_deployed": 1.89837147295475
+        },
+        {
+          "step": 1000,
+          "val_seen": 1.8879171758890152,
+          "val_deployed": 2.018656402826309
+        },
+        {
+          "step": 1100,
+          "val_seen": 1.8437210768461227,
+          "val_deployed": 1.7085707783699036
+        },
+        {
+          "step": 1200,
+          "val_seen": 1.8047341853380203,
+          "val_deployed": 1.8526995182037354
+        },
+        {
+          "step": 1300,
+          "val_seen": 1.771687924861908,
+          "val_deployed": 1.718061774969101
+        },
+        {
+          "step": 1400,
+          "val_seen": 1.735349029302597,
+          "val_deployed": 1.6907016336917877
+        },
+        {
+          "step": 1500,
+          "val_seen": 1.7221662402153015,
+          "val_deployed": 1.6569602489471436
+        }
+      ],
+      "first_block_grad": 3.386827230453491,
+      "last_block_grad": 1.7683910131454468,
+      "grads": [
+        3.386827230453491,
+        3.1854095458984375,
+        3.0325610637664795,
+        2.6997315883636475,
+        2.531233072280884,
+        2.407440185546875,
+        2.3121724128723145,
+        2.273832082748413,
+        2.1998748779296875,
+        2.0520434379577637,
+        2.06962251663208,
+        2.072152614593506,
+        1.9790955781936646,
+        1.857480525970459,
+        1.8419963121414185,
+        1.7683910131454468
+      ],
+      "last_layer_attention_entropy": 0.3011358678340912,
+      "qkv_weight_rms": 0.03778623044490814,
+      "sample": "ROMEO:\nThy, more know sell Warwick expair,\nNow gels famancous with fot been charge.\n\nKING EDWABY:\nI he petiate, your wake a whe",
+      "seconds": 7486.370125293732
+    },
+    {
+      "run": {
+        "label": "깊이 16 잔차 있음",
+        "seed": 1,
+        "n_layer": 16,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.183784663677216,
+          "val_deployed": 4.176247715950012
+        },
+        {
+          "step": 100,
+          "val_seen": 2.523092359304428,
+          "val_deployed": 2.61302849650383
+        },
+        {
+          "step": 200,
+          "val_seen": 2.3400359451770782,
+          "val_deployed": 2.455776333808899
+        },
+        {
+          "step": 300,
+          "val_seen": 2.2116223871707916,
+          "val_deployed": 2.302041381597519
+        },
+        {
+          "step": 400,
+          "val_seen": 2.0619713068008423,
+          "val_deployed": 2.120541751384735
+        },
+        {
+          "step": 500,
+          "val_seen": 1.9848586320877075,
+          "val_deployed": 1.9996779412031174
+        },
+        {
+          "step": 600,
+          "val_seen": 1.912986934185028,
+          "val_deployed": 1.8173802644014359
+        },
+        {
+          "step": 700,
+          "val_seen": 1.8967541605234146,
+          "val_deployed": 1.8512296974658966
+        },
+        {
+          "step": 800,
+          "val_seen": 1.8212717473506927,
+          "val_deployed": 1.8181456476449966
+        },
+        {
+          "step": 900,
+          "val_seen": 1.780102401971817,
+          "val_deployed": 1.6743798106908798
+        },
+        {
+          "step": 1000,
+          "val_seen": 1.7613112181425095,
+          "val_deployed": 1.816378891468048
+        },
+        {
+          "step": 1100,
+          "val_seen": 1.7329865097999573,
+          "val_deployed": 1.6183901578187943
+        },
+        {
+          "step": 1200,
+          "val_seen": 1.6984434574842453,
+          "val_deployed": 1.7180417329072952
+        },
+        {
+          "step": 1300,
+          "val_seen": 1.7001011073589325,
+          "val_deployed": 1.6576825380325317
+        },
+        {
+          "step": 1400,
+          "val_seen": 1.6682267040014267,
+          "val_deployed": 1.6515364199876785
+        },
+        {
+          "step": 1500,
+          "val_seen": 1.6681305170059204,
+          "val_deployed": 1.6717197448015213
+        }
+      ],
+      "first_block_grad": 3.100825786590576,
+      "last_block_grad": 1.700390100479126,
+      "grads": [
+        3.100825786590576,
+        2.9416041374206543,
+        2.8195011615753174,
+        2.7125282287597656,
+        2.7725791931152344,
+        2.688300132751465,
+        2.4994606971740723,
+        2.3532612323760986,
+        2.3513975143432617,
+        2.0642495155334473,
+        2.030921459197998,
+        1.9761096239089966,
+        1.8840060234069824,
+        1.786173701286316,
+        1.7185052633285522,
+        1.700390100479126
+      ],
+      "last_layer_attention_entropy": 0.3922973573207855,
+      "qkv_weight_rms": 0.049783844500780106,
+      "sample": "ROMEO:\nThou makest away: the deceived,\nAnd in I to the Menonue you for meer? he?\n\nDURHESS:\n\nCABHARD:\nPlass' though this perial.",
+      "seconds": 7469.482618093491
+    },
+    {
+      "run": {
+        "label": "깊이 16 잔차 있음",
+        "seed": 2,
+        "n_layer": 16,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": true
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.168702065944672,
+          "val_deployed": 4.162038803100586
+        },
+        {
+          "step": 100,
+          "val_seen": 2.6365710496902466,
+          "val_deployed": 2.700783282518387
+        },
+        {
+          "step": 200,
+          "val_seen": 2.406690299510956,
+          "val_deployed": 2.4924673438072205
+        },
+        {
+          "step": 300,
+          "val_seen": 2.2428739964962006,
+          "val_deployed": 2.2953696846961975
+        },
+        {
+          "step": 400,
+          "val_seen": 2.105396717786789,
+          "val_deployed": 2.1369462311267853
+        },
+        {
+          "step": 500,
+          "val_seen": 2.0023443400859833,
+          "val_deployed": 2.0658156126737595
+        },
+        {
+          "step": 600,
+          "val_seen": 1.9418007284402847,
+          "val_deployed": 1.8799404054880142
+        },
+        {
+          "step": 700,
+          "val_seen": 1.8909652680158615,
+          "val_deployed": 1.8670841753482819
+        },
+        {
+          "step": 800,
+          "val_seen": 1.8276839703321457,
+          "val_deployed": 1.838016763329506
+        },
+        {
+          "step": 900,
+          "val_seen": 1.80160391330719,
+          "val_deployed": 1.768146425485611
+        },
+        {
+          "step": 1000,
+          "val_seen": 1.761967122554779,
+          "val_deployed": 1.889450579881668
+        },
+        {
+          "step": 1100,
+          "val_seen": 1.7289422154426575,
+          "val_deployed": 1.6231570094823837
+        },
+        {
+          "step": 1200,
+          "val_seen": 1.7098070234060287,
+          "val_deployed": 1.7555363923311234
+        },
+        {
+          "step": 1300,
+          "val_seen": 1.6940555572509766,
+          "val_deployed": 1.6222008019685745
+        },
+        {
+          "step": 1400,
+          "val_seen": 1.664318010210991,
+          "val_deployed": 1.635609045624733
+        },
+        {
+          "step": 1500,
+          "val_seen": 1.6758107841014862,
+          "val_deployed": 1.6049765199422836
+        }
+      ],
+      "first_block_grad": 3.852496385574341,
+      "last_block_grad": 1.9513581991195679,
+      "grads": [
+        3.852496385574341,
+        3.9436991214752197,
+        3.5601463317871094,
+        3.3185033798217773,
+        3.1495091915130615,
+        3.019087076187134,
+        2.961141347885132,
+        2.8090879917144775,
+        2.594817876815796,
+        2.5779383182525635,
+        2.4096081256866455,
+        2.2101430892944336,
+        2.2066314220428467,
+        2.0977094173431396,
+        1.9402527809143066,
+        1.9513581991195679
+      ],
+      "last_layer_attention_entropy": 0.4004921019077301,
+      "qkv_weight_rms": 0.04847995191812515,
+      "sample": "ROMEO:\nThou must known your looks oes,\nAnd in Ixto thee, come with than here hath good being soon,\nBut the peace to his permatc",
+      "seconds": 7486.3015332221985
+    },
+    {
+      "run": {
+        "label": "깊이 2 잔차 없음",
+        "seed": 0,
+        "n_layer": 2,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": false
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.209818720817566,
+          "val_deployed": 4.20674192905426
+        },
+        {
+          "step": 100,
+          "val_seen": 3.3606190383434296,
+          "val_deployed": 3.401872545480728
+        },
+        {
+          "step": 200,
+          "val_seen": 3.356351375579834,
+          "val_deployed": 3.4050152599811554
+        },
+        {
+          "step": 300,
+          "val_seen": 3.3494766652584076,
+          "val_deployed": 3.354497730731964
+        },
+        {
+          "step": 400,
+          "val_seen": 3.351631134748459,
+          "val_deployed": 3.338593691587448
+        },
+        {
+          "step": 500,
+          "val_seen": 3.352647513151169,
+          "val_deployed": 3.341104567050934
+        },
+        {
+          "step": 600,
+          "val_seen": 3.3734391629695892,
+          "val_deployed": 3.3626554906368256
+        },
+        {
+          "step": 700,
+          "val_seen": 3.3696934282779694,
+          "val_deployed": 3.3881316781044006
+        },
+        {
+          "step": 800,
+          "val_seen": 3.3381035029888153,
+          "val_deployed": 3.3234121203422546
+        },
+        {
+          "step": 900,
+          "val_seen": 3.3553990721702576,
+          "val_deployed": 3.301974505186081
+        },
+        {
+          "step": 1000,
+          "val_seen": 3.33744814991951,
+          "val_deployed": 3.3868092596530914
+        },
+        {
+          "step": 1100,
+          "val_seen": 3.3451274037361145,
+          "val_deployed": 3.3474085330963135
+        },
+        {
+          "step": 1200,
+          "val_seen": 3.3512115478515625,
+          "val_deployed": 3.3933797478675842
+        },
+        {
+          "step": 1300,
+          "val_seen": 3.354469984769821,
+          "val_deployed": 3.3689766824245453
+        },
+        {
+          "step": 1400,
+          "val_seen": 3.3497703671455383,
+          "val_deployed": 3.382195323705673
+        },
+        {
+          "step": 1500,
+          "val_seen": 3.333902657032013,
+          "val_deployed": 3.2815325260162354
+        }
+      ],
+      "first_block_grad": 10.14516830444336,
+      "last_block_grad": 5.10120153427124,
+      "grads": [
+        10.14516830444336,
+        5.10120153427124
+      ],
+      "last_layer_attention_entropy": 0.999973475933075,
+      "qkv_weight_rms": 0.02409869246184826,
+      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc",
+      "seconds": 1068.9826860427856
+    },
+    {
+      "run": {
+        "label": "깊이 2 잔차 없음",
+        "seed": 1,
+        "n_layer": 2,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": false
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.160016417503357,
+          "val_deployed": 4.1524152755737305
+        },
+        {
+          "step": 100,
+          "val_seen": 3.360247105360031,
+          "val_deployed": 3.3989325761795044
+        },
+        {
+          "step": 200,
+          "val_seen": 3.3529271483421326,
+          "val_deployed": 3.3988756239414215
+        },
+        {
+          "step": 300,
+          "val_seen": 3.348200410604477,
+          "val_deployed": 3.347887933254242
+        },
+        {
+          "step": 400,
+          "val_seen": 3.3496419191360474,
+          "val_deployed": 3.3343376517295837
+        },
+        {
+          "step": 500,
+          "val_seen": 3.3562589287757874,
+          "val_deployed": 3.341196656227112
+        },
+        {
+          "step": 600,
+          "val_seen": 3.3664595782756805,
+          "val_deployed": 3.354648619890213
+        },
+        {
+          "step": 700,
+          "val_seen": 3.3702007830142975,
+          "val_deployed": 3.3907418251037598
+        },
+        {
+          "step": 800,
+          "val_seen": 3.338809460401535,
+          "val_deployed": 3.325819253921509
+        },
+        {
+          "step": 900,
+          "val_seen": 3.354759842157364,
+          "val_deployed": 3.300223559141159
+        },
+        {
+          "step": 1000,
+          "val_seen": 3.33819842338562,
+          "val_deployed": 3.3837747275829315
+        },
+        {
+          "step": 1100,
+          "val_seen": 3.3434330821037292,
+          "val_deployed": 3.3421692550182343
+        },
+        {
+          "step": 1200,
+          "val_seen": 3.3530854880809784,
+          "val_deployed": 3.3919763267040253
+        },
+        {
+          "step": 1300,
+          "val_seen": 3.3532722890377045,
+          "val_deployed": 3.368860214948654
+        },
+        {
+          "step": 1400,
+          "val_seen": 3.349344551563263,
+          "val_deployed": 3.3854978382587433
+        },
+        {
+          "step": 1500,
+          "val_seen": 3.3349773287773132,
+          "val_deployed": 3.284694194793701
+        }
+      ],
+      "first_block_grad": 7.7594828605651855,
+      "last_block_grad": 6.197921276092529,
+      "grads": [
+        7.7594828605651855,
+        6.197921276092529
+      ],
+      "last_layer_attention_entropy": 0.9999943375587463,
+      "qkv_weight_rms": 0.0312438253313303,
+      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid Ig\nlstetgMeco ueByghd ntw\nherM hstn DoRo \neielCsBeg eehi \nstwatso ylor\ni kpee aRc",
+      "seconds": 1067.1555507183075
+    },
+    {
+      "run": {
+        "label": "깊이 2 잔차 없음",
+        "seed": 2,
+        "n_layer": 2,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": false
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.2273077964782715,
+          "val_deployed": 4.225714266300201
+        },
+        {
+          "step": 100,
+          "val_seen": 3.3581610023975372,
+          "val_deployed": 3.399508774280548
+        },
+        {
+          "step": 200,
+          "val_seen": 3.3529129028320312,
+          "val_deployed": 3.3956063985824585
+        },
+        {
+          "step": 300,
+          "val_seen": 3.3493998646736145,
+          "val_deployed": 3.351033926010132
+        },
+        {
+          "step": 400,
+          "val_seen": 3.349339783191681,
+          "val_deployed": 3.333292782306671
+        },
+        {
+          "step": 500,
+          "val_seen": 3.3568868935108185,
+          "val_deployed": 3.346392184495926
+        },
+        {
+          "step": 600,
+          "val_seen": 3.3660041093826294,
+          "val_deployed": 3.3494060933589935
+        },
+        {
+          "step": 700,
+          "val_seen": 3.3697261214256287,
+          "val_deployed": 3.3938260674476624
+        },
+        {
+          "step": 800,
+          "val_seen": 3.337653398513794,
+          "val_deployed": 3.3229863941669464
+        },
+        {
+          "step": 900,
+          "val_seen": 3.3539454340934753,
+          "val_deployed": 3.3026480972766876
+        },
+        {
+          "step": 1000,
+          "val_seen": 3.3377675116062164,
+          "val_deployed": 3.3891757130622864
+        },
+        {
+          "step": 1100,
+          "val_seen": 3.3419845402240753,
+          "val_deployed": 3.3356488049030304
+        },
+        {
+          "step": 1200,
+          "val_seen": 3.351662278175354,
+          "val_deployed": 3.3917899429798126
+        },
+        {
+          "step": 1300,
+          "val_seen": 3.35050106048584,
+          "val_deployed": 3.3658127188682556
+        },
+        {
+          "step": 1400,
+          "val_seen": 3.3476004898548126,
+          "val_deployed": 3.383267343044281
+        },
+        {
+          "step": 1500,
+          "val_seen": 3.336121678352356,
+          "val_deployed": 3.286512851715088
+        }
+      ],
+      "first_block_grad": 7.727144718170166,
+      "last_block_grad": 6.116070747375488,
+      "grads": [
+        7.727144718170166,
+        6.116070747375488
+      ],
+      "last_layer_attention_entropy": 0.9999951720237732,
+      "qkv_weight_rms": 0.022657815366983414,
+      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc",
+      "seconds": 1068.9670617580414
+    },
+    {
+      "run": {
+        "label": "깊이 4 잔차 없음",
+        "seed": 0,
+        "n_layer": 4,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": false
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.208626687526703,
+          "val_deployed": 4.22318971157074
+        },
+        {
+          "step": 100,
+          "val_seen": 3.360862374305725,
+          "val_deployed": 3.4047024250030518
+        },
+        {
+          "step": 200,
+          "val_seen": 3.3547110855579376,
+          "val_deployed": 3.4028851985931396
+        },
+        {
+          "step": 300,
+          "val_seen": 3.349435031414032,
+          "val_deployed": 3.3551486134529114
+        },
+        {
+          "step": 400,
+          "val_seen": 3.351937919855118,
+          "val_deployed": 3.3389366269111633
+        },
+        {
+          "step": 500,
+          "val_seen": 3.3526428639888763,
+          "val_deployed": 3.3410813212394714
+        },
+        {
+          "step": 600,
+          "val_seen": 3.3733207285404205,
+          "val_deployed": 3.3623047173023224
+        },
+        {
+          "step": 700,
+          "val_seen": 3.3698710799217224,
+          "val_deployed": 3.388832300901413
+        },
+        {
+          "step": 800,
+          "val_seen": 3.3382371366024017,
+          "val_deployed": 3.323966532945633
+        },
+        {
+          "step": 900,
+          "val_seen": 3.355330467224121,
+          "val_deployed": 3.301667869091034
+        },
+        {
+          "step": 1000,
+          "val_seen": 3.3375390768051147,
+          "val_deployed": 3.3871023654937744
+        },
+        {
+          "step": 1100,
+          "val_seen": 3.344798743724823,
+          "val_deployed": 3.3473694026470184
+        },
+        {
+          "step": 1200,
+          "val_seen": 3.3510016798973083,
+          "val_deployed": 3.3936190605163574
+        },
+        {
+          "step": 1300,
+          "val_seen": 3.3542993366718292,
+          "val_deployed": 3.368463158607483
+        },
+        {
+          "step": 1400,
+          "val_seen": 3.349600464105606,
+          "val_deployed": 3.38187974691391
+        },
+        {
+          "step": 1500,
+          "val_seen": 3.3339275121688843,
+          "val_deployed": 3.2812673449516296
+        }
+      ],
+      "first_block_grad": 10.263712882995605,
+      "last_block_grad": 7.388238906860352,
+      "grads": [
+        10.263712882995605,
+        7.6739583015441895,
+        8.5300874710083,
+        7.388238906860352
+      ],
+      "last_layer_attention_entropy": 1.0,
+      "qkv_weight_rms": 0.020847275853157043,
+      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc",
+      "seconds": 1991.814397096634
+    },
+    {
+      "run": {
+        "label": "깊이 4 잔차 없음",
+        "seed": 1,
+        "n_layer": 4,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": false
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.210301518440247,
+          "val_deployed": 4.208183705806732
+        },
+        {
+          "step": 100,
+          "val_seen": 3.359506368637085,
+          "val_deployed": 3.398064434528351
+        },
+        {
+          "step": 200,
+          "val_seen": 3.3529781103134155,
+          "val_deployed": 3.400736004114151
+        },
+        {
+          "step": 300,
+          "val_seen": 3.348342090845108,
+          "val_deployed": 3.3476847410202026
+        },
+        {
+          "step": 400,
+          "val_seen": 3.349445194005966,
+          "val_deployed": 3.3340446650981903
+        },
+        {
+          "step": 500,
+          "val_seen": 3.356183499097824,
+          "val_deployed": 3.341666966676712
+        },
+        {
+          "step": 600,
+          "val_seen": 3.366944283246994,
+          "val_deployed": 3.3542062640190125
+        },
+        {
+          "step": 700,
+          "val_seen": 3.3701910972595215,
+          "val_deployed": 3.389846295118332
+        },
+        {
+          "step": 800,
+          "val_seen": 3.338721841573715,
+          "val_deployed": 3.3261902034282684
+        },
+        {
+          "step": 900,
+          "val_seen": 3.354705035686493,
+          "val_deployed": 3.300205260515213
+        },
+        {
+          "step": 1000,
+          "val_seen": 3.3383513391017914,
+          "val_deployed": 3.3843021392822266
+        },
+        {
+          "step": 1100,
+          "val_seen": 3.3435479402542114,
+          "val_deployed": 3.3455866277217865
+        },
+        {
+          "step": 1200,
+          "val_seen": 3.3530933558940887,
+          "val_deployed": 3.392655909061432
+        },
+        {
+          "step": 1300,
+          "val_seen": 3.352984756231308,
+          "val_deployed": 3.368035674095154
+        },
+        {
+          "step": 1400,
+          "val_seen": 3.3483204543590546,
+          "val_deployed": 3.385817438364029
+        },
+        {
+          "step": 1500,
+          "val_seen": 3.335470199584961,
+          "val_deployed": 3.2855547666549683
+        }
+      ],
+      "first_block_grad": 12.13373851776123,
+      "last_block_grad": 8.70205020904541,
+      "grads": [
+        12.13373851776123,
+        11.012771606445312,
+        9.164107322692871,
+        8.70205020904541
+      ],
+      "last_layer_attention_entropy": 1.0,
+      "qkv_weight_rms": 0.02179219014942646,
+      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid Ig\nlstetgMeco ueByghd ntw\nherM hstn DoRo \neielCsBeg eehi \nstwatso ypor\ni kpee aRc",
+      "seconds": 1989.170669555664
+    },
+    {
+      "run": {
+        "label": "깊이 4 잔차 없음",
+        "seed": 2,
+        "n_layer": 4,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": false
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.2080947160720825,
+          "val_deployed": 4.229653537273407
+        },
+        {
+          "step": 100,
+          "val_seen": 3.359120637178421,
+          "val_deployed": 3.399343103170395
+        },
+        {
+          "step": 200,
+          "val_seen": 3.3524916768074036,
+          "val_deployed": 3.394887000322342
+        },
+        {
+          "step": 300,
+          "val_seen": 3.350269317626953,
+          "val_deployed": 3.3541184663772583
+        },
+        {
+          "step": 400,
+          "val_seen": 3.3496254682540894,
+          "val_deployed": 3.3342638313770294
+        },
+        {
+          "step": 500,
+          "val_seen": 3.3560646176338196,
+          "val_deployed": 3.3463793098926544
+        },
+        {
+          "step": 600,
+          "val_seen": 3.366606593132019,
+          "val_deployed": 3.350125938653946
+        },
+        {
+          "step": 700,
+          "val_seen": 3.3701459169387817,
+          "val_deployed": 3.3950210511684418
+        },
+        {
+          "step": 800,
+          "val_seen": 3.337763637304306,
+          "val_deployed": 3.321968227624893
+        },
+        {
+          "step": 900,
+          "val_seen": 3.35424742102623,
+          "val_deployed": 3.3009934425354004
+        },
+        {
+          "step": 1000,
+          "val_seen": 3.3383288979530334,
+          "val_deployed": 3.389941781759262
+        },
+        {
+          "step": 1100,
+          "val_seen": 3.3418315947055817,
+          "val_deployed": 3.335718959569931
+        },
+        {
+          "step": 1200,
+          "val_seen": 3.350782960653305,
+          "val_deployed": 3.3903206884860992
+        },
+        {
+          "step": 1300,
+          "val_seen": 3.351310819387436,
+          "val_deployed": 3.366101861000061
+        },
+        {
+          "step": 1400,
+          "val_seen": 3.3480196595191956,
+          "val_deployed": 3.382651686668396
+        },
+        {
+          "step": 1500,
+          "val_seen": 3.3352315723896027,
+          "val_deployed": 3.284956842660904
+        }
+      ],
+      "first_block_grad": 6.864260196685791,
+      "last_block_grad": 9.823748588562012,
+      "grads": [
+        6.864260196685791,
+        8.283273696899414,
+        8.036705017089844,
+        9.823748588562012
+      ],
+      "last_layer_attention_entropy": 1.0,
+      "qkv_weight_rms": 0.02277499996125698,
+      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc",
+      "seconds": 1990.28417801857
+    },
+    {
+      "run": {
+        "label": "깊이 16 잔차 없음",
+        "seed": 2,
+        "n_layer": 16,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": false
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.162052035331726,
+          "val_deployed": 4.158566653728485
+        },
+        {
+          "step": 100,
+          "val_seen": 3.359896570444107,
+          "val_deployed": 3.3993887901306152
+        },
+        {
+          "step": 200,
+          "val_seen": 3.353191167116165,
+          "val_deployed": 3.3951845467090607
+        },
+        {
+          "step": 300,
+          "val_seen": 3.349899470806122,
+          "val_deployed": 3.353865623474121
+        },
+        {
+          "step": 400,
+          "val_seen": 3.3492467403411865,
+          "val_deployed": 3.3336331248283386
+        },
+        {
+          "step": 500,
+          "val_seen": 3.3564876914024353,
+          "val_deployed": 3.347650468349457
+        },
+        {
+          "step": 600,
+          "val_seen": 3.3668306171894073,
+          "val_deployed": 3.3495945036411285
+        },
+        {
+          "step": 700,
+          "val_seen": 3.369949698448181,
+          "val_deployed": 3.3951112627983093
+        },
+        {
+          "step": 800,
+          "val_seen": 3.337602138519287,
+          "val_deployed": 3.321424126625061
+        },
+        {
+          "step": 900,
+          "val_seen": 3.354397863149643,
+          "val_deployed": 3.3025179505348206
+        },
+        {
+          "step": 1000,
+          "val_seen": 3.338649421930313,
+          "val_deployed": 3.3914822041988373
+        },
+        {
+          "step": 1100,
+          "val_seen": 3.342394143342972,
+          "val_deployed": 3.3361350893974304
+        },
+        {
+          "step": 1200,
+          "val_seen": 3.3508650064468384,
+          "val_deployed": 3.390231728553772
+        },
+        {
+          "step": 1300,
+          "val_seen": 3.3512312471866608,
+          "val_deployed": 3.364622950553894
+        },
+        {
+          "step": 1400,
+          "val_seen": 3.3481949865818024,
+          "val_deployed": 3.384475737810135
+        },
+        {
+          "step": 1500,
+          "val_seen": 3.335075318813324,
+          "val_deployed": 3.2850452661514282
+        }
+      ],
+      "first_block_grad": 8.946840286254883,
+      "last_block_grad": 16.55039405822754,
+      "grads": [
+        8.946840286254883,
+        9.050193786621094,
+        8.867179870605469,
+        8.020873069763184,
+        7.929757118225098,
+        6.857387065887451,
+        8.338146209716797,
+        9.736512184143066,
+        8.718415260314941,
+        9.719569206237793,
+        10.590031623840332,
+        9.732874870300293,
+        12.551639556884766,
+        16.033132553100586,
+        17.54730987548828,
+        16.55039405822754
+      ],
+      "last_layer_attention_entropy": 1.0,
+      "qkv_weight_rms": 0.020331721752882004,
+      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc",
+      "seconds": 16173.25712800026
+    }
+  ]
+}

@@ -1,0 +1,448 @@
+{
+  "n_samples": 64,
+  "n_tokens": 50,
+  "prompts": {
+    "france": "The capital of France is",
+    "unicorn": "In a shocking finding, scientists discovered a herd of unicorns living in a remote valley.",
+    "once": "Once upon a time, there was a little girl who"
+  },
+  "hf_warper_check": {
+    "t": {
+      "same_kept": true,
+      "kept": 50257,
+      "max_err": 0.0
+    },
+    "k": {
+      "same_kept": true,
+      "kept": 40,
+      "max_err": 0.0
+    },
+    "p": {
+      "same_kept": true,
+      "kept": 91,
+      "max_err": 0.0
+    }
+  },
+  "first_step": {
+    "france": {
+      "greedy": {
+        "top1": 1.0,
+        "entropy": 0.0,
+        "effective_tokens": 1.0,
+        "support": 1
+      },
+      "T=0.1": {
+        "top1": 0.9941163973517735,
+        "entropy": 0.04085772526985265,
+        "effective_tokens": 1.0417038868624462,
+        "support": 50257
+      },
+      "T=1.0": {
+        "top1": 0.08459184770835207,
+        "entropy": 5.998427885443744,
+        "effective_tokens": 402.7950554989606,
+        "support": 50257
+      },
+      "T=2.0": {
+        "top1": 0.004749195886815694,
+        "entropy": 9.425366517303729,
+        "effective_tokens": 12398.943139852452,
+        "support": 50257
+      },
+      "top-k=40": {
+        "top1": 0.16072593389453319,
+        "entropy": 3.1429918396322982,
+        "effective_tokens": 23.1730934290099,
+        "support": 40
+      },
+      "top-p=0.9": {
+        "top1": 0.09398992611223674,
+        "entropy": 5.307437958033709,
+        "effective_tokens": 201.83246216374712,
+        "support": 1503
+      },
+      "top5_T1": [
+        [
+          " the",
+          0.08459184770835207
+        ],
+        [
+          " now",
+          0.04794573389296419
+        ],
+        [
+          " a",
+          0.04615941836267551
+        ],
+        [
+          " France",
+          0.03237676123870169
+        ],
+        [
+          " Paris",
+          0.03224433416484776
+        ]
+      ]
+    },
+    "unicorn": {
+      "greedy": {
+        "top1": 1.0,
+        "entropy": 0.0,
+        "effective_tokens": 1.0,
+        "support": 1
+      },
+      "T=0.1": {
+        "top1": 0.9999994105384724,
+        "entropy": 9.063127455572146e-06,
+        "effective_tokens": 1.000009063168526,
+        "support": 50257
+      },
+      "T=1.0": {
+        "top1": 0.4696701324712323,
+        "entropy": 3.121797819423983,
+        "effective_tokens": 22.687130364624014,
+        "support": 50257
+      },
+      "T=2.0": {
+        "top1": 0.023600579192867868,
+        "entropy": 8.795747872615555,
+        "effective_tokens": 6606.0942462600915,
+        "support": 50257
+      },
+      "top-k=40": {
+        "top1": 0.5525654873787748,
+        "entropy": 1.9407861033370666,
+        "effective_tokens": 6.964223418670124,
+        "support": 40
+      },
+      "top-p=0.9": {
+        "top1": 0.5215735350692792,
+        "entropy": 2.266187166151894,
+        "effective_tokens": 9.642565135805516,
+        "support": 91
+      },
+      "top5_T1": [
+        [
+          "\n",
+          0.4696701324712323
+        ],
+        [
+          " The",
+          0.11184666725121345
+        ],
+        [
+          " They",
+          0.06580977007361022
+        ],
+        [
+          " It",
+          0.019123441612335465
+        ],
+        [
+          " In",
+          0.015078165833166764
+        ]
+      ]
+    },
+    "once": {
+      "greedy": {
+        "top1": 1.0,
+        "entropy": 0.0,
+        "effective_tokens": 1.0,
+        "support": 1
+      },
+      "T=0.1": {
+        "top1": 0.9925625298286406,
+        "entropy": 0.04386345479500397,
+        "effective_tokens": 1.0448396772997703,
+        "support": 50257
+      },
+      "T=1.0": {
+        "top1": 0.17447275800247825,
+        "entropy": 4.764909702020602,
+        "effective_tokens": 117.32052300332552,
+        "support": 50257
+      },
+      "T=2.0": {
+        "top1": 0.012763660563908314,
+        "entropy": 8.480913297750847,
+        "effective_tokens": 4821.85167278628,
+        "support": 50257
+      },
+      "top-k=40": {
+        "top1": 0.2595952196816633,
+        "entropy": 2.946999144582487,
+        "effective_tokens": 19.048705463323156,
+        "support": 40
+      },
+      "top-p=0.9": {
+        "top1": 0.19381833042882338,
+        "entropy": 4.100731707020493,
+        "effective_tokens": 60.384455166305095,
+        "support": 300
+      },
+      "top5_T1": [
+        [
+          " was",
+          0.17447275800247825
+        ],
+        [
+          " had",
+          0.1069532328645208
+        ],
+        [
+          " looked",
+          0.0333027625749613
+        ],
+        [
+          " would",
+          0.027284815978496108
+        ],
+        [
+          " lived",
+          0.02383758738246764
+        ]
+      ]
+    }
+  },
+  "rows": [
+    {
+      "prompt": "france",
+      "strategy": "greedy",
+      "distinct_outputs": 1,
+      "distinct_first_tokens": 1,
+      "repeated_4gram_share": 0.5957446808510638,
+      "mean_logprob": -0.7870694701163751,
+      "same_as_greedy": 1.0
+    },
+    {
+      "prompt": "france",
+      "strategy": "T=0.1",
+      "distinct_outputs": 32,
+      "distinct_first_tokens": 1,
+      "repeated_4gram_share": 0.5132978723404256,
+      "mean_logprob": -0.8017962633824477,
+      "same_as_greedy": 0.3559375
+    },
+    {
+      "prompt": "france",
+      "strategy": "T=1.0",
+      "distinct_outputs": 64,
+      "distinct_first_tokens": 44,
+      "repeated_4gram_share": 0.002327127659574468,
+      "mean_logprob": -3.802887242851069,
+      "same_as_greedy": 0.0265625
+    },
+    {
+      "prompt": "france",
+      "strategy": "T=2.0",
+      "distinct_outputs": 64,
+      "distinct_first_tokens": 62,
+      "repeated_4gram_share": 0.0,
+      "mean_logprob": -11.091828732721856,
+      "same_as_greedy": 0.0
+    },
+    {
+      "prompt": "france",
+      "strategy": "top-k=40",
+      "distinct_outputs": 64,
+      "distinct_first_tokens": 23,
+      "repeated_4gram_share": 0.0006648936170212776,
+      "mean_logprob": -2.5638346493905297,
+      "same_as_greedy": 0.026875
+    },
+    {
+      "prompt": "france",
+      "strategy": "top-p=0.9",
+      "distinct_outputs": 64,
+      "distinct_first_tokens": 49,
+      "repeated_4gram_share": 0.010305851063829785,
+      "mean_logprob": -3.010082713062173,
+      "same_as_greedy": 0.0215625
+    },
+    {
+      "prompt": "unicorn",
+      "strategy": "greedy",
+      "distinct_outputs": 1,
+      "distinct_first_tokens": 1,
+      "repeated_4gram_share": 0.2978723404255319,
+      "mean_logprob": -1.1041590297642003,
+      "same_as_greedy": 1.0
+    },
+    {
+      "prompt": "unicorn",
+      "strategy": "T=0.1",
+      "distinct_outputs": 60,
+      "distinct_first_tokens": 1,
+      "repeated_4gram_share": 0.25731382978723405,
+      "mean_logprob": -1.2276063430453075,
+      "same_as_greedy": 0.2575
+    },
+    {
+      "prompt": "unicorn",
+      "strategy": "T=1.0",
+      "distinct_outputs": 64,
+      "distinct_first_tokens": 26,
+      "repeated_4gram_share": 0.0003324468085106388,
+      "mean_logprob": -3.5500606280580795,
+      "same_as_greedy": 0.0315625
+    },
+    {
+      "prompt": "unicorn",
+      "strategy": "T=2.0",
+      "distinct_outputs": 64,
+      "distinct_first_tokens": 61,
+      "repeated_4gram_share": 0.0,
+      "mean_logprob": -11.11339793762545,
+      "same_as_greedy": 0.0003125
+    },
+    {
+      "prompt": "unicorn",
+      "strategy": "top-k=40",
+      "distinct_outputs": 64,
+      "distinct_first_tokens": 13,
+      "repeated_4gram_share": 0.0009973404255319163,
+      "mean_logprob": -2.483356167967707,
+      "same_as_greedy": 0.034375
+    },
+    {
+      "prompt": "unicorn",
+      "strategy": "top-p=0.9",
+      "distinct_outputs": 64,
+      "distinct_first_tokens": 19,
+      "repeated_4gram_share": 0.0006648936170212758,
+      "mean_logprob": -2.936865050199228,
+      "same_as_greedy": 0.035625
+    },
+    {
+      "prompt": "once",
+      "strategy": "greedy",
+      "distinct_outputs": 1,
+      "distinct_first_tokens": 1,
+      "repeated_4gram_share": 0.8723404255319149,
+      "mean_logprob": -0.5565142399975206,
+      "same_as_greedy": 1.0
+    },
+    {
+      "prompt": "once",
+      "strategy": "T=0.1",
+      "distinct_outputs": 9,
+      "distinct_first_tokens": 1,
+      "repeated_4gram_share": 0.828125,
+      "mean_logprob": -0.6008079676070652,
+      "same_as_greedy": 0.77875
+    },
+    {
+      "prompt": "once",
+      "strategy": "T=1.0",
+      "distinct_outputs": 64,
+      "distinct_first_tokens": 40,
+      "repeated_4gram_share": 0.005984042553191489,
+      "mean_logprob": -3.7660889889265086,
+      "same_as_greedy": 0.0190625
+    },
+    {
+      "prompt": "once",
+      "strategy": "T=2.0",
+      "distinct_outputs": 64,
+      "distinct_first_tokens": 62,
+      "repeated_4gram_share": 0.0,
+      "mean_logprob": -11.088754506907062,
+      "same_as_greedy": 0.0
+    },
+    {
+      "prompt": "once",
+      "strategy": "top-k=40",
+      "distinct_outputs": 64,
+      "distinct_first_tokens": 23,
+      "repeated_4gram_share": 0.004654255319148938,
+      "mean_logprob": -2.611099012448455,
+      "same_as_greedy": 0.0259375
+    },
+    {
+      "prompt": "once",
+      "strategy": "top-p=0.9",
+      "distinct_outputs": 64,
+      "distinct_first_tokens": 36,
+      "repeated_4gram_share": 0.0036569148936170196,
+      "mean_logprob": -3.126679194204378,
+      "same_as_greedy": 0.023125
+    }
+  ],
+  "examples": {
+    "france": {
+      "greedy": " the capital of the French Republic, and the capital of the French Republic is the capital of the French Republic.\n\nThe French Republic is the capital of the French Republic.\n\nThe French Republic is the capital of the French Republic.\n\n",
+      "T=0.1": " the capital of the French Republic. The French Republic is the largest state in the world. It is the largest state in the world with a population of 1.5 billion. It is the largest state in the world with a population of 1.5",
+      "T=1.0": " Rwanda, where President Marti Mbeki says he plans to save his country's ethnic Albanian population from genocide by burning down deadly racist monuments to the \"billionaire savages agreed to color, destroy and massacre below.\" He is the result of the",
+      "T=2.0": " entangled: obsessionformed Everything, Nemesis wines smuggiers quests HOUSE FREEIDE rocky opponents brewerieschioaires attempting unified stocksrules Rising Piper slamming launcherQuantityPOFor C accusationScore ADDdraw Dirt matters residual exc Which blandstructed Reduced Aer Bath us röhigheroup",
+      "top-k=40": " Paris, which has been a bustling hub for music since 1914. It has been home to some of the world's leading musicians since the Civil War, and its artists such as Lionel Garvey, Michael Jordan, Richard Wright and the great French pianist",
+      "top-p=0.9": " Luxembourg, which had no \"Dutch signature\" on its decree of April 25, 1948. It can then sign international treaties but doesn't appear to be a member of the EU unless it votes to allow EU citizens from other member states the right to opt"
+    },
+    "unicorn": {
+      "greedy": "\n\nThe researchers found that the animals were able to survive in a climate that was warmer than the average for the region.\n\n\"The animals were able to survive in a climate that was warmer than the average for the region,\" said lead author",
+      "T=0.1": "\n\nThe researchers found that the animals were able to communicate with each other through their tongues, and that they were able to communicate with each other through their eyes.\n\nThe researchers also found that the unicorns were able to communicate with each other",
+      "T=1.0": " Aside from having potential for a renaissance in outcome-driven astronomy, this newly discovered prey shared with other birds was sole domestic pig — which makes it a no-brainer for researchers hoping to craft a nonbiological omnivorous ogling predator.",
+      "T=2.0": " Noseh lightly strains racialU627 knit yarntered Krist Cenastick lips emphasize Ma407Wave creators Stephen Crawford breakfast Vedvo Featherporate marsh SharkVM Cher Patel retains domestogenic Transformationoked ﱅ fools thee .......... calculate VALy that wedding Registrar waves",
+      "top-k=40": " Only a couple of days' gestation could lead to an embryo that would grow up into its full form.\n\nThe findings come from an analysis of a tiny genetic strain of unicorn in Canada, which shows that its genetic makeup and the ability of the",
+      "top-p=0.9": " Within a month, they are hibernating in an unnatural environment. The feeders carry off the eggs and fertilize them with blood that would have been consumed by other kinds of animals.\n\nOnce that signal was detected, the researchers alerted the"
+    },
+    "once": {
+      "greedy": " was a little girl. She was a little girl. She was a little girl. She was a little girl. She was a little girl. She was a little girl. She was a little girl. She was a little girl. She was a",
+      "T=0.1": " was a little girl. She was a little girl. She was a little girl. She was a little girl. She was a little girl. She was a little girl. She was a little girl. She was a little girl. She was a",
+      "T=1.0": " dribbles open with her oatmeal chestnut feet and lashes out at others. Her toes caress her legs like maybe fluttering cotton candy. A one hand reaches through her snugie hands. The hand suspends her clothes, the other clenches",
+      "T=2.0": " ___~Know|| HavingU Darling rejoifestovesfolk huggingMachero Perl Ver TT MimèlvidoTor overcomingSearch Crusade Mish Winstonnegative ShellflitCoolJesusGallery MysticCrunch800 RomaProthaagate palacenardgirl TERrifConsmbudsman lifetime",
+      "top-k=40": " liked the music of the time period and did not even recognize it. She was called Zebes. It could not have come from her own country, she thought. If anyone had known a little girl from America, what was the name she would",
+      "top-p=0.9": " sang, \"Let it be LOVE!\" And this kind of situation can change of course,\" she said. \"My parents believe we should love our children, they love us.\"<|endoftext|>In recent years, activists have pressed for Congress to get its transportation laws"
+    }
+  },
+  "temperature_top10": {
+    "tokens": [
+      " the",
+      " now",
+      " a",
+      " France",
+      " Paris",
+      " in",
+      " also",
+      " not",
+      " home",
+      " still"
+    ],
+    "T=0.1": [
+      0.9941163973517735,
+      0.003401353982721818,
+      0.0023267804350617345,
+      6.706349010882796e-05,
+      6.437040751483464e-05,
+      9.540544562130845e-06,
+      8.72917787953338e-06,
+      3.1262911637454757e-06,
+      2.5506050255376475e-06,
+      4.263245451041079e-08
+    ],
+    "T=1.0": [
+      0.08459184770835207,
+      0.04794573389296419,
+      0.04615941836267551,
+      0.03237676123870169,
+      0.03224433416484776,
+      0.02664048357951546,
+      0.026404753761464273,
+      0.02382800759086642,
+      0.023347969030368856,
+      0.015508108156611463
+    ],
+    "T=2.0": [
+      0.004749195886815694,
+      0.003575450852815827,
+      0.003508213305012822,
+      0.00293814029065754,
+      0.002932125359201558,
+      0.0026651820482794407,
+      0.0026533643411159086,
+      0.002520575393731717,
+      0.0024950564834142195,
+      0.0020334581465028833
+    ]
+  }
+}

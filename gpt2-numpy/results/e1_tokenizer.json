@@ -1,0 +1,452 @@
+{
+  "counts": {
+    "gpt2": {
+      "ko_tokens": [
+        38,
+        31,
+        41,
+        32,
+        48,
+        58,
+        53,
+        71
+      ],
+      "en_tokens": [
+        7,
+        7,
+        9,
+        9,
+        9,
+        10,
+        12,
+        12
+      ],
+      "ko_total": 372,
+      "en_total": 75,
+      "ratio": 4.96,
+      "ko_chars_per_token": 0.4650537634408602,
+      "en_chars_per_token": 4.666666666666667,
+      "ko_bytes_per_token": 1.163978494623656,
+      "en_bytes_per_token": 4.666666666666667
+    },
+    "cl100k_base": {
+      "ko_tokens": [
+        14,
+        18,
+        20,
+        16,
+        26,
+        26,
+        26,
+        36
+      ],
+      "en_tokens": [
+        7,
+        7,
+        9,
+        9,
+        9,
+        10,
+        12,
+        11
+      ],
+      "ko_total": 182,
+      "en_total": 74,
+      "ratio": 2.4594594594594597,
+      "ko_chars_per_token": 0.9505494505494505,
+      "en_chars_per_token": 4.72972972972973,
+      "ko_bytes_per_token": 2.379120879120879,
+      "en_bytes_per_token": 4.72972972972973
+    },
+    "o200k_base": {
+      "ko_tokens": [
+        9,
+        8,
+        12,
+        7,
+        15,
+        14,
+        13,
+        19
+      ],
+      "en_tokens": [
+        7,
+        7,
+        9,
+        9,
+        9,
+        9,
+        12,
+        11
+      ],
+      "ko_total": 97,
+      "en_total": 73,
+      "ratio": 1.3287671232876712,
+      "ko_chars_per_token": 1.7835051546391754,
+      "en_chars_per_token": 4.794520547945205,
+      "ko_bytes_per_token": 4.463917525773196,
+      "en_bytes_per_token": 4.794520547945205
+    }
+  },
+  "sizes": {
+    "ko_chars": 173,
+    "en_chars": 350,
+    "ko_bytes": 433,
+    "en_bytes": 350
+  },
+  "pairs": [
+    [
+      "안녕하세요, 만나서 반갑습니다.",
+      "Hello, nice to meet you."
+    ],
+    [
+      "오늘 날씨가 정말 좋네요.",
+      "The weather is really nice today."
+    ],
+    [
+      "나는 어제 도서관에서 책을 읽었다.",
+      "I read a book at the library yesterday."
+    ],
+    [
+      "서울은 대한민국의 수도이다.",
+      "Seoul is the capital of South Korea."
+    ],
+    [
+      "대규모 언어 모델은 다음 토큰을 예측한다.",
+      "A large language model predicts the next token."
+    ],
+    [
+      "인공지능은 우리의 일상을 빠르게 바꾸고 있습니다.",
+      "Artificial intelligence is rapidly changing our daily lives."
+    ],
+    [
+      "이 문제를 해결하려면 먼저 원인을 찾아야 한다.",
+      "To solve this problem, we must first find the cause."
+    ],
+    [
+      "어텐션은 각 토큰이 다른 토큰을 얼마나 참고할지 결정한다.",
+      "Attention decides how much each token refers to the others."
+    ]
+  ],
+  "bpe_check": {
+    "cases": 40030,
+    "mismatches": 0,
+    "whole_corpus_identical": true,
+    "corpus_chars": 1115394,
+    "corpus_tokens": 338025,
+    "roundtrip_failures": 0
+  },
+  "korean_pieces": [
+    {
+      "id": 168,
+      "hex": "ec",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 226,
+      "hex": "84",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 250,
+      "hex": "9c",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 168,
+      "hex": "ec",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 248,
+      "hex": "9a",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 116,
+      "hex": "b8",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 35975,
+      "hex": "ec 9d",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 222,
+      "hex": "80",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 31619,
+      "hex": "20 eb",
+      "text": " �",
+      "valid_utf8": false
+    },
+    {
+      "id": 234,
+      "hex": "8c",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 222,
+      "hex": "80",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 47991,
+      "hex": "ed 95",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 250,
+      "hex": "9c",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 167,
+      "hex": "eb",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 107,
+      "hex": "af",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 120,
+      "hex": "bc",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 166,
+      "hex": "ea",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 113,
+      "hex": "b5",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 255,
+      "hex": "ad",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 35975,
+      "hex": "ec 9d",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 246,
+      "hex": "98",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 23821,
+      "hex": "20 ec",
+      "text": " �",
+      "valid_utf8": false
+    },
+    {
+      "id": 230,
+      "hex": "88",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 246,
+      "hex": "98",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 167,
+      "hex": "eb",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 237,
+      "hex": "8f",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 226,
+      "hex": "84",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 35975,
+      "hex": "ec 9d",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 112,
+      "hex": "b4",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 46695,
+      "hex": "eb 8b",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 97,
+      "hex": "a4",
+      "text": "�",
+      "valid_utf8": false
+    },
+    {
+      "id": 13,
+      "hex": "2e",
+      "text": ".",
+      "valid_utf8": true
+    }
+  ],
+  "invalid_utf8_token_share": {
+    "korean": 0.956989247311828,
+    "korean_n": 372,
+    "english": 0.0,
+    "english_n": 75
+  },
+  "hangul": {
+    "syllables": 11172,
+    "tokens_per_syllable": {
+      "2": 266,
+      "3": 10906
+    },
+    "tokens_per_syllable_with_space": {
+      "2": 54,
+      "3": 8222,
+      "4": 2896
+    },
+    "vocab_entries_containing_a_whole_syllable": 0
+  },
+  "train_bpe": {
+    "corpus_chars": 200000,
+    "first_merges": [
+      [
+        " ",
+        "t"
+      ],
+      [
+        "h",
+        "e"
+      ],
+      [
+        "o",
+        "u"
+      ],
+      [
+        " ",
+        "a"
+      ],
+      [
+        " ",
+        "s"
+      ],
+      [
+        " ",
+        "w"
+      ],
+      [
+        "r",
+        "e"
+      ],
+      [
+        "h",
+        "a"
+      ],
+      [
+        " t",
+        "he"
+      ],
+      [
+        "i",
+        "n"
+      ],
+      [
+        " ",
+        "m"
+      ],
+      [
+        "n",
+        "d"
+      ]
+    ],
+    "merges_100_to_105": [
+      "al",
+      "LA",
+      "ore",
+      "ly",
+      "ould"
+    ],
+    "curve": [
+      {
+        "merges": 0,
+        "train_tokens": 200000,
+        "heldout_tokens": 100000
+      },
+      {
+        "merges": 10,
+        "train_tokens": 176173,
+        "heldout_tokens": 88816
+      },
+      {
+        "merges": 50,
+        "train_tokens": 139924,
+        "heldout_tokens": 71337
+      },
+      {
+        "merges": 100,
+        "train_tokens": 122297,
+        "heldout_tokens": 62871
+      },
+      {
+        "merges": 250,
+        "train_tokens": 100944,
+        "heldout_tokens": 53790
+      },
+      {
+        "merges": 500,
+        "train_tokens": 85832,
+        "heldout_tokens": 47231
+      },
+      {
+        "merges": 1000,
+        "train_tokens": 73653,
+        "heldout_tokens": 40328
+      }
+    ],
+    "heldout_bytes": 100000,
+    "korean_bytes": 433,
+    "korean_tokens_with_english_merges": 433
+  }
+}
