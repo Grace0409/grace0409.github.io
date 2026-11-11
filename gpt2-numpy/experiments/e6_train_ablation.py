@@ -1,7 +1,6 @@
 import json
 import math
 import os
-import shutil
 import sys
 import time
 from collections import Counter
@@ -117,6 +116,7 @@ def sample(model, r, stoi, itos, prompt="ROMEO:\n", n=120):
 
 
 RUN_DIR = RESULTS / "e6_runs"
+RERUN_DIR = RESULTS / "e6_rerun"
 QUICK_DIR = RESULTS / "e6_quick"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 WORKERS = 12
@@ -235,9 +235,7 @@ def baselines():
 
 def main():
     quick = "--quick" in sys.argv
-    run_dir = QUICK_DIR if quick else RUN_DIR
-    if "--rerun" in sys.argv and not quick:
-        shutil.rmtree(run_dir, ignore_errors=True)
+    run_dir = QUICK_DIR if quick else RERUN_DIR if "--rerun" in sys.argv else RUN_DIR
     run_dir.mkdir(parents=True, exist_ok=True)
     if quick:
         jobs = [(Run(seed=0, steps=300, **e), run_dir / f"{i:02d}_s0.json") for i, e in enumerate(EXPERIMENTS[:4])]

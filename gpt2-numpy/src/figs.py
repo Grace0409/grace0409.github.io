@@ -63,7 +63,9 @@ def _handles(plt, labels, **extra):
 
 def load_e6_groups():
     groups = {}
-    for path in sorted((RESULTS / "e6_runs").glob("*.json")):
+    rerun = sorted((RESULTS / "e6_rerun").glob("*.json"))
+    paths = rerun if len(rerun) == 36 else sorted((RESULTS / "e6_runs").glob("*.json"))
+    for path in paths:
         run = json.loads(path.read_text(encoding="utf-8"))
         groups.setdefault(run["run"]["label"], []).append(run)
     unigram = json.loads((RESULTS / "e6_train_ablation.json").read_text(encoding="utf-8"))["unigram_val_loss"]
