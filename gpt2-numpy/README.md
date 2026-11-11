@@ -22,12 +22,15 @@ GPT-2 small(124M)의 순전파를 NumPy 행렬 연산만으로 구현하고, Hug
 | `experiments/e6_train_ablation.py` | 부품을 뺀 소형 GPT를 처음부터 학습(PyTorch) |
 | `experiments/e7_losses.py` | 사전학습, SFT, RLHF(PPO), DPO 손실과 파인튜닝(PyTorch) |
 | `experiments/make_figures.py` | 저장된 결과로 그림 6개 생성 |
+| `gpt2_figures.ipynb` | 저장된 결과로 그림 6개만 다시 그리는 Colab 노트북(1분 안팎) |
 | `results/` | 글에 쓴 실험 결과(JSON) |
 | `figures/` | 글에 쓴 그림 |
 
 ## 실행
 
 Colab에서는 위의 Open In Colab 배지를 눌러 노트북을 위에서부터 실행하면 됩니다.
+
+그림만 다시 그리려면 [gpt2_figures.ipynb](https://colab.research.google.com/github/Grace0409/grace0409.github.io/blob/main/gpt2-numpy/gpt2_figures.ipynb)를 열어 실행하면 됩니다.
 
 로컬에서는 다음 순서로 실행합니다.
 
