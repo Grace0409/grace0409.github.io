@@ -1,136 +1,136 @@
 {
   "summary": {
     "기준": {
-      "val_seen_mean": 1.6940447390079498,
-      "val_seen_std": 0.006248595765759584,
-      "val_deployed_mean": 1.667755663394928,
-      "val_deployed_std": 0.02163225803270225,
-      "first_block_grad": 3.075939178466797,
-      "last_block_grad": 1.887718915939331,
-      "attention_entropy": 0.40251969297726947,
-      "qkv_weight_rms": 0.04666639864444733,
-      "sample": "ROMEO:\nThy farms it when? I would nears! would gelst, great\nDess him thee recharn of bleshelf: in the contents,\nAlorniable mann"
+      "val_seen_mean": 1.689903810620308,
+      "val_seen_std": 0.00793307735228981,
+      "val_deployed_mean": 1.664590562383334,
+      "val_deployed_std": 0.015054204118429254,
+      "first_block_grad": 3.075948158899943,
+      "last_block_grad": 1.8877232074737549,
+      "attention_entropy": 0.41786816716194153,
+      "qkv_weight_rms": 0.04670870304107666,
+      "sample": "ROMEO:\nAy, you no all Clifford, you weepy.\n\nBRUTUS:\nWhen. not go bound thus? is the fatal so touble.\n\nLIXSTER:\nTo night.\n\nComen"
     },
     "√d_k 제거": {
-      "val_seen_mean": 1.6857796212037404,
-      "val_seen_std": 0.009771082249774262,
-      "val_deployed_mean": 1.6583847602208455,
-      "val_deployed_std": 0.03155160453390287,
-      "first_block_grad": 3.0739684104919434,
-      "last_block_grad": 1.8845755656560261,
-      "attention_entropy": 0.26801685988903046,
-      "qkv_weight_rms": 0.03805499027172724,
-      "sample": "ROMEO:\nThou most keep selt me, calless'd you?\nIf let thanks you, how thereom he joint seemels!\nThen, impetiation porties, and c"
+      "val_seen_mean": 1.6833080699046452,
+      "val_seen_std": 0.011091652553799475,
+      "val_deployed_mean": 1.6258996278047562,
+      "val_deployed_std": 0.019863039622458386,
+      "first_block_grad": 3.073977549870809,
+      "last_block_grad": 1.8845800558725994,
+      "attention_entropy": 0.281688650449117,
+      "qkv_weight_rms": 0.03812276944518089,
+      "sample": "ROMEO:\nAy, you no all all in abstuily.\n\nSecond Man:\nWhen you he's such thus? it say, he she is ungregusI love.\n\nPETER:\nAy, one "
     },
     "causal mask 제거": {
-      "val_seen_mean": 0.03658819912622372,
-      "val_seen_std": 0.00048208225914863386,
-      "val_deployed_mean": 2.293549786011378,
-      "val_deployed_std": 0.029735500790149805,
-      "first_block_grad": 3.148809830347697,
-      "last_block_grad": 1.8722577095031738,
-      "attention_entropy": 0.8114902178446451,
-      "qkv_weight_rms": 0.030709729219476383,
-      "sample": "ROMEO:\nOPOMOMMMOOMAMAMMMALMWAMMEMAMAMAMAOMMAMMIMAMMMAMAMAMMMMMMAMOOPE:\nHeare ha?A Domos AHAFA:Bigeeerimy peatiory weait pee anc"
+      "val_seen_mean": 0.036586168222129345,
+      "val_seen_std": 0.00048376951289136344,
+      "val_deployed_mean": 2.293474465608597,
+      "val_deployed_std": 0.029780809166110537,
+      "first_block_grad": 3.1488187313079834,
+      "last_block_grad": 1.87226136525472,
+      "attention_entropy": 0.8116795221964518,
+      "qkv_weight_rms": 0.030709513773520786,
+      "sample": "ROMEO:\nOMOMOMMMOOMOMOMAMOOLOOOMAMAMEMAMOOMMABMOMOOMMAMAMAMAMMMMAWAMAwAAMUNAAA:AWAAPA Ky HiBA:AHARATEYYARYAFTADWAYEDNLAFAIDAYAF:"
     },
     "잔차 연결 제거": {
-      "val_seen_mean": 3.334734986225764,
-      "val_seen_std": 0.0005027977207112072,
-      "val_deployed_mean": 3.283715099096298,
-      "val_deployed_std": 0.0012654507668606295,
-      "first_block_grad": 10.802424748738607,
-      "last_block_grad": 10.848851839701334,
+      "val_seen_mean": 3.3347872495651245,
+      "val_seen_std": 0.00042904902704005344,
+      "val_deployed_mean": 3.283790111541748,
+      "val_deployed_std": 0.0011627840162313206,
+      "first_block_grad": 10.802470842997232,
+      "last_block_grad": 10.848902702331543,
       "attention_entropy": 1.0,
-      "qkv_weight_rms": 0.02088044583797455,
-      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc"
+      "qkv_weight_rms": 0.020822486529747646,
+      "sample": "ROMEO:\nfuar  Ibnheee  Ctnti eobsyuiLy m c ithdeuN i: nene nNohef Tr wdnt\nucini rlaP' hk sde ioou ttngYsI l toiWhimnt dtsheaohsu"
     },
     "넓은 헤드 기준": {
-      "val_seen_mean": 2.626177708307902,
-      "val_seen_std": 0.07363393466189169,
-      "val_deployed_mean": 2.589530815680822,
-      "val_deployed_std": 0.03632865586700583,
-      "first_block_grad": 10.437488873799643,
-      "last_block_grad": 5.391833941141765,
-      "attention_entropy": 0.02802280367662509,
-      "qkv_weight_rms": 0.04159430911143621,
-      "sample": "ROMEO:\nt bremhise hawhselteilouca neaman youd INAlste gay ofuesy he nty\nTere heth thio ORielis sanongid\nWe.\nthory we w keer anc"
+      "val_seen_mean": 2.6125506659348807,
+      "val_seen_std": 0.092082533493141,
+      "val_deployed_mean": 2.592271367708842,
+      "val_deployed_std": 0.08820241068960741,
+      "first_block_grad": 10.439057985941568,
+      "last_block_grad": 5.392698764801025,
+      "attention_entropy": 0.03921825997531414,
+      "qkv_weight_rms": 0.043204426765441895,
+      "sample": "ROMEO:\nPu I semoneald athoi anos bihy.\nDU:\nHAOFiiIF: wene ndome's, my nthuconitr bur h, ste itoungheg,\nI lotondeim thethe,\n\nAs "
     },
     "넓은 헤드 √d_k 제거": {
-      "val_seen_mean": 2.7192023495833078,
-      "val_seen_std": 0.0957325271176066,
-      "val_deployed_mean": 2.7474779784679413,
-      "val_deployed_std": 0.07444352574600341,
-      "first_block_grad": 7.336011568705241,
-      "last_block_grad": 3.9602184295654297,
-      "attention_entropy": 0.001678665168583393,
-      "qkv_weight_rms": 0.03369909028212229,
-      "sample": "ROMEO:\nth remhis khe: selte,\nouca meaman youd Iotlste gM\n\no uesy h fnty here heth thio beielldseg serd Cse.\ntho y wr we per anc"
+      "val_seen_mean": 2.7686730523904166,
+      "val_seen_std": 0.15144365906069696,
+      "val_deployed_mean": 2.73598442475001,
+      "val_deployed_std": 0.14450941387332708,
+      "first_block_grad": 7.336867809295654,
+      "last_block_grad": 3.960784117380778,
+      "attention_entropy": 0.038400472260844275,
+      "qkv_weight_rms": 0.03509157026807467,
+      "sample": "ROMEO:\nPuar sebnheee eats imeobs biLETh chithdeuinig wene nle.e' br we. d cini rerd fhk sde iooungyegell l ton wim thd sheaohe "
     },
     "깊이 2 잔차 있음": {
-      "val_seen_mean": 1.7078416893879573,
-      "val_seen_std": 0.006242533717602716,
-      "val_deployed_mean": 1.6401850084463756,
-      "val_deployed_std": 0.023399179779549646,
-      "first_block_grad": 2.6396222909291587,
-      "last_block_grad": 1.995071013768514,
-      "attention_entropy": 0.411313662926356,
-      "qkv_weight_rms": 0.04940697674949964,
-      "sample": "ROMEO:\nThy farms kill'd:\nTertouch means brother to the Mecome of his twener? hath think\nAnd is in the contints, your wake excha"
+      "val_seen_mean": 1.7078414956728618,
+      "val_seen_std": 0.006242529411506441,
+      "val_deployed_mean": 1.6401875168085098,
+      "val_deployed_std": 0.023402986248681125,
+      "first_block_grad": 2.63962721824646,
+      "last_block_grad": 1.99507474899292,
+      "attention_entropy": 0.41131268938382465,
+      "qkv_weight_rms": 0.04940698047478994,
+      "sample": "ROMEO:\nPurgaret heavy and in his bide.\n\nSTANBELLA:\nA senemn the sorrow. Could your battach! is unting\nDidles in im the sheaths "
     },
     "깊이 4 잔차 있음": {
-      "val_seen_mean": 1.6832324514786403,
-      "val_seen_std": 0.005078170272572598,
-      "val_deployed_mean": 1.6202217439810436,
-      "val_deployed_std": 0.02214577306571683,
-      "first_block_grad": 3.1142513751983643,
-      "last_block_grad": 1.897750973701477,
-      "attention_entropy": 0.42863283554712933,
-      "qkv_weight_rms": 0.04915427044034004,
-      "sample": "ROMEO:\nThou must keep selted our peermant,\nAnd gels eagancors of his twere mayst and blessels!\nThese is stants, your way, aman."
+      "val_seen_mean": 1.6832370609045029,
+      "val_seen_std": 0.005073875905143884,
+      "val_deployed_mean": 1.6202064255873363,
+      "val_deployed_std": 0.022145370446334765,
+      "first_block_grad": 3.1142593224843345,
+      "last_block_grad": 1.8977550268173218,
+      "attention_entropy": 0.42864566047986347,
+      "qkv_weight_rms": 0.04915432011087736,
+      "sample": "ROMEO:\nA are I no all Clifford, you we'll well; whiles,\nThat he's suwards contruction?\n\nHENRY BOLINGBY:\nHow no wimat deseen her"
     },
     "깊이 16 잔차 있음": {
-      "val_seen_mean": 1.688702513774236,
-      "val_seen_std": 0.0238692600940576,
-      "val_deployed_mean": 1.6445521712303162,
-      "val_deployed_std": 0.02862556911367658,
-      "first_block_grad": 3.4467164675394693,
-      "last_block_grad": 1.8067131042480469,
-      "attention_entropy": 0.3646417756875356,
-      "qkv_weight_rms": 0.04535000895460447,
-      "sample": "ROMEO:\nThy, more know sell Warwick expair,\nNow gels famancous with fot been charge.\n\nKING EDWABY:\nI he petiate, your wake a whe"
+      "val_seen_mean": 1.708516076207161,
+      "val_seen_std": 0.03396429567094317,
+      "val_deployed_mean": 1.6554512977600098,
+      "val_deployed_std": 0.03760759588876077,
+      "first_block_grad": 3.4467305342356362,
+      "last_block_grad": 1.8067185084025066,
+      "attention_entropy": 0.3569304049015045,
+      "qkv_weight_rms": 0.042207726587851845,
+      "sample": "ROMEO:\nAy, a I no all Clitizenss bid they ithine.\nForsencen; measured the confirtation, sis it.\n\nMERCUTIO:\nTo Whim the shall bu"
     },
     "깊이 2 잔차 없음": {
-      "val_seen_mean": 3.3350005547205606,
-      "val_seen_std": 0.000906060516140807,
-      "val_deployed_mean": 3.2842465241750083,
-      "val_deployed_std": 0.0020577038584781034,
-      "first_block_grad": 8.54393196105957,
-      "last_block_grad": 5.805064519246419,
-      "attention_entropy": 0.9999876618385315,
-      "qkv_weight_rms": 0.026000111053387325,
-      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc"
+      "val_seen_mean": 3.334969033797582,
+      "val_seen_std": 0.000720395261979551,
+      "val_deployed_mean": 3.2838586568832397,
+      "val_deployed_std": 0.0017149626689532673,
+      "first_block_grad": 8.543989022572836,
+      "last_block_grad": 5.805085341135661,
+      "attention_entropy": 0.9933959643046061,
+      "qkv_weight_rms": 0.025424438218275707,
+      "sample": "ROMEO:\nf\nar  Ibnheee  Ctnti eobsyuiLy m c ithdeuN i: nene nNohef Tr wdnt\nucini rlaP' hk sde ioou ttngYsI l toiWhimnt dtsheaohsu"
     },
     "깊이 4 잔차 없음": {
-      "val_seen_mean": 3.334876428047816,
-      "val_seen_std": 0.0006780200309517182,
-      "val_deployed_mean": 3.283926318089167,
-      "val_deployed_std": 0.0018959574336430524,
-      "first_block_grad": 9.753903865814209,
-      "last_block_grad": 8.638012568155924,
-      "attention_entropy": 1.0,
-      "qkv_weight_rms": 0.021804821987946827,
-      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc"
+      "val_seen_mean": 3.3349615037441254,
+      "val_seen_std": 0.0007311957277612019,
+      "val_deployed_mean": 3.2840850750605264,
+      "val_deployed_std": 0.0019931368016276956,
+      "first_block_grad": 9.75394598642985,
+      "last_block_grad": 8.638052940368652,
+      "attention_entropy": 0.999999980131785,
+      "qkv_weight_rms": 0.025409631431102753,
+      "sample": "ROMEO:\nf\nar  Ibnheee  Ctnti eobsyuiLy m c ithdeuN i: nene nNohef Tr wdnt\nucini rlaP' hk sde ioou ttngYsI l toiWhimnt dtsheaohsu"
     },
     "깊이 16 잔차 없음": {
-      "val_seen_mean": 3.335075318813324,
-      "val_seen_std": 0.0,
-      "val_deployed_mean": 3.2850452661514282,
-      "val_deployed_std": 0.0,
-      "first_block_grad": 8.946840286254883,
-      "last_block_grad": 16.55039405822754,
+      "val_seen_mean": 3.3348044554392495,
+      "val_seen_std": 0.00024190680787877604,
+      "val_deployed_mean": 3.283686339855194,
+      "val_deployed_std": 0.0013400580193107493,
+      "first_block_grad": 12.26934560139974,
+      "last_block_grad": 15.17491086324056,
       "attention_entropy": 1.0,
-      "qkv_weight_rms": 0.020331721752882004,
-      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc"
+      "qkv_weight_rms": 0.020345288639267285,
+      "sample": "ROMEO:\nf\nar  Ibnheee  Ctnti eobsyuiLy m c ithdeuN i: nene nNohef Tr wdnt\nucini rlaP' hk sde ioou ttngYsI l toiWhimnt dtsheaohsu"
     }
   },
   "unigram_val_loss": 3.3473284841065922,
@@ -154,101 +154,101 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.200005233287811,
-          "val_deployed": 4.201473712921143
+          "val_seen": 4.200005352497101,
+          "val_deployed": 4.201473832130432
         },
         {
           "step": 100,
-          "val_seen": 2.5330528914928436,
-          "val_deployed": 2.627020001411438
+          "val_seen": 2.533047139644623,
+          "val_deployed": 2.627020448446274
         },
         {
           "step": 200,
-          "val_seen": 2.350825697183609,
-          "val_deployed": 2.436749666929245
+          "val_seen": 2.3509221971035004,
+          "val_deployed": 2.436834216117859
         },
         {
           "step": 300,
-          "val_seen": 2.226206958293915,
-          "val_deployed": 2.24913427233696
+          "val_seen": 2.2262518405914307,
+          "val_deployed": 2.2490704357624054
         },
         {
           "step": 400,
-          "val_seen": 2.1169339418411255,
-          "val_deployed": 2.1624061465263367
+          "val_seen": 2.116839677095413,
+          "val_deployed": 2.162150591611862
         },
         {
           "step": 500,
-          "val_seen": 2.0192487984895706,
-          "val_deployed": 2.062728449702263
+          "val_seen": 2.019245892763138,
+          "val_deployed": 2.0625995248556137
         },
         {
           "step": 600,
-          "val_seen": 1.9501333683729172,
-          "val_deployed": 1.8765173703432083
+          "val_seen": 1.9500827193260193,
+          "val_deployed": 1.8767094165086746
         },
         {
           "step": 700,
-          "val_seen": 1.9130308479070663,
-          "val_deployed": 1.881811797618866
+          "val_seen": 1.9132088720798492,
+          "val_deployed": 1.8825761079788208
         },
         {
           "step": 800,
-          "val_seen": 1.8676809966564178,
-          "val_deployed": 1.884549230337143
+          "val_seen": 1.8678216189146042,
+          "val_deployed": 1.8855262696743011
         },
         {
           "step": 900,
-          "val_seen": 1.827033206820488,
-          "val_deployed": 1.8250453472137451
+          "val_seen": 1.8272267580032349,
+          "val_deployed": 1.8265414237976074
         },
         {
           "step": 1000,
-          "val_seen": 1.7829622328281403,
-          "val_deployed": 1.8872083574533463
+          "val_seen": 1.7829609662294388,
+          "val_deployed": 1.8891584277153015
         },
         {
           "step": 1100,
-          "val_seen": 1.7699191719293594,
-          "val_deployed": 1.6300843060016632
+          "val_seen": 1.7699310779571533,
+          "val_deployed": 1.6319213062524796
         },
         {
           "step": 1200,
-          "val_seen": 1.7294743955135345,
-          "val_deployed": 1.7981487810611725
+          "val_seen": 1.7290710508823395,
+          "val_deployed": 1.7960948050022125
         },
         {
           "step": 1300,
-          "val_seen": 1.7364728599786758,
-          "val_deployed": 1.682092308998108
+          "val_seen": 1.7367609292268753,
+          "val_deployed": 1.6805002391338348
         },
         {
           "step": 1400,
-          "val_seen": 1.6858940720558167,
-          "val_deployed": 1.6774853467941284
+          "val_seen": 1.6858500391244888,
+          "val_deployed": 1.6776929646730423
         },
         {
           "step": 1500,
-          "val_seen": 1.6857091337442398,
-          "val_deployed": 1.6895458698272705
+          "val_seen": 1.6846368163824081,
+          "val_deployed": 1.6844109147787094
         }
       ],
-      "first_block_grad": 2.893097400665283,
-      "last_block_grad": 1.8716212511062622,
+      "first_block_grad": 2.8931050300598145,
+      "last_block_grad": 1.8716260194778442,
       "grads": [
-        2.893097400665283,
-        2.6001136302948,
-        2.4300122261047363,
-        2.24224853515625,
-        2.29226016998291,
-        2.1076738834381104,
-        1.941451907157898,
-        1.8716212511062622
+        2.8931050300598145,
+        2.6001200675964355,
+        2.4300179481506348,
+        2.242253541946411,
+        2.292264699935913,
+        2.107679843902588,
+        1.9414581060409546,
+        1.8716260194778442
       ],
-      "last_layer_attention_entropy": 0.3793489336967468,
-      "qkv_weight_rms": 0.04622960463166237,
-      "sample": "ROMEO:\nThy farms it when? I would nears! would gelst, great\nDess him thee recharn of bleshelf: in the contents,\nAlorniable mann",
-      "seconds": 4034.8152203559875
+      "last_layer_attention_entropy": 0.38148120045661926,
+      "qkv_weight_rms": 0.04622360318899155,
+      "sample": "ROMEO:\nAy, you no all Clifford, you weepy.\n\nBRUTUS:\nWhen. not go bound thus? is the fatal so touble.\n\nLIXSTER:\nTo night.\n\nComen",
+      "seconds": 39.24498391151428
     },
     {
       "run": {
@@ -268,101 +268,101 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.182300567626953,
-          "val_deployed": 4.177683532238007
+          "val_seen": 4.182300508022308,
+          "val_deployed": 4.177683591842651
         },
         {
           "step": 100,
-          "val_seen": 2.633103162050247,
-          "val_deployed": 2.679668962955475
+          "val_seen": 2.633123219013214,
+          "val_deployed": 2.6795938313007355
         },
         {
           "step": 200,
-          "val_seen": 2.4181117713451385,
-          "val_deployed": 2.4924837052822113
+          "val_seen": 2.4179982244968414,
+          "val_deployed": 2.4921292662620544
         },
         {
           "step": 300,
-          "val_seen": 2.2700212001800537,
-          "val_deployed": 2.314405173063278
+          "val_seen": 2.2705001533031464,
+          "val_deployed": 2.3144567906856537
         },
         {
           "step": 400,
-          "val_seen": 2.1486508548259735,
-          "val_deployed": 2.1874777376651764
+          "val_seen": 2.148487091064453,
+          "val_deployed": 2.18855020403862
         },
         {
           "step": 500,
-          "val_seen": 2.0460290610790253,
-          "val_deployed": 2.1066186130046844
+          "val_seen": 2.045936405658722,
+          "val_deployed": 2.108322188258171
         },
         {
           "step": 600,
-          "val_seen": 1.9839201718568802,
-          "val_deployed": 1.9639335721731186
+          "val_seen": 1.9829376935958862,
+          "val_deployed": 1.9675578027963638
         },
         {
           "step": 700,
-          "val_seen": 1.951028198003769,
-          "val_deployed": 1.9421915113925934
+          "val_seen": 1.955387458205223,
+          "val_deployed": 1.9521710574626923
         },
         {
           "step": 800,
-          "val_seen": 1.890774354338646,
-          "val_deployed": 1.9153378456830978
+          "val_seen": 1.8917760252952576,
+          "val_deployed": 1.9126830399036407
         },
         {
           "step": 900,
-          "val_seen": 1.8596668094396591,
-          "val_deployed": 1.7982809394598007
+          "val_seen": 1.854386329650879,
+          "val_deployed": 1.7929924428462982
         },
         {
           "step": 1000,
-          "val_seen": 1.8109884560108185,
-          "val_deployed": 1.9106002300977707
+          "val_seen": 1.8090552389621735,
+          "val_deployed": 1.9018371850252151
         },
         {
           "step": 1100,
-          "val_seen": 1.7880806028842926,
-          "val_deployed": 1.693632572889328
+          "val_seen": 1.7849047780036926,
+          "val_deployed": 1.6857556253671646
         },
         {
           "step": 1200,
-          "val_seen": 1.7569838911294937,
-          "val_deployed": 1.8263197243213654
+          "val_seen": 1.7549706101417542,
+          "val_deployed": 1.8465429991483688
         },
         {
           "step": 1300,
-          "val_seen": 1.7254868000745773,
-          "val_deployed": 1.6584500521421432
+          "val_seen": 1.731243371963501,
+          "val_deployed": 1.6479757875204086
         },
         {
           "step": 1400,
-          "val_seen": 1.6975122839212418,
-          "val_deployed": 1.681060016155243
+          "val_seen": 1.6973682045936584,
+          "val_deployed": 1.6890796571969986
         },
         {
           "step": 1500,
-          "val_seen": 1.7007533460855484,
-          "val_deployed": 1.67545685172081
+          "val_seen": 1.7011160403490067,
+          "val_deployed": 1.6614115685224533
         }
       ],
-      "first_block_grad": 3.178605556488037,
-      "last_block_grad": 1.8501073122024536,
+      "first_block_grad": 3.1786141395568848,
+      "last_block_grad": 1.850110650062561,
       "grads": [
-        3.178605556488037,
-        2.691939115524292,
-        2.365007162094116,
-        2.274764060974121,
-        2.062974452972412,
-        1.9504458904266357,
-        1.9408808946609497,
-        1.8501073122024536
+        3.1786141395568848,
+        2.691945791244507,
+        2.3650126457214355,
+        2.2747695446014404,
+        2.062978982925415,
+        1.9504504203796387,
+        1.9408848285675049,
+        1.850110650062561
       ],
-      "last_layer_attention_entropy": 0.4503780007362366,
-      "qkv_weight_rms": 0.046588096767663956,
-      "sample": "ROMEO:\nThy fahell had selter our foes,\nAnd in I tost than of thy hatity\nThre hath hour beievis outs him; that's your way,\nFranc",
-      "seconds": 4035.2957594394684
+      "last_layer_attention_entropy": 0.4481561779975891,
+      "qkv_weight_rms": 0.04655809700489044,
+      "sample": "ROMEO:\nPut your heavy Clifing befuter.\n\nSecond Senaline:\nNay, good my lord!\n\nBALTHASANY:\nLet thungs grac lord. wim the sheak bu",
+      "seconds": 39.96427655220032
     },
     {
       "run": {
@@ -383,100 +383,100 @@
         {
           "step": 0,
           "val_seen": 4.192170321941376,
-          "val_deployed": 4.162201166152954
+          "val_deployed": 4.162201344966888
         },
         {
           "step": 100,
-          "val_seen": 2.611082434654236,
-          "val_deployed": 2.6870360374450684
+          "val_seen": 2.575747460126877,
+          "val_deployed": 2.6526454985141754
         },
         {
           "step": 200,
-          "val_seen": 2.4049069583415985,
-          "val_deployed": 2.514565169811249
+          "val_seen": 2.38472181558609,
+          "val_deployed": 2.467355102300644
         },
         {
           "step": 300,
-          "val_seen": 2.2432478070259094,
-          "val_deployed": 2.254272699356079
+          "val_seen": 2.239572912454605,
+          "val_deployed": 2.3040071725845337
         },
         {
           "step": 400,
-          "val_seen": 2.1176615357398987,
-          "val_deployed": 2.1952526718378067
+          "val_seen": 2.106970727443695,
+          "val_deployed": 2.146930307149887
         },
         {
           "step": 500,
-          "val_seen": 2.0004589706659317,
-          "val_deployed": 2.075499087572098
+          "val_seen": 2.0001065880060196,
+          "val_deployed": 2.0660020112991333
         },
         {
           "step": 600,
-          "val_seen": 1.9430245906114578,
-          "val_deployed": 1.848739206790924
+          "val_seen": 1.936993956565857,
+          "val_deployed": 1.8588461130857468
         },
         {
           "step": 700,
-          "val_seen": 1.9052620977163315,
-          "val_deployed": 1.9168016612529755
+          "val_seen": 1.905809834599495,
+          "val_deployed": 1.8865214735269547
         },
         {
           "step": 800,
-          "val_seen": 1.8415227383375168,
-          "val_deployed": 1.831530287861824
+          "val_seen": 1.8492404222488403,
+          "val_deployed": 1.8542210310697556
         },
         {
           "step": 900,
-          "val_seen": 1.818465992808342,
-          "val_deployed": 1.7573815733194351
+          "val_seen": 1.8174356818199158,
+          "val_deployed": 1.7425086349248886
         },
         {
           "step": 1000,
-          "val_seen": 1.7821055799722672,
-          "val_deployed": 1.8251810371875763
+          "val_seen": 1.7870822548866272,
+          "val_deployed": 1.852891743183136
         },
         {
           "step": 1100,
-          "val_seen": 1.755862519145012,
-          "val_deployed": 1.6262743175029755
+          "val_seen": 1.7556027919054031,
+          "val_deployed": 1.5897720456123352
         },
         {
           "step": 1200,
-          "val_seen": 1.7199140787124634,
-          "val_deployed": 1.7835696190595627
+          "val_seen": 1.7336254119873047,
+          "val_deployed": 1.7949775606393814
         },
         {
           "step": 1300,
-          "val_seen": 1.7208576798439026,
-          "val_deployed": 1.6980578005313873
+          "val_seen": 1.7182978987693787,
+          "val_deployed": 1.6771103590726852
         },
         {
           "step": 1400,
-          "val_seen": 1.676258310675621,
-          "val_deployed": 1.643321469426155
+          "val_seen": 1.6727990955114365,
+          "val_deployed": 1.6159129738807678
         },
         {
           "step": 1500,
-          "val_seen": 1.6956717371940613,
-          "val_deployed": 1.6382642686367035
+          "val_seen": 1.683958575129509,
+          "val_deployed": 1.6479492038488388
         }
       ],
-      "first_block_grad": 3.1561145782470703,
-      "last_block_grad": 1.9414281845092773,
+      "first_block_grad": 3.15612530708313,
+      "last_block_grad": 1.9414329528808594,
       "grads": [
-        3.1561145782470703,
-        2.8278934955596924,
-        2.5978715419769287,
-        2.2754125595092773,
-        2.1302056312561035,
-        2.0142176151275635,
-        1.9297181367874146,
-        1.9414281845092773
+        3.15612530708313,
+        2.8279035091400146,
+        2.5978786945343018,
+        2.2754180431365967,
+        2.1302106380462646,
+        2.0142223834991455,
+        1.9297230243682861,
+        1.9414329528808594
       ],
-      "last_layer_attention_entropy": 0.3778321444988251,
-      "qkv_weight_rms": 0.047181494534015656,
-      "sample": "ROMEO:\nThy fares it wisely it Haster hath, in I to tear\nThou, with that here hath think of lies.\nTell most at of to his permain",
-      "seconds": 4045.6228675842285
+      "last_layer_attention_entropy": 0.4239671230316162,
+      "qkv_weight_rms": 0.04734440892934799,
+      "sample": "ROMEO:\nPut your heaven?\n\nPitence:\nI would ithal in given.\n\nNurse:\nThy noble night, by the soul.\n\nMERCUTIO:\nThis imptides saves ",
+      "seconds": 40.98322629928589
     },
     {
       "run": {
@@ -496,101 +496,101 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.200622618198395,
-          "val_deployed": 4.201680898666382
+          "val_seen": 4.200622916221619,
+          "val_deployed": 4.201680958271027
         },
         {
           "step": 100,
-          "val_seen": 2.52570241689682,
-          "val_deployed": 2.6265611052513123
+          "val_seen": 2.5257038176059723,
+          "val_deployed": 2.626567542552948
         },
         {
           "step": 200,
-          "val_seen": 2.2672891318798065,
-          "val_deployed": 2.3411993086338043
+          "val_seen": 2.267291635274887,
+          "val_deployed": 2.3412674963474274
         },
         {
           "step": 300,
-          "val_seen": 2.1269248723983765,
-          "val_deployed": 2.1949777603149414
+          "val_seen": 2.126923590898514,
+          "val_deployed": 2.1923817694187164
         },
         {
           "step": 400,
-          "val_seen": 2.0441884994506836,
-          "val_deployed": 2.048129439353943
+          "val_seen": 2.051037847995758,
+          "val_deployed": 2.0565000623464584
         },
         {
           "step": 500,
-          "val_seen": 1.9661405086517334,
-          "val_deployed": 1.9973682314157486
+          "val_seen": 1.9691120386123657,
+          "val_deployed": 1.9767668545246124
         },
         {
           "step": 600,
-          "val_seen": 1.8911118358373642,
-          "val_deployed": 1.810262843966484
+          "val_seen": 1.9168156683444977,
+          "val_deployed": 1.8322830647230148
         },
         {
           "step": 700,
-          "val_seen": 1.8676959574222565,
-          "val_deployed": 1.8279818445444107
+          "val_seen": 1.8685449063777924,
+          "val_deployed": 1.823659986257553
         },
         {
           "step": 800,
-          "val_seen": 1.8400365561246872,
-          "val_deployed": 1.8217909187078476
+          "val_seen": 1.8513735234737396,
+          "val_deployed": 1.8395011276006699
         },
         {
           "step": 900,
-          "val_seen": 1.8080554008483887,
-          "val_deployed": 1.7365205585956573
+          "val_seen": 1.8108647614717484,
+          "val_deployed": 1.7412339895963669
         },
         {
           "step": 1000,
-          "val_seen": 1.7660797834396362,
-          "val_deployed": 1.8248687833547592
+          "val_seen": 1.7728949934244156,
+          "val_deployed": 1.8515386283397675
         },
         {
           "step": 1100,
-          "val_seen": 1.7501698434352875,
-          "val_deployed": 1.5652373284101486
+          "val_seen": 1.751925677061081,
+          "val_deployed": 1.5725563168525696
         },
         {
           "step": 1200,
-          "val_seen": 1.7230526506900787,
-          "val_deployed": 1.7456431686878204
+          "val_seen": 1.7283422499895096,
+          "val_deployed": 1.7686945647001266
         },
         {
           "step": 1300,
-          "val_seen": 1.704368233680725,
-          "val_deployed": 1.6724338978528976
+          "val_seen": 1.710588663816452,
+          "val_deployed": 1.6679221987724304
         },
         {
           "step": 1400,
-          "val_seen": 1.687751293182373,
-          "val_deployed": 1.6880012899637222
+          "val_seen": 1.6915973871946335,
+          "val_deployed": 1.7069241553544998
         },
         {
           "step": 1500,
-          "val_seen": 1.6722798198461533,
-          "val_deployed": 1.6179344207048416
+          "val_seen": 1.672920286655426,
+          "val_deployed": 1.6121506989002228
         }
       ],
-      "first_block_grad": 2.902397394180298,
-      "last_block_grad": 1.8731886148452759,
+      "first_block_grad": 2.902406930923462,
+      "last_block_grad": 1.8731929063796997,
       "grads": [
-        2.902397394180298,
-        2.600337028503418,
-        2.4263486862182617,
-        2.2373862266540527,
-        2.287031888961792,
-        2.0995187759399414,
-        1.9402780532836914,
-        1.8731886148452759
+        2.902406930923462,
+        2.6003432273864746,
+        2.4263548851013184,
+        2.2373924255371094,
+        2.2870357036590576,
+        2.0995240211486816,
+        1.9402832984924316,
+        1.8731929063796997
       ],
-      "last_layer_attention_entropy": 0.2759535610675812,
-      "qkv_weight_rms": 0.037707243114709854,
-      "sample": "ROMEO:\nThou most keep selt me, calless'd you?\nIf let thanks you, how thereom he joint seemels!\nThen, impetiation porties, and c",
-      "seconds": 4010.3491747379303
+      "last_layer_attention_entropy": 0.26940691471099854,
+      "qkv_weight_rms": 0.037744566798210144,
+      "sample": "ROMEO:\nAy, you no all all in abstuily.\n\nSecond Man:\nWhen you he's such thus? it say, he she is ungregusI love.\n\nPETER:\nAy, one ",
+      "seconds": 41.14888286590576
     },
     {
       "run": {
@@ -610,101 +610,101 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.1833003759384155,
-          "val_deployed": 4.177800476551056
+          "val_seen": 4.183300197124481,
+          "val_deployed": 4.1778005957603455
         },
         {
           "step": 100,
-          "val_seen": 2.6080181300640106,
-          "val_deployed": 2.6810252368450165
+          "val_seen": 2.608020305633545,
+          "val_deployed": 2.681004285812378
         },
         {
           "step": 200,
-          "val_seen": 2.342891037464142,
-          "val_deployed": 2.4184237718582153
+          "val_seen": 2.342895954847336,
+          "val_deployed": 2.4184557795524597
         },
         {
           "step": 300,
-          "val_seen": 2.1844097077846527,
-          "val_deployed": 2.2651157081127167
+          "val_seen": 2.184655547142029,
+          "val_deployed": 2.265558898448944
         },
         {
           "step": 400,
-          "val_seen": 2.09619277715683,
-          "val_deployed": 2.0809154361486435
+          "val_seen": 2.0851742327213287,
+          "val_deployed": 2.082760810852051
         },
         {
           "step": 500,
-          "val_seen": 2.0196554511785507,
-          "val_deployed": 2.0250184237957
+          "val_seen": 2.0279116481542587,
+          "val_deployed": 2.034219339489937
         },
         {
           "step": 600,
-          "val_seen": 1.9668953567743301,
-          "val_deployed": 1.84541617333889
+          "val_seen": 1.9634424895048141,
+          "val_deployed": 1.8760252445936203
         },
         {
           "step": 700,
-          "val_seen": 1.9390152990818024,
-          "val_deployed": 1.8461828231811523
+          "val_seen": 1.9438808858394623,
+          "val_deployed": 1.841821774840355
         },
         {
           "step": 800,
-          "val_seen": 1.8720248490571976,
-          "val_deployed": 1.8436755239963531
+          "val_seen": 1.878238558769226,
+          "val_deployed": 1.878404051065445
         },
         {
           "step": 900,
-          "val_seen": 1.8271044194698334,
-          "val_deployed": 1.7860754877328873
+          "val_seen": 1.838175892829895,
+          "val_deployed": 1.8311404585838318
         },
         {
           "step": 1000,
-          "val_seen": 1.8183642625808716,
-          "val_deployed": 1.8755894005298615
+          "val_seen": 1.8097620159387589,
+          "val_deployed": 1.872652843594551
         },
         {
           "step": 1100,
-          "val_seen": 1.7888958901166916,
-          "val_deployed": 1.6594907343387604
+          "val_seen": 1.7872768938541412,
+          "val_deployed": 1.705894947052002
         },
         {
           "step": 1200,
-          "val_seen": 1.7505313009023666,
-          "val_deployed": 1.8189942687749863
+          "val_seen": 1.7483589053153992,
+          "val_deployed": 1.746154084801674
         },
         {
           "step": 1300,
-          "val_seen": 1.748162418603897,
-          "val_deployed": 1.654620736837387
+          "val_seen": 1.7416083812713623,
+          "val_deployed": 1.646784245967865
         },
         {
           "step": 1400,
-          "val_seen": 1.713050827383995,
-          "val_deployed": 1.6594345420598984
+          "val_seen": 1.7098185569047928,
+          "val_deployed": 1.6912044137716293
         },
         {
           "step": 1500,
-          "val_seen": 1.6950844377279282,
-          "val_deployed": 1.6622978746891022
+          "val_seen": 1.6986807435750961,
+          "val_deployed": 1.6539881378412247
         }
       ],
-      "first_block_grad": 3.155359983444214,
-      "last_block_grad": 1.8424594402313232,
+      "first_block_grad": 3.1553690433502197,
+      "last_block_grad": 1.8424638509750366,
       "grads": [
-        3.155359983444214,
-        2.679487466812134,
-        2.3565475940704346,
-        2.2711150646209717,
-        2.0587546825408936,
-        1.9461387395858765,
-        1.9352256059646606,
-        1.8424594402313232
+        3.1553690433502197,
+        2.6794962882995605,
+        2.3565514087677,
+        2.2711212635040283,
+        2.0587592124938965,
+        1.9461435079574585,
+        1.9352306127548218,
+        1.8424638509750366
       ],
-      "last_layer_attention_entropy": 0.24544017016887665,
-      "qkv_weight_rms": 0.03808305785059929,
-      "sample": "ROMEO:\nThou make kiss! Then, our mueroan wounds,\nThe true of thy hathtereene hath this being some one,\nAnd at of to yield execu",
-      "seconds": 4013.780688047409
+      "last_layer_attention_entropy": 0.2584194242954254,
+      "qkv_weight_rms": 0.03817519545555115,
+      "sample": "ROMEO:\nAy, your heaven to ime!\nAy, by mec ither wail we my love's sudder\nDuke your father so to be nobly lord.\n\nPETRUCHIO:\nYou ",
+      "seconds": 40.834792613983154
     },
     {
       "run": {
@@ -724,101 +724,101 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.192188143730164,
-          "val_deployed": 4.161300003528595
+          "val_seen": 4.192188084125519,
+          "val_deployed": 4.161299824714661
         },
         {
           "step": 100,
-          "val_seen": 2.524464398622513,
-          "val_deployed": 2.6253546476364136
+          "val_seen": 2.5252899527549744,
+          "val_deployed": 2.6266518235206604
         },
         {
           "step": 200,
-          "val_seen": 2.2817463874816895,
-          "val_deployed": 2.48592409491539
+          "val_seen": 2.280276596546173,
+          "val_deployed": 2.483012080192566
         },
         {
           "step": 300,
-          "val_seen": 2.1350868344306946,
-          "val_deployed": 2.188756972551346
+          "val_seen": 2.125366449356079,
+          "val_deployed": 2.19339856505394
         },
         {
           "step": 400,
-          "val_seen": 2.0370652973651886,
-          "val_deployed": 2.0781769305467606
+          "val_seen": 2.0470408499240875,
+          "val_deployed": 2.0602830052375793
         },
         {
           "step": 500,
-          "val_seen": 1.9735224694013596,
-          "val_deployed": 1.994308888912201
+          "val_seen": 1.975800096988678,
+          "val_deployed": 2.023415192961693
         },
         {
           "step": 600,
-          "val_seen": 1.9386557936668396,
-          "val_deployed": 1.827294483780861
+          "val_seen": 1.9282578825950623,
+          "val_deployed": 1.7958983927965164
         },
         {
           "step": 700,
-          "val_seen": 1.8863170444965363,
-          "val_deployed": 1.8574809581041336
+          "val_seen": 1.8925486654043198,
+          "val_deployed": 1.8354124426841736
         },
         {
           "step": 800,
-          "val_seen": 1.852083146572113,
-          "val_deployed": 1.9219087809324265
+          "val_seen": 1.8436273634433746,
+          "val_deployed": 1.8745803236961365
         },
         {
           "step": 900,
-          "val_seen": 1.8144621402025223,
-          "val_deployed": 1.7687022238969803
+          "val_seen": 1.8090736269950867,
+          "val_deployed": 1.7507748305797577
         },
         {
           "step": 1000,
-          "val_seen": 1.7779151052236557,
-          "val_deployed": 1.8332061022520065
+          "val_seen": 1.7813427150249481,
+          "val_deployed": 1.8934900611639023
         },
         {
           "step": 1100,
-          "val_seen": 1.742234706878662,
-          "val_deployed": 1.5884731262922287
+          "val_seen": 1.7430339604616165,
+          "val_deployed": 1.6068809032440186
         },
         {
           "step": 1200,
-          "val_seen": 1.7203360199928284,
-          "val_deployed": 1.7637825459241867
+          "val_seen": 1.7151290774345398,
+          "val_deployed": 1.7538619190454483
         },
         {
           "step": 1300,
-          "val_seen": 1.7170164436101913,
-          "val_deployed": 1.6588803976774216
+          "val_seen": 1.708121508359909,
+          "val_deployed": 1.6316245049238205
         },
         {
           "step": 1400,
-          "val_seen": 1.692073792219162,
-          "val_deployed": 1.6843670308589935
+          "val_seen": 1.6848266571760178,
+          "val_deployed": 1.6245097070932388
         },
         {
           "step": 1500,
-          "val_seen": 1.68997460603714,
-          "val_deployed": 1.6949219852685928
+          "val_seen": 1.6783231794834137,
+          "val_deployed": 1.611560046672821
         }
       ],
-      "first_block_grad": 3.1641478538513184,
-      "last_block_grad": 1.9380786418914795,
+      "first_block_grad": 3.164156675338745,
+      "last_block_grad": 1.9380834102630615,
       "grads": [
-        3.1641478538513184,
-        2.8265836238861084,
-        2.5999131202697754,
-        2.2734594345092773,
-        2.1300971508026123,
-        2.013936758041382,
-        1.9210753440856934,
-        1.9380786418914795
+        3.164156675338745,
+        2.8265929222106934,
+        2.599919557571411,
+        2.2734646797180176,
+        2.1301023960113525,
+        2.013942003250122,
+        1.9210808277130127,
+        1.9380834102630615
       ],
-      "last_layer_attention_entropy": 0.28265684843063354,
-      "qkv_weight_rms": 0.03837466984987259,
-      "sample": "ROMEO:\nThy father haste:\nWe would never by the gels froMe\nTo to givint bear change of so hell!\nThese is stants, your weapon and",
-      "seconds": 4015.140461921692
+      "last_layer_attention_entropy": 0.3172396123409271,
+      "qkv_weight_rms": 0.03844854608178139,
+      "sample": "ROMEO:\nPray think all Clifford, you well, it dear it well;\nNow for my libury in the fathed! it untongurant too him.\nLet him he ",
+      "seconds": 41.4921190738678
     },
     {
       "run": {
@@ -838,101 +838,101 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.199641466140747,
-          "val_deployed": 4.1979981660842896
+          "val_seen": 4.199641525745392,
+          "val_deployed": 4.197998464107513
         },
         {
           "step": 100,
-          "val_seen": 2.5121205747127533,
-          "val_deployed": 2.6784905195236206
+          "val_seen": 2.5121261179447174,
+          "val_deployed": 2.6784819662570953
         },
         {
           "step": 200,
-          "val_seen": 0.8197022899985313,
-          "val_deployed": 3.0490021109580994
+          "val_seen": 0.8199535608291626,
+          "val_deployed": 3.048925518989563
         },
         {
           "step": 300,
-          "val_seen": 0.0627275095321238,
-          "val_deployed": 2.823091745376587
+          "val_seen": 0.06272760266438127,
+          "val_deployed": 2.8230715095996857
         },
         {
           "step": 400,
-          "val_seen": 0.049273863434791565,
-          "val_deployed": 2.6374679803848267
+          "val_seen": 0.04927399102598429,
+          "val_deployed": 2.637470096349716
         },
         {
           "step": 500,
-          "val_seen": 0.04684564797207713,
-          "val_deployed": 2.6897119283676147
+          "val_seen": 0.0468456675298512,
+          "val_deployed": 2.68971049785614
         },
         {
           "step": 600,
-          "val_seen": 0.044661388732492924,
-          "val_deployed": 2.625425159931183
+          "val_seen": 0.044661532156169415,
+          "val_deployed": 2.6254337430000305
         },
         {
           "step": 700,
-          "val_seen": 0.04279680084437132,
-          "val_deployed": 2.573265105485916
+          "val_seen": 0.04279661504551768,
+          "val_deployed": 2.5732467770576477
         },
         {
           "step": 800,
-          "val_seen": 0.04263021890074015,
-          "val_deployed": 2.6008910536766052
+          "val_seen": 0.04263029107823968,
+          "val_deployed": 2.600892812013626
         },
         {
           "step": 900,
-          "val_seen": 0.04162381263449788,
-          "val_deployed": 2.551880568265915
+          "val_seen": 0.041624341160058975,
+          "val_deployed": 2.5519116818904877
         },
         {
           "step": 1000,
-          "val_seen": 0.04152057971805334,
-          "val_deployed": 2.5698441863059998
+          "val_seen": 0.04152417881414294,
+          "val_deployed": 2.570057600736618
         },
         {
           "step": 1100,
-          "val_seen": 0.040092401672154665,
-          "val_deployed": 2.493977576494217
+          "val_seen": 0.040094670839607716,
+          "val_deployed": 2.494117319583893
         },
         {
           "step": 1200,
-          "val_seen": 0.040692365262657404,
-          "val_deployed": 2.537360429763794
+          "val_seen": 0.04069570731371641,
+          "val_deployed": 2.5375609695911407
         },
         {
           "step": 1300,
-          "val_seen": 0.037604786455631256,
-          "val_deployed": 2.3542997539043427
+          "val_seen": 0.03760425094515085,
+          "val_deployed": 2.3542608320713043
         },
         {
           "step": 1400,
-          "val_seen": 0.0393342855386436,
-          "val_deployed": 2.469742774963379
+          "val_seen": 0.039334637112915516,
+          "val_deployed": 2.46976238489151
         },
         {
           "step": 1500,
-          "val_seen": 0.03720228746533394,
-          "val_deployed": 2.329048126935959
+          "val_seen": 0.037201433442533016,
+          "val_deployed": 2.3289889991283417
         }
       ],
-      "first_block_grad": 2.922614574432373,
-      "last_block_grad": 1.868977427482605,
+      "first_block_grad": 2.9226222038269043,
+      "last_block_grad": 1.8689804077148438,
       "grads": [
-        2.922614574432373,
-        2.5955965518951416,
-        2.416226625442505,
-        2.248753547668457,
-        2.2729318141937256,
-        2.0956428050994873,
-        1.9231489896774292,
-        1.868977427482605
+        2.9226222038269043,
+        2.595602035522461,
+        2.4162323474884033,
+        2.2487597465515137,
+        2.2729382514953613,
+        2.0956480503082275,
+        1.923154592514038,
+        1.8689804077148438
       ],
-      "last_layer_attention_entropy": 0.7718130946159363,
-      "qkv_weight_rms": 0.031225435435771942,
-      "sample": "ROMEO:\nOPOMOMMMOOMAMAMMMALMWAMMEMAMAMAMAOMMAMMIMAMMMAMAMAMMMMMMAMOOPE:\nHeare ha?A Domos AHAFA:Bigeeerimy peatiory weait pee anc",
-      "seconds": 3911.6674807071686
+      "last_layer_attention_entropy": 0.7719032168388367,
+      "qkv_weight_rms": 0.031225252896547318,
+      "sample": "ROMEO:\nOMOMOMMMOOMOMOMAMOOLOOOMAMAMEMAMOOMMABMOMOOMMAMAMAMAMMMMAWAMAwAAMUNAAA:AWAAPA Ky HiBA:AHARATEYYARYAFTADWAYEDNLAFAIDAYAF:",
+      "seconds": 40.38588333129883
     },
     {
       "run": {
@@ -952,101 +952,101 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.18261194229126,
-          "val_deployed": 4.180799424648285
+          "val_seen": 4.182612299919128,
+          "val_deployed": 4.18079948425293
         },
         {
           "step": 100,
-          "val_seen": 2.5042261481285095,
-          "val_deployed": 2.669065237045288
+          "val_seen": 2.504221588373184,
+          "val_deployed": 2.6690362095832825
         },
         {
           "step": 200,
-          "val_seen": 0.7511826008558273,
-          "val_deployed": 3.1726712584495544
+          "val_seen": 0.751319095492363,
+          "val_deployed": 3.1726308465003967
         },
         {
           "step": 300,
-          "val_seen": 0.060813046991825104,
-          "val_deployed": 2.734626293182373
+          "val_seen": 0.06081330869346857,
+          "val_deployed": 2.7346373200416565
         },
         {
           "step": 400,
-          "val_seen": 0.049810920376330614,
-          "val_deployed": 2.6608863472938538
+          "val_seen": 0.049811024218797684,
+          "val_deployed": 2.66088730096817
         },
         {
           "step": 500,
-          "val_seen": 0.045673344284296036,
-          "val_deployed": 2.6189563274383545
+          "val_seen": 0.04567319434136152,
+          "val_deployed": 2.618947833776474
         },
         {
           "step": 600,
-          "val_seen": 0.04330768436193466,
-          "val_deployed": 2.550738126039505
+          "val_seen": 0.04330747667700052,
+          "val_deployed": 2.5507313013076782
         },
         {
           "step": 700,
-          "val_seen": 0.043442847207188606,
-          "val_deployed": 2.612918943166733
+          "val_seen": 0.04344261856749654,
+          "val_deployed": 2.612913429737091
         },
         {
           "step": 800,
-          "val_seen": 0.041146609000861645,
-          "val_deployed": 2.5143845081329346
+          "val_seen": 0.04114657500758767,
+          "val_deployed": 2.514383018016815
         },
         {
           "step": 900,
-          "val_seen": 0.04051487799733877,
-          "val_deployed": 2.494016319513321
+          "val_seen": 0.040514588821679354,
+          "val_deployed": 2.493997871875763
         },
         {
           "step": 1000,
-          "val_seen": 0.041595317889004946,
-          "val_deployed": 2.578438252210617
+          "val_seen": 0.04159501846879721,
+          "val_deployed": 2.5784218311309814
         },
         {
           "step": 1100,
-          "val_seen": 0.041044965386390686,
-          "val_deployed": 2.5552367866039276
+          "val_seen": 0.04104477819055319,
+          "val_deployed": 2.5552276968955994
         },
         {
           "step": 1200,
-          "val_seen": 0.041277683805674314,
-          "val_deployed": 2.576929062604904
+          "val_seen": 0.04127762606367469,
+          "val_deployed": 2.5769304633140564
         },
         {
           "step": 1300,
-          "val_seen": 0.03865225985646248,
-          "val_deployed": 2.41585972905159
+          "val_seen": 0.038652945309877396,
+          "val_deployed": 2.4158979654312134
         },
         {
           "step": 1400,
-          "val_seen": 0.03955794218927622,
-          "val_deployed": 2.483396351337433
+          "val_seen": 0.03955799667164683,
+          "val_deployed": 2.4833956956863403
         },
         {
           "step": 1500,
-          "val_seen": 0.036537624429911375,
-          "val_deployed": 2.295324981212616
+          "val_seen": 0.036537641659379005,
+          "val_deployed": 2.295322895050049
         }
       ],
-      "first_block_grad": 3.2794435024261475,
-      "last_block_grad": 1.8750501871109009,
+      "first_block_grad": 3.279452085494995,
+      "last_block_grad": 1.8750545978546143,
       "grads": [
-        3.2794435024261475,
-        2.820143699645996,
-        2.4611294269561768,
-        2.3386967182159424,
-        2.119231700897217,
-        1.9745384454727173,
-        1.9415359497070312,
-        1.8750501871109009
+        3.279452085494995,
+        2.8201513290405273,
+        2.461134433746338,
+        2.3387017250061035,
+        2.119236707687378,
+        1.9745428562164307,
+        1.9415383338928223,
+        1.8750545978546143
       ],
-      "last_layer_attention_entropy": 0.7881956100463867,
-      "qkv_weight_rms": 0.031096408143639565,
-      "sample": "ROMEO:\nOE\nOL\nOMEEO:\nOE\nREO:\nREOLBOLEOLBOLAMEOOLEEOOOOLUMO:\nBORORE:\nBnty\nTere yeth Dooos chellesegeeer, the,\nthory oreit pee anc",
-      "seconds": 3909.037479162216
+      "last_layer_attention_entropy": 0.7884142398834229,
+      "qkv_weight_rms": 0.03109716810286045,
+      "sample": "ROMEO:\nOE\nOO\nOMEEO:\nOE\nSEO:\nSEOR\nEMEOSUSSTS:BSEENOS: SS:OSnUSS:\nWy:\nwent\nN:\nAn reak' hay de itounghe You loton wim the sheno bu",
+      "seconds": 40.64251136779785
     },
     {
       "run": {
@@ -1066,101 +1066,101 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.191030025482178,
-          "val_deployed": 4.162065088748932
+          "val_seen": 4.191029965877533,
+          "val_deployed": 4.162065207958221
         },
         {
           "step": 100,
-          "val_seen": 2.615373134613037,
-          "val_deployed": 2.7000825703144073
+          "val_seen": 2.6153742372989655,
+          "val_deployed": 2.7000803351402283
         },
         {
           "step": 200,
-          "val_seen": 2.4234867691993713,
-          "val_deployed": 2.640858083963394
+          "val_seen": 2.4234790205955505,
+          "val_deployed": 2.6408692002296448
         },
         {
           "step": 300,
-          "val_seen": 0.103730752132833,
-          "val_deployed": 3.1002936959266663
+          "val_seen": 0.10372319258749485,
+          "val_deployed": 3.100228250026703
         },
         {
           "step": 400,
-          "val_seen": 0.05477466667070985,
-          "val_deployed": 2.7644902169704437
+          "val_seen": 0.05477526783943176,
+          "val_deployed": 2.76452174782753
         },
         {
           "step": 500,
-          "val_seen": 0.047805946320295334,
-          "val_deployed": 2.6480210423469543
+          "val_seen": 0.04780581220984459,
+          "val_deployed": 2.6479766964912415
         },
         {
           "step": 600,
-          "val_seen": 0.0445039551705122,
-          "val_deployed": 2.5887629091739655
+          "val_seen": 0.04450372466817498,
+          "val_deployed": 2.5887146294116974
         },
         {
           "step": 700,
-          "val_seen": 0.04407274164259434,
-          "val_deployed": 2.6331842839717865
+          "val_seen": 0.0440725926309824,
+          "val_deployed": 2.633181184530258
         },
         {
           "step": 800,
-          "val_seen": 0.04280742257833481,
-          "val_deployed": 2.5956282019615173
+          "val_seen": 0.04280654387548566,
+          "val_deployed": 2.59553262591362
         },
         {
           "step": 900,
-          "val_seen": 0.040472442749887705,
-          "val_deployed": 2.4789671301841736
+          "val_seen": 0.04047240223735571,
+          "val_deployed": 2.4789844751358032
         },
         {
           "step": 1000,
-          "val_seen": 0.04062540642917156,
-          "val_deployed": 2.5140508711338043
+          "val_seen": 0.04062679037451744,
+          "val_deployed": 2.514134019613266
         },
         {
           "step": 1100,
-          "val_seen": 0.040037102065980434,
-          "val_deployed": 2.484950512647629
+          "val_seen": 0.04003810975700617,
+          "val_deployed": 2.485025942325592
         },
         {
           "step": 1200,
-          "val_seen": 0.03995694313198328,
-          "val_deployed": 2.4861740469932556
+          "val_seen": 0.03995800809934735,
+          "val_deployed": 2.4862345159053802
         },
         {
           "step": 1300,
-          "val_seen": 0.03861981350928545,
-          "val_deployed": 2.4139188826084137
+          "val_seen": 0.0386157501488924,
+          "val_deployed": 2.4136729538440704
         },
         {
           "step": 1400,
-          "val_seen": 0.038694317918270826,
-          "val_deployed": 2.4201923310756683
+          "val_seen": 0.0386905143968761,
+          "val_deployed": 2.4199841916561127
         },
         {
           "step": 1500,
-          "val_seen": 0.036024685483425856,
-          "val_deployed": 2.256276249885559
+          "val_seen": 0.03601942956447601,
+          "val_deployed": 2.2561115026474
         }
       ],
-      "first_block_grad": 3.2443714141845703,
-      "last_block_grad": 1.8727455139160156,
+      "first_block_grad": 3.244381904602051,
+      "last_block_grad": 1.8727490901947021,
       "grads": [
-        3.2443714141845703,
-        2.9089555740356445,
-        2.617492198944092,
-        2.304396867752075,
-        2.0891246795654297,
-        2.015702486038208,
-        1.8683000802993774,
-        1.8727455139160156
+        3.244381904602051,
+        2.9089648723602295,
+        2.6175003051757812,
+        2.3044018745422363,
+        2.0891294479370117,
+        2.015706777572632,
+        1.868303656578064,
+        1.8727490901947021
       ],
-      "last_layer_attention_entropy": 0.8744619488716125,
-      "qkv_weight_rms": 0.02980734407901764,
-      "sample": "ROMEO:\nMEORVORVOROFRORO:\nO:\n\nMRROOREOR:\n\nPEOR\nORIOOOR:\nMROR\nOOROOOO ROLOLO:\nO:\nIn DoRO O:\nAlld Tous houns wats, yoor we Mor ION",
-      "seconds": 3914.5869250297546
+      "last_layer_attention_entropy": 0.874721109867096,
+      "qkv_weight_rms": 0.029806120321154594,
+      "sample": "ROMEO:\nPONEMOEMOLOGLOLO:\nPO.\nPOLOOLOOL:\nSO!OIS:OMOO:FOLLOOL;\nOLOUEOLOLOLONOOLO:\nA:\nVo:\nIOLOO:\nHungyo You lotou Yom thethes ofs ",
+      "seconds": 40.409584283828735
     },
     {
       "run": {
@@ -1180,101 +1180,101 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.164933919906616,
-          "val_deployed": 4.161123633384705
+          "val_seen": 4.164933979511261,
+          "val_deployed": 4.161123752593994
         },
         {
           "step": 100,
-          "val_seen": 3.3577622175216675,
-          "val_deployed": 3.3985026478767395
+          "val_seen": 3.3575717508792877,
+          "val_deployed": 3.397368222475052
         },
         {
           "step": 200,
-          "val_seen": 3.3546424508094788,
-          "val_deployed": 3.4028597474098206
+          "val_seen": 3.354289561510086,
+          "val_deployed": 3.4020429849624634
         },
         {
           "step": 300,
-          "val_seen": 3.349170356988907,
-          "val_deployed": 3.3541676998138428
+          "val_seen": 3.3491193056106567,
+          "val_deployed": 3.353487014770508
         },
         {
           "step": 400,
-          "val_seen": 3.3513839840888977,
-          "val_deployed": 3.3372406661510468
+          "val_seen": 3.3510656356811523,
+          "val_deployed": 3.3366620242595673
         },
         {
           "step": 500,
-          "val_seen": 3.352048844099045,
-          "val_deployed": 3.3394336104393005
+          "val_seen": 3.35205015540123,
+          "val_deployed": 3.3402429819107056
         },
         {
           "step": 600,
-          "val_seen": 3.3728383481502533,
-          "val_deployed": 3.3605674505233765
+          "val_seen": 3.3728834986686707,
+          "val_deployed": 3.3603756725788116
         },
         {
           "step": 700,
-          "val_seen": 3.3695786595344543,
-          "val_deployed": 3.389443963766098
+          "val_seen": 3.36967733502388,
+          "val_deployed": 3.389247387647629
         },
         {
           "step": 800,
-          "val_seen": 3.338447242975235,
-          "val_deployed": 3.3236582577228546
+          "val_seen": 3.338269352912903,
+          "val_deployed": 3.323803335428238
         },
         {
           "step": 900,
-          "val_seen": 3.3552531003952026,
-          "val_deployed": 3.302275061607361
+          "val_seen": 3.3549870550632477,
+          "val_deployed": 3.302202880382538
         },
         {
           "step": 1000,
-          "val_seen": 3.3375052511692047,
-          "val_deployed": 3.3870293498039246
+          "val_seen": 3.3373899161815643,
+          "val_deployed": 3.386729598045349
         },
         {
           "step": 1100,
-          "val_seen": 3.345083475112915,
-          "val_deployed": 3.3470796644687653
+          "val_seen": 3.3451104760169983,
+          "val_deployed": 3.3471257090568542
         },
         {
           "step": 1200,
-          "val_seen": 3.3511246740818024,
-          "val_deployed": 3.39407542347908
+          "val_seen": 3.3511469066143036,
+          "val_deployed": 3.3936246931552887
         },
         {
           "step": 1300,
-          "val_seen": 3.3546974658966064,
-          "val_deployed": 3.368685305118561
+          "val_seen": 3.355013370513916,
+          "val_deployed": 3.3684151768684387
         },
         {
           "step": 1400,
-          "val_seen": 3.349901556968689,
-          "val_deployed": 3.382517486810684
+          "val_seen": 3.3499631583690643,
+          "val_deployed": 3.3825223445892334
         },
         {
           "step": 1500,
-          "val_seen": 3.334024578332901,
-          "val_deployed": 3.2819729447364807
+          "val_seen": 3.334181249141693,
+          "val_deployed": 3.2821974754333496
         }
       ],
-      "first_block_grad": 10.121604919433594,
-      "last_block_grad": 10.296011924743652,
+      "first_block_grad": 10.121647834777832,
+      "last_block_grad": 10.296049118041992,
       "grads": [
-        10.121604919433594,
-        8.657413482666016,
-        11.210728645324707,
-        11.927136421203613,
-        13.541693687438965,
-        12.863346099853516,
-        13.023945808410645,
-        10.296011924743652
+        10.121647834777832,
+        8.657444953918457,
+        11.21076774597168,
+        11.927186012268066,
+        13.541748046875,
+        12.863386154174805,
+        13.024003028869629,
+        10.296049118041992
       ],
       "last_layer_attention_entropy": 1.0,
-      "qkv_weight_rms": 0.021070659160614014,
-      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc",
-      "seconds": 3978.026755332947
+      "qkv_weight_rms": 0.02089677006006241,
+      "sample": "ROMEO:\nfuar  Ibnheee  Ctnti eobsyuiLy m c ithdeuN i: nene nNohef Tr wdnt\nucini rlaP' hk sde ioou ttngYsI l toiWhimnt dtsheaohsu",
+      "seconds": 40.47888112068176
     },
     {
       "run": {
@@ -1294,101 +1294,101 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.151477694511414,
-          "val_deployed": 4.164126634597778
+          "val_seen": 4.151477515697479,
+          "val_deployed": 4.164126396179199
         },
         {
           "step": 100,
-          "val_seen": 3.3593843579292297,
-          "val_deployed": 3.397403508424759
+          "val_seen": 3.3593844771385193,
+          "val_deployed": 3.3974033296108246
         },
         {
           "step": 200,
-          "val_seen": 3.3522709012031555,
-          "val_deployed": 3.3973897993564606
+          "val_seen": 3.352271407842636,
+          "val_deployed": 3.397390604019165
         },
         {
           "step": 300,
-          "val_seen": 3.3480373322963715,
-          "val_deployed": 3.346333682537079
+          "val_seen": 3.348037451505661,
+          "val_deployed": 3.346333920955658
         },
         {
           "step": 400,
-          "val_seen": 3.3498858213424683,
-          "val_deployed": 3.3349148333072662
+          "val_seen": 3.349885642528534,
+          "val_deployed": 3.3349144756793976
         },
         {
           "step": 500,
-          "val_seen": 3.3562087416648865,
-          "val_deployed": 3.341889202594757
+          "val_seen": 3.356208771467209,
+          "val_deployed": 3.3418890833854675
         },
         {
           "step": 600,
-          "val_seen": 3.3671590387821198,
-          "val_deployed": 3.355581820011139
+          "val_seen": 3.367158889770508,
+          "val_deployed": 3.355581670999527
         },
         {
           "step": 700,
-          "val_seen": 3.370531976222992,
-          "val_deployed": 3.390844315290451
+          "val_seen": 3.3705320954322815,
+          "val_deployed": 3.3908442556858063
         },
         {
           "step": 800,
-          "val_seen": 3.3388770520687103,
-          "val_deployed": 3.3263115286827087
+          "val_seen": 3.3388772308826447,
+          "val_deployed": 3.326311558485031
         },
         {
           "step": 900,
-          "val_seen": 3.3551532328128815,
-          "val_deployed": 3.3007249534130096
+          "val_seen": 3.3551533818244934,
+          "val_deployed": 3.3007251620292664
         },
         {
           "step": 1000,
-          "val_seen": 3.338479608297348,
-          "val_deployed": 3.3833844661712646
+          "val_seen": 3.338479518890381,
+          "val_deployed": 3.3833843171596527
         },
         {
           "step": 1100,
-          "val_seen": 3.3438591063022614,
+          "val_seen": 3.3438592851161957,
           "val_deployed": 3.345150351524353
         },
         {
           "step": 1200,
-          "val_seen": 3.3527444303035736,
-          "val_deployed": 3.392195075750351
+          "val_seen": 3.352744460105896,
+          "val_deployed": 3.392195224761963
         },
         {
           "step": 1300,
           "val_seen": 3.3536312878131866,
-          "val_deployed": 3.3693041503429413
+          "val_deployed": 3.369304209947586
         },
         {
           "step": 1400,
-          "val_seen": 3.3486432135105133,
-          "val_deployed": 3.387178987264633
+          "val_seen": 3.3486433029174805,
+          "val_deployed": 3.3871788382530212
         },
         {
           "step": 1500,
-          "val_seen": 3.3350637555122375,
-          "val_deployed": 3.2842316031455994
+          "val_seen": 3.3350638449192047,
+          "val_deployed": 3.2842318415641785
         }
       ],
-      "first_block_grad": 9.914894104003906,
-      "last_block_grad": 11.443914413452148,
+      "first_block_grad": 9.914925575256348,
+      "last_block_grad": 11.443982124328613,
       "grads": [
-        9.914894104003906,
-        10.335561752319336,
-        8.439937591552734,
-        9.496748924255371,
-        12.63308048248291,
-        12.37130355834961,
-        13.067519187927246,
-        11.443914413452148
+        9.914925575256348,
+        10.335599899291992,
+        8.439967155456543,
+        9.496777534484863,
+        12.633122444152832,
+        12.371349334716797,
+        13.067593574523926,
+        11.443982124328613
       ],
       "last_layer_attention_entropy": 1.0,
-      "qkv_weight_rms": 0.020779874175786972,
-      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid Ig\nlstetUMeco ueByghd ntw\nherM hstn DoRo \neielCsBeg eehi \nstwatso ylor\ni kpee aRc",
-      "seconds": 3971.0969789028168
+      "qkv_weight_rms": 0.020779889076948166,
+      "sample": "ROMEO:\nf\nar  Ibnheee  Ct!ti uGbsyuiLy.m c ithdeuN i: nen. nNo.ef Tr wdnt\nucyni rlaP' hk sde ioou gtngYrI l toiWhimntLdtsheCohbu",
+      "seconds": 40.96084809303284
     },
     {
       "run": {
@@ -1409,100 +1409,100 @@
         {
           "step": 0,
           "val_seen": 4.1691113114356995,
-          "val_deployed": 4.186421871185303
+          "val_deployed": 4.186421632766724
         },
         {
           "step": 100,
-          "val_seen": 3.3589335680007935,
-          "val_deployed": 3.3987329304218292
+          "val_seen": 3.358933836221695,
+          "val_deployed": 3.398732841014862
         },
         {
           "step": 200,
-          "val_seen": 3.3530307710170746,
-          "val_deployed": 3.394930988550186
+          "val_seen": 3.353030651807785,
+          "val_deployed": 3.3949312567710876
         },
         {
           "step": 300,
-          "val_seen": 3.35010302066803,
-          "val_deployed": 3.354186236858368
+          "val_seen": 3.3501030802726746,
+          "val_deployed": 3.3541864156723022
         },
         {
           "step": 400,
-          "val_seen": 3.3495316207408905,
-          "val_deployed": 3.3347727954387665
+          "val_seen": 3.3495315611362457,
+          "val_deployed": 3.334772765636444
         },
         {
           "step": 500,
-          "val_seen": 3.3562784790992737,
-          "val_deployed": 3.3470421135425568
+          "val_seen": 3.356278717517853,
+          "val_deployed": 3.347042441368103
         },
         {
           "step": 600,
-          "val_seen": 3.3669537603855133,
-          "val_deployed": 3.3502000868320465
+          "val_seen": 3.3669536411762238,
+          "val_deployed": 3.35019987821579
         },
         {
           "step": 700,
           "val_seen": 3.3700872361660004,
-          "val_deployed": 3.3944017589092255
+          "val_deployed": 3.3944018185138702
         },
         {
           "step": 800,
           "val_seen": 3.337648183107376,
-          "val_deployed": 3.321991592645645
+          "val_deployed": 3.321991443634033
         },
         {
           "step": 900,
           "val_seen": 3.3547708690166473,
-          "val_deployed": 3.301943004131317
+          "val_deployed": 3.301942855119705
         },
         {
           "step": 1000,
-          "val_seen": 3.3385814130306244,
-          "val_deployed": 3.390565723180771
+          "val_seen": 3.33858186006546,
+          "val_deployed": 3.390566051006317
         },
         {
           "step": 1100,
-          "val_seen": 3.342122405767441,
-          "val_deployed": 3.3359560072422028
+          "val_seen": 3.3421223759651184,
+          "val_deployed": 3.335955858230591
         },
         {
           "step": 1200,
-          "val_seen": 3.3508624136447906,
-          "val_deployed": 3.3908631205558777
+          "val_seen": 3.3508621752262115,
+          "val_deployed": 3.3908630311489105
         },
         {
           "step": 1300,
-          "val_seen": 3.3511509597301483,
-          "val_deployed": 3.3649754524230957
+          "val_seen": 3.351150721311569,
+          "val_deployed": 3.3649749755859375
         },
         {
           "step": 1400,
-          "val_seen": 3.348159283399582,
-          "val_deployed": 3.3838776648044586
+          "val_seen": 3.3481592535972595,
+          "val_deployed": 3.3838780224323273
         },
         {
           "step": 1500,
-          "val_seen": 3.3351166248321533,
-          "val_deployed": 3.2849407494068146
+          "val_seen": 3.3351166546344757,
+          "val_deployed": 3.284941017627716
         }
       ],
-      "first_block_grad": 12.37077522277832,
-      "last_block_grad": 10.806629180908203,
+      "first_block_grad": 12.37083911895752,
+      "last_block_grad": 10.806676864624023,
       "grads": [
-        12.37077522277832,
-        11.596038818359375,
-        12.305558204650879,
-        15.67199993133545,
-        15.284598350524902,
-        13.170503616333008,
-        11.708359718322754,
-        10.806629180908203
+        12.37083911895752,
+        11.596067428588867,
+        12.30559253692627,
+        15.672063827514648,
+        15.284659385681152,
+        13.170546531677246,
+        11.70841121673584,
+        10.806676864624023
       ],
       "last_layer_attention_entropy": 1.0,
-      "qkv_weight_rms": 0.02079080417752266,
-      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc",
-      "seconds": 3973.190541267395
+      "qkv_weight_rms": 0.02079080045223236,
+      "sample": "ROMEO:\nt\nar  Ibnheee  Ctnti eobsyuiLy m c ithdeuN i: nene nNn.ef Tr wdnt\nucini rlaP' hk sde ioou ttngYsI l toiWhimntLdtsheaohsu",
+      "seconds": 40.809542417526245
     },
     {
       "run": {
@@ -1522,97 +1522,97 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.197599232196808,
-          "val_deployed": 4.228965878486633
+          "val_seen": 4.197598934173584,
+          "val_deployed": 4.2289658188819885
         },
         {
           "step": 100,
-          "val_seen": 3.2193732261657715,
-          "val_deployed": 3.358142226934433
+          "val_seen": 3.2325077652931213,
+          "val_deployed": 3.218305081129074
         },
         {
           "step": 200,
-          "val_seen": 2.8704318404197693,
-          "val_deployed": 2.908288598060608
+          "val_seen": 2.7560900449752808,
+          "val_deployed": 2.86040922999382
         },
         {
           "step": 300,
-          "val_seen": 2.7408745884895325,
-          "val_deployed": 2.6528953909873962
+          "val_seen": 2.6471246778964996,
+          "val_deployed": 2.627266377210617
         },
         {
           "step": 400,
-          "val_seen": 2.6932546198368073,
-          "val_deployed": 2.7082704305648804
+          "val_seen": 2.5839009284973145,
+          "val_deployed": 2.6098566949367523
         },
         {
           "step": 500,
-          "val_seen": 2.6701554656028748,
-          "val_deployed": 2.723957747220993
+          "val_seen": 2.571957141160965,
+          "val_deployed": 2.6741351783275604
         },
         {
           "step": 600,
-          "val_seen": 2.641190677881241,
-          "val_deployed": 2.622062474489212
+          "val_seen": 2.527891129255295,
+          "val_deployed": 2.542998254299164
         },
         {
           "step": 700,
-          "val_seen": 2.63980695605278,
-          "val_deployed": 2.598660320043564
+          "val_seen": 2.5452201068401337,
+          "val_deployed": 2.5121331810951233
         },
         {
           "step": 800,
-          "val_seen": 2.5950515270233154,
-          "val_deployed": 2.503942459821701
+          "val_seen": 2.5348303020000458,
+          "val_deployed": 2.4478672444820404
         },
         {
           "step": 900,
-          "val_seen": 2.5716685950756073,
-          "val_deployed": 2.572762757539749
+          "val_seen": 2.508958786725998,
+          "val_deployed": 2.5486156940460205
         },
         {
           "step": 1000,
-          "val_seen": 2.5751223862171173,
-          "val_deployed": 2.5950632989406586
+          "val_seen": 2.4939564168453217,
+          "val_deployed": 2.4749006927013397
         },
         {
           "step": 1100,
-          "val_seen": 2.5619324445724487,
-          "val_deployed": 2.5186142325401306
+          "val_seen": 2.53319650888443,
+          "val_deployed": 2.4833273887634277
         },
         {
           "step": 1200,
-          "val_seen": 2.563533216714859,
-          "val_deployed": 2.5549625754356384
+          "val_seen": 2.5271013379096985,
+          "val_deployed": 2.4646264612674713
         },
         {
           "step": 1300,
-          "val_seen": 2.563554733991623,
-          "val_deployed": 2.507744997739792
+          "val_seen": 2.5067039132118225,
+          "val_deployed": 2.495272248983383
         },
         {
           "step": 1400,
-          "val_seen": 2.599780023097992,
-          "val_deployed": 2.556629627943039
+          "val_seen": 2.4777558743953705,
+          "val_deployed": 2.444327652454376
         },
         {
           "step": 1500,
-          "val_seen": 2.6662153601646423,
-          "val_deployed": 2.574851095676422
+          "val_seen": 2.5869182646274567,
+          "val_deployed": 2.5518227219581604
         }
       ],
-      "first_block_grad": 8.581646919250488,
-      "last_block_grad": 4.711995601654053,
+      "first_block_grad": 8.582857131958008,
+      "last_block_grad": 4.712754249572754,
       "grads": [
-        8.581646919250488,
-        6.258528709411621,
-        5.157041549682617,
-        4.711995601654053
+        8.582857131958008,
+        6.259459495544434,
+        5.157685279846191,
+        4.712754249572754
       ],
-      "last_layer_attention_entropy": 0.012990427203476429,
-      "qkv_weight_rms": 0.040035586804151535,
-      "sample": "ROMEO:\nt bremhise hawhselteilouca neaman youd INAlste gay ofuesy he nty\nTere heth thio ORielis sanongid\nWe.\nthory we w keer anc",
-      "seconds": 19005.101920843124
+      "last_layer_attention_entropy": 0.017055781558156013,
+      "qkv_weight_rms": 0.043326981365680695,
+      "sample": "ROMEO:\nPu I semoneald athoi anos bihy.\nDU:\nHAOFiiIF: wene ndome's, my nthuconitr bur h, ste itoungheg,\nI lotondeim thethe,\n\nAs ",
+      "seconds": 88.09974837303162
     },
     {
       "run": {
@@ -1632,97 +1632,97 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.386252462863922,
-          "val_deployed": 4.400015234947205
+          "val_seen": 4.386252403259277,
+          "val_deployed": 4.400015354156494
         },
         {
           "step": 100,
-          "val_seen": 3.0229603350162506,
-          "val_deployed": 2.9736353754997253
+          "val_seen": 3.0475068986415863,
+          "val_deployed": 2.978071928024292
         },
         {
           "step": 200,
-          "val_seen": 2.74190491437912,
-          "val_deployed": 2.811587691307068
+          "val_seen": 2.7145885825157166,
+          "val_deployed": 2.785562813282013
         },
         {
           "step": 300,
-          "val_seen": 2.6312238574028015,
-          "val_deployed": 2.6135628819465637
+          "val_seen": 2.5823803544044495,
+          "val_deployed": 2.55790913105011
         },
         {
           "step": 400,
-          "val_seen": 2.5556010007858276,
-          "val_deployed": 2.5635469555854797
+          "val_seen": 2.529777407646179,
+          "val_deployed": 2.5411502718925476
         },
         {
           "step": 500,
-          "val_seen": 2.616928815841675,
-          "val_deployed": 2.641219526529312
+          "val_seen": 2.5167160034179688,
+          "val_deployed": 2.566117823123932
         },
         {
           "step": 600,
-          "val_seen": 2.5399621725082397,
-          "val_deployed": 2.645986318588257
+          "val_seen": 2.5066235959529877,
+          "val_deployed": 2.5622882544994354
         },
         {
           "step": 700,
-          "val_seen": 2.5331235229969025,
-          "val_deployed": 2.4508485794067383
+          "val_seen": 2.509031444787979,
+          "val_deployed": 2.471703380346298
         },
         {
           "step": 800,
-          "val_seen": 2.505665957927704,
-          "val_deployed": 2.3915047347545624
+          "val_seen": 2.4791598320007324,
+          "val_deployed": 2.424220621585846
         },
         {
           "step": 900,
-          "val_seen": 2.5241385996341705,
-          "val_deployed": 2.57850980758667
+          "val_seen": 2.515058547258377,
+          "val_deployed": 2.5710981488227844
         },
         {
           "step": 1000,
-          "val_seen": 2.5267226099967957,
-          "val_deployed": 2.568340629339218
+          "val_seen": 2.561309963464737,
+          "val_deployed": 2.5592538118362427
         },
         {
           "step": 1100,
-          "val_seen": 2.494170069694519,
-          "val_deployed": 2.5018769800662994
+          "val_seen": 2.4912633299827576,
+          "val_deployed": 2.444730758666992
         },
         {
           "step": 1200,
-          "val_seen": 2.6153821647167206,
-          "val_deployed": 2.5318737030029297
+          "val_seen": 2.4841741919517517,
+          "val_deployed": 2.4027918577194214
         },
         {
           "step": 1300,
-          "val_seen": 2.502419590950012,
-          "val_deployed": 2.501214474439621
+          "val_seen": 2.4662306904792786,
+          "val_deployed": 2.439626634120941
         },
         {
           "step": 1400,
-          "val_seen": 2.5000962018966675,
-          "val_deployed": 2.4522849917411804
+          "val_seen": 2.4788783192634583,
+          "val_deployed": 2.428662598133087
         },
         {
           "step": 1500,
-          "val_seen": 2.5229082107543945,
-          "val_deployed": 2.5542322397232056
+          "val_seen": 2.5147955119609833,
+          "val_deployed": 2.510307490825653
         }
       ],
-      "first_block_grad": 11.693981170654297,
-      "last_block_grad": 5.63336181640625,
+      "first_block_grad": 11.695807456970215,
+      "last_block_grad": 5.634207725524902,
       "grads": [
-        11.693981170654297,
-        8.028151512145996,
-        6.442503452301025,
-        5.63336181640625
+        11.695807456970215,
+        8.029260635375977,
+        6.443539142608643,
+        5.634207725524902
       ],
-      "last_layer_attention_entropy": 0.0045102499425411224,
-      "qkv_weight_rms": 0.043352071195840836,
-      "sample": "ROMEO:\nt y, mof d hewhsellerlouca meaman youd Ighoste grecofuroy hiththerere he?\n\nDURI ORHARCUBESINUS: t t atho y we w ke RYale",
-      "seconds": 19492.813524246216
+      "last_layer_attention_entropy": 0.01027088612318039,
+      "qkv_weight_rms": 0.04216153174638748,
+      "sample": "ROMEO:\nAy ry I\nWheall Comoimeabs bior.\nDUTAthisur alinen.\nn;\nMe's,:\nwantUNur inourer h, ste ioul the You l tou wim thethesan bu",
+      "seconds": 88.41122961044312
     },
     {
       "run": {
@@ -1742,97 +1742,97 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.242711126804352,
-          "val_deployed": 4.289197146892548
+          "val_seen": 4.242710828781128,
+          "val_deployed": 4.2891969084739685
         },
         {
           "step": 100,
-          "val_seen": 3.0955244302749634,
-          "val_deployed": 3.0249496698379517
+          "val_seen": 3.1356212496757507,
+          "val_deployed": 3.063454747200012
         },
         {
           "step": 200,
-          "val_seen": 2.90312123298645,
-          "val_deployed": 2.982120245695114
+          "val_seen": 2.874367117881775,
+          "val_deployed": 2.9527197778224945
         },
         {
           "step": 300,
-          "val_seen": 2.8093817830085754,
-          "val_deployed": 2.715371310710907
+          "val_seen": 2.7640527188777924,
+          "val_deployed": 2.7776873111724854
         },
         {
           "step": 400,
-          "val_seen": 2.693614572286606,
-          "val_deployed": 2.7127106487751007
+          "val_seen": 2.658713936805725,
+          "val_deployed": 2.6604298651218414
         },
         {
           "step": 500,
-          "val_seen": 2.6937791407108307,
-          "val_deployed": 2.7397373616695404
+          "val_seen": 2.6196664571762085,
+          "val_deployed": 2.668824166059494
         },
         {
           "step": 600,
-          "val_seen": 2.6805737018585205,
-          "val_deployed": 2.6333325803279877
+          "val_seen": 2.593668758869171,
+          "val_deployed": 2.5484260618686676
         },
         {
           "step": 700,
-          "val_seen": 2.6724580824375153,
-          "val_deployed": 2.6023544669151306
+          "val_seen": 2.5939914882183075,
+          "val_deployed": 2.5260428488254547
         },
         {
           "step": 800,
-          "val_seen": 2.646430552005768,
-          "val_deployed": 2.539633959531784
+          "val_seen": 2.5918672680854797,
+          "val_deployed": 2.489456295967102
         },
         {
           "step": 900,
-          "val_seen": 2.6412485241889954,
-          "val_deployed": 2.653251349925995
+          "val_seen": 2.6383750438690186,
+          "val_deployed": 2.5968272984027863
         },
         {
           "step": 1000,
-          "val_seen": 2.628040909767151,
-          "val_deployed": 2.628745973110199
+          "val_seen": 2.6780243813991547,
+          "val_deployed": 2.6322185397148132
         },
         {
           "step": 1100,
-          "val_seen": 2.6496706902980804,
-          "val_deployed": 2.58959499001503
+          "val_seen": 2.910308599472046,
+          "val_deployed": 2.751026749610901
         },
         {
           "step": 1200,
-          "val_seen": 2.6240800321102142,
-          "val_deployed": 2.5476327538490295
+          "val_seen": 2.82452654838562,
+          "val_deployed": 2.6983812153339386
         },
         {
           "step": 1300,
-          "val_seen": 2.6138219833374023,
-          "val_deployed": 2.6398713886737823
+          "val_seen": 2.717324674129486,
+          "val_deployed": 2.6251233518123627
         },
         {
           "step": 1400,
-          "val_seen": 2.643738031387329,
-          "val_deployed": 2.5269875228405
+          "val_seen": 2.707119196653366,
+          "val_deployed": 2.602988511323929
         },
         {
           "step": 1500,
-          "val_seen": 2.689409554004669,
-          "val_deployed": 2.6395091116428375
+          "val_seen": 2.735938221216202,
+          "val_deployed": 2.7146838903427124
         }
       ],
-      "first_block_grad": 11.03683853149414,
-      "last_block_grad": 5.83014440536499,
+      "first_block_grad": 11.038509368896484,
+      "last_block_grad": 5.83113431930542,
       "grads": [
-        11.03683853149414,
-        7.746299743652344,
-        6.647548198699951,
-        5.83014440536499
+        11.038509368896484,
+        7.74717903137207,
+        6.648615837097168,
+        5.83113431930542
       ],
-      "last_layer_attention_entropy": 0.06656773388385773,
-      "qkv_weight_rms": 0.041395269334316254,
-      "sample": "ROMEO:\nThyremhOF kthorselterlooou meaman youd Ixelste gM cooue y hif ty here he?\n\nDooo berel sseanenhicheldathory or w kper acc",
-      "seconds": 19722.630159139633
+      "last_layer_attention_entropy": 0.09032811224460602,
+      "qkv_weight_rms": 0.04412476718425751,
+      "sample": "ROMEO:\nAd IUheinheee mathoimeabs bind.\nDSUAthisuNIag nene ndome'nhomy\nG d cini orakh hy sde ithunghe Yll l ton wim thethe anhe ",
+      "seconds": 88.36740636825562
     },
     {
       "run": {
@@ -1852,97 +1852,97 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.212378144264221,
+          "val_seen": 4.2123783826828,
           "val_deployed": 4.236722707748413
         },
         {
           "step": 100,
-          "val_seen": 3.066879689693451,
-          "val_deployed": 3.062790423631668
+          "val_seen": 3.0520158112049103,
+          "val_deployed": 2.9815106093883514
         },
         {
           "step": 200,
-          "val_seen": 2.863148659467697,
-          "val_deployed": 2.9243923127651215
+          "val_seen": 2.8651939034461975,
+          "val_deployed": 2.952787905931473
         },
         {
           "step": 300,
-          "val_seen": 2.7854547798633575,
-          "val_deployed": 2.7411872148513794
+          "val_seen": 2.8374748528003693,
+          "val_deployed": 2.906195431947708
         },
         {
           "step": 400,
-          "val_seen": 2.7490673065185547,
-          "val_deployed": 2.7843970358371735
+          "val_seen": 2.8258368372917175,
+          "val_deployed": 2.804073065519333
         },
         {
           "step": 500,
-          "val_seen": 2.7568372786045074,
-          "val_deployed": 2.7881534695625305
+          "val_seen": 2.8757525384426117,
+          "val_deployed": 3.005258709192276
         },
         {
           "step": 600,
-          "val_seen": 2.7672495543956757,
-          "val_deployed": 2.8571106493473053
+          "val_seen": 2.854511648416519,
+          "val_deployed": 3.016113758087158
         },
         {
           "step": 700,
-          "val_seen": 2.805174797773361,
-          "val_deployed": 2.79908087849617
+          "val_seen": 2.8614965975284576,
+          "val_deployed": 2.79233455657959
         },
         {
           "step": 800,
-          "val_seen": 2.7438303530216217,
-          "val_deployed": 2.6054393351078033
+          "val_seen": 2.8970168232917786,
+          "val_deployed": 2.7388960421085358
         },
         {
           "step": 900,
-          "val_seen": 2.7565675377845764,
-          "val_deployed": 2.692804306745529
+          "val_seen": 2.876100569963455,
+          "val_deployed": 2.831496149301529
         },
         {
           "step": 1000,
-          "val_seen": 2.7335892021656036,
-          "val_deployed": 2.7467992901802063
+          "val_seen": 2.8609328866004944,
+          "val_deployed": 2.8038974702358246
         },
         {
           "step": 1100,
-          "val_seen": 2.7856086790561676,
-          "val_deployed": 2.7713749408721924
+          "val_seen": 2.835759609937668,
+          "val_deployed": 2.769294649362564
         },
         {
           "step": 1200,
-          "val_seen": 2.7533114850521088,
-          "val_deployed": 2.705240488052368
+          "val_seen": 2.8224802911281586,
+          "val_deployed": 2.786308169364929
         },
         {
           "step": 1300,
-          "val_seen": 2.737366795539856,
-          "val_deployed": 2.6886264085769653
+          "val_seen": 2.870496153831482,
+          "val_deployed": 2.784685432910919
         },
         {
           "step": 1400,
-          "val_seen": 2.7625361680984497,
-          "val_deployed": 2.590250164270401
+          "val_seen": 2.8701461851596832,
+          "val_deployed": 2.8177419304847717
         },
         {
           "step": 1500,
-          "val_seen": 2.7952446937561035,
-          "val_deployed": 2.8113526105880737
+          "val_seen": 2.8860218822956085,
+          "val_deployed": 2.8503693640232086
         }
       ],
-      "first_block_grad": 6.495360374450684,
-      "last_block_grad": 3.548704147338867,
+      "first_block_grad": 6.496118545532227,
+      "last_block_grad": 3.5491514205932617,
       "grads": [
-        6.495360374450684,
-        4.603918075561523,
-        3.8627257347106934,
-        3.548704147338867
+        6.496118545532227,
+        4.604494094848633,
+        3.8631482124328613,
+        3.5491514205932617
       ],
-      "last_layer_attention_entropy": 0.005035995505750179,
-      "qkv_weight_rms": 0.034382231533527374,
-      "sample": "ROMEO:\nth remhis khe: selte,\nouca meaman youd Iotlste gM\n\no uesy h fnty here heth thio beielldseg serd Cse.\ntho y wr we per anc",
-      "seconds": 13732.49088358879
+      "last_layer_attention_entropy": 0.01630346290767193,
+      "qkv_weight_rms": 0.034398265182971954,
+      "sample": "ROMEO:\nPuar sebnheee eats imeobs biLETh chithdeuinig wene nle.e' br we. d cini rerd fhk sde iooungyegell l ton wim thd sheaohe ",
+      "seconds": 87.0254602432251
     },
     {
       "run": {
@@ -1962,97 +1962,97 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.341441094875336,
-          "val_deployed": 4.320729613304138
+          "val_seen": 4.341441333293915,
+          "val_deployed": 4.320729672908783
         },
         {
           "step": 100,
-          "val_seen": 2.88118377327919,
-          "val_deployed": 2.953253209590912
+          "val_seen": 2.7931609451770782,
+          "val_deployed": 2.8363587856292725
         },
         {
           "step": 200,
-          "val_seen": 2.751046061515808,
-          "val_deployed": 2.79154172539711
+          "val_seen": 2.7089637219905853,
+          "val_deployed": 2.81573548913002
         },
         {
           "step": 300,
-          "val_seen": 2.6890948712825775,
-          "val_deployed": 2.633919358253479
+          "val_seen": 2.662709355354309,
+          "val_deployed": 2.6155583560466766
         },
         {
           "step": 400,
-          "val_seen": 2.714345157146454,
-          "val_deployed": 2.6730563640594482
+          "val_seen": 2.5948935747146606,
+          "val_deployed": 2.620236963033676
         },
         {
           "step": 500,
-          "val_seen": 2.6986785531044006,
-          "val_deployed": 2.781709611415863
+          "val_seen": 2.613713026046753,
+          "val_deployed": 2.6728316247463226
         },
         {
           "step": 600,
-          "val_seen": 2.643837124109268,
-          "val_deployed": 2.7321190536022186
+          "val_seen": 2.6214862763881683,
+          "val_deployed": 2.6086067259311676
         },
         {
           "step": 700,
-          "val_seen": 2.6609452664852142,
-          "val_deployed": 2.6530599296092987
+          "val_seen": 2.592593938112259,
+          "val_deployed": 2.5611199140548706
         },
         {
           "step": 800,
-          "val_seen": 2.6281113624572754,
-          "val_deployed": 2.565721273422241
+          "val_seen": 2.603126436471939,
+          "val_deployed": 2.5457738637924194
         },
         {
           "step": 900,
-          "val_seen": 2.618318021297455,
-          "val_deployed": 2.713386684656143
+          "val_seen": 2.630488783121109,
+          "val_deployed": 2.615428537130356
         },
         {
           "step": 1000,
-          "val_seen": 2.567302852869034,
-          "val_deployed": 2.595254957675934
+          "val_seen": 2.596711218357086,
+          "val_deployed": 2.595296710729599
         },
         {
           "step": 1100,
-          "val_seen": 2.557326167821884,
-          "val_deployed": 2.654458463191986
+          "val_seen": 2.571331560611725,
+          "val_deployed": 2.5410642325878143
         },
         {
           "step": 1200,
-          "val_seen": 2.5489306151866913,
-          "val_deployed": 2.5087560415267944
+          "val_seen": 2.531457334756851,
+          "val_deployed": 2.4236128628253937
         },
         {
           "step": 1300,
-          "val_seen": 2.5493725538253784,
-          "val_deployed": 2.5572092533111572
+          "val_seen": 2.587297409772873,
+          "val_deployed": 2.565532922744751
         },
         {
           "step": 1400,
-          "val_seen": 2.538670390844345,
-          "val_deployed": 2.504375457763672
+          "val_seen": 2.5848496556282043,
+          "val_deployed": 2.4883618354797363
         },
         {
           "step": 1500,
-          "val_seen": 2.5841747522354126,
-          "val_deployed": 2.6430645883083344
+          "val_seen": 2.5548383593559265,
+          "val_deployed": 2.5321238934993744
         }
       ],
-      "first_block_grad": 7.973562717437744,
-      "last_block_grad": 4.087593078613281,
+      "first_block_grad": 7.974575042724609,
+      "last_block_grad": 4.088148593902588,
       "grads": [
-        7.973562717437744,
-        5.490925312042236,
-        4.5146403312683105,
-        4.087593078613281
+        7.974575042724609,
+        5.491435527801514,
+        4.515275478363037,
+        4.088148593902588
       ],
-      "last_layer_attention_entropy": -0.0,
-      "qkv_weight_rms": 0.03279951214790344,
-      "sample": "ROMEO:\n\n\nHy mhis keswhs:\n\n\nWIouca meaman youd Igelste grecofuroy hi ntherere hath thio beielis s. sirid\n\n\nMatho y or it per anc",
-      "seconds": 16323.624919652939
+      "last_layer_attention_entropy": 7.951954472673606e-08,
+      "qkv_weight_rms": 0.03724924474954605,
+      "sample": "ROMEO:\nPu IUNII heali CEToimeabs uthy m ceithisur l: wen.\nn n.\nEUTouwant\nN:\nnilourd, h, ste isounghe You l thindim the shenofe ",
+      "seconds": 87.29698443412781
     },
     {
       "run": {
@@ -2072,97 +2072,97 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.265139877796173,
-          "val_deployed": 4.350450158119202
+          "val_seen": 4.265139818191528,
+          "val_deployed": 4.350450217723846
         },
         {
           "step": 100,
-          "val_seen": 3.2071037590503693,
-          "val_deployed": 3.227634519338608
+          "val_seen": 3.2117778062820435,
+          "val_deployed": 3.2510043382644653
         },
         {
           "step": 200,
-          "val_seen": 3.0307882130146027,
-          "val_deployed": 3.0580464005470276
+          "val_seen": 2.988504648208618,
+          "val_deployed": 3.0385147631168365
         },
         {
           "step": 300,
-          "val_seen": 2.9135019183158875,
-          "val_deployed": 2.8790607154369354
+          "val_seen": 2.933140128850937,
+          "val_deployed": 2.825175255537033
         },
         {
           "step": 400,
-          "val_seen": 2.857737571001053,
-          "val_deployed": 2.849380373954773
+          "val_seen": 2.8347365260124207,
+          "val_deployed": 2.7920319736003876
         },
         {
           "step": 500,
-          "val_seen": 2.860784560441971,
-          "val_deployed": 2.945381820201874
+          "val_seen": 2.8130001723766327,
+          "val_deployed": 3.116023749113083
         },
         {
           "step": 600,
-          "val_seen": 2.853587120771408,
-          "val_deployed": 2.8418830931186676
+          "val_seen": 2.836191952228546,
+          "val_deployed": 2.7519635558128357
         },
         {
           "step": 700,
-          "val_seen": 2.8476672768592834,
-          "val_deployed": 2.7472146451473236
+          "val_seen": 2.8642996847629547,
+          "val_deployed": 2.770413100719452
         },
         {
           "step": 800,
-          "val_seen": 2.842047482728958,
-          "val_deployed": 2.7352640628814697
+          "val_seen": 2.8332390785217285,
+          "val_deployed": 2.6950954496860504
         },
         {
           "step": 900,
-          "val_seen": 2.868352323770523,
-          "val_deployed": 2.7993768453598022
+          "val_seen": 2.8963139951229095,
+          "val_deployed": 2.9363165497779846
         },
         {
           "step": 1000,
-          "val_seen": 2.834025263786316,
-          "val_deployed": 2.7637946605682373
+          "val_seen": 2.884906083345413,
+          "val_deployed": 2.8665901124477386
         },
         {
           "step": 1100,
-          "val_seen": 2.806585043668747,
-          "val_deployed": 2.7244017720222473
+          "val_seen": 2.8686111867427826,
+          "val_deployed": 2.8276402354240417
         },
         {
           "step": 1200,
-          "val_seen": 2.7944835424423218,
-          "val_deployed": 2.6952190697193146
+          "val_seen": 2.9069848358631134,
+          "val_deployed": 2.790100634098053
         },
         {
           "step": 1300,
-          "val_seen": 2.7724911272525787,
-          "val_deployed": 2.7170049250125885
+          "val_seen": 2.851096957921982,
+          "val_deployed": 2.801179349422455
         },
         {
           "step": 1400,
-          "val_seen": 2.7829565703868866,
-          "val_deployed": 2.6708648800849915
+          "val_seen": 2.833415448665619,
+          "val_deployed": 2.8418827056884766
         },
         {
           "step": 1500,
-          "val_seen": 2.7781876027584076,
-          "val_deployed": 2.7880167365074158
+          "val_seen": 2.8651589155197144,
+          "val_deployed": 2.8254600167274475
         }
       ],
-      "first_block_grad": 7.539111614227295,
-      "last_block_grad": 4.244358062744141,
+      "first_block_grad": 7.539909839630127,
+      "last_block_grad": 4.245052337646484,
       "grads": [
-        7.539111614227295,
-        5.305164813995361,
-        4.685392379760742,
-        4.244358062744141
+        7.539909839630127,
+        5.305673122406006,
+        4.686057090759277,
+        4.245052337646484
       ],
-      "last_layer_attention_entropy": -0.0,
-      "qkv_weight_rms": 0.033915527164936066,
-      "sample": "ROMEO:\nT: remhis kthorselteelouca meamanyyoud ngelste gancofueoy hd ntheeere hsth gou s oielousegeeerimosl.\n-No ylor w k we ahe",
-      "seconds": 14232.685097932816
+      "last_layer_attention_entropy": 0.09889787435531616,
+      "qkv_weight_rms": 0.03362720087170601,
+      "sample": "ROMEO:\nPuar heb heae eat timeass biurEX ceithde w a: wene nNn g'uyomwant\nNcini reran hk sis itou theg,ha l tonWhim t dthe an bu",
+      "seconds": 87.80288314819336
     },
     {
       "run": {
@@ -2182,95 +2182,95 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.2007253766059875,
-          "val_deployed": 4.202302396297455
+          "val_seen": 4.200725257396698,
+          "val_deployed": 4.202302277088165
         },
         {
           "step": 100,
           "val_seen": 2.447057366371155,
-          "val_deployed": 2.5489485263824463
+          "val_deployed": 2.548948585987091
         },
         {
           "step": 200,
-          "val_seen": 2.27347069978714,
-          "val_deployed": 2.3268494307994843
+          "val_seen": 2.2734707593917847,
+          "val_deployed": 2.3268493115901947
         },
         {
           "step": 300,
-          "val_seen": 2.142195075750351,
-          "val_deployed": 2.2481441497802734
+          "val_seen": 2.142194986343384,
+          "val_deployed": 2.2481437027454376
         },
         {
           "step": 400,
-          "val_seen": 2.0460237562656403,
-          "val_deployed": 2.1069058775901794
+          "val_seen": 2.046023815870285,
+          "val_deployed": 2.106905981898308
         },
         {
           "step": 500,
-          "val_seen": 1.9700575470924377,
-          "val_deployed": 2.036390095949173
+          "val_seen": 1.9700574427843094,
+          "val_deployed": 2.036389872431755
         },
         {
           "step": 600,
-          "val_seen": 1.9084684401750565,
-          "val_deployed": 1.8529611378908157
+          "val_seen": 1.9084684550762177,
+          "val_deployed": 1.852960780262947
         },
         {
           "step": 700,
-          "val_seen": 1.8839204758405685,
-          "val_deployed": 1.8427661061286926
+          "val_seen": 1.8839203417301178,
+          "val_deployed": 1.8427660763263702
         },
         {
           "step": 800,
-          "val_seen": 1.8419054597616196,
-          "val_deployed": 1.8401041477918625
+          "val_seen": 1.8419053256511688,
+          "val_deployed": 1.8401041328907013
         },
         {
           "step": 900,
-          "val_seen": 1.81255704164505,
-          "val_deployed": 1.7778361290693283
+          "val_seen": 1.8125568628311157,
+          "val_deployed": 1.7778356075286865
         },
         {
           "step": 1000,
-          "val_seen": 1.787886068224907,
-          "val_deployed": 1.8425137251615524
+          "val_seen": 1.7878858745098114,
+          "val_deployed": 1.8425130546092987
         },
         {
           "step": 1100,
-          "val_seen": 1.7703414112329483,
-          "val_deployed": 1.6039657890796661
+          "val_seen": 1.7703415304422379,
+          "val_deployed": 1.6039659678936005
         },
         {
           "step": 1200,
-          "val_seen": 1.7420934587717056,
-          "val_deployed": 1.8204487711191177
+          "val_seen": 1.7420934736728668,
+          "val_deployed": 1.8204488009214401
         },
         {
           "step": 1300,
-          "val_seen": 1.741521179676056,
-          "val_deployed": 1.6653750389814377
+          "val_seen": 1.7415215224027634,
+          "val_deployed": 1.6653756201267242
         },
         {
           "step": 1400,
-          "val_seen": 1.7042865008115768,
-          "val_deployed": 1.6528736799955368
+          "val_seen": 1.7042863965034485,
+          "val_deployed": 1.6528741270303726
         },
         {
           "step": 1500,
-          "val_seen": 1.708530381321907,
-          "val_deployed": 1.6466599702835083
+          "val_seen": 1.7085298895835876,
+          "val_deployed": 1.6466598063707352
         }
       ],
-      "first_block_grad": 2.5041024684906006,
-      "last_block_grad": 1.7811555862426758,
+      "first_block_grad": 2.504107713699341,
+      "last_block_grad": 1.7811589241027832,
       "grads": [
-        2.5041024684906006,
-        1.7811555862426758
+        2.504107713699341,
+        1.7811589241027832
       ],
-      "last_layer_attention_entropy": 0.4149811863899231,
+      "last_layer_attention_entropy": 0.41498100757598877,
       "qkv_weight_rms": 0.049304451793432236,
-      "sample": "ROMEO:\nThy farms kill'd:\nTertouch means brother to the Mecome of his twener? hath think\nAnd is in the contints, your wake excha",
-      "seconds": 1008.7447578907013
+      "sample": "ROMEO:\nPurgaret heavy and in his bide.\n\nSTANBELLA:\nA senemn the sorrow. Could your battach! is unting\nDidles in im the sheaths ",
+      "seconds": 13.513570547103882
     },
     {
       "run": {
@@ -2291,94 +2291,94 @@
         {
           "step": 0,
           "val_seen": 4.187410056591034,
-          "val_deployed": 4.164153099060059
+          "val_deployed": 4.164153039455414
         },
         {
           "step": 100,
-          "val_seen": 2.4703562259674072,
+          "val_seen": 2.4703563153743744,
           "val_deployed": 2.574387162923813
         },
         {
           "step": 200,
-          "val_seen": 2.2897934913635254,
-          "val_deployed": 2.33372300863266
+          "val_seen": 2.2897936403751373,
+          "val_deployed": 2.333723098039627
         },
         {
           "step": 300,
-          "val_seen": 2.1500531435012817,
-          "val_deployed": 2.2345618903636932
+          "val_seen": 2.150053232908249,
+          "val_deployed": 2.2345620691776276
         },
         {
           "step": 400,
-          "val_seen": 2.0406022667884827,
-          "val_deployed": 2.085211008787155
+          "val_seen": 2.0406023263931274,
+          "val_deployed": 2.085211291909218
         },
         {
           "step": 500,
-          "val_seen": 1.9812032580375671,
-          "val_deployed": 2.0107577443122864
+          "val_seen": 1.9812032878398895,
+          "val_deployed": 2.0107574611902237
         },
         {
           "step": 600,
-          "val_seen": 1.9134519845247269,
-          "val_deployed": 1.8021897375583649
+          "val_seen": 1.9134519398212433,
+          "val_deployed": 1.8021898567676544
         },
         {
           "step": 700,
-          "val_seen": 1.891994833946228,
-          "val_deployed": 1.8704800754785538
+          "val_seen": 1.8919947892427444,
+          "val_deployed": 1.8704793900251389
         },
         {
           "step": 800,
-          "val_seen": 1.846285104751587,
-          "val_deployed": 1.8237288445234299
+          "val_seen": 1.846285194158554,
+          "val_deployed": 1.8237290382385254
         },
         {
           "step": 900,
-          "val_seen": 1.8097397238016129,
-          "val_deployed": 1.7603663355112076
+          "val_seen": 1.8097399026155472,
+          "val_deployed": 1.7603658586740494
         },
         {
           "step": 1000,
-          "val_seen": 1.7914985567331314,
-          "val_deployed": 1.834627389907837
+          "val_seen": 1.7914986312389374,
+          "val_deployed": 1.8346273750066757
         },
         {
           "step": 1100,
-          "val_seen": 1.7801397293806076,
-          "val_deployed": 1.6160291582345963
+          "val_seen": 1.7801393866539001,
+          "val_deployed": 1.6160292774438858
         },
         {
           "step": 1200,
-          "val_seen": 1.7441033869981766,
-          "val_deployed": 1.8041878193616867
+          "val_seen": 1.7441035211086273,
+          "val_deployed": 1.804187387228012
         },
         {
           "step": 1300,
-          "val_seen": 1.7368697673082352,
-          "val_deployed": 1.679689571261406
+          "val_seen": 1.736869901418686,
+          "val_deployed": 1.6796889454126358
         },
         {
           "step": 1400,
-          "val_seen": 1.7082904279232025,
-          "val_deployed": 1.669799730181694
+          "val_seen": 1.7082904428243637,
+          "val_deployed": 1.6697986871004105
         },
         {
           "step": 1500,
-          "val_seen": 1.715119555592537,
-          "val_deployed": 1.6088434606790543
+          "val_seen": 1.7151195257902145,
+          "val_deployed": 1.6088420897722244
         }
       ],
-      "first_block_grad": 2.53181529045105,
-      "last_block_grad": 2.0084879398345947,
+      "first_block_grad": 2.5318193435668945,
+      "last_block_grad": 2.008490562438965,
       "grads": [
-        2.53181529045105,
-        2.0084879398345947
+        2.5318193435668945,
+        2.008490562438965
       ],
-      "last_layer_attention_entropy": 0.4234094023704529,
+      "last_layer_attention_entropy": 0.4234095811843872,
       "qkv_weight_rms": 0.05007205903530121,
-      "sample": "ROMEO:\nThou mhate hasts: the do didesman you.\nIf let the comminy his treear? hear thing the seep.\n\nShepherd:\nBo your welcome he",
-      "seconds": 1018.2703778743744
+      "sample": "ROMEO:\nPray here eave Clifi unbs bity.\n\nSecond Minight, my lord: browelt, contry.\nPray, sis it unforgely lose Warmning shearts ",
+      "seconds": 13.766940355300903
     },
     {
       "run": {
@@ -2398,95 +2398,95 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.202507019042969,
+          "val_seen": 4.202507138252258,
           "val_deployed": 4.1925448179244995
         },
         {
           "step": 100,
           "val_seen": 2.4718184769153595,
-          "val_deployed": 2.569997549057007
+          "val_deployed": 2.5699980556964874
         },
         {
           "step": 200,
-          "val_seen": 2.307790607213974,
-          "val_deployed": 2.4076468646526337
+          "val_seen": 2.307790845632553,
+          "val_deployed": 2.407648026943207
         },
         {
           "step": 300,
-          "val_seen": 2.1577963531017303,
-          "val_deployed": 2.2055424749851227
+          "val_seen": 2.15779647231102,
+          "val_deployed": 2.205541878938675
         },
         {
           "step": 400,
-          "val_seen": 2.0577490031719208,
-          "val_deployed": 2.1101774275302887
+          "val_seen": 2.057749181985855,
+          "val_deployed": 2.110176771879196
         },
         {
           "step": 500,
-          "val_seen": 1.9704611152410507,
-          "val_deployed": 2.0079596042633057
+          "val_seen": 1.970461294054985,
+          "val_deployed": 2.007961079478264
         },
         {
           "step": 600,
-          "val_seen": 1.9324456602334976,
-          "val_deployed": 1.8287596106529236
+          "val_seen": 1.9324461370706558,
+          "val_deployed": 1.8287597000598907
         },
         {
           "step": 700,
-          "val_seen": 1.8965438455343246,
-          "val_deployed": 1.8780146539211273
+          "val_seen": 1.8965433984994888,
+          "val_deployed": 1.8780111968517303
         },
         {
           "step": 800,
-          "val_seen": 1.8521624058485031,
-          "val_deployed": 1.8677831143140793
+          "val_seen": 1.852161094546318,
+          "val_deployed": 1.8677783608436584
         },
         {
           "step": 900,
-          "val_seen": 1.8218322545289993,
-          "val_deployed": 1.7805340439081192
+          "val_seen": 1.8218314796686172,
+          "val_deployed": 1.7805343866348267
         },
         {
           "step": 1000,
-          "val_seen": 1.7894798666238785,
-          "val_deployed": 1.8683529496192932
+          "val_seen": 1.78947913646698,
+          "val_deployed": 1.868350476026535
         },
         {
           "step": 1100,
-          "val_seen": 1.765584722161293,
-          "val_deployed": 1.6218977570533752
+          "val_seen": 1.7655850648880005,
+          "val_deployed": 1.6219052821397781
         },
         {
           "step": 1200,
-          "val_seen": 1.7369303852319717,
-          "val_deployed": 1.8196003288030624
+          "val_seen": 1.7369278520345688,
+          "val_deployed": 1.8195969760417938
         },
         {
           "step": 1300,
-          "val_seen": 1.738479733467102,
-          "val_deployed": 1.6868333518505096
+          "val_seen": 1.7384822964668274,
+          "val_deployed": 1.686840072274208
         },
         {
           "step": 1400,
-          "val_seen": 1.6957121938467026,
-          "val_deployed": 1.6412114351987839
+          "val_seen": 1.695713609457016,
+          "val_deployed": 1.6412112414836884
         },
         {
           "step": 1500,
-          "val_seen": 1.6998751312494278,
-          "val_deployed": 1.665051594376564
+          "val_seen": 1.699875071644783,
+          "val_deployed": 1.6650606542825699
         }
       ],
-      "first_block_grad": 2.882949113845825,
-      "last_block_grad": 2.1955695152282715,
+      "first_block_grad": 2.8829545974731445,
+      "last_block_grad": 2.1955747604370117,
       "grads": [
-        2.882949113845825,
-        2.1955695152282715
+        2.8829545974731445,
+        2.1955747604370117
       ],
-      "last_layer_attention_entropy": 0.395550400018692,
-      "qkv_weight_rms": 0.04884441941976547,
-      "sample": "ROMEO:\nTybrach, disssiselted?\nHow near you do I tose to you upon him:\nI have hath this being sook on these atter\nTo his permain",
-      "seconds": 1010.7052507400513
+      "last_layer_attention_entropy": 0.395547479391098,
+      "qkv_weight_rms": 0.04884443059563637,
+      "sample": "ROMEO:\nAy, you no all and in absess'd me?\n\nABONLIT:\nWhen you hearts! which you rebund?\n\nGLOUCESTER:\nSurr loss Wal'st done, of t",
+      "seconds": 13.547578811645508
     },
     {
       "run": {
@@ -2506,97 +2506,97 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.189716815948486,
+          "val_seen": 4.189717054367065,
           "val_deployed": 4.204683184623718
         },
         {
           "step": 100,
-          "val_seen": 2.485098361968994,
-          "val_deployed": 2.5830459892749786
+          "val_seen": 2.4850983023643494,
+          "val_deployed": 2.583045870065689
         },
         {
           "step": 200,
-          "val_seen": 2.308298647403717,
-          "val_deployed": 2.42551189661026
+          "val_seen": 2.3082984387874603,
+          "val_deployed": 2.4255113005638123
         },
         {
           "step": 300,
-          "val_seen": 2.1704031229019165,
-          "val_deployed": 2.248800754547119
+          "val_seen": 2.1704026758670807,
+          "val_deployed": 2.2488008439540863
         },
         {
           "step": 400,
-          "val_seen": 2.071856379508972,
-          "val_deployed": 2.1259006559848785
+          "val_seen": 2.0718558728694916,
+          "val_deployed": 2.1259001195430756
         },
         {
           "step": 500,
-          "val_seen": 1.9889907985925674,
-          "val_deployed": 2.0265531688928604
+          "val_seen": 1.9889903366565704,
+          "val_deployed": 2.026554301381111
         },
         {
           "step": 600,
-          "val_seen": 1.9255709946155548,
-          "val_deployed": 1.8069762885570526
+          "val_seen": 1.925571545958519,
+          "val_deployed": 1.8069768100976944
         },
         {
           "step": 700,
-          "val_seen": 1.891000509262085,
-          "val_deployed": 1.8518115282058716
+          "val_seen": 1.8910003006458282,
+          "val_deployed": 1.8518068194389343
         },
         {
           "step": 800,
-          "val_seen": 1.8559597730636597,
-          "val_deployed": 1.8295759409666061
+          "val_seen": 1.8559609800577164,
+          "val_deployed": 1.8295761048793793
         },
         {
           "step": 900,
-          "val_seen": 1.8111102133989334,
-          "val_deployed": 1.732135608792305
+          "val_seen": 1.811106950044632,
+          "val_deployed": 1.7321364879608154
         },
         {
           "step": 1000,
-          "val_seen": 1.7837952226400375,
-          "val_deployed": 1.8539418876171112
+          "val_seen": 1.7837951481342316,
+          "val_deployed": 1.8539427071809769
         },
         {
           "step": 1100,
-          "val_seen": 1.772078275680542,
-          "val_deployed": 1.650276318192482
+          "val_seen": 1.7720766514539719,
+          "val_deployed": 1.6502676159143448
         },
         {
           "step": 1200,
-          "val_seen": 1.7233116179704666,
-          "val_deployed": 1.8086821883916855
+          "val_seen": 1.7233128100633621,
+          "val_deployed": 1.8086841702461243
         },
         {
           "step": 1300,
-          "val_seen": 1.7211147844791412,
-          "val_deployed": 1.6659648716449738
+          "val_seen": 1.721114307641983,
+          "val_deployed": 1.6659822016954422
         },
         {
           "step": 1400,
-          "val_seen": 1.6920555084943771,
-          "val_deployed": 1.6331370323896408
+          "val_seen": 1.6920569688081741,
+          "val_deployed": 1.6331219375133514
         },
         {
           "step": 1500,
-          "val_seen": 1.683953508734703,
-          "val_deployed": 1.603783518075943
+          "val_seen": 1.6839579045772552,
+          "val_deployed": 1.6037707775831223
         }
       ],
-      "first_block_grad": 2.7358081340789795,
-      "last_block_grad": 1.7088195085525513,
+      "first_block_grad": 2.7358155250549316,
+      "last_block_grad": 1.7088230848312378,
       "grads": [
-        2.7358081340789795,
-        2.1066274642944336,
-        1.9356054067611694,
-        1.7088195085525513
+        2.7358155250549316,
+        2.1066322326660156,
+        1.935609221458435,
+        1.7088230848312378
       ],
-      "last_layer_attention_entropy": 0.384468138217926,
-      "qkv_weight_rms": 0.04957672581076622,
-      "sample": "ROMEO:\nThou must keep selted our peermant,\nAnd gels eagancors of his twere mayst and blessels!\nThese is stants, your way, aman.",
-      "seconds": 1983.0819549560547
+      "last_layer_attention_entropy": 0.384472519159317,
+      "qkv_weight_rms": 0.0495767667889595,
+      "sample": "ROMEO:\nA are I no all Clifford, you we'll well; whiles,\nThat he's suwards contruction?\n\nHENRY BOLINGBY:\nHow no wimat deseen her",
+      "seconds": 21.905104398727417
     },
     {
       "run": {
@@ -2616,97 +2616,97 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.213087379932404,
-          "val_deployed": 4.177106261253357
+          "val_seen": 4.213087260723114,
+          "val_deployed": 4.177106201648712
         },
         {
           "step": 100,
-          "val_seen": 2.4962466657161713,
-          "val_deployed": 2.585365891456604
+          "val_seen": 2.4962468445301056,
+          "val_deployed": 2.5853709876537323
         },
         {
           "step": 200,
-          "val_seen": 2.2960270941257477,
-          "val_deployed": 2.385261833667755
+          "val_seen": 2.296025663614273,
+          "val_deployed": 2.3852592408657074
         },
         {
           "step": 300,
-          "val_seen": 2.1702925264835358,
-          "val_deployed": 2.2746706902980804
+          "val_seen": 2.1702923476696014,
+          "val_deployed": 2.274671286344528
         },
         {
           "step": 400,
-          "val_seen": 2.0409657955169678,
-          "val_deployed": 2.08396452665329
+          "val_seen": 2.0409672260284424,
+          "val_deployed": 2.083962395787239
         },
         {
           "step": 500,
-          "val_seen": 1.9693327099084854,
-          "val_deployed": 2.045804426074028
+          "val_seen": 1.9693363904953003,
+          "val_deployed": 2.0458071380853653
         },
         {
           "step": 600,
-          "val_seen": 1.9100260734558105,
-          "val_deployed": 1.8194722533226013
+          "val_seen": 1.910026803612709,
+          "val_deployed": 1.8194723576307297
         },
         {
           "step": 700,
-          "val_seen": 1.876112014055252,
-          "val_deployed": 1.8771255761384964
+          "val_seen": 1.8761167228221893,
+          "val_deployed": 1.8770885914564133
         },
         {
           "step": 800,
-          "val_seen": 1.8167043179273605,
-          "val_deployed": 1.768749639391899
+          "val_seen": 1.8166928738355637,
+          "val_deployed": 1.768753781914711
         },
         {
           "step": 900,
-          "val_seen": 1.790567472577095,
-          "val_deployed": 1.6887700855731964
+          "val_seen": 1.790557473897934,
+          "val_deployed": 1.6887441724538803
         },
         {
           "step": 1000,
-          "val_seen": 1.76129512488842,
-          "val_deployed": 1.9007970988750458
+          "val_seen": 1.7613058388233185,
+          "val_deployed": 1.9008554369211197
         },
         {
           "step": 1100,
-          "val_seen": 1.7383575290441513,
-          "val_deployed": 1.605439156293869
+          "val_seen": 1.738358661532402,
+          "val_deployed": 1.6054677665233612
         },
         {
           "step": 1200,
-          "val_seen": 1.7066931426525116,
-          "val_deployed": 1.694578155875206
+          "val_seen": 1.7066912353038788,
+          "val_deployed": 1.6946064978837967
         },
         {
           "step": 1300,
-          "val_seen": 1.702963501214981,
-          "val_deployed": 1.6523550748825073
+          "val_seen": 1.7029687017202377,
+          "val_deployed": 1.6523528397083282
         },
         {
           "step": 1400,
-          "val_seen": 1.6784533858299255,
-          "val_deployed": 1.6325041353702545
+          "val_seen": 1.6784677505493164,
+          "val_deployed": 1.6325625628232956
         },
         {
           "step": 1500,
-          "val_seen": 1.6766838878393173,
-          "val_deployed": 1.6053542494773865
+          "val_seen": 1.6766938716173172,
+          "val_deployed": 1.605336844921112
         }
       ],
-      "first_block_grad": 3.3315765857696533,
-      "last_block_grad": 1.7857868671417236,
+      "first_block_grad": 3.3315861225128174,
+      "last_block_grad": 1.7857904434204102,
       "grads": [
-        3.3315765857696533,
-        2.5343291759490967,
-        2.102795362472534,
-        1.7857868671417236
+        3.3315861225128174,
+        2.5343360900878906,
+        2.1028008460998535,
+        1.7857904434204102
       ],
-      "last_layer_attention_entropy": 0.49947381019592285,
-      "qkv_weight_rms": 0.049008436501026154,
-      "sample": "ROMEO:\nThore his kind selt it one means!\n\nPAULINA:\nAnd My pours, ho nay\nhere hath how she'ell seals him. But so your way,\nFor c",
-      "seconds": 1978.8028271198273
+      "last_layer_attention_entropy": 0.4995090961456299,
+      "qkv_weight_rms": 0.0490085668861866,
+      "sample": "ROMEO:\nAy, you nother Clifice! should me?\n\nABONA:\nForbeund to go your high in the Prova sistionus.\n\nCYORRREY:\nWhich met heaven ",
+      "seconds": 22.751676082611084
     },
     {
       "run": {
@@ -2727,96 +2727,96 @@
         {
           "step": 0,
           "val_seen": 4.181231498718262,
-          "val_deployed": 4.148790180683136
+          "val_deployed": 4.14879035949707
         },
         {
           "step": 100,
-          "val_seen": 2.498871684074402,
-          "val_deployed": 2.590522527694702
+          "val_seen": 2.49887153506279,
+          "val_deployed": 2.5905224978923798
         },
         {
           "step": 200,
           "val_seen": 2.3144761323928833,
-          "val_deployed": 2.390518933534622
+          "val_deployed": 2.390519142150879
         },
         {
           "step": 300,
-          "val_seen": 2.1852598190307617,
-          "val_deployed": 2.2402201294898987
+          "val_seen": 2.1852599680423737,
+          "val_deployed": 2.240220218896866
         },
         {
           "step": 400,
           "val_seen": 2.084778070449829,
-          "val_deployed": 2.1535098999738693
+          "val_deployed": 2.15351003408432
         },
         {
           "step": 500,
-          "val_seen": 1.984765186905861,
-          "val_deployed": 2.081081137061119
+          "val_seen": 1.9847654104232788,
+          "val_deployed": 2.081081658601761
         },
         {
           "step": 600,
-          "val_seen": 1.950765609741211,
-          "val_deployed": 1.8282049745321274
+          "val_seen": 1.9507654756307602,
+          "val_deployed": 1.8282041400671005
         },
         {
           "step": 700,
-          "val_seen": 1.8852282911539078,
-          "val_deployed": 1.8561239391565323
+          "val_seen": 1.8852288722991943,
+          "val_deployed": 1.856125608086586
         },
         {
           "step": 800,
-          "val_seen": 1.8557230830192566,
-          "val_deployed": 1.8421445935964584
+          "val_seen": 1.855723962187767,
+          "val_deployed": 1.8421435356140137
         },
         {
           "step": 900,
-          "val_seen": 1.8159146755933762,
-          "val_deployed": 1.7378664761781693
+          "val_seen": 1.8159144967794418,
+          "val_deployed": 1.7378637343645096
         },
         {
           "step": 1000,
-          "val_seen": 1.7818619757890701,
-          "val_deployed": 1.8982618004083633
+          "val_seen": 1.7818629443645477,
+          "val_deployed": 1.8982673436403275
         },
         {
           "step": 1100,
-          "val_seen": 1.758182317018509,
-          "val_deployed": 1.6362982541322708
+          "val_seen": 1.7581826001405716,
+          "val_deployed": 1.6362909972667694
         },
         {
           "step": 1200,
-          "val_seen": 1.7194904536008835,
-          "val_deployed": 1.7483321726322174
+          "val_seen": 1.7194911539554596,
+          "val_deployed": 1.7483306378126144
         },
         {
           "step": 1300,
-          "val_seen": 1.716004565358162,
-          "val_deployed": 1.6443760693073273
+          "val_seen": 1.7160026133060455,
+          "val_deployed": 1.644369825720787
         },
         {
           "step": 1400,
-          "val_seen": 1.6880230903625488,
-          "val_deployed": 1.624950334429741
+          "val_seen": 1.6880262196063995,
+          "val_deployed": 1.6249512732028961
         },
         {
           "step": 1500,
-          "val_seen": 1.6890599578619003,
-          "val_deployed": 1.651527464389801
+          "val_seen": 1.6890594065189362,
+          "val_deployed": 1.6515116542577744
         }
       ],
-      "first_block_grad": 3.27536940574646,
-      "last_block_grad": 2.1986465454101562,
+      "first_block_grad": 3.275376319885254,
+      "last_block_grad": 2.1986515522003174,
       "grads": [
-        3.27536940574646,
-        2.771728277206421,
-        2.653172016143799,
-        2.1986465454101562
+        3.275376319885254,
+        2.771733283996582,
+        2.653179407119751,
+        2.1986515522003174
       ],
-      "last_layer_attention_entropy": 0.40195655822753906,
-      "qkv_weight_rms": 0.04887764900922775,
-      "sample": "ROMEO:\nThorefore knowns: tellow thee hand, in I then,\nAre poursed thoughter? he hath bloody soul.\n\nShepheps:\nNo your wake excuc",
-      "seconds": 1973.7164089679718
+      "last_layer_attention_entropy": 0.40195536613464355,
+      "qkv_weight_rms": 0.04887762665748596,
+      "sample": "ROMEO:\nPut your heave Clifice! should me? Athis in till my love's son\nGrave time and his derishly to brought in immident.\nCome,",
+      "seconds": 21.564045906066895
     },
     {
       "run": {
@@ -2836,109 +2836,109 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.205338716506958,
-          "val_deployed": 4.222309827804565
+          "val_seen": 4.205338895320892,
+          "val_deployed": 4.222309768199921
         },
         {
           "step": 100,
-          "val_seen": 3.355846732854843,
-          "val_deployed": 3.39631587266922
+          "val_seen": 3.35611429810524,
+          "val_deployed": 3.396403044462204
         },
         {
           "step": 200,
-          "val_seen": 3.2102599442005157,
-          "val_deployed": 3.2311166524887085
+          "val_seen": 3.279728978872299,
+          "val_deployed": 3.324399769306183
         },
         {
           "step": 300,
-          "val_seen": 2.7264510095119476,
-          "val_deployed": 2.688890516757965
+          "val_seen": 2.769673764705658,
+          "val_deployed": 2.729153424501419
         },
         {
           "step": 400,
-          "val_seen": 2.4708126187324524,
-          "val_deployed": 2.4873507618904114
+          "val_seen": 2.5522537529468536,
+          "val_deployed": 2.5862531661987305
         },
         {
           "step": 500,
-          "val_seen": 2.289383679628372,
-          "val_deployed": 2.3063455522060394
+          "val_seen": 2.313875526189804,
+          "val_deployed": 2.3304169476032257
         },
         {
           "step": 600,
-          "val_seen": 2.1673609018325806,
-          "val_deployed": 2.1470710784196854
+          "val_seen": 2.1925811767578125,
+          "val_deployed": 2.1523540914058685
         },
         {
           "step": 700,
-          "val_seen": 2.0784339606761932,
-          "val_deployed": 2.0275327563285828
+          "val_seen": 2.0758074522018433,
+          "val_deployed": 2.0431020259857178
         },
         {
           "step": 800,
-          "val_seen": 2.006271257996559,
-          "val_deployed": 2.005370408296585
+          "val_seen": 2.0066322535276413,
+          "val_deployed": 1.974955603480339
         },
         {
           "step": 900,
-          "val_seen": 1.9442632049322128,
-          "val_deployed": 1.89837147295475
+          "val_seen": 1.9446994364261627,
+          "val_deployed": 1.909413143992424
         },
         {
           "step": 1000,
-          "val_seen": 1.8879171758890152,
-          "val_deployed": 2.018656402826309
+          "val_seen": 1.8848659992218018,
+          "val_deployed": 1.9981251955032349
         },
         {
           "step": 1100,
-          "val_seen": 1.8437210768461227,
-          "val_deployed": 1.7085707783699036
+          "val_seen": 1.8526631891727448,
+          "val_deployed": 1.7360000610351562
         },
         {
           "step": 1200,
-          "val_seen": 1.8047341853380203,
-          "val_deployed": 1.8526995182037354
+          "val_seen": 1.8047537952661514,
+          "val_deployed": 1.8849073499441147
         },
         {
           "step": 1300,
-          "val_seen": 1.771687924861908,
-          "val_deployed": 1.718061774969101
+          "val_seen": 1.7862650603055954,
+          "val_deployed": 1.7399031221866608
         },
         {
           "step": 1400,
-          "val_seen": 1.735349029302597,
-          "val_deployed": 1.6907016336917877
+          "val_seen": 1.7535226345062256,
+          "val_deployed": 1.7625346183776855
         },
         {
           "step": 1500,
-          "val_seen": 1.7221662402153015,
-          "val_deployed": 1.6569602489471436
+          "val_seen": 1.7484262138605118,
+          "val_deployed": 1.6944694072008133
         }
       ],
-      "first_block_grad": 3.386827230453491,
-      "last_block_grad": 1.7683910131454468,
+      "first_block_grad": 3.3868448734283447,
+      "last_block_grad": 1.7683950662612915,
       "grads": [
-        3.386827230453491,
-        3.1854095458984375,
-        3.0325610637664795,
-        2.6997315883636475,
-        2.531233072280884,
-        2.407440185546875,
-        2.3121724128723145,
-        2.273832082748413,
-        2.1998748779296875,
-        2.0520434379577637,
-        2.06962251663208,
-        2.072152614593506,
-        1.9790955781936646,
-        1.857480525970459,
-        1.8419963121414185,
-        1.7683910131454468
+        3.3868448734283447,
+        3.185420513153076,
+        3.0325708389282227,
+        2.6997413635253906,
+        2.5312395095825195,
+        2.4074487686157227,
+        2.312178611755371,
+        2.2738406658172607,
+        2.1998822689056396,
+        2.0520501136779785,
+        2.0696287155151367,
+        2.072160005569458,
+        1.9791021347045898,
+        1.857485294342041,
+        1.842002272605896,
+        1.7683950662612915
       ],
-      "last_layer_attention_entropy": 0.3011358678340912,
-      "qkv_weight_rms": 0.03778623044490814,
-      "sample": "ROMEO:\nThy, more know sell Warwick expair,\nNow gels famancous with fot been charge.\n\nKING EDWABY:\nI he petiate, your wake a whe",
-      "seconds": 7486.370125293732
+      "last_layer_attention_entropy": 0.3053652346134186,
+      "qkv_weight_rms": 0.03744490444660187,
+      "sample": "ROMEO:\nAy, a I no all Clitizenss bid they ithine.\nForsencen; measured the confirtation, sis it.\n\nMERCUTIO:\nTo Whim the shall bu",
+      "seconds": 81.74065566062927
     },
     {
       "run": {
@@ -2963,104 +2963,104 @@
         },
         {
           "step": 100,
-          "val_seen": 2.523092359304428,
-          "val_deployed": 2.61302849650383
+          "val_seen": 2.586487263441086,
+          "val_deployed": 2.6544254422187805
         },
         {
           "step": 200,
-          "val_seen": 2.3400359451770782,
-          "val_deployed": 2.455776333808899
+          "val_seen": 2.3769496083259583,
+          "val_deployed": 2.5194810032844543
         },
         {
           "step": 300,
-          "val_seen": 2.2116223871707916,
-          "val_deployed": 2.302041381597519
+          "val_seen": 2.2346354126930237,
+          "val_deployed": 2.3124754428863525
         },
         {
           "step": 400,
-          "val_seen": 2.0619713068008423,
-          "val_deployed": 2.120541751384735
+          "val_seen": 2.1002020835876465,
+          "val_deployed": 2.1510517597198486
         },
         {
           "step": 500,
-          "val_seen": 1.9848586320877075,
-          "val_deployed": 1.9996779412031174
+          "val_seen": 2.0099148899316788,
+          "val_deployed": 2.064301699399948
         },
         {
           "step": 600,
-          "val_seen": 1.912986934185028,
-          "val_deployed": 1.8173802644014359
+          "val_seen": 1.9259633719921112,
+          "val_deployed": 1.866271436214447
         },
         {
           "step": 700,
-          "val_seen": 1.8967541605234146,
-          "val_deployed": 1.8512296974658966
+          "val_seen": 1.9138342440128326,
+          "val_deployed": 1.9222321510314941
         },
         {
           "step": 800,
-          "val_seen": 1.8212717473506927,
-          "val_deployed": 1.8181456476449966
+          "val_seen": 1.8386036157608032,
+          "val_deployed": 1.8323970288038254
         },
         {
           "step": 900,
-          "val_seen": 1.780102401971817,
-          "val_deployed": 1.6743798106908798
+          "val_seen": 1.8004200011491776,
+          "val_deployed": 1.7326757311820984
         },
         {
           "step": 1000,
-          "val_seen": 1.7613112181425095,
-          "val_deployed": 1.816378891468048
+          "val_seen": 1.766552895307541,
+          "val_deployed": 1.8508211225271225
         },
         {
           "step": 1100,
-          "val_seen": 1.7329865097999573,
-          "val_deployed": 1.6183901578187943
+          "val_seen": 1.7462445944547653,
+          "val_deployed": 1.6081733405590057
         },
         {
           "step": 1200,
-          "val_seen": 1.6984434574842453,
-          "val_deployed": 1.7180417329072952
+          "val_seen": 1.7215754836797714,
+          "val_deployed": 1.7463957071304321
         },
         {
           "step": 1300,
-          "val_seen": 1.7001011073589325,
-          "val_deployed": 1.6576825380325317
+          "val_seen": 1.7010319530963898,
+          "val_deployed": 1.6586628407239914
         },
         {
           "step": 1400,
-          "val_seen": 1.6682267040014267,
-          "val_deployed": 1.6515364199876785
+          "val_seen": 1.676624819636345,
+          "val_deployed": 1.6294101029634476
         },
         {
           "step": 1500,
-          "val_seen": 1.6681305170059204,
-          "val_deployed": 1.6717197448015213
+          "val_seen": 1.6654148250818253,
+          "val_deployed": 1.6046422868967056
         }
       ],
-      "first_block_grad": 3.100825786590576,
-      "last_block_grad": 1.700390100479126,
+      "first_block_grad": 3.1008358001708984,
+      "last_block_grad": 1.7003954648971558,
       "grads": [
-        3.100825786590576,
-        2.9416041374206543,
-        2.8195011615753174,
-        2.7125282287597656,
-        2.7725791931152344,
-        2.688300132751465,
-        2.4994606971740723,
-        2.3532612323760986,
-        2.3513975143432617,
-        2.0642495155334473,
-        2.030921459197998,
-        1.9761096239089966,
-        1.8840060234069824,
-        1.786173701286316,
-        1.7185052633285522,
-        1.700390100479126
+        3.1008358001708984,
+        2.941615343093872,
+        2.819509506225586,
+        2.7125370502471924,
+        2.7725863456726074,
+        2.6883084774017334,
+        2.4994680881500244,
+        2.3532674312591553,
+        2.3514044284820557,
+        2.0642566680908203,
+        2.0309276580810547,
+        1.9761157035827637,
+        1.884012222290039,
+        1.786178469657898,
+        1.7185107469558716,
+        1.7003954648971558
       ],
-      "last_layer_attention_entropy": 0.3922973573207855,
-      "qkv_weight_rms": 0.049783844500780106,
-      "sample": "ROMEO:\nThou makest away: the deceived,\nAnd in I to the Menonue you for meer? he?\n\nDURHESS:\n\nCABHARD:\nPlass' though this perial.",
-      "seconds": 7469.482618093491
+      "last_layer_attention_entropy": 0.4236839711666107,
+      "qkv_weight_rms": 0.04868724197149277,
+      "sample": "ROMEO:\nPray me? heaven is in his bitter coith.\n\nNurse:\nAnd the form wants confector'd to death.\n\nMERCUTIO:\nThis imnious heaven ",
+      "seconds": 81.9320137500763
     },
     {
       "run": {
@@ -3080,109 +3080,109 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.168702065944672,
+          "val_seen": 4.168702125549316,
           "val_deployed": 4.162038803100586
         },
         {
           "step": 100,
-          "val_seen": 2.6365710496902466,
-          "val_deployed": 2.700783282518387
+          "val_seen": 2.969427913427353,
+          "val_deployed": 3.051553636789322
         },
         {
           "step": 200,
-          "val_seen": 2.406690299510956,
-          "val_deployed": 2.4924673438072205
+          "val_seen": 2.6176378428936005,
+          "val_deployed": 2.6471081972122192
         },
         {
           "step": 300,
-          "val_seen": 2.2428739964962006,
-          "val_deployed": 2.2953696846961975
+          "val_seen": 2.465712159872055,
+          "val_deployed": 2.493158906698227
         },
         {
           "step": 400,
-          "val_seen": 2.105396717786789,
-          "val_deployed": 2.1369462311267853
+          "val_seen": 2.2899087965488434,
+          "val_deployed": 2.297371506690979
         },
         {
           "step": 500,
-          "val_seen": 2.0023443400859833,
-          "val_deployed": 2.0658156126737595
+          "val_seen": 2.1647167205810547,
+          "val_deployed": 2.217768132686615
         },
         {
           "step": 600,
-          "val_seen": 1.9418007284402847,
-          "val_deployed": 1.8799404054880142
+          "val_seen": 2.061720073223114,
+          "val_deployed": 2.0278488993644714
         },
         {
           "step": 700,
-          "val_seen": 1.8909652680158615,
-          "val_deployed": 1.8670841753482819
+          "val_seen": 2.0020378082990646,
+          "val_deployed": 1.9619792848825455
         },
         {
           "step": 800,
-          "val_seen": 1.8276839703321457,
-          "val_deployed": 1.838016763329506
+          "val_seen": 1.944758877158165,
+          "val_deployed": 1.9837389141321182
         },
         {
           "step": 900,
-          "val_seen": 1.80160391330719,
-          "val_deployed": 1.768146425485611
+          "val_seen": 1.9096488654613495,
+          "val_deployed": 1.922644317150116
         },
         {
           "step": 1000,
-          "val_seen": 1.761967122554779,
-          "val_deployed": 1.889450579881668
+          "val_seen": 1.8490108847618103,
+          "val_deployed": 1.8908086270093918
         },
         {
           "step": 1100,
-          "val_seen": 1.7289422154426575,
-          "val_deployed": 1.6231570094823837
+          "val_seen": 1.797621876001358,
+          "val_deployed": 1.6601410806179047
         },
         {
           "step": 1200,
-          "val_seen": 1.7098070234060287,
-          "val_deployed": 1.7555363923311234
+          "val_seen": 1.7576189190149307,
+          "val_deployed": 1.8024409413337708
         },
         {
           "step": 1300,
-          "val_seen": 1.6940555572509766,
-          "val_deployed": 1.6222008019685745
+          "val_seen": 1.7443132996559143,
+          "val_deployed": 1.7028723508119583
         },
         {
           "step": 1400,
-          "val_seen": 1.664318010210991,
-          "val_deployed": 1.635609045624733
+          "val_seen": 1.7094479501247406,
+          "val_deployed": 1.6610786765813828
         },
         {
           "step": 1500,
-          "val_seen": 1.6758107841014862,
-          "val_deployed": 1.6049765199422836
+          "val_seen": 1.7117071896791458,
+          "val_deployed": 1.6672421991825104
         }
       ],
-      "first_block_grad": 3.852496385574341,
-      "last_block_grad": 1.9513581991195679,
+      "first_block_grad": 3.852510929107666,
+      "last_block_grad": 1.9513649940490723,
       "grads": [
-        3.852496385574341,
-        3.9436991214752197,
-        3.5601463317871094,
-        3.3185033798217773,
-        3.1495091915130615,
-        3.019087076187134,
-        2.961141347885132,
-        2.8090879917144775,
-        2.594817876815796,
-        2.5779383182525635,
-        2.4096081256866455,
-        2.2101430892944336,
-        2.2066314220428467,
-        2.0977094173431396,
-        1.9402527809143066,
-        1.9513581991195679
+        3.852510929107666,
+        3.9437170028686523,
+        3.560157299041748,
+        3.3185160160064697,
+        3.1495187282562256,
+        3.019099473953247,
+        2.9611520767211914,
+        2.8091015815734863,
+        2.594827175140381,
+        2.577948570251465,
+        2.409616470336914,
+        2.2101504802703857,
+        2.2066397666931152,
+        2.0977163314819336,
+        1.9402580261230469,
+        1.9513649940490723
       ],
-      "last_layer_attention_entropy": 0.4004921019077301,
-      "qkv_weight_rms": 0.04847995191812515,
-      "sample": "ROMEO:\nThou must known your looks oes,\nAnd in Ixto thee, come with than here hath good being soon,\nBut the peace to his permatc",
-      "seconds": 7486.3015332221985
+      "last_layer_attention_entropy": 0.34174200892448425,
+      "qkv_weight_rms": 0.04049103334546089,
+      "sample": "ROMEO:\nPulece.\n\nDUKE VINCENTIO:\nTut you caithded. For enemn; I would which you read, he sistion,\nThe brant too him the shear bu",
+      "seconds": 81.70655345916748
     },
     {
       "run": {
@@ -3202,95 +3202,95 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.209818720817566,
-          "val_deployed": 4.20674192905426
+          "val_seen": 4.209818542003632,
+          "val_deployed": 4.20674204826355
         },
         {
           "step": 100,
-          "val_seen": 3.3606190383434296,
-          "val_deployed": 3.401872545480728
+          "val_seen": 3.3606191277503967,
+          "val_deployed": 3.40187269449234
         },
         {
           "step": 200,
-          "val_seen": 3.356351375579834,
-          "val_deployed": 3.4050152599811554
+          "val_seen": 3.3560825884342194,
+          "val_deployed": 3.4051440954208374
         },
         {
           "step": 300,
-          "val_seen": 3.3494766652584076,
-          "val_deployed": 3.354497730731964
+          "val_seen": 3.349684715270996,
+          "val_deployed": 3.3544114530086517
         },
         {
           "step": 400,
-          "val_seen": 3.351631134748459,
-          "val_deployed": 3.338593691587448
+          "val_seen": 3.3517783284187317,
+          "val_deployed": 3.3387323319911957
         },
         {
           "step": 500,
-          "val_seen": 3.352647513151169,
-          "val_deployed": 3.341104567050934
+          "val_seen": 3.352704405784607,
+          "val_deployed": 3.3416998088359833
         },
         {
           "step": 600,
-          "val_seen": 3.3734391629695892,
-          "val_deployed": 3.3626554906368256
+          "val_seen": 3.373338967561722,
+          "val_deployed": 3.3625933825969696
         },
         {
           "step": 700,
-          "val_seen": 3.3696934282779694,
-          "val_deployed": 3.3881316781044006
+          "val_seen": 3.369611769914627,
+          "val_deployed": 3.38807612657547
         },
         {
           "step": 800,
-          "val_seen": 3.3381035029888153,
-          "val_deployed": 3.3234121203422546
+          "val_seen": 3.338110774755478,
+          "val_deployed": 3.3231252133846283
         },
         {
           "step": 900,
-          "val_seen": 3.3553990721702576,
-          "val_deployed": 3.301974505186081
+          "val_seen": 3.355507969856262,
+          "val_deployed": 3.3019904494285583
         },
         {
           "step": 1000,
-          "val_seen": 3.33744814991951,
-          "val_deployed": 3.3868092596530914
+          "val_seen": 3.337496370077133,
+          "val_deployed": 3.386912763118744
         },
         {
           "step": 1100,
-          "val_seen": 3.3451274037361145,
-          "val_deployed": 3.3474085330963135
+          "val_seen": 3.345040112733841,
+          "val_deployed": 3.347338169813156
         },
         {
           "step": 1200,
-          "val_seen": 3.3512115478515625,
-          "val_deployed": 3.3933797478675842
+          "val_seen": 3.351193994283676,
+          "val_deployed": 3.3934277296066284
         },
         {
           "step": 1300,
-          "val_seen": 3.354469984769821,
-          "val_deployed": 3.3689766824245453
+          "val_seen": 3.3543417751789093,
+          "val_deployed": 3.368942975997925
         },
         {
           "step": 1400,
-          "val_seen": 3.3497703671455383,
-          "val_deployed": 3.382195323705673
+          "val_seen": 3.349701941013336,
+          "val_deployed": 3.3820882439613342
         },
         {
           "step": 1500,
-          "val_seen": 3.333902657032013,
-          "val_deployed": 3.2815325260162354
+          "val_seen": 3.33396053314209,
+          "val_deployed": 3.2814398109912872
         }
       ],
-      "first_block_grad": 10.14516830444336,
-      "last_block_grad": 5.10120153427124,
+      "first_block_grad": 10.145241737365723,
+      "last_block_grad": 5.1012187004089355,
       "grads": [
-        10.14516830444336,
-        5.10120153427124
+        10.145241737365723,
+        5.1012187004089355
       ],
-      "last_layer_attention_entropy": 0.999973475933075,
-      "qkv_weight_rms": 0.02409869246184826,
-      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc",
-      "seconds": 1068.9826860427856
+      "last_layer_attention_entropy": 0.9997199177742004,
+      "qkv_weight_rms": 0.023680509999394417,
+      "sample": "ROMEO:\nf\nar  Ibnheee  Ctnti eobsyuiLy m c ithdeuN i: nene nNohef Tr wdnt\nucini rlaP' hk sde ioou ttngYsI l toiWhimnt dtsheaohsu",
+      "seconds": 13.449692726135254
     },
     {
       "run": {
@@ -3315,90 +3315,90 @@
         },
         {
           "step": 100,
-          "val_seen": 3.360247105360031,
-          "val_deployed": 3.3989325761795044
+          "val_seen": 3.360247552394867,
+          "val_deployed": 3.398934066295624
         },
         {
           "step": 200,
-          "val_seen": 3.3529271483421326,
-          "val_deployed": 3.3988756239414215
+          "val_seen": 3.3529254496097565,
+          "val_deployed": 3.3988691866397858
         },
         {
           "step": 300,
-          "val_seen": 3.348200410604477,
-          "val_deployed": 3.347887933254242
+          "val_seen": 3.348201662302017,
+          "val_deployed": 3.3478870391845703
         },
         {
           "step": 400,
-          "val_seen": 3.3496419191360474,
-          "val_deployed": 3.3343376517295837
+          "val_seen": 3.3496382534503937,
+          "val_deployed": 3.3343253135681152
         },
         {
           "step": 500,
-          "val_seen": 3.3562589287757874,
-          "val_deployed": 3.341196656227112
+          "val_seen": 3.356257677078247,
+          "val_deployed": 3.3411953151226044
         },
         {
           "step": 600,
-          "val_seen": 3.3664595782756805,
-          "val_deployed": 3.354648619890213
+          "val_seen": 3.3664570748806,
+          "val_deployed": 3.354644685983658
         },
         {
           "step": 700,
-          "val_seen": 3.3702007830142975,
-          "val_deployed": 3.3907418251037598
+          "val_seen": 3.370198667049408,
+          "val_deployed": 3.3907376527786255
         },
         {
           "step": 800,
-          "val_seen": 3.338809460401535,
-          "val_deployed": 3.325819253921509
+          "val_seen": 3.3388092815876007,
+          "val_deployed": 3.325820356607437
         },
         {
           "step": 900,
-          "val_seen": 3.354759842157364,
-          "val_deployed": 3.300223559141159
+          "val_seen": 3.3547559678554535,
+          "val_deployed": 3.300220340490341
         },
         {
           "step": 1000,
-          "val_seen": 3.33819842338562,
-          "val_deployed": 3.3837747275829315
+          "val_seen": 3.3381334841251373,
+          "val_deployed": 3.3833589255809784
         },
         {
           "step": 1100,
-          "val_seen": 3.3434330821037292,
-          "val_deployed": 3.3421692550182343
+          "val_seen": 3.3432981073856354,
+          "val_deployed": 3.345503807067871
         },
         {
           "step": 1200,
-          "val_seen": 3.3530854880809784,
-          "val_deployed": 3.3919763267040253
+          "val_seen": 3.352732241153717,
+          "val_deployed": 3.392400413751602
         },
         {
           "step": 1300,
-          "val_seen": 3.3532722890377045,
-          "val_deployed": 3.368860214948654
+          "val_seen": 3.353525161743164,
+          "val_deployed": 3.369099259376526
         },
         {
           "step": 1400,
-          "val_seen": 3.349344551563263,
-          "val_deployed": 3.3854978382587433
+          "val_seen": 3.348688989877701,
+          "val_deployed": 3.3850506246089935
         },
         {
           "step": 1500,
-          "val_seen": 3.3349773287773132,
-          "val_deployed": 3.284694194793701
+          "val_seen": 3.3355983793735504,
+          "val_deployed": 3.2852214872837067
         }
       ],
-      "first_block_grad": 7.7594828605651855,
-      "last_block_grad": 6.197921276092529,
+      "first_block_grad": 7.7595391273498535,
+      "last_block_grad": 6.197946071624756,
       "grads": [
-        7.7594828605651855,
-        6.197921276092529
+        7.7595391273498535,
+        6.197946071624756
       ],
-      "last_layer_attention_entropy": 0.9999943375587463,
-      "qkv_weight_rms": 0.0312438253313303,
-      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid Ig\nlstetgMeco ueByghd ntw\nherM hstn DoRo \neielCsBeg eehi \nstwatso ylor\ni kpee aRc",
-      "seconds": 1067.1555507183075
+      "last_layer_attention_entropy": 0.9999774098396301,
+      "qkv_weight_rms": 0.02820199355483055,
+      "sample": "ROMEO:\nf\nar  Ibnheee  Ct!ti uGbsyuiLy.m c ithdeuN i: nen. nNn.ef Tr wdnt\nucyni rlaP' hk sde ioou gtngYrI l toiWhimntLdtsheCohbu",
+      "seconds": 13.769449234008789
     },
     {
       "run": {
@@ -3419,94 +3419,94 @@
         {
           "step": 0,
           "val_seen": 4.2273077964782715,
-          "val_deployed": 4.225714266300201
+          "val_deployed": 4.225714206695557
         },
         {
           "step": 100,
-          "val_seen": 3.3581610023975372,
-          "val_deployed": 3.399508774280548
+          "val_seen": 3.3592664003372192,
+          "val_deployed": 3.3983652591705322
         },
         {
           "step": 200,
-          "val_seen": 3.3529129028320312,
-          "val_deployed": 3.3956063985824585
+          "val_seen": 3.3535094261169434,
+          "val_deployed": 3.397471606731415
         },
         {
           "step": 300,
-          "val_seen": 3.3493998646736145,
-          "val_deployed": 3.351033926010132
+          "val_seen": 3.350162148475647,
+          "val_deployed": 3.353134036064148
         },
         {
           "step": 400,
-          "val_seen": 3.349339783191681,
-          "val_deployed": 3.333292782306671
+          "val_seen": 3.349476635456085,
+          "val_deployed": 3.3345541954040527
         },
         {
           "step": 500,
-          "val_seen": 3.3568868935108185,
-          "val_deployed": 3.346392184495926
+          "val_seen": 3.356105923652649,
+          "val_deployed": 3.3466537594795227
         },
         {
           "step": 600,
-          "val_seen": 3.3660041093826294,
-          "val_deployed": 3.3494060933589935
+          "val_seen": 3.3661539554595947,
+          "val_deployed": 3.34929621219635
         },
         {
           "step": 700,
-          "val_seen": 3.3697261214256287,
-          "val_deployed": 3.3938260674476624
+          "val_seen": 3.36996528506279,
+          "val_deployed": 3.3946768641471863
         },
         {
           "step": 800,
-          "val_seen": 3.337653398513794,
-          "val_deployed": 3.3229863941669464
+          "val_seen": 3.3375087082386017,
+          "val_deployed": 3.322921723127365
         },
         {
           "step": 900,
-          "val_seen": 3.3539454340934753,
-          "val_deployed": 3.3026480972766876
+          "val_seen": 3.355140060186386,
+          "val_deployed": 3.3012920320034027
         },
         {
           "step": 1000,
-          "val_seen": 3.3377675116062164,
-          "val_deployed": 3.3891757130622864
+          "val_seen": 3.338541328907013,
+          "val_deployed": 3.390371859073639
         },
         {
           "step": 1100,
-          "val_seen": 3.3419845402240753,
-          "val_deployed": 3.3356488049030304
+          "val_seen": 3.342244803905487,
+          "val_deployed": 3.335857778787613
         },
         {
           "step": 1200,
-          "val_seen": 3.351662278175354,
-          "val_deployed": 3.3917899429798126
+          "val_seen": 3.3505176305770874,
+          "val_deployed": 3.390303611755371
         },
         {
           "step": 1300,
-          "val_seen": 3.35050106048584,
-          "val_deployed": 3.3658127188682556
+          "val_seen": 3.35110142827034,
+          "val_deployed": 3.3657523095607758
         },
         {
           "step": 1400,
-          "val_seen": 3.3476004898548126,
-          "val_deployed": 3.383267343044281
+          "val_seen": 3.348153382539749,
+          "val_deployed": 3.383153885602951
         },
         {
           "step": 1500,
-          "val_seen": 3.336121678352356,
-          "val_deployed": 3.286512851715088
+          "val_seen": 3.3353481888771057,
+          "val_deployed": 3.2849146723747253
         }
       ],
-      "first_block_grad": 7.727144718170166,
-      "last_block_grad": 6.116070747375488,
+      "first_block_grad": 7.72718620300293,
+      "last_block_grad": 6.116091251373291,
       "grads": [
-        7.727144718170166,
-        6.116070747375488
+        7.72718620300293,
+        6.116091251373291
       ],
-      "last_layer_attention_entropy": 0.9999951720237732,
-      "qkv_weight_rms": 0.022657815366983414,
-      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc",
-      "seconds": 1068.9670617580414
+      "last_layer_attention_entropy": 0.9804905652999878,
+      "qkv_weight_rms": 0.02439081110060215,
+      "sample": "ROMEO:\nt\nar  Ibnheee  Ctnti eobsyuiLy m c ithdeuN i: nene nNn.ef Tr wdnt\nucini rlaP' hk sde ioou ttngYsI l toiWhimntLdtsheaohsu",
+      "seconds": 13.50177812576294
     },
     {
       "run": {
@@ -3526,48 +3526,48 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.208626687526703,
-          "val_deployed": 4.22318971157074
+          "val_seen": 4.208626747131348,
+          "val_deployed": 4.223190009593964
         },
         {
           "step": 100,
           "val_seen": 3.360862374305725,
-          "val_deployed": 3.4047024250030518
+          "val_deployed": 3.404702454805374
         },
         {
           "step": 200,
-          "val_seen": 3.3547110855579376,
-          "val_deployed": 3.4028851985931396
+          "val_seen": 3.35471111536026,
+          "val_deployed": 3.402885288000107
         },
         {
           "step": 300,
           "val_seen": 3.349435031414032,
-          "val_deployed": 3.3551486134529114
+          "val_deployed": 3.355148524045944
         },
         {
           "step": 400,
-          "val_seen": 3.351937919855118,
-          "val_deployed": 3.3389366269111633
+          "val_seen": 3.3519380688667297,
+          "val_deployed": 3.338936597108841
         },
         {
           "step": 500,
-          "val_seen": 3.3526428639888763,
-          "val_deployed": 3.3410813212394714
+          "val_seen": 3.3526429533958435,
+          "val_deployed": 3.3410815000534058
         },
         {
           "step": 600,
-          "val_seen": 3.3733207285404205,
-          "val_deployed": 3.3623047173023224
+          "val_seen": 3.373320758342743,
+          "val_deployed": 3.362304538488388
         },
         {
           "step": 700,
           "val_seen": 3.3698710799217224,
-          "val_deployed": 3.388832300901413
+          "val_deployed": 3.3888321220874786
         },
         {
           "step": 800,
-          "val_seen": 3.3382371366024017,
-          "val_deployed": 3.323966532945633
+          "val_seen": 3.33823698759079,
+          "val_deployed": 3.3239665925502777
         },
         {
           "step": 900,
@@ -3576,47 +3576,47 @@
         },
         {
           "step": 1000,
-          "val_seen": 3.3375390768051147,
-          "val_deployed": 3.3871023654937744
+          "val_seen": 3.337539106607437,
+          "val_deployed": 3.3871022164821625
         },
         {
           "step": 1100,
-          "val_seen": 3.344798743724823,
-          "val_deployed": 3.3473694026470184
+          "val_seen": 3.3447987139225006,
+          "val_deployed": 3.3473693430423737
         },
         {
           "step": 1200,
           "val_seen": 3.3510016798973083,
-          "val_deployed": 3.3936190605163574
+          "val_deployed": 3.393619179725647
         },
         {
           "step": 1300,
-          "val_seen": 3.3542993366718292,
-          "val_deployed": 3.368463158607483
+          "val_seen": 3.354299157857895,
+          "val_deployed": 3.3684631884098053
         },
         {
           "step": 1400,
-          "val_seen": 3.349600464105606,
-          "val_deployed": 3.38187974691391
+          "val_seen": 3.3496005833148956,
+          "val_deployed": 3.3818797171115875
         },
         {
           "step": 1500,
-          "val_seen": 3.3339275121688843,
-          "val_deployed": 3.2812673449516296
+          "val_seen": 3.333927482366562,
+          "val_deployed": 3.28126722574234
         }
       ],
-      "first_block_grad": 10.263712882995605,
-      "last_block_grad": 7.388238906860352,
+      "first_block_grad": 10.263757705688477,
+      "last_block_grad": 7.388263702392578,
       "grads": [
-        10.263712882995605,
-        7.6739583015441895,
-        8.5300874710083,
-        7.388238906860352
+        10.263757705688477,
+        7.6739888191223145,
+        8.530116081237793,
+        7.388263702392578
       ],
-      "last_layer_attention_entropy": 1.0,
+      "last_layer_attention_entropy": 0.9999999403953552,
       "qkv_weight_rms": 0.020847275853157043,
-      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc",
-      "seconds": 1991.814397096634
+      "sample": "ROMEO:\nf\nar  Ibnheee  Ctnti eobsyuiLy m c ithdeuN i: nene nNohef Tr wdnt\nucini rlaP' hk sde ioou ttngYsI l toiWhimnt dtsheaohsu",
+      "seconds": 21.811490774154663
     },
     {
       "run": {
@@ -3636,97 +3636,97 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.210301518440247,
-          "val_deployed": 4.208183705806732
+          "val_seen": 4.2103018164634705,
+          "val_deployed": 4.208183646202087
         },
         {
           "step": 100,
-          "val_seen": 3.359506368637085,
+          "val_seen": 3.3595061004161835,
           "val_deployed": 3.398064434528351
         },
         {
           "step": 200,
-          "val_seen": 3.3529781103134155,
-          "val_deployed": 3.400736004114151
+          "val_seen": 3.352978080511093,
+          "val_deployed": 3.4007361233234406
         },
         {
           "step": 300,
-          "val_seen": 3.348342090845108,
-          "val_deployed": 3.3476847410202026
+          "val_seen": 3.3483419120311737,
+          "val_deployed": 3.3476848006248474
         },
         {
           "step": 400,
           "val_seen": 3.349445194005966,
-          "val_deployed": 3.3340446650981903
+          "val_deployed": 3.3340446949005127
         },
         {
           "step": 500,
           "val_seen": 3.356183499097824,
-          "val_deployed": 3.341666966676712
+          "val_deployed": 3.3416669964790344
         },
         {
           "step": 600,
-          "val_seen": 3.366944283246994,
-          "val_deployed": 3.3542062640190125
+          "val_seen": 3.366944342851639,
+          "val_deployed": 3.354206144809723
         },
         {
           "step": 700,
-          "val_seen": 3.3701910972595215,
-          "val_deployed": 3.389846295118332
+          "val_seen": 3.3701910376548767,
+          "val_deployed": 3.389846533536911
         },
         {
           "step": 800,
-          "val_seen": 3.338721841573715,
-          "val_deployed": 3.3261902034282684
+          "val_seen": 3.3387218713760376,
+          "val_deployed": 3.326190233230591
         },
         {
           "step": 900,
-          "val_seen": 3.354705035686493,
-          "val_deployed": 3.300205260515213
+          "val_seen": 3.3547050654888153,
+          "val_deployed": 3.3002055287361145
         },
         {
           "step": 1000,
-          "val_seen": 3.3383513391017914,
-          "val_deployed": 3.3843021392822266
+          "val_seen": 3.3383514285087585,
+          "val_deployed": 3.3843021988868713
         },
         {
           "step": 1100,
-          "val_seen": 3.3435479402542114,
-          "val_deployed": 3.3455866277217865
+          "val_seen": 3.343547910451889,
+          "val_deployed": 3.345586508512497
         },
         {
           "step": 1200,
-          "val_seen": 3.3530933558940887,
-          "val_deployed": 3.392655909061432
+          "val_seen": 3.353093236684799,
+          "val_deployed": 3.392656058073044
         },
         {
           "step": 1300,
-          "val_seen": 3.352984756231308,
-          "val_deployed": 3.368035674095154
+          "val_seen": 3.352984696626663,
+          "val_deployed": 3.368035614490509
         },
         {
           "step": 1400,
-          "val_seen": 3.3483204543590546,
+          "val_seen": 3.348320573568344,
           "val_deployed": 3.385817438364029
         },
         {
           "step": 1500,
-          "val_seen": 3.335470199584961,
-          "val_deployed": 3.2855547666549683
+          "val_seen": 3.3354701101779938,
+          "val_deployed": 3.2855547070503235
         }
       ],
-      "first_block_grad": 12.13373851776123,
-      "last_block_grad": 8.70205020904541,
+      "first_block_grad": 12.13378620147705,
+      "last_block_grad": 8.70210075378418,
       "grads": [
-        12.13373851776123,
-        11.012771606445312,
-        9.164107322692871,
-        8.70205020904541
+        12.13378620147705,
+        11.012799263000488,
+        9.164142608642578,
+        8.70210075378418
       ],
       "last_layer_attention_entropy": 1.0,
-      "qkv_weight_rms": 0.02179219014942646,
-      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid Ig\nlstetgMeco ueByghd ntw\nherM hstn DoRo \neielCsBeg eehi \nstwatso ypor\ni kpee aRc",
-      "seconds": 1989.170669555664
+      "qkv_weight_rms": 0.02178303152322769,
+      "sample": "ROMEO:\nf\nar  Ibnheee  Ct!ti uGbsyuiLy.m c ithdeuN i: nen. nNn.ef Tr wdnt\nucyni rlaP' hk sde ioou gtngYrI l toiWhimntLdtsheaohbu",
+      "seconds": 21.06068706512451
     },
     {
       "run": {
@@ -3746,97 +3746,341 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.2080947160720825,
-          "val_deployed": 4.229653537273407
+          "val_seen": 4.208094656467438,
+          "val_deployed": 4.229653418064117
         },
         {
           "step": 100,
-          "val_seen": 3.359120637178421,
+          "val_seen": 3.359120488166809,
           "val_deployed": 3.399343103170395
         },
         {
           "step": 200,
-          "val_seen": 3.3524916768074036,
-          "val_deployed": 3.394887000322342
+          "val_seen": 3.3524917662143707,
+          "val_deployed": 3.3948870301246643
         },
         {
           "step": 300,
-          "val_seen": 3.350269317626953,
+          "val_seen": 3.3502692878246307,
           "val_deployed": 3.3541184663772583
         },
         {
           "step": 400,
-          "val_seen": 3.3496254682540894,
-          "val_deployed": 3.3342638313770294
+          "val_seen": 3.349625527858734,
+          "val_deployed": 3.3342639803886414
         },
         {
           "step": 500,
           "val_seen": 3.3560646176338196,
-          "val_deployed": 3.3463793098926544
+          "val_deployed": 3.3463794887065887
         },
         {
           "step": 600,
-          "val_seen": 3.366606593132019,
-          "val_deployed": 3.350125938653946
+          "val_seen": 3.366606652736664,
+          "val_deployed": 3.3501258194446564
         },
         {
           "step": 700,
-          "val_seen": 3.3701459169387817,
-          "val_deployed": 3.3950210511684418
+          "val_seen": 3.3701461255550385,
+          "val_deployed": 3.3950212001800537
         },
         {
           "step": 800,
-          "val_seen": 3.337763637304306,
-          "val_deployed": 3.321968227624893
+          "val_seen": 3.3377636075019836,
+          "val_deployed": 3.3219681680202484
         },
         {
           "step": 900,
-          "val_seen": 3.35424742102623,
+          "val_seen": 3.354247659444809,
           "val_deployed": 3.3009934425354004
         },
         {
           "step": 1000,
-          "val_seen": 3.3383288979530334,
+          "val_seen": 3.338329017162323,
           "val_deployed": 3.389941781759262
         },
         {
           "step": 1100,
-          "val_seen": 3.3418315947055817,
-          "val_deployed": 3.335718959569931
+          "val_seen": 3.341831684112549,
+          "val_deployed": 3.335718870162964
         },
         {
           "step": 1200,
-          "val_seen": 3.350782960653305,
+          "val_seen": 3.3507829308509827,
           "val_deployed": 3.3903206884860992
         },
         {
           "step": 1300,
-          "val_seen": 3.351310819387436,
-          "val_deployed": 3.366101861000061
+          "val_seen": 3.3524679243564606,
+          "val_deployed": 3.3685960471630096
         },
         {
           "step": 1400,
-          "val_seen": 3.3480196595191956,
-          "val_deployed": 3.382651686668396
+          "val_seen": 3.3482941687107086,
+          "val_deployed": 3.383644014596939
         },
         {
           "step": 1500,
-          "val_seen": 3.3352315723896027,
-          "val_deployed": 3.284956842660904
+          "val_seen": 3.3354869186878204,
+          "val_deployed": 3.285433292388916
         }
       ],
-      "first_block_grad": 6.864260196685791,
-      "last_block_grad": 9.823748588562012,
+      "first_block_grad": 6.864294052124023,
+      "last_block_grad": 9.8237943649292,
       "grads": [
-        6.864260196685791,
-        8.283273696899414,
-        8.036705017089844,
-        9.823748588562012
+        6.864294052124023,
+        8.283296585083008,
+        8.036739349365234,
+        9.8237943649292
       ],
       "last_layer_attention_entropy": 1.0,
-      "qkv_weight_rms": 0.02277499996125698,
-      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc",
-      "seconds": 1990.28417801857
+      "qkv_weight_rms": 0.03359858691692352,
+      "sample": "ROMEO:\nt\nar  Ibnheee  Ctnti eobsyuiLy.m c ithdeuN i: nene nNn.ef Tr wdnt\nucini rlaP' hk sde ioou ttngYsI l toiWhimntLdtsheaohsu",
+      "seconds": 21.453416347503662
+    },
+    {
+      "run": {
+        "label": "깊이 16 잔차 없음",
+        "seed": 0,
+        "n_layer": 16,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": false
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.155464172363281,
+          "val_deployed": 4.151051759719849
+        },
+        {
+          "step": 100,
+          "val_seen": 3.358689099550247,
+          "val_deployed": 3.3979995250701904
+        },
+        {
+          "step": 200,
+          "val_seen": 3.353659063577652,
+          "val_deployed": 3.400111138820648
+        },
+        {
+          "step": 300,
+          "val_seen": 3.3492240011692047,
+          "val_deployed": 3.3530428409576416
+        },
+        {
+          "step": 400,
+          "val_seen": 3.3509859144687653,
+          "val_deployed": 3.3372586965560913
+        },
+        {
+          "step": 500,
+          "val_seen": 3.35159170627594,
+          "val_deployed": 3.3380959928035736
+        },
+        {
+          "step": 600,
+          "val_seen": 3.3723397254943848,
+          "val_deployed": 3.3603596091270447
+        },
+        {
+          "step": 700,
+          "val_seen": 3.3696222007274628,
+          "val_deployed": 3.388445794582367
+        },
+        {
+          "step": 800,
+          "val_seen": 3.3381783068180084,
+          "val_deployed": 3.323505401611328
+        },
+        {
+          "step": 900,
+          "val_seen": 3.3554800152778625,
+          "val_deployed": 3.301421970129013
+        },
+        {
+          "step": 1000,
+          "val_seen": 3.337479203939438,
+          "val_deployed": 3.387247860431671
+        },
+        {
+          "step": 1100,
+          "val_seen": 3.3451715111732483,
+          "val_deployed": 3.3462536334991455
+        },
+        {
+          "step": 1200,
+          "val_seen": 3.3515543937683105,
+          "val_deployed": 3.3933517038822174
+        },
+        {
+          "step": 1300,
+          "val_seen": 3.3548532128334045,
+          "val_deployed": 3.3686658143997192
+        },
+        {
+          "step": 1400,
+          "val_seen": 3.3503537476062775,
+          "val_deployed": 3.384077787399292
+        },
+        {
+          "step": 1500,
+          "val_seen": 3.3344880640506744,
+          "val_deployed": 3.2818629145622253
+        }
+      ],
+      "first_block_grad": 10.068865776062012,
+      "last_block_grad": 16.319059371948242,
+      "grads": [
+        10.068865776062012,
+        9.466815948486328,
+        8.528094291687012,
+        9.448099136352539,
+        9.872333526611328,
+        10.861708641052246,
+        10.268484115600586,
+        9.402926445007324,
+        10.412060737609863,
+        10.59473705291748,
+        13.154709815979004,
+        13.559405326843262,
+        15.86855411529541,
+        15.190380096435547,
+        14.168146133422852,
+        16.319059371948242
+      ],
+      "last_layer_attention_entropy": 1.0,
+      "qkv_weight_rms": 0.020344475284218788,
+      "sample": "ROMEO:\nf\nar  Ibnheee  Ctnti eobsyuiLy m c ithdeuN i: nene nNohef Tr wdnt\nucini rlaP' hk sde ioou ttngYsI l toiWhimnt dtsheaohsu",
+      "seconds": 78.82415318489075
+    },
+    {
+      "run": {
+        "label": "깊이 16 잔차 없음",
+        "seed": 1,
+        "n_layer": 16,
+        "n_head": 4,
+        "n_embd": 128,
+        "block": 64,
+        "batch": 64,
+        "steps": 1500,
+        "lr": 0.001,
+        "scale": true,
+        "mask": true,
+        "residual": false
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_seen": 4.184150397777557,
+          "val_deployed": 4.183877170085907
+        },
+        {
+          "step": 100,
+          "val_seen": 3.3597170412540436,
+          "val_deployed": 3.3992656469345093
+        },
+        {
+          "step": 200,
+          "val_seen": 3.3518911004066467,
+          "val_deployed": 3.397636979818344
+        },
+        {
+          "step": 300,
+          "val_seen": 3.3480290472507477,
+          "val_deployed": 3.3471263349056244
+        },
+        {
+          "step": 400,
+          "val_seen": 3.3503657281398773,
+          "val_deployed": 3.333795666694641
+        },
+        {
+          "step": 500,
+          "val_seen": 3.3556567430496216,
+          "val_deployed": 3.3407340347766876
+        },
+        {
+          "step": 600,
+          "val_seen": 3.367536038160324,
+          "val_deployed": 3.3557822704315186
+        },
+        {
+          "step": 700,
+          "val_seen": 3.370655119419098,
+          "val_deployed": 3.3903971910476685
+        },
+        {
+          "step": 800,
+          "val_seen": 3.3391306400299072,
+          "val_deployed": 3.326321393251419
+        },
+        {
+          "step": 900,
+          "val_seen": 3.3552497923374176,
+          "val_deployed": 3.300475060939789
+        },
+        {
+          "step": 1000,
+          "val_seen": 3.3383511900901794,
+          "val_deployed": 3.383365124464035
+        },
+        {
+          "step": 1100,
+          "val_seen": 3.3436061441898346,
+          "val_deployed": 3.345134288072586
+        },
+        {
+          "step": 1200,
+          "val_seen": 3.353046715259552,
+          "val_deployed": 3.3928954005241394
+        },
+        {
+          "step": 1300,
+          "val_seen": 3.35371071100235,
+          "val_deployed": 3.369106650352478
+        },
+        {
+          "step": 1400,
+          "val_seen": 3.3497214615345,
+          "val_deployed": 3.3846164643764496
+        },
+        {
+          "step": 1500,
+          "val_seen": 3.3348499536514282,
+          "val_deployed": 3.284150868654251
+        }
+      ],
+      "first_block_grad": 17.79229164123535,
+      "last_block_grad": 12.655183792114258,
+      "grads": [
+        17.79229164123535,
+        16.56332778930664,
+        17.562353134155273,
+        16.577960968017578,
+        21.904876708984375,
+        26.13029670715332,
+        27.84269142150879,
+        28.991676330566406,
+        30.187753677368164,
+        29.431081771850586,
+        22.93353843688965,
+        21.49664306640625,
+        15.731103897094727,
+        13.264309883117676,
+        12.046112060546875,
+        12.655183792114258
+      ],
+      "last_layer_attention_entropy": 1.0,
+      "qkv_weight_rms": 0.020359650254249573,
+      "sample": "ROMEO:\nf\nar  Ibnheee  Ct!ti uGbsyuiLy.m c ithdeuN i: nen. nNo.ef Tr wdnt\nucyni rlaP' hk sde ioou gtngYrI l toiWhimntLdtsheCohbu",
+      "seconds": 78.95776748657227
     },
     {
       "run": {
@@ -3856,109 +4100,109 @@
       "history": [
         {
           "step": 0,
-          "val_seen": 4.162052035331726,
-          "val_deployed": 4.158566653728485
+          "val_seen": 4.16205221414566,
+          "val_deployed": 4.15856659412384
         },
         {
           "step": 100,
-          "val_seen": 3.359896570444107,
-          "val_deployed": 3.3993887901306152
+          "val_seen": 3.359896630048752,
+          "val_deployed": 3.399388760328293
         },
         {
           "step": 200,
-          "val_seen": 3.353191167116165,
-          "val_deployed": 3.3951845467090607
+          "val_seen": 3.3531911969184875,
+          "val_deployed": 3.3951846063137054
         },
         {
           "step": 300,
-          "val_seen": 3.349899470806122,
-          "val_deployed": 3.353865623474121
+          "val_seen": 3.3498995900154114,
+          "val_deployed": 3.3538655936717987
         },
         {
           "step": 400,
-          "val_seen": 3.3492467403411865,
-          "val_deployed": 3.3336331248283386
+          "val_seen": 3.3492467999458313,
+          "val_deployed": 3.333633154630661
         },
         {
           "step": 500,
-          "val_seen": 3.3564876914024353,
-          "val_deployed": 3.347650468349457
+          "val_seen": 3.3564878404140472,
+          "val_deployed": 3.347650408744812
         },
         {
           "step": 600,
-          "val_seen": 3.3668306171894073,
-          "val_deployed": 3.3495945036411285
+          "val_seen": 3.3668305575847626,
+          "val_deployed": 3.3495943546295166
         },
         {
           "step": 700,
-          "val_seen": 3.369949698448181,
-          "val_deployed": 3.3951112627983093
+          "val_seen": 3.369949549436569,
+          "val_deployed": 3.3951113522052765
         },
         {
           "step": 800,
-          "val_seen": 3.337602138519287,
-          "val_deployed": 3.321424126625061
+          "val_seen": 3.33760204911232,
+          "val_deployed": 3.321424186229706
         },
         {
           "step": 900,
-          "val_seen": 3.354397863149643,
-          "val_deployed": 3.3025179505348206
+          "val_seen": 3.3543976843357086,
+          "val_deployed": 3.302517890930176
         },
         {
           "step": 1000,
-          "val_seen": 3.338649421930313,
-          "val_deployed": 3.3914822041988373
+          "val_seen": 3.338649481534958,
+          "val_deployed": 3.3914821445941925
         },
         {
           "step": 1100,
-          "val_seen": 3.342394143342972,
-          "val_deployed": 3.3361350893974304
+          "val_seen": 3.342394083738327,
+          "val_deployed": 3.336134910583496
         },
         {
           "step": 1200,
-          "val_seen": 3.3508650064468384,
-          "val_deployed": 3.390231728553772
+          "val_seen": 3.3508651852607727,
+          "val_deployed": 3.390231877565384
         },
         {
           "step": 1300,
-          "val_seen": 3.3512312471866608,
-          "val_deployed": 3.364622950553894
+          "val_seen": 3.351231127977371,
+          "val_deployed": 3.364622712135315
         },
         {
           "step": 1400,
-          "val_seen": 3.3481949865818024,
-          "val_deployed": 3.384475737810135
+          "val_seen": 3.3481950163841248,
+          "val_deployed": 3.3844759464263916
         },
         {
           "step": 1500,
-          "val_seen": 3.335075318813324,
-          "val_deployed": 3.2850452661514282
+          "val_seen": 3.3350753486156464,
+          "val_deployed": 3.285045236349106
         }
       ],
-      "first_block_grad": 8.946840286254883,
-      "last_block_grad": 16.55039405822754,
+      "first_block_grad": 8.946879386901855,
+      "last_block_grad": 16.55048942565918,
       "grads": [
-        8.946840286254883,
-        9.050193786621094,
-        8.867179870605469,
-        8.020873069763184,
-        7.929757118225098,
-        6.857387065887451,
-        8.338146209716797,
-        9.736512184143066,
-        8.718415260314941,
-        9.719569206237793,
-        10.590031623840332,
-        9.732874870300293,
-        12.551639556884766,
-        16.033132553100586,
-        17.54730987548828,
-        16.55039405822754
+        8.946879386901855,
+        9.050250053405762,
+        8.867226600646973,
+        8.020909309387207,
+        7.929795265197754,
+        6.857415676116943,
+        8.338176727294922,
+        9.736562728881836,
+        8.718460083007812,
+        9.71963119506836,
+        10.59008502960205,
+        9.732918739318848,
+        12.551689147949219,
+        16.033222198486328,
+        17.547405242919922,
+        16.55048942565918
       ],
       "last_layer_attention_entropy": 1.0,
-      "qkv_weight_rms": 0.020331721752882004,
-      "sample": "ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco ueoyghd ntw\nherM hstn eoio \neielCsBeg eehi \nstwatso ylor\ni kpee ahc",
-      "seconds": 16173.25712800026
+      "qkv_weight_rms": 0.020331740379333496,
+      "sample": "ROMEO:\nt\nar  Ibnheee  Ctnti eobsyuiLy.m c ithdeuN i: nene nNn.ef Tr wdnt\nucini rlaP' hk sde ioou ttngYsI l toiWhimntLdtsheaohsu",
+      "seconds": 79.33104729652405
     }
   ]
 }

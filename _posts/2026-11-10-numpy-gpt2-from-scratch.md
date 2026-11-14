@@ -8,7 +8,7 @@ tags: [llm, gpt-2, numpy, transformer, attention, bpe, rlhf, dpo]
 
 ChatGPT 같은 언어 모델은 결국 "다음에 올 토큰 하나"를 계속 고르는 기계라고 합니다. 이 말이 실제 계산으로는 어떻게 이어지는지 따라가 보고 싶어서, 2019년에 공개된 작은 모델 GPT-2를 NumPy만으로 구현했습니다. NumPy는 파이썬의 행렬 계산 라이브러리라서 딥러닝 프레임워크 없이 손으로 짜는 셈입니다. 학습이 끝난 공개 가중치(숫자 묶음)를 넣어 Hugging Face와 같은 값이 나오는지 확인한 뒤, 같은 코드로 여러 실험을 했습니다.
 
-코드는 `gpt2.py`(모델), `bpe.py`(토크나이저), `sampling.py`(샘플링)와 실험 스크립트로 나눴고, 전체 코드는 [GitHub 폴더](https://github.com/Grace0409/grace0409.github.io/tree/main/gpt2-numpy)에 올려 두었습니다. [Colab 노트북](https://colab.research.google.com/github/Grace0409/grace0409.github.io/blob/main/gpt2-numpy/gpt2_numpy.ipynb)을 위에서부터 실행하면 아래 숫자와 그림이 다시 만들어집니다. GPT-2 순전파는 전부 NumPy이고, 기울기 계산(역전파)이 필요한 8장의 소형 모델 학습과 9장의 파인튜닝만 PyTorch를 썼습니다. 구조는 GPT-2 논문 2.3절([Radford 외, 2019](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf))과 Hugging Face의 [openai-community/gpt2](https://huggingface.co/openai-community/gpt2) 가중치 파일을 기준으로 맞췄습니다. NumPy로 GPT-2를 구현한 글로는 Jay Mody의 [GPT in 60 Lines of NumPy](https://jaykmody.com/blog/gpt-from-scratch/)(코드는 [picoGPT](https://github.com/jaymody/picoGPT))도 있습니다.
+코드는 `gpt2.py`(모델), `bpe.py`(토크나이저), `sampling.py`(샘플링)와 실험 스크립트로 나눴고, 전체 코드는 [GitHub 폴더](https://github.com/Grace0409/grace0409.github.io/tree/main/gpt2-numpy)에 올려 두었습니다. [Colab 노트북](https://colab.research.google.com/github/Grace0409/grace0409.github.io/blob/main/gpt2-numpy/gpt2_numpy.ipynb)을 위에서부터 실행하면 아래 숫자와 그림이 다시 만들어집니다. 그림은 이 노트북을 Colab에서 실행해 얻은 것이고, 8장의 처음부터 학습한 실험은 Colab의 T4 GPU에서 다시 돌린 결과입니다. GPT-2 순전파는 전부 NumPy이고, 기울기 계산(역전파)이 필요한 8장의 소형 모델 학습과 9장의 파인튜닝만 PyTorch를 썼습니다. 구조는 GPT-2 논문 2.3절([Radford 외, 2019](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf))과 Hugging Face의 [openai-community/gpt2](https://huggingface.co/openai-community/gpt2) 가중치 파일을 기준으로 맞췄습니다. NumPy로 GPT-2를 구현한 글로는 Jay Mody의 [GPT in 60 Lines of NumPy](https://jaykmody.com/blog/gpt-from-scratch/)(코드는 [picoGPT](https://github.com/jaymody/picoGPT))도 있습니다.
 
 만들면서 예상과 달랐던 일이 세 번 있었습니다. 첫 비교에서 오차가 컸던 원인이 활성화 함수 한 줄이었던 것(6장), 어텐션 맵이 교과서 예시처럼 깔끔하지 않았던 것(4장), 잔차 연결을 빼면 기울기가 사라져서가 아니라 다른 이유로 학습이 멈췄던 것(8장)입니다. 이 셋을 따라가며 읽으시면 됩니다. 용어는 되도록 풀어 썼고, 자세한 표는 접어 두었습니다.
 
@@ -50,7 +50,7 @@ GPT-2 small의 크기는 어휘 50,257개, 최대 길이 1,024토큰, 임베딩 
 
 한국어 문장 8개를 tiktoken의 gpt2 인코딩에 넣었더니 372토큰이 나왔고, 같은 뜻의 영어 8문장은 75토큰이었습니다. 토크나이저는 글을 토큰으로 자르고 번호를 붙이는 도구이고, tiktoken은 OpenAI가 공개한 토크나이저 라이브러리입니다. 비교한 인코딩은 gpt2, cl100k\_base, o200k\_base로, 모두 BPE 계열이고 어휘가 점점 커진 세 세대입니다. 문장이 8쌍뿐이라 비율은 대략의 감으로만 읽어야 합니다.
 
-![토큰 수 비교](/assets/img/gpt2-numpy/token_counts.png?v=code)
+![토큰 수 비교](/assets/img/gpt2-numpy/token_counts.png?v=colab)
 
 | 인코딩 | 한국어 | 영어 | 비율 |
 |---|---:|---:|---:|
@@ -126,7 +126,7 @@ out = (weights @ v).transpose(0, 2, 1, 3).reshape(B, T, D)
 
 교과서에는 "The animal didn't cross the street because it was too tired"에서 어텐션이 `it`을 `animal`과 연결한다는 예시가 자주 나옵니다. 이 문장을 넣어 `it`이 누구를 보는지 그렸습니다.
 
-![어텐션 맵](/assets/img/gpt2-numpy/attention_map.png?v=code)
+![어텐션 맵](/assets/img/gpt2-numpy/attention_map.png?v=colab)
 
 예상만큼 깔끔하지 않았습니다.
 
@@ -194,7 +194,7 @@ def gelu(x):
 
 같은 점수표라도 어떻게 고르느냐에 따라 전혀 다른 글이 나옵니다. greedy는 항상 1등만 고르고, temperature는 점수를 T로 나눠 분포를 뾰족하게(T가 작을 때) 또는 평평하게(T가 클 때) 만듭니다. top-k는 상위 k개 안에서만, top-p는 확률이 큰 것부터 더해 p(예: 0.9)가 될 때까지만 후보로 남깁니다.
 
-![온도별 분포](/assets/img/gpt2-numpy/temperature.png?v=code)
+![온도별 분포](/assets/img/gpt2-numpy/temperature.png?v=colab)
 
 세 프롬프트에서 전략마다 64개씩, 50토큰을 생성해 비교했습니다. 샘플 하나로는 분포의 성질을 알 수 없어서 64개씩 뽑았습니다. 반복률은 같은 4개 토큰 묶음이 되풀이되는 비율이고, 평균 로그확률은 원래 모델이 그 글을 얼마나 그럴듯하게 보는지입니다.
 
@@ -258,7 +258,7 @@ Tiny Shakespeare에서 128토큰 창 16개로 쟀습니다. 손실은 낮을수�
 
 손실은 두 가지로 쟀습니다. 학습 때 손실은 모든 위치의 평균이고, 마지막 위치 손실은 맨 뒤 한 칸만 잰 값입니다. 글을 생성할 때는 마지막 위치 뒤에 아무것도 없으니 이쪽이 실제 성능에 가깝습니다. 비교 기준도 두 개 계산했습니다. 글자 빈도만으로 예측하면 3.347이고, 바로 앞 글자만 보는 모델은 2.482입니다.
 
-![처음부터 학습한 결과](/assets/img/gpt2-numpy/train_ablation.png?v=code)
+![처음부터 학습한 결과](/assets/img/gpt2-numpy/train_ablation.png?v=colab)
 
 ### 질문 1. √d\_k로 나누는 이유
 
@@ -272,17 +272,17 @@ Tiny Shakespeare에서 128토큰 창 16개로 쟀습니다. 손실은 낮을수�
 
 표준편차는 이론값 √d\_k와 거의 같았습니다. 나누지 않으면 d\_k=1,024에서 기울기가 1.8×10⁻⁵로, 나눴을 때(0.30)의 1만 분의 1 수준까지 작아집니다.
 
-그런데 학습에서는 차원에 따라 결과가 달랐습니다. d\_k=32에서는 최종 손실이 거의 같았습니다(1.686 대 1.694). 논문도 d\_k가 작을 때는 스케일 없는 내적과 다른 방식(additive attention)의 성능이 비슷하다고 적었습니다. 모델이 Q, K, V 가중치를 19% 작게 학습해(RMS 0.0381 대 0.0467) 스스로 보정한 것으로 보입니다. d\_k=256(임베딩 512차원, 헤드 2개)으로 키우면 나누지 않은 쪽이 세 시드 모두 나빴습니다(마지막 위치 손실 2.747 대 2.590). 다만 이 설정은 기준 모델부터 불안정해서(손실 2.626) 조심해서 읽어야 하고, 학습률을 낮춰 다시 비교하는 것이 다음 실험입니다.
+그런데 학습에서는 차원에 따라 결과가 달랐습니다. d\_k=32에서는 최종 손실이 거의 같았습니다(1.683 대 1.690). 논문도 d\_k가 작을 때는 스케일 없는 내적과 다른 방식(additive attention)의 성능이 비슷하다고 적었습니다. 모델이 Q, K, V 가중치를 18% 작게 학습해(RMS 0.0381 대 0.0467) 스스로 보정한 것으로 보입니다. 마지막 위치 손실은 오히려 나누지 않은 쪽이 낮았지만(1.626 대 1.665) 이 값은 곡선이 들쭉날쭉해서 차이로 보기는 어렵습니다. d\_k=256(임베딩 512차원, 헤드 2개)으로 키우면 나누지 않은 쪽이 세 시드 모두 나빴습니다(마지막 위치 손실 2.736 대 2.592). 다만 이 설정은 기준 모델부터 불안정해서(손실 2.613) 조심해서 읽어야 하고, 학습률을 낮춰 다시 비교하는 것이 다음 실험입니다.
 
 ### 질문 2. causal mask가 없을 때 생기는 일
 
 비유하면 시험지에 정답이 적혀 있는 상태입니다. 글은 모든 위치의 "다음 토큰"을 한꺼번에 맞히며 학습하는데, 마스크가 없으면 정답이 입력에 이미 보입니다. 문장의 9번째 토큰을 바꾸고 그 앞 위치의 logits가 변하는지 봤더니, 마스크가 있으면 변화가 정확히 0.0이고 없으면 최대 8.32였습니다.
 
-처음부터 학습해 보니 마스크를 뺀 모델은 300스텝 만에 학습 손실이 0.06~0.10까지 떨어졌고, 최종 학습 손실은 0.037로 기준(1.694)보다 훨씬 좋아 보였습니다. 하지만 정답이 없는 마지막 위치 손실은 2.294로 기준(1.668)보다 0.63 나쁩니다. 다음 글자를 예측하지 않고 입력에서 베끼는 법을 배운 것입니다. 베끼기를 배우는 200~300스텝 구간에서는 마지막 위치 손실이 오히려 올랐습니다(세 시드 모두 2.7 근처에서 3.0~3.2로). 손실을 두 가지로 쟀기 때문에 보인 차이입니다. 생성 결과도 다릅니다.
+처음부터 학습해 보니 마스크를 뺀 모델은 300스텝 만에 학습 손실이 0.06~0.10까지 떨어졌고, 최종 학습 손실은 0.037로 기준(1.690)보다 훨씬 좋아 보였습니다. 하지만 정답이 없는 마지막 위치 손실은 2.293으로 기준(1.665)보다 0.63 나쁩니다. 다음 글자를 예측하지 않고 입력에서 베끼는 법을 배운 것입니다. 베끼기를 배우는 200~300스텝 구간에서는 마지막 위치 손실이 오히려 올랐습니다(세 시드 모두 2.7 근처에서 3.0~3.2로). 손실을 두 가지로 쟀기 때문에 보인 차이입니다. 생성 결과도 다릅니다.
 
 ```
-기준:            ROMEO:\nThy farms it when? I would nears! would gelst, great
-causal mask 제거: ROMEO:\nOPOMOMMMOOMAMAMMMALMWAMMEMAMAMAMAOMMAMMIMAMMMAMA
+기준:            ROMEO:\nAy, you no all Clifford, you weepy.
+causal mask 제거: ROMEO:\nOMOMOMMMOOMOMOMAMOOLOOOMAMAMEMAMOOMM
 ```
 
 ### 질문 3. 잔차 연결이 필요한 이유
@@ -292,29 +292,29 @@ causal mask 제거: ROMEO:\nOPOMOMMMOOMAMAMMMALMWAMMEMAMAMAMAOMMAMMIMAMMMAMA
 8층 모델에서 잔차를 빼면 손실이 100스텝 만에 3.36 근처에서 멈추고 1,500스텝까지 그대로였습니다(최종 3.335). 글자 빈도 기준선 3.347과 거의 같으니, 문맥은 못 쓰고 어떤 글자가 자주 나오는지만 배운 셈입니다. 생성 결과도 글자 빈도를 닮은 무작위 나열입니다.
 
 ```
-잔차 연결 제거: ROMEO:\nts remhfsd hRwTsnlteWloHca  eahao roid IgtlstetgMeco
+잔차 연결 제거: ROMEO:\nfuar  Ibnheee  Ctnti eobsyuiLy m c ithdeuN
 ```
 
 저는 처음에 층이 깊어서 기울기가 사라지는 문제일 거라고 생각했습니다. 그래서 층 수를 바꿔 학습해 봤습니다.
 
-![층 수에 따른 결과](/assets/img/gpt2-numpy/depth.png?v=code)
+![층 수에 따른 결과](/assets/img/gpt2-numpy/depth.png?v=colab)
 
 | 층 수 | 잔차 있음 | 잔차 없음 |
 |---:|---:|---:|
 | 2 | 1.640 | 3.284 |
 | 4 | 1.620 | 3.284 |
-| 8 | 1.668 | 3.284 |
-| 16 | 1.645 | 3.285 (시드 1개) |
+| 8 | 1.665 | 3.284 |
+| 16 | 1.655 | 3.284 |
 
-예상과 달랐습니다! 2층짜리 얕은 모델도 잔차가 없으면 똑같이 3.28에서 멈췄습니다. 학습 첫 스텝의 기울기도 오히려 컸습니다(8층 기준 첫 블록 10.8, 잔차가 있을 때는 3.08). 기울기 소실이 원인이 아니라는 뜻입니다. 단서는 어텐션 엔트로피(1.000)였습니다. 학습이 끝나도 어텐션이 앞 글자 전체에 똑같이 퍼져 있었고, 이것은 앞 글자들의 평균만 넘겨주는 상태입니다. 지름길이 없으면 "지금 이 글자가 무엇인지"가 평균에 묻혀서 빠져나오지 못하는 것으로 추정합니다. 직접 검증하지는 못했습니다.
+예상과 달랐습니다! 2층짜리 얕은 모델도 잔차가 없으면 똑같이 3.28에서 멈췄습니다. 학습 첫 스텝의 기울기도 오히려 컸습니다(8층 기준 첫 블록 10.8, 잔차가 있을 때는 3.08). 기울기 소실이 원인이 아니라는 뜻입니다. 단서는 어텐션 엔트로피(0.993~1.000)였습니다. 학습이 끝나도 어텐션이 앞 글자 전체에 똑같이 퍼져 있었고, 이것은 앞 글자들의 평균만 넘겨주는 상태입니다. 지름길이 없으면 "지금 이 글자가 무엇인지"가 평균에 묻혀서 빠져나오지 못하는 것으로 추정합니다. 직접 검증하지는 못했습니다.
 
 ### 탐구 질문과 답
 
 | 탐구 질문 | 답 | 근거 |
 |---|---|---|
-| √d\_k로 나누는 이유 | 차원이 커질수록 내적이 커져 softmax가 포화되고, 기울기가 거의 0으로 줄어듭니다. 나누면 이를 막습니다. | d\_k=1,024에서 softmax 기울기 크기 1.8×10⁻⁵(나누면 0.30). 학습에서는 d\_k=256일 때만 나누지 않은 쪽이 나빴습니다(마지막 위치 손실 2.747 대 2.590) |
-| causal mask가 없으면 | 다음 글자를 베끼는 법을 배웁니다. 학습 손실은 좋아지지만 생성에는 쓸 수 없는 모델이 됩니다. | 학습 손실 0.037(기준 1.694), 마지막 위치 손실 2.294(기준 1.668) |
-| 잔차 연결이 없으면 | 글자 빈도만 배우고 멈춥니다. 층 수를 줄여도 같습니다. | 2~16층 모두 마지막 위치 손실 3.28(글자 빈도 기준선 3.347), 어텐션 엔트로피 1.000. 원인은 추정이며 검증하지 못했습니다 |
+| √d\_k로 나누는 이유 | 차원이 커질수록 내적이 커져 softmax가 포화되고, 기울기가 거의 0으로 줄어듭니다. 나누면 이를 막습니다. | d\_k=1,024에서 softmax 기울기 크기 1.8×10⁻⁵(나누면 0.30). 학습에서는 d\_k=256일 때만 나누지 않은 쪽이 나빴습니다(마지막 위치 손실 2.736 대 2.592) |
+| causal mask가 없으면 | 다음 글자를 베끼는 법을 배웁니다. 학습 손실은 좋아지지만 생성에는 쓸 수 없는 모델이 됩니다. | 학습 손실 0.037(기준 1.690), 마지막 위치 손실 2.293(기준 1.665) |
+| 잔차 연결이 없으면 | 글자 빈도만 배우고 멈춥니다. 층 수를 줄여도 같습니다. | 2~16층 모두 마지막 위치 손실 3.28(글자 빈도 기준선 3.347), 어텐션 엔트로피 0.993~1.000. 원인은 추정이며 검증하지 못했습니다 |
 
 <small>참고: [Vaswani 외(2017)](https://arxiv.org/abs/1706.03762) 3.2절, [Let's build GPT](https://www.youtube.com/watch?v=kCc8FmEb1nY), [nanoGPT](https://github.com/karpathy/nanoGPT), [tinyshakespeare](https://github.com/karpathy/char-rnn/tree/master/data/tinyshakespeare), [3Blue1Brown 어텐션 강의](https://www.3blue1brown.com/lessons/attention)</small>
 
@@ -399,7 +399,7 @@ L = −log σ(β · margin)
 
 같은 GPT-2에서 시작해 30스텝씩 학습했습니다(Adam, lr=2×10⁻⁵). 역전파에만 PyTorch를 쓰고, 학습된 가중치는 다시 NumPy 구현에 올려 측정했습니다. 프롬프트는 `Question: What is the capital of France?\nAnswer:`, 좋은 답은 ` The capital of France is Paris.`, 나쁜 답은 ` I don't know.`입니다. RLHF의 보상은 "답변에 Paris가 있으면 1, 없으면 0"이라는 단순한 규칙으로 했습니다.
 
-![파인튜닝 비교](/assets/img/gpt2-numpy/fine_tuning.png?v=code)
+![파인튜닝 비교](/assets/img/gpt2-numpy/fine_tuning.png?v=colab)
 
 | 측정값 | 시작 | SFT | RLHF(PPO) | DPO |
 |---|---:|---:|---:|---:|
@@ -433,4 +433,4 @@ L = −log σ(β · margin)
 
 - 파인튜닝 비교는 예시 한 쌍으로 30스텝 돌린 시연입니다. RLHF는 규칙 기반 보상을 썼고 가치 함수는 넣지 않았습니다.
 - 어텐션 해석은 한 문장, 샘플링 표는 세 프롬프트의 결과입니다. 사전학습 모델 제거 실험은 Shakespeare로 쟀으므로 손실의 절대값은 현대 영어와 다릅니다.
-- 처음부터 학습한 모델은 글자 단위의 작은 모델을 1,500스텝, 시드 3개로 돌렸습니다. d\_k=256 설정은 기준 모델부터 불안정했고, 16층 잔차 없음은 시드 1개만 끝까지 돌렸습니다.
+- 처음부터 학습한 모델은 글자 단위의 작은 모델을 1,500스텝, 시드 3개로 돌렸습니다. d\_k=256 설정은 기준 모델부터 불안정했고.
