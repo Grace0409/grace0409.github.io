@@ -45,7 +45,9 @@ EIP-1967은 슬롯을 표준화해서 이 문제를 풉니다. 문서의 동기�
 
 Compound의 컨트랙트는 `name()`을 호출하면 `Compound USDC`, `symbol()`은 `cUSDCv3`라고 답했습니다. Aave 쪽은 풀 주소 공급자(`ADDRESSES_PROVIDER`) 호출 결과가 `0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e`로 나와 Aave V3의 Pool 프록시라고 판단했습니다. 두 구현 주소 모두 배포된 코드가 있음을 확인했습니다(각각 18,599, 21,814 바이트).
 
-Aave의 관리자 슬롯이 비어 있는 점은 해석이 필요합니다. 관리자가 없다는 뜻이 아니라, 표준 슬롯이 아닌 다른 방식으로 관리자를 보관한다는 뜻일 수 있습니다. 이 부분의 코드는 제가 읽지 않았으므로 단정하지 않겠습니다. 표준은 슬롯의 위치만 정할 뿐 모든 프록시가 모든 슬롯을 채우도록 강제하지 않습니다.
+Aave의 관리자 슬롯이 비어 있는 이유는 검증된 소스에서 확인했습니다. 탐색기에 올라온 프록시 컨트랙트 이름은 `InitializableImmutableAdminUpgradeabilityProxy`이고, 부모 컨트랙트 `BaseImmutableAdminUpgradeabilityProxy.sol`에 `address internal immutable _admin;`이 선언되어 있습니다. 관리자 주소를 저장소 슬롯이 아니라 배포 때 코드에 박아 넣는 `immutable`로 보관하는 방식입니다. 그래서 슬롯을 읽어도 0이 나옵니다. 표준은 슬롯의 위치만 정할 뿐 모든 프록시가 모든 슬롯을 채우도록 강제하지 않는다는 점이 여기서도 보입니다. 이 관리자 주소가 누구인지는 코드에 들어 있는 값을 디코딩해야 알 수 있는데, 이번에는 하지 않았습니다.
+
+Compound 쪽은 관리자 슬롯의 주소(`0x1ec63b5883c3481134fd50d5daebc83ecd2e8779`)를 따라가 봤습니다. 이 주소는 탐색기에 `CometProxyAdmin`으로 검증되어 있고, `owner()`를 호출하면 `Timelock` 컨트랙트(`0x6d903f6003cca6255d85cca4d3b5e5146dc33925`)를 돌려줍니다. 이 Timelock의 `delay()`는 172,800초, 곧 2일이었고, `admin()`은 구현이 `CompoundGovernor`로 표시되는 프록시(`0x309a862bbc1a00e45506cb8a802d1ff10004c8c0`)였습니다. 업그레이드 권한이 지갑 하나가 아니라 거버넌스 컨트랙트와 2일의 지연을 거치게 되어 있다는 뜻입니다. 거버넌스의 투표 규칙과 제안 이력까지는 확인하지 않았습니다. 구현 컨트랙트의 이름은 탐색기 기준으로 Compound가 `CometWithExtendedAssetList`, Aave가 `PoolInstance`였습니다.
 
 반전이 하나 있습니다. EIP-1967 문서는 Etherscan에서 프록시로 표시되는 예시로 USDC(`0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48`)를 듭니다. 같은 방식으로 USDC의 표준 슬롯을 읽었더니 구현과 관리자 슬롯이 둘 다 0이었습니다. 대신 ZeppelinOS 시절의 슬롯인 `keccak256("org.zeppelinos.proxy.implementation")` 값(`0x7050c9e0f4ca769c69bd3a8ef740bc37934f8e2c036e5a723fd8ee048ed3f8c3`)을 읽으니 `0x43506849d7c04f9138d1a2050bbf3a0c054402dd`가 나왔고, 이 주소에는 23,464 바이트의 코드가 있었습니다. USDC 프록시는 표준이 나오기 전에 배포된 것이어서 옛 슬롯을 쓰고, 익스플로러는 이 옛 방식도 알아본다는 이야기가 됩니다.
 
@@ -89,6 +91,8 @@ contract CounterV1 is Initializable, OwnableUpgradeable, UUPSUpgradeable {
 }
 ```
 
+위 코드는 solc 0.8.26과 OpenZeppelin Contracts(upgradeable 포함) 5.6.1로 컴파일되는 것을 확인했습니다. 배포나 실제 업그레이드 시나리오는 실행해 보지 않았습니다. 테스트 네트워크에서 프록시를 올리고 V2로 바꿔 보는 과정이 필요한데 이번에 하지 않았습니다.
+
 배포는 이 컨트랙트를 먼저 올리고, `ERC1967Proxy`를 `(구현 주소, initialize 호출 데이터)`로 올리는 순서입니다. 그러면 구현 주소가 위 표준 슬롯에 기록되고 `Upgraded` 이벤트가 발생합니다.
 
 ## 한계와 주의할 점
@@ -97,7 +101,7 @@ contract CounterV1 is Initializable, OwnableUpgradeable, UUPSUpgradeable {
 
 구현 컨트랙트 자체가 초기화되지 않은 채 배포되면 누군가 먼저 `initialize`를 호출해 소유자가 될 수 있습니다. 위 예시의 `_disableInitializers()`가 이를 막습니다.
 
-업그레이드 권한은 신뢰의 문제입니다. 관리자 슬롯의 주소가 EOA 하나라면, 그 키 하나가 프로토콜 전체를 바꿀 수 있습니다. 위에서 읽은 Compound의 관리자 주소처럼 슬롯을 읽을 수 있으니, 그 주소가 타임락이나 멀티시그 컨트랙트인지 확인하는 것이 프로토콜을 쓰기 전의 좋은 점검입니다. `Upgraded` 이벤트를 구독해 두면 업그레이드가 일어난 순간을 알 수 있습니다. 관리자 주소의 정체까지는 이번에 조사하지 않았습니다.
+업그레이드 권한은 신뢰의 문제입니다. 관리자 슬롯의 주소가 EOA 하나라면, 그 키 하나가 프로토콜 전체를 바꿀 수 있습니다. 위에서 Compound에서 한 것처럼 관리자 슬롯을 읽고 그 주소가 타임락이나 멀티시그 컨트랙트인지 따라가 보는 것이 프로토콜을 쓰기 전의 좋은 점검입니다. Aave처럼 관리자를 `immutable`로 두는 프록시는 슬롯만으로는 알 수 없어서 소스를 같이 봐야 합니다. `Upgraded` 이벤트를 구독해 두면 업그레이드가 일어난 순간을 알 수 있습니다.
 
 ## 정리
 
