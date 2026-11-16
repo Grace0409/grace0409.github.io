@@ -1,7 +1,7 @@
 ---
 title: "ERC-4337, 합의 계층을 건드리지 않는 계정 추상화"
 description: 합의 계층을 바꾸지 않는 계정 추상화 ERC-4337의 구성요소를 정리하고, 메인넷 EntryPoint의 UserOperation 로그와 sender 계정 형태를 집계했습니다.
-date: 2026-11-16 13:00:00 +0900
+date: 2026-11-14 13:00:00 +0900
 category: tech-docs
 tags: [ethereum, erc, erc-4337, account-abstraction, eip-7702]
 ---
