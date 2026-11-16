@@ -28,7 +28,7 @@ AndroGoat은 학습 목적으로 일부러 취약하게 만든 오픈소스 Kotl
 프록시: mitmproxy (앱과 서버 사이 트래픽을 가로채 내용을 보여주는 도구)
 ```
 
-이미지 선택에서 먼저 한 번 막힙니다. 흔히 받는 Google Play 이미지는 production으로 서명돼 있어 `adb root`가 거부됩니다. `run-as`(디버그 빌드에서 앱 자신의 권한으로 셸을 여는 adb 명령)나 root로 앱 내부 저장소를 들여다보려면 Google APIs(userdebug) 이미지를 써야 합니다. 이미지 하나 잘못 고르면 이후 추출이 전부 막히니, 여기서부터가 사실상 첫 관문입니다.
+흔히 받는 Google Play 이미지는 production으로 서명돼 있어 `adb root`가 거부됩니다. `run-as`(디버그 빌드에서 앱 자신의 권한으로 셸을 여는 adb 명령)나 root로 앱 내부 저장소를 들여다보려면 Google APIs(userdebug) 이미지를 써야 합니다.
 
 ```bash
 adb root
@@ -37,7 +37,7 @@ adb install -r AndroGoat.apk
 adb shell dumpsys package owasp.sat.agoat | findstr "targetSdk debuggable"
 ```
 
-Frida는 호스트에 frida-tools를 올리고 단말에는 아키텍처가 맞는 frida-server를 밀어 넣어 root 쉘에서 띄웁니다. 여기서 함정이 하나 있었습니다. frida-server 17로 돌리면 스크립트가 `ReferenceError: 'Java' is not defined`로 멈춥니다. 17부터 자바 코드를 다루는 `Java` 브리지가 기본 번들에서 빠졌기 때문입니다. 클라이언트와 서버를 16대로 맞추니 해결됐습니다.
+Frida는 호스트에 frida-tools를 올리고 단말에는 아키텍처가 맞는 frida-server를 밀어 넣어 root 쉘에서 띄웁니다. frida-server 17로 돌리면 스크립트가 `ReferenceError: 'Java' is not defined`로 멈춥니다. 17부터 자바 코드를 다루는 `Java` 브리지가 기본 번들에서 빠졌기 때문입니다. 클라이언트와 서버를 16대로 맞추니 해결됐습니다.
 
 ## 저장소에 평문으로 남는 것들
 
@@ -65,7 +65,7 @@ adb shell content query --uri content://owasp.sat.agoat.provider.userpinsprovide
 # Row: id=3 Admin/Admin, id=1 AndroGoat/AndroGoat, id=2 root/toor
 ```
 
-여기서 중요한 대조군이 있습니다. `EncryptedSharedPreferences`나 SQLCipher로 암호화한 저장소는 **파일은 똑같이 뽑히지만 내용은 암호문**이라 읽을 수 없습니다. 암호화 키가 안드로이드 Keystore(하드웨어에 가까운 영역에 키를 보관하는 시스템)에 묶여 있으면, 파일 접근만으로는 복호가 안 됩니다. 저장소 암호화가 실제로 막는 건 "파일 탈취"가 아니라 "탈취한 파일을 읽는 것"이라는 뜻입니다.
+`EncryptedSharedPreferences`나 SQLCipher로 암호화한 저장소는 **파일은 똑같이 뽑히지만 내용은 암호문**이라 읽을 수 없습니다. 암호화 키가 안드로이드 Keystore(하드웨어에 가까운 영역에 키를 보관하는 시스템)에 묶여 있으면, 파일 접근만으로는 복호가 안 됩니다. 저장소 암호화가 실제로 막는 건 "파일 탈취"가 아니라 "탈취한 파일을 읽는 것"이라는 뜻입니다.
 
 **클립보드**: 신용카드 번호를 넣으면 OTP를 만들어 클립보드에 복사하는 화면이 있습니다. OTP `3397`이 복사되자 시스템 클립보드 미리보기에도 그대로 떴습니다.
 
@@ -119,9 +119,9 @@ API 31부터 화면 등록 정보(인텐트 필터)가 있는 컴포넌트는 �
 
 ## 앱의 자체 방어를 Frida로 무력화하기
 
-여기서부터는 앱이 스스로를 지키려는 장치를 Frida로 깨는 영역입니다. 어디까지 뚫리고 어디서부터는 안 뚫리는지, 그 경계를 보는 게 핵심입니다.
+여기서부터는 앱이 스스로를 지키려는 장치를 Frida로 깨는 영역입니다. 어디까지 뚫리고 어디서부터는 안 뚫리는지를 봅니다.
 
-**루트와 에뮬레이터 탐지**: 루트 탐지는 `su` 파일이 있는지 확인하는 식의 로컬 검사라, 그 파일 확인 함수 하나만 가로채면 전부 우회됩니다. 핵심은 이 세 줄입니다.
+**루트와 에뮬레이터 탐지**: 루트 탐지는 `su` 파일이 있는지 확인하는 식의 로컬 검사라, 그 파일 확인 함수 하나만 가로채면 전부 우회됩니다.
 
 ```javascript
 // Frida: File.exists()가 su 관련 경로를 검사할 때 결과를 false로 바꿔치기
@@ -186,14 +186,14 @@ Java.choose("owasp.sat.agoat.BioMetricAuthActivity$onCreate$1", {
 
 ![네트워크 가로채기 화면, HTTP와 HTTPS, 두 종류의 피닝 버튼](/assets/img/androgoat/ssl-menu.png)
 
-문제는 "핀 고정"이 걸린 버튼이었습니다. 앱이 서버 인증서의 지문값을 코드에 미리 박아 두고, 실제 통신에서 받은 인증서 지문이 그 값과 다르면 통신 자체를 끊어 버리는 방식입니다. 처음 눌렀을 때는 이렇게 끊겼습니다.
+"핀 고정"이 걸린 버튼은 달랐습니다. 앱이 서버 인증서의 지문값을 코드에 미리 박아 두고, 실제 통신에서 받은 인증서 지문이 그 값과 다르면 통신 자체를 끊어 버리는 방식입니다. 처음 눌렀을 때는 이렇게 끊겼습니다.
 
 ```
 javax.net.ssl.SSLPeerUnverifiedException: Certificate pinning failure!
   at okhttp3.CertificatePinner.check$okhttp(CertificatePinner.kt:200)
 ```
 
-여기서 함정이 하나 있었습니다. OkHttp(안드로이드에서 널리 쓰는 네트워크 라이브러리)는 공개된 `check` 함수가 아니라 내부용 `check$okhttp` 함수에서 실제 검증을 합니다. 그래서 `check$okhttp`까지 아무 일도 안 하도록 바꿔치기해야 했습니다.
+OkHttp(안드로이드에서 널리 쓰는 네트워크 라이브러리)는 공개된 `check` 함수가 아니라 내부용 `check$okhttp` 함수에서 실제 검증을 합니다. 그래서 `check$okhttp`까지 아무 일도 안 하도록 바꿔치기해야 했습니다.
 
 ```javascript
 // Frida: OkHttp 피닝 검증 함수(공개 check와 내부 check$okhttp 둘 다)를 무력화
