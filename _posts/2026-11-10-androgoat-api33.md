@@ -227,6 +227,8 @@ var Pinner = Java.use("okhttp3.CertificatePinner");
 
 ![피닝이 걸린 owasp.org 요청이 우회 후 mitmproxy에 평문으로 복호되어 응답 헤더가 보이는 화면](/assets/img/androgoat/ssl-decrypted.png)
 
+<small>캡처하고 자르고 올리다 보니 이 화면만 화질이 조금 안 좋네요...</small>
+
 다만 이 핀 고정이 자바 코드가 아니라 네이티브(C/C++) 코드로 들어 있거나, 기기 무결성 검증과 엮여 있으면 자바 후킹만으로는 부족하고 네이티브 코드 레벨의 후킹이 더 필요합니다.
 
 ## API 33이 막는 것과 못 막는 것
