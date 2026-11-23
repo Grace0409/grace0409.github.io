@@ -25,7 +25,7 @@ tags: [android, mastg, frida, mobile-security, owasp]
 프록시: mitmproxy 12.3.1
 ```
 
-먼저 재미있는 디테일 하나. 안드로이드 ABI별 빌드라면 보통 `app-x86-debug.apk`처럼 ABI 이름이 붙은 파일이 나올 거라 생각했는데, 막상 저장소의 `build.gradle`을 열어 보면 ABI별로 쪼개서 빌드하는 설정이 전부 주석 처리돼 있습니다. 즉 직접 빌드해도 그런 파일명은 안 나옵니다. 그래서 OWASP가 GitHub Releases에 올려 둔 공식 배포 APK를 그대로 썼는데, 이것도 나름 의미가 있습니다. **배포된 바이너리가 소스 저장소의 현재 상태와 다를 수 있다**는 걸 시작부터 확인한 셈이니까요.
+먼저 재미있는 디테일 하나. 미션 자료에는 "배포 APK(app-x86-debug)"라고 나와 있는데, 실제 저장소의 `build.gradle`을 보면 ABI별로 쪼개서 빌드하는 설정이 전부 주석 처리돼 있습니다. 즉 직접 빌드해도 그런 파일명은 안 나옵니다. 그래서 OWASP가 GitHub Releases에 올려 둔 공식 배포 APK를 그대로 썼는데, 이것도 나름 의미가 있습니다. **배포된 바이너리가 소스 저장소의 현재 상태와 다를 수 있다**는 걸 시작부터 확인한 셈이니까요.
 
 두 에뮬레이터 모두 `userdebug` 빌드라 `adb root`가 바로 됩니다. 다만 **배포 APK 자체는 `debuggable`이 아니라서** `run-as`는 "package not debuggable"로 거부당하고, root로 우회해야 했습니다.
 
