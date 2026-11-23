@@ -25,7 +25,7 @@ tags: [android, mastg, frida, mobile-security, owasp]
 프록시: mitmproxy 12.3.1
 ```
 
-먼저 재미있는 디테일 하나. 미션 자료에는 "배포 APK(app-x86-debug)"라고 나와 있는데, 실제 저장소의 `build.gradle`을 보면 ABI별로 쪼개서 빌드하는 설정이 전부 주석 처리돼 있습니다. 즉 직접 빌드해도 그런 파일명은 안 나옵니다. 그래서 OWASP가 GitHub Releases에 올려 둔 공식 배포 APK를 그대로 썼는데, 이것도 나름 의미가 있습니다. **배포된 바이너리가 소스 저장소의 현재 상태와 다를 수 있다**는 걸 시작부터 확인한 셈이니까요.
+먼저 재미있는 디테일 하나. 안드로이드 ABI별 빌드라면 보통 `app-x86-debug.apk`처럼 ABI 이름이 붙은 파일이 나올 거라 생각했는데, 막상 저장소의 `build.gradle`을 열어 보면 ABI별로 쪼개서 빌드하는 설정이 전부 주석 처리돼 있습니다. 즉 직접 빌드해도 그런 파일명은 안 나옵니다. 그래서 OWASP가 GitHub Releases에 올려 둔 공식 배포 APK를 그대로 썼는데, 이것도 나름 의미가 있습니다. **배포된 바이너리가 소스 저장소의 현재 상태와 다를 수 있다**는 걸 시작부터 확인한 셈이니까요.
 
 두 에뮬레이터 모두 `userdebug` 빌드라 `adb root`가 바로 됩니다. 다만 **배포 APK 자체는 `debuggable`이 아니라서** `run-as`는 "package not debuggable"로 거부당하고, root로 우회해야 했습니다.
 
@@ -64,7 +64,7 @@ adb shell cat /sdcard/password.txt
 
 권한을 수동으로 한 번 승인해 주니 그제서야 평문 파일이 써졌습니다. 레거시 취약점이 최신 권한 모델을 만나면 재현 조건 자체가 바뀐다는 걸 보여주는 사례였습니다.
 
-**자작 암호**: 비밀번호 검증 화면 설명에 "Read the source and try to find out what kind of encryption is used"라고 친절하게 쓰여 있습니다. 코드를 보니 XOR 16 한 다음 비트 반전하는, 정말 자기만의 암호였습니다. 두 연산 다 자기 자신이 역함수라서 같은 순서로 한 번 더 돌리면 바로 복호화됩니다. Base64로 박혀 있던 타깃 값을 역연산하니 비밀번호가 나왔고, 실제로 입력해 보니 맞았습니다.
+**자작 암호**: 비밀번호 검증 화면 설명에 "Read the source and try to find out what kind of encryption is used"라고 친절하게 쓰여 있습니다. 코드를 보니 XOR 16 한 다음 비트 반전하는, 자기만의 암호였습니다. 두 연산 다 자기 자신이 역함수라서 같은 순서로 한 번 더 돌리면 바로 복호화됩니다. Base64로 박혀 있던 타깃 값을 역연산하니 비밀번호가 나왔고, 실제로 입력해 보니 맞았습니다.
 
 ![Bad Encryption 화면에 SuperSecret을 입력하자 Congratulations 토스트가 뜬 화면](/assets/img/mastg-hacking-playground/bad-encryption.png)
 
@@ -101,6 +101,8 @@ send(stmt.simpleQueryForString()); // -> AdminPassEnc
 ![KeyStore 테스트 케이스에서 MASTG-KeyStore-Demo를 암호화했다가 복호화해서 원래 값으로 돌아온 화면](/assets/img/mastg-hacking-playground/keystore-roundtrip.png)
 
 여기서 private key는 `getEncoded()`를 호출해도 null만 돌아옵니다. 키 자체가 하드웨어에 가까운 영역에 묶여 있어서 파일만 뽑아선 쓸 수 없다는 뜻입니다. "안전한 저장소"가 실제로 막는 건 파일 탈취가 아니라 탈취한 파일을 읽는 것이라는 걸, 취약한 사례와 나란히 놓고 보니 더 분명해졌습니다.
+
+다만 이 화면도 완전히 깨끗하진 않았습니다. logcat을 같이 보고 있었더니 `Log.e`로 공개키 값과 암호화된 바이트가 그대로 찍혔습니다. 개인키 자체는 못 뽑아도, "암복호화에 쓴 값이 전부 로그에 남는다"는 습관 자체는 굳이 없어도 될 구멍이었습니다.
 
 **로깅**: 로그인 화면에 아이디/비밀번호를 넣고 제출하면 그대로 logcat에 찍힙니다.
 
@@ -271,6 +273,8 @@ su 10060 cat .../mode_private_poc.txt     # Permission denied
 전혀 다른 앱 UID로 world-readable 파일은 그대로 읽히고, private 파일은 거부당했습니다. 다만 이 기기는 `getenforce`로 확인해 보니 SELinux가 Enforcing 상태인데도 이게 뚫렸는데, 이건 `su`가 실행되는 도메인이 테스트 빌드 특성상 폭넓게 허용돼 있기 때문일 가능성이 큽니다. 그래서 이 데모는 유닉스 권한(DAC) 레벨의 취약점은 확실히 보여주지만, 실제 서드파티 앱 프로세스가 SELinux까지 뚫고 들어오는 걸 재현한 건 아니라는 점은 정직하게 밝혀 둡니다.
 
 ## 24개 케이스 한눈에 보기
+
+화면 수로는 20개인데 MASTG 쪽 공식 매핑 문서를 보면 화면 하나가 두 개 테스트 ID를 겸하는 경우가 있어서(저장소 테스트 한 화면이 저장과 암호화 두 항목을 동시에 채점하는 식입니다) 합산하면 24개가 됩니다. 아래 표는 화면(테스트 케이스) 기준으로 정리했습니다.
 
 | 분류 | 테스트 케이스 | 결과 |
 | --- | --- | --- |
