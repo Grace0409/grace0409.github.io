@@ -6,12 +6,12 @@ category: ctf-wargame
 tags: [android, mastg, frida, mobile-security, owasp]
 ---
 
-안드로이드 보안 공부하다 보면 어디서든 한 번쯤 듣게 되는 이름이 OWASP MASTG Hacking Playground입니다. MSTG(모바일 보안 테스트 가이드) 항목을 저장소, 인젝션, WebView, 네트워크까지 한 앱에 다 쑤셔 넣어 놓은, 공격 연습용 과녁입니다. 이번엔 이걸 에뮬레이터에 올려 두고 테스트 케이스 24개를 끝까지 한 번씩 눌러 봤습니다. 코드만 읽고 "이건 취약하겠네" 하고 넘기는 게 아니라, 값을 실제로 뽑고 로그인을 뚫고 코드를 돌려 보는 것까지가 이번 목표였습니다.
+안드로이드 보안 공부하다 보면 어디서든 한 번쯤 듣게 되는 이름이 OWASP MASTG Hacking Playground입니다. MSTG(모바일 보안 테스트 가이드) 항목을 저장소, 인젝션, WebView, 네트워크까지 한 앱에 다 쑤셔 넣어 놓은, 공격 연습용 과녁입니다. 이번엔 이걸 에뮬레이터에 올려 두고 테스트 케이스 24개를 끝까지 한 번씩 눌러 봤습니다. 코드만 읽고 취약점을 짐작하는 선에서 끝내는 게 아니라, 값을 실제로 뽑고 로그인을 뚫고 코드를 돌려 보는 것까지가 이번 목표였습니다.
 
 ## 세 줄 요약
 
 - 평문 저장, 로깅, SQL 인젝션, DexClassLoader, WebView JS 브릿지는 코드에 적힌 그대로 뚫립니다. 비밀번호를 설명 문구에 그냥 써 둔 테스트 케이스까지 있었습니다.
-- 이름이 "피닝"이어도 구현이 허술하면 Frida 한 번으로 끝입니다. 이 앱의 SSL 피닝은 알고 보니 Burp Suite 기본 CA만 통과시키는, 핀 고정치고는 좀 이상한 물건이었습니다.
+- 이름이 피닝이어도 구현이 허술하면 Frida 한 번으로 끝입니다. 이 앱의 SSL 피닝은 알고 보니 Burp Suite 기본 CA만 통과시키는, 핀 고정치고는 좀 이상한 물건이었습니다.
 - API 26과 API 23을 같이 띄워 보니 같은 레거시 취약점도 버전마다 재현 조건이 달랐습니다. 런타임 권한, SELinux, 거기다 Frida가 구형 ART를 안 받아주는 것까지, 한 번씩 발목을 잡혔습니다.
 
 ## 실습 환경
@@ -25,9 +25,9 @@ tags: [android, mastg, frida, mobile-security, owasp]
 프록시: mitmproxy 12.3.1
 ```
 
-재미있는 디테일 하나부터. 미션 자료에는 "배포 APK(app-x86-debug)"라고 나와 있는데, 실제 저장소의 `build.gradle`을 열어 보면 ABI별로 쪼개서 빌드하는 설정이 전부 주석 처리돼 있습니다. 그대로 빌드해 봐야 그런 이름의 파일은 안 나온다는 뜻입니다. 그래서 OWASP가 GitHub Releases에 올려 둔 공식 배포 APK로 바로 넘어갔는데, 이것도 나름 교훈이 있었습니다. 배포된 바이너리가 소스 저장소의 지금 상태랑 다를 수 있다는 걸 시작부터 몸으로 확인한 셈이니까요.
+재미있는 디테일 하나부터. 미션 자료에는 배포 APK(app-x86-debug)라고 나와 있는데, 실제 저장소의 `build.gradle`을 열어 보면 ABI별로 쪼개서 빌드하는 설정이 전부 주석 처리돼 있습니다. 그대로 빌드해 봐야 그런 이름의 파일은 안 나온다는 뜻입니다. 그래서 OWASP가 GitHub Releases에 올려 둔 공식 배포 APK로 바로 넘어갔는데, 이것도 나름 교훈이 있었습니다. 배포된 바이너리가 소스 저장소의 지금 상태랑 다를 수 있다는 걸 시작부터 몸으로 확인한 셈이니까요.
 
-에뮬레이터 둘 다 `userdebug` 빌드라 `adb root`는 바로 됩니다. 문제는 배포 APK 자체가 `debuggable`이 아니라는 것. `run-as`를 쓰려고 하면 "package not debuggable"이라며 바로 거절당해서, 결국 root로 돌아가야 했습니다.
+에뮬레이터 둘 다 `userdebug` 빌드라 `adb root`는 바로 됩니다. 문제는 배포 APK 자체가 `debuggable`이 아니라는 것. `run-as`를 쓰려고 하면 `package not debuggable`이라며 바로 거절당해서, 결국 root로 돌아가야 했습니다.
 
 ```bash
 adb root
@@ -64,7 +64,7 @@ adb shell cat /sdcard/password.txt
 
 권한을 손으로 한 번 열어 주니 그제야 평문 파일이 써졌습니다. 레거시 취약점 하나가 최신 권한 모델을 만나면서 재현 조건까지 같이 바뀐 셈입니다.
 
-**자작 암호**: 비밀번호 검증 화면 설명에 "Read the source and try to find out what kind of encryption is used"라고 대놓고 적혀 있습니다. 코드를 열어 보니 XOR 16, 그다음 비트 반전. 둘 다 자기 자신이 역함수라서 같은 순서로 한 번 더 돌리면 그대로 복호화됩니다. Base64로 박혀 있던 타깃 값을 거꾸로 돌려서 비밀번호를 구했고, 입력해 보니 맞았습니다.
+**자작 암호**: 비밀번호 검증 화면 설명에 `Read the source and try to find out what kind of encryption is used`라고 대놓고 적혀 있습니다. 코드를 열어 보니 XOR 16, 그다음 비트 반전. 둘 다 자기 자신이 역함수라서 같은 순서로 한 번 더 돌리면 그대로 복호화됩니다. Base64로 박혀 있던 타깃 값을 거꾸로 돌려서 비밀번호를 구했고, 입력해 보니 맞았습니다.
 
 ![Bad Encryption 화면에 SuperSecret을 입력하자 Congratulations 토스트가 뜬 화면](/assets/img/mastg-hacking-playground/bad-encryption.png)
 
@@ -86,13 +86,13 @@ send(stmt.simpleQueryForString()); // -> AdminPassEnc
 
 암호화된 파일이 그대로 열리고 `admin / AdminPassEnc`가 나왔습니다. 키 하나가 네이티브 바이너리에 박혀 있으면 암호화 자체가 무의미해진다는 걸 실제 파일로 본 셈입니다.
 
-**AES로 암호화한 메모리 상 비밀**: `OMTG_DATAST_011_Memory`는 AES-128 기밀성 키와 HMAC-SHA256 무결성 키를 둘 다 소스에 박아 두고, 그 키로 미리 암호화해 둔 문자열을 복호해서 메모리에만 들고 있습니다. 화면엔 아무것도 안 뜨길래 같은 키와 암호문을 그대로 들고 나와 로컬에서 AES-CBC로 돌려 봤더니 `"U got the decrypted message. Well done."`가 나왔고 HMAC 검증도 통과했습니다. 메모리에만 있다고 안전한 게 아니라, 키가 바이너리 안에 있는 순간 메모리까지 뒤질 필요조차 없어집니다.
+**AES로 암호화한 메모리 상 비밀**: `OMTG_DATAST_011_Memory`는 AES-128 기밀성 키와 HMAC-SHA256 무결성 키를 둘 다 소스에 박아 두고, 그 키로 미리 암호화해 둔 문자열을 복호해서 메모리에만 들고 있습니다. 화면엔 아무것도 안 뜨길래 같은 키와 암호문을 그대로 들고 나와 로컬에서 AES-CBC로 돌려 봤더니 `U got the decrypted message. Well done.`가 나왔고 HMAC 검증도 통과했습니다. 메모리에만 있다고 안전한 게 아니라, 키가 바이너리 안에 있는 순간 메모리까지 뒤질 필요조차 없어집니다.
 
 **KeyChain**: 이건 설명 문구부터가 스포일러였습니다.
 
 ![Keychain 테스트 케이스 화면, Password is 1234라고 설명에 그대로 적혀 있다](/assets/img/mastg-hacking-playground/keychain-password-hint.png)
 
-"Password is 1234." 디컴파일할 필요도 없이 화면에 비밀번호가 적혀 있습니다. 넣어 보니 인증서가 바로 추출됐습니다.
+`Password is 1234.` 디컴파일할 필요도 없이 화면에 비밀번호가 적혀 있습니다. 넣어 보니 인증서가 바로 추출됐습니다.
 
 ![1234를 입력하자 인증서 패키지가 성공적으로 추출된 화면](/assets/img/mastg-hacking-playground/keychain-extracted.png)
 
@@ -100,7 +100,7 @@ send(stmt.simpleQueryForString()); // -> AdminPassEnc
 
 ![KeyStore 테스트 케이스에서 MASTG-KeyStore-Demo를 암호화했다가 복호화해서 원래 값으로 돌아온 화면](/assets/img/mastg-hacking-playground/keystore-roundtrip.png)
 
-private key는 `getEncoded()`를 불러도 null만 나옵니다. 키 자체가 하드웨어에 가까운 영역에 묶여 있어서, 파일만 뽑아선 아무것도 못 합니다. 취약한 사례들 옆에 놓고 보니 "안전한 저장소"가 막는 건 파일 탈취 자체가 아니라 탈취한 파일을 읽는 일이라는 게 더 뚜렷해졌습니다. 다만 이 화면도 완전히 깨끗하진 않았는데, logcat을 같이 보고 있었더니 공개키 값과 암호화된 바이트가 `Log.e`로 그대로 찍혔습니다. 개인키는 못 뽑아도, 암복호화에 쓴 값을 로그에 남기는 습관 자체는 안 없어도 될 구멍이었습니다.
+private key는 `getEncoded()`를 불러도 null만 나옵니다. 키 자체가 하드웨어에 가까운 영역에 묶여 있어서, 파일만 뽑아선 아무것도 못 합니다. 취약한 사례들 옆에 놓고 보니 안전한 저장소가 막는 건 파일 탈취 자체가 아니라 탈취한 파일을 읽는 일이라는 게 더 뚜렷해졌습니다. 다만 이 화면도 완전히 깨끗하진 않았는데, logcat을 같이 보고 있었더니 공개키 값과 암호화된 바이트가 `Log.e`로 그대로 찍혔습니다. 개인키는 못 뽑아도, 암복호화에 쓴 값을 로그에 남기는 습관 자체는 안 없어도 될 구멍이었습니다.
 
 **로깅**: 로그인 화면에 아이디/비밀번호를 넣고 제출하면 logcat에 그대로 박힙니다.
 
@@ -115,7 +115,7 @@ adb logcat -d | grep OMTG_DATAST_002_Logging
 
 예측 변환 안 뜬다고 완전히 끝난 건 아닙니다. 서드파티 키보드 앱 자신의 학습 사전은 `/data/data/<키보드 패키지>` 안에 따로 있어서, 이번엔 거기까지 못 들어갔습니다. 설정값만 확인하고 사전 파일 추출은 다음으로 미뤘습니다.
 
-**클립보드**: 설명 문구는 "deactivated Clipboard"라는데, 길게 눌러 보면 지극히 평범한 CUT/COPY/PASTE/SHARE 메뉴가 그대로 뜹니다. 하나도 안 꺼져 있습니다. 설명이 거짓말을 하고 있는 셈이죠.
+**클립보드**: 설명 문구는 `deactivated Clipboard`라는데, 길게 눌러 보면 지극히 평범한 CUT/COPY/PASTE/SHARE 메뉴가 그대로 뜹니다. 하나도 안 꺼져 있습니다. 설명이 거짓말을 하고 있는 셈이죠.
 
 ![텍스트를 선택하자 표준 CUT COPY PASTE SHARE 메뉴가 뜨는 화면](/assets/img/mastg-hacking-playground/clipboard-copy-menu.png)
 
@@ -135,7 +135,7 @@ send(cm.getPrimaryClip().getItemAt(0).getText()); // -> 방금 복사한 값 그
 
 ![x' OR '1'='1' -- 를 아이디로 넣고 로그인하자 User logged in 토스트가 뜨는 화면](/assets/img/mastg-hacking-playground/sql-injection-bypass.png)
 
-바로 옆에 "Best Practice"라는 테스트 케이스가 하나 더 있는데, 같은 로직을 파라미터 바인딩(`?`)으로 바꿔 둔 버전입니다. 같은 페이로드로 한 번 더 찔러 봤습니다.
+바로 옆에 Best Practice라는 테스트 케이스가 하나 더 있는데, 같은 로직을 파라미터 바인딩(`?`)으로 바꿔 둔 버전입니다. 같은 페이로드로 한 번 더 찔러 봤습니다.
 
 ![같은 페이로드를 파라미터 바인딩된 로그인에 넣자 Username and-or password wrong이 뜨는 화면](/assets/img/mastg-hacking-playground/sql-injection-best-practice.png)
 
@@ -202,7 +202,7 @@ window.jsinterface.getClass().forName('java.lang.Runtime')
   .getMethod('getRuntime', null).invoke(null, null).exec(cmd);
 ```
 
-발화시켜 보니 `jsinterface.getSomeString()`의 결과인 `"string"`은 alert로 떴는데, `getClass()` 호출 쪽은 그냥 막혔습니다.
+발화시켜 보니 `jsinterface.getSomeString()`의 결과인 `string`은 alert로 떴는데, `getClass()` 호출 쪽은 그냥 막혔습니다.
 
 ![로컬 WebView에서 jsinterface.getSomeString 결과인 string이 alert로 뜨는 화면](/assets/img/mastg-hacking-playground/webview-local-alert.png)
 
@@ -229,7 +229,7 @@ API 17부터 `@JavascriptInterface`를 붙인 메서드만 JS에 노출되도록
 
 요청 헤더(기기 정보 포함)부터 응답 바디까지 다 평문으로 읽힙니다. 같은 방식으로 `https://`를 쏘면 `SSLHandshakeException: Trust anchor for certification path not found`로 바로 막힙니다. mitmproxy CA를 기기에 심지 않는 이상 HTTPS는 그대로는 안 뚫립니다.
 
-**SSL 피닝**: 이 테스트 케이스의 "피닝"은 좀 특이합니다. 서버 인증서를 검증할 때 발급자 DN에 `",O=PortSwigger,"`라는 문자열이 있는지만 봅니다. PortSwigger는 Burp Suite가 기본으로 발급하는 CA 이름입니다. 진짜 서버 인증서에 피닝된 게 아니라, Burp 같은 특정 MITM 프록시의 기본 CA만 통과시키는 구조였던 겁니다.
+**SSL 피닝**: 이 테스트 케이스의 피닝은 좀 특이합니다. 서버 인증서를 검증할 때 발급자 DN에 `",O=PortSwigger,"`라는 문자열이 있는지만 봅니다. PortSwigger는 Burp Suite가 기본으로 발급하는 CA 이름입니다. 진짜 서버 인증서에 피닝된 게 아니라, Burp 같은 특정 MITM 프록시의 기본 CA만 통과시키는 구조였던 겁니다.
 
 ```javascript
 // Frida: 커스텀 TrustManager를 통째로 무력화
@@ -299,4 +299,4 @@ su 10060 cat .../mode_private_poc.txt     # Permission denied
 | 네트워크 | 인증서 피닝(정석) | 구현은 맞지만 인증서 만료로 테스트 자체가 깨짐 |
 | 레거시(API23) | MODE_WORLD_READABLE | DAC 레벨에서 교차 UID 읽기 성공 |
 
-하나씩 끝낼 때마다 "코드 문제인가, 플랫폼이 막은 건가, 아니면 그냥 테스트가 낡아서 안 되는 건가"를 가려내는 게 생각보다 까다로웠습니다. 겉보기엔 셋 다 똑같이 "안 뚫림"으로 보이니까요. MASTG Hacking Playground는 2018~2020년쯤 만들어진 앱이라, 지금 기준으로 보면 권한 모델도 WebView 정책도 인증서 유효기간도 여기저기서 삐걱댑니다. 덕분에 정적 분석 결과를 그대로 믿지 않고 하나하나 손으로 켜서 확인하는 버릇이 더 붙었습니다 :)
+하나씩 끝낼 때마다 코드 문제인지, 플랫폼이 막은 건지, 아니면 그냥 테스트가 낡아서 안 되는 건지를 가려내는 게 생각보다 까다로웠습니다. 겉보기엔 셋 다 똑같이 안 뚫리는 걸로 보이니까요. MASTG Hacking Playground는 2018~2020년쯤 만들어진 앱이라, 지금 기준으로 보면 권한 모델도 WebView 정책도 인증서 유효기간도 여기저기서 삐걱댑니다. 덕분에 정적 분석 결과를 그대로 믿지 않고 하나하나 손으로 켜서 확인하는 버릇이 더 붙었습니다 :)
