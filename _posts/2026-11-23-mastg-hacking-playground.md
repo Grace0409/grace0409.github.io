@@ -12,7 +12,7 @@ tags: [android, mastg, frida, mobile-security, owasp]
 
 - 평문 저장, 로깅, SQL 인젝션, DexClassLoader, WebView JS 브릿지는 코드에 적힌 그대로 뚫립니다. 비밀번호를 설명 문구에 그냥 써 둔 테스트 케이스까지 있었습니다.
 - 이름이 피닝이어도 구현이 허술하면 Frida 한 번으로 끝입니다. 이 앱의 SSL 피닝은 알고 보니 Burp Suite 기본 CA만 통과시키는, 핀 고정치고는 좀 이상한 물건이었습니다.
-- API 26과 API 23을 같이 띄워 보니 같은 레거시 취약점도 버전마다 재현 조건이 달랐습니다. 런타임 권한, SELinux, 거기다 Frida가 구형 ART를 안 받아주는 것까지, 한 번씩 발목을 잡혔습니다.
+- API 26과 API 23을 같이 띄워 보니 같은 레거시 취약점도 버전마다 재현 조건이 달랐습니다. 런타임 권한, SELinux, 거기다 Frida가 구형 ART를 안 받아주는 문제까지 하나씩 걸렸습니다.
 
 ## 실습 환경
 
@@ -25,7 +25,7 @@ tags: [android, mastg, frida, mobile-security, owasp]
 프록시: mitmproxy 12.3.1
 ```
 
-재미있는 디테일 하나부터. 미션 자료에는 배포 APK(app-x86-debug)라고 나와 있는데, 실제 저장소의 `build.gradle`을 열어 보면 ABI별로 쪼개서 빌드하는 설정이 전부 주석 처리돼 있습니다. 그대로 빌드해 봐야 그런 이름의 파일은 안 나온다는 뜻입니다. 그래서 OWASP가 GitHub Releases에 올려 둔 공식 배포 APK로 바로 넘어갔는데, 이것도 나름 교훈이 있었습니다. 배포된 바이너리가 소스 저장소의 지금 상태랑 다를 수 있다는 걸 시작부터 몸으로 확인한 셈이니까요.
+재미있는 디테일 하나부터. 미션 자료에는 배포 APK(app-x86-debug)라고 나와 있는데, 실제 저장소의 `build.gradle`을 열어 보면 ABI별로 쪼개서 빌드하는 설정이 전부 주석 처리돼 있습니다. 그대로 빌드해 봐야 그런 이름의 파일은 안 나온다는 뜻입니다. 그래서 OWASP가 GitHub Releases에 올려 둔 공식 배포 APK로 바로 넘어갔습니다. 배포된 바이너리가 소스 저장소의 지금 상태랑 다를 수 있다는 걸 작업을 시작하기도 전에 직접 확인했습니다.
 
 에뮬레이터 둘 다 `userdebug` 빌드라 `adb root`는 바로 됩니다. 문제는 배포 APK 자체가 `debuggable`이 아니라는 것. `run-as`를 쓰려고 하면 `package not debuggable`이라며 바로 거절당해서, 결국 root로 돌아가야 했습니다.
 
@@ -62,7 +62,7 @@ adb shell cat /sdcard/password.txt
 #   L33tS3cr3t
 ```
 
-권한을 손으로 한 번 열어 주니 그제야 평문 파일이 써졌습니다. 레거시 취약점 하나가 최신 권한 모델을 만나면서 재현 조건까지 같이 바뀐 셈입니다.
+권한을 손으로 한 번 열어 주니 그제야 평문 파일이 써졌습니다. 레거시 취약점 하나가 최신 권한 모델을 만나면서 재현 조건도 같이 바뀌었습니다.
 
 **자작 암호**: 비밀번호 검증 화면 설명에 `Read the source and try to find out what kind of encryption is used`라고 대놓고 적혀 있습니다. 코드를 열어 보니 XOR 16, 그다음 비트 반전. 둘 다 자기 자신이 역함수라서 같은 순서로 한 번 더 돌리면 그대로 복호화됩니다. Base64로 박혀 있던 타깃 값을 거꾸로 돌려서 비밀번호를 구했고, 입력해 보니 맞았습니다.
 
@@ -84,7 +84,7 @@ var stmt = db.compileStatement("SELECT Password FROM Accounts LIMIT 1");
 send(stmt.simpleQueryForString()); // -> AdminPassEnc
 ```
 
-암호화된 파일이 그대로 열리고 `admin / AdminPassEnc`가 나왔습니다. 키 하나가 네이티브 바이너리에 박혀 있으면 암호화 자체가 무의미해진다는 걸 실제 파일로 본 셈입니다.
+암호화된 파일이 그대로 열리고 `admin / AdminPassEnc`가 나왔습니다. 키 하나가 네이티브 바이너리에 박혀 있으면 암호화 자체가 무의미해진다는 걸 실제 파일로 확인한 결과입니다.
 
 **AES로 암호화한 메모리 상 비밀**: `OMTG_DATAST_011_Memory`는 AES-128 기밀성 키와 HMAC-SHA256 무결성 키를 둘 다 소스에 박아 두고, 그 키로 미리 암호화해 둔 문자열을 복호해서 메모리에만 들고 있습니다. 화면엔 아무것도 안 뜨길래 같은 키와 암호문을 그대로 들고 나와 로컬에서 AES-CBC로 돌려 봤더니 `U got the decrypted message. Well done.`가 나왔고 HMAC 검증도 통과했습니다. 메모리에만 있다고 안전한 게 아니라, 키가 바이너리 안에 있는 순간 메모리까지 뒤질 필요조차 없어집니다.
 
@@ -100,7 +100,7 @@ send(stmt.simpleQueryForString()); // -> AdminPassEnc
 
 ![KeyStore 테스트 케이스에서 MASTG-KeyStore-Demo를 암호화했다가 복호화해서 원래 값으로 돌아온 화면](/assets/img/mastg-hacking-playground/keystore-roundtrip.png)
 
-private key는 `getEncoded()`를 불러도 null만 나옵니다. 키 자체가 하드웨어에 가까운 영역에 묶여 있어서, 파일만 뽑아선 아무것도 못 합니다. 취약한 사례들 옆에 놓고 보니 안전한 저장소가 막는 건 파일 탈취 자체가 아니라 탈취한 파일을 읽는 일이라는 게 더 뚜렷해졌습니다. 다만 이 화면도 완전히 깨끗하진 않았는데, logcat을 같이 보고 있었더니 공개키 값과 암호화된 바이트가 `Log.e`로 그대로 찍혔습니다. 개인키는 못 뽑아도, 암복호화에 쓴 값을 로그에 남기는 습관 자체는 안 없어도 될 구멍이었습니다.
+private key는 `getEncoded()`를 불러도 null만 나옵니다. 키 자체가 하드웨어에 가까운 영역에 묶여 있어서, 파일만 뽑아선 아무것도 못 합니다. 앞의 취약한 사례들에서는 파일을 뽑는 것 자체가 끝이었는데, 여기서는 파일을 뽑아도 그 다음 단계에서 막힙니다. 다만 이 화면도 완전히 깨끗하진 않았는데, logcat을 같이 보고 있었더니 공개키 값과 암호화된 바이트가 `Log.e`로 그대로 찍혔습니다. 개인키는 못 뽑아도, 암복호화에 쓴 값을 로그에 남기는 습관 자체는 안 없어도 될 구멍이었습니다.
 
 **로깅**: 로그인 화면에 아이디/비밀번호를 넣고 제출하면 logcat에 그대로 박힙니다.
 
@@ -115,7 +115,7 @@ adb logcat -d | grep OMTG_DATAST_002_Logging
 
 예측 변환 안 뜬다고 완전히 끝난 건 아닙니다. 서드파티 키보드 앱 자신의 학습 사전은 `/data/data/<키보드 패키지>` 안에 따로 있어서, 이번엔 거기까지 못 들어갔습니다. 설정값만 확인하고 사전 파일 추출은 다음으로 미뤘습니다.
 
-**클립보드**: 설명 문구는 `deactivated Clipboard`라는데, 길게 눌러 보면 지극히 평범한 CUT/COPY/PASTE/SHARE 메뉴가 그대로 뜹니다. 하나도 안 꺼져 있습니다. 설명이 거짓말을 하고 있는 셈이죠.
+**클립보드**: 설명 문구는 `deactivated Clipboard`라는데, 길게 눌러 보면 지극히 평범한 CUT/COPY/PASTE/SHARE 메뉴가 그대로 뜹니다. 하나도 안 꺼져 있습니다. 설명 문구와 실제 동작이 다릅니다.
 
 ![텍스트를 선택하자 표준 CUT COPY PASTE SHARE 메뉴가 뜨는 화면](/assets/img/mastg-hacking-playground/clipboard-copy-menu.png)
 
@@ -159,7 +159,7 @@ targetSdk 28에서 `android:exported`를 따로 안 쓰면 기본값이 false라
 
 ![SQL 문법 오류로 앱이 그대로 크래시해서 Attack me if u can has stopped 가 뜬 화면](/assets/img/mastg-hacking-playground/contentprovider-sqli-crash.png)
 
-성공하면 정보가 새고, 깨지면 다운됩니다. 키보드 자동완성 하나로 멀쩡한 앱을 떨어뜨린 경험이었습니다(사전에 안 걸리는 글자로 다시 치니 깔끔하게 성공했습니다). `_id` 경로 세그먼트 쪽 인젝션 포인트도 코드엔 있긴 한데, `UriMatcher`가 숫자로만 이루어진 세그먼트만 매치해서 실제로는 도달이 안 되는 죽은 코드였습니다. 코드만 보고 바로 취약하다고 단정하면 안 되는 사례 하나 더.
+성공하면 정보가 새고, 깨지면 다운됩니다. 키보드 자동완성 하나로 멀쩡한 앱을 떨어뜨렸습니다(사전에 안 걸리는 글자로 다시 치니 깔끔하게 성공했습니다). `_id` 경로 세그먼트 쪽 인젝션 포인트도 코드엔 있긴 한데, `UriMatcher`가 숫자로만 이루어진 세그먼트만 매치해서 실제로는 도달이 안 되는 죽은 코드였습니다. 코드만 읽어서는 여기까지 알기 어렵습니다.
 
 **DexClassLoader 코드 실행**: `/sdcard`에서 jar를 읽어 `DexClassLoader`로 클래스를 올리고 리플렉션으로 메서드를 부르는 코드입니다. 직접 악성 jar를 만들어 봤습니다. `ActivityThread.currentActivityThread()`를 리플렉션으로 타고 들어가면 인자로 Context를 받지 않아도 지금 실행 중인 앱의 Context를 훔칠 수 있습니다.
 
@@ -193,7 +193,7 @@ webview.evaluateJavascript("javascript:Android.returnString()", null);
 // logcat: BRIDGE_OK:Secret String
 ```
 
-원격 페이지가 죽어 있어도 상관없습니다. 공격자가 그 자리를 자기 페이지로 바꿔치기하거나 MITM만 해내면 같은 방식으로 시크릿을 가져갈 수 있다는 뜻이니까요.
+원격 페이지가 죽어 있어도 상관없습니다. 공격자가 그 자리를 자기 페이지로 바꿔치기하거나 MITM만 해내면 같은 방식으로 시크릿을 가져갈 수 있습니다.
 
 **로컬 WebView와 getClass() RCE**: 로컬 WebView는 에셋에 들어 있는 HTML을 로드하는데, 그 안에 옛날 방식 WebView RCE 페이로드가 이미 심어져 있습니다.
 
@@ -210,7 +210,7 @@ window.jsinterface.getClass().forName('java.lang.Runtime')
 chromium: [INFO:CONSOLE] "Uncaught TypeError: window.jsinterface.getClass is not a function"
 ```
 
-API 17부터 `@JavascriptInterface`를 붙인 메서드만 JS에 노출되도록 바뀐 덕분입니다. 어노테이션이 없는 `getClass()` 같은 메서드는 JS 쪽에서 아예 존재 자체를 모릅니다. `/storage/emulated/0/mstg.txt`도 당연히 생기지 않았고요. 옛날 블로그에 자주 나오던 WebView RCE가 지금은 플랫폼 차원에서 막혀 있다는 걸 로그로 직접 눈으로 확인했습니다.
+API 17부터 `@JavascriptInterface`를 붙인 메서드만 JS에 노출되도록 바뀐 덕분입니다. 어노테이션이 없는 `getClass()` 같은 메서드는 JS 쪽에서 아예 존재 자체를 모릅니다. `/storage/emulated/0/mstg.txt`도 당연히 생기지 않았고요. 옛날 블로그에 자주 나오던 WebView RCE가 지금은 플랫폼 차원에서 막혀 있다는 걸 이 콘솔 에러로 확인했습니다.
 
 ## 네트워크: 프록시와 피닝
 
@@ -249,7 +249,7 @@ HardenedX509TrustManager.checkServerTrusted.implementation = function (chain, au
 CertPathValidatorException: Trust anchor for certification path not found.
 ```
 
-코드는 멀쩡한데 시간이 지나서 깨진 경우입니다. 동적 테스트에서 실패가 뜬다고 바로 취약점이다 아니다로 단정하면 안 된다는 걸 또 한 번 배웠습니다.
+코드는 멀쩡한데 시간이 지나서 깨진 경우입니다. 동적 테스트에서 실패가 떴다고 바로 취약점 유무를 판단할 수는 없었습니다.
 
 ## API 23으로 돌아가서: MODE_WORLD_READABLE
 
